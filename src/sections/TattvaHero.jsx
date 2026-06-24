@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useReducedMotion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 
 /* ─────────────────────────────────────────────────────────────────
    TATTVA — Hero Section (Premium Manuscript Engine)
@@ -11,7 +11,7 @@ const QUOTES = [
     sanskrit_l2: 'कदाचित्',
     transliteration: 'na jāyate mriyate vā kadācit',
     translation: 'It is never born,\nnor does it ever die.',
-    source: 'Bhagavad Gita',
+    source: 'Bhagavad Gītā',
     sourceRef: '2.20',
   },
   {
@@ -35,7 +35,7 @@ const QUOTES = [
     sanskrit_l2: 'मा फलेषु कदाचन',
     transliteration: 'karmaṇyevādhikāraste mā phaleṣu kadācana',
     translation: 'You have a right to perform your prescribed duty,\nbut you are not entitled to the fruits of action.',
-    source: 'Bhagavad Gita',
+    source: 'Bhagavad Gītā',
     sourceRef: '2.47',
   },
   {
@@ -59,7 +59,7 @@ const QUOTES = [
     sanskrit_l2: 'नात्मानमवसादयेत्',
     transliteration: 'uddharedātmanātmānaṁ nātmānamavasādayet',
     translation: 'Let a man lift himself by his own Self alone;\nlet him not degrade himself.',
-    source: 'Bhagavad Gita',
+    source: 'Bhagavad Gītā',
     sourceRef: '6.5',
   },
   {
@@ -143,6 +143,71 @@ function Vignette() {
 /* ─────────────────────────────────────────────────────────────────
    ABSTRACT FORMS
    ──────────────────────────────────────────────────────────────── */
+function SacredGeometryAnchor() {
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+
+  const mouseX = useMotionValue(typeof window !== 'undefined' ? window.innerWidth / 2 : 0);
+  const mouseY = useMotionValue(typeof window !== 'undefined' ? window.innerHeight / 2 : 0);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  // Spring configuration for buttery smooth movement
+  const springConfig = { damping: 50, stiffness: 400, mass: 1 };
+  
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+
+  // Max movement 20px (-10 to 10)
+  const x = useTransform(smoothX, [0, typeof window !== 'undefined' ? window.innerWidth : 1000], [-10, 10]);
+  const y = useTransform(smoothY, [0, typeof window !== 'undefined' ? window.innerHeight : 1000], [-10, 10]);
+
+  return (
+    <motion.div
+      aria-hidden="true"
+      style={{
+        position: 'absolute',
+        top: '50%',
+        right: '-15%', // Partially cropped by viewport edge
+        width: 'clamp(900px, 80vw, 1200px)', 
+        height: 'clamp(900px, 80vw, 1200px)',
+        marginTop: '-50vh', // Half height offset visually
+        x,
+        y,
+        scale,
+        opacity: 0.05, // 5% opacity (between 3% and 8%)
+        zIndex: 3,
+        pointerEvents: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {/* Concentric Circles */}
+      <div className="absolute inset-0 rounded-full border-[1px] border-[#C58B52] opacity-80" />
+      <div className="absolute inset-[5%] rounded-full border-[1px] border-[#1A1A1A] opacity-70" />
+      <div className="absolute inset-[18%] rounded-full border-[1px] border-[#C58B52] opacity-50" />
+      <div className="absolute inset-[32%] rounded-full border-[1px] border-[#1A1A1A] opacity-40" />
+      <div className="absolute inset-[48%] rounded-full border-[1px] border-[#C58B52] opacity-30" />
+      
+      {/* Thin structural crosshairs */}
+      <div className="absolute top-1/2 left-[-10%] right-[-10%] h-[1px] bg-[#C58B52] -translate-y-1/2 opacity-30" />
+      <div className="absolute left-1/2 top-[-10%] bottom-[-10%] w-[1px] bg-[#C58B52] -translate-x-1/2 opacity-30" />
+      
+      {/* Diagonal structure lines */}
+      <div className="absolute top-1/2 left-[-10%] right-[-10%] h-[1px] bg-[#1A1A1A] -translate-y-1/2 opacity-20 rotate-45" />
+      <div className="absolute top-1/2 left-[-10%] right-[-10%] h-[1px] bg-[#1A1A1A] -translate-y-1/2 opacity-20 -rotate-45" />
+    </motion.div>
+  );
+}
+
 function AbstractForms() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[2] overflow-hidden">
@@ -591,6 +656,7 @@ export function TattvaHero() {
         animate="visible"
         variants={containerVariants}
       >
+        <SacredGeometryAnchor />
         <AbstractForms />
         <Wordmark />
 

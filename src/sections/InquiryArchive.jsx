@@ -5,17 +5,27 @@ const INQUIRIES = [
   {
     number: '01',
     question: 'Why do innocent people suffer?',
-    tags: 'KARMA · DHARMA',
+    tags: 'KARMA • DHARMA',
   },
   {
     number: '02',
     question: 'Does consciousness survive death?',
-    tags: 'ATMAN · DEATH',
+    tags: 'ATMAN • DEATH',
   },
   {
     number: '03',
     question: 'Is free will an illusion?',
-    tags: 'KARMA · AGENCY',
+    tags: 'KARMA • AGENCY',
+  },
+  {
+    number: '04',
+    question: 'Why are there many gods?',
+    tags: 'DEVOTION • PHILOSOPHY',
+  },
+  {
+    number: '05',
+    question: 'Can truth be known?',
+    tags: 'EPISTEMOLOGY • DHARMA',
   },
 ];
 

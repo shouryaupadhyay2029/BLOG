@@ -3,6 +3,9 @@ import { LenisProvider } from '@/hooks/useLenis';
 import { TattvaHero } from '@/sections/TattvaHero';
 import { Threshold } from '@/sections/Threshold';
 import { InquiryArchive } from '@/sections/InquiryArchive';
+import { FeaturedDeepDive } from '@/sections/FeaturedDeepDive';
+import { CosmicTimeline } from '@/sections/CosmicTimeline';
+import { SiteWideThread } from '@/components/SiteWideThread';
 
 /**
  * App — root entry.
@@ -15,10 +18,12 @@ function App() {
         className="relative w-full bg-tattva-obsidian text-tattva-cream font-sans antialiased"
         style={{ overflowX: 'hidden' }}
       >
+        <SiteWideThread />
         <TattvaHero />
         <Threshold />
         <InquiryArchive />
-        {/* Future sections mount here */}
+        <FeaturedDeepDive />
+        <CosmicTimeline />
       </div>
     </LenisProvider>
   );
