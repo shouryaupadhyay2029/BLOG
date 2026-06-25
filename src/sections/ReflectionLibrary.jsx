@@ -114,6 +114,65 @@ export function ReflectionLibrary() {
         </div>
 
       </div>
+
+      {/* FINAL CONCLUSION SECTION */}
+      <div className="w-full flex flex-col items-center justify-center mt-[35vh] pb-[20vh] relative">
+        
+        {/* Massive Typography Watermark */}
+        <div 
+          className="absolute inset-0 flex flex-col items-center justify-end pb-[10vh] pointer-events-none select-none z-0 overflow-hidden"
+        >
+          <span 
+            className="font-instrument text-[#E9E2D4] leading-none text-center"
+            style={{ 
+              fontSize: '28vw', 
+              opacity: 0.03, 
+              letterSpacing: '-0.02em',
+              transform: 'translateY(15%)'
+            }}
+          >
+            TATTVA
+          </span>
+        </div>
+
+        <motion.div 
+          className="relative z-10 flex flex-col items-center text-center px-6"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 1.4, ease: EASE_EXPO }}
+        >
+          {/* Top Label */}
+          <span className="font-general text-[9px] uppercase tracking-[0.4em] text-[#C58B52] mb-12">
+            The Journey Continues
+          </span>
+
+          {/* Main Quote */}
+          <h2 className="font-instrument text-4xl md:text-6xl lg:text-7xl text-[#E9E2D4] leading-tight max-w-4xl tracking-tight mb-8">
+            "There is no final answer.<br />
+            <span className="italic opacity-80">Only deeper questions.</span>"
+          </h2>
+
+          {/* Secondary Text */}
+          <p className="font-cormorant text-lg md:text-xl font-light italic text-[#E9E2D4]/50 mb-16 max-w-md leading-relaxed">
+            The search does not end here.<br />
+            It begins again with every question.
+          </p>
+
+          {/* Divider */}
+          <div className="w-[90px] h-[1px] bg-[#C58B52]/40 mb-16" />
+
+          {/* Signature */}
+          <div className="flex flex-col items-center">
+            <span className="font-general text-[11px] uppercase tracking-[0.3em] text-[#E9E2D4]/70 mb-2">
+              TATTVA
+            </span>
+            <span className="font-cormorant text-sm italic text-[#E9E2D4]/40">
+              A Search Beyond Certainty
+            </span>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

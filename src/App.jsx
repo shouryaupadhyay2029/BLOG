@@ -1,32 +1,26 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { LenisProvider } from '@/hooks/useLenis';
-import { TattvaHero } from '@/sections/TattvaHero';
-import { Threshold } from '@/sections/Threshold';
-import { InquiryArchive } from '@/sections/InquiryArchive';
-import { FeaturedDeepDive } from '@/sections/FeaturedDeepDive';
-import { CosmicTimeline } from '@/sections/CosmicTimeline';
-import { ReflectionLibrary } from '@/sections/ReflectionLibrary';
-import { SiteWideThread } from '@/components/SiteWideThread';
+import ScrollToTop from '@/components/ScrollToTop';
+
+import { HomePage } from '@/pages/HomePage';
+import { InquiryArchivePage } from '@/pages/InquiryArchivePage';
+import { InquiryDetailPlaceholder } from '@/pages/InquiryDetailPlaceholder';
 
 /**
  * App — root entry.
  * Wraps everything in the Lenis smooth-scroll context.
+ * Defines all routes.
  */
 function App() {
   return (
     <LenisProvider>
-      <div
-        className="relative w-full bg-tattva-obsidian text-tattva-cream font-sans antialiased"
-        style={{ overflowX: 'hidden' }}
-      >
-        <SiteWideThread />
-        <TattvaHero />
-        <Threshold />
-        <InquiryArchive />
-        <FeaturedDeepDive />
-        <CosmicTimeline />
-      </div>
-      <ReflectionLibrary />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/inquiry" element={<InquiryArchivePage />} />
+        <Route path="/inquiry/:slug" element={<InquiryDetailPlaceholder />} />
+      </Routes>
     </LenisProvider>
   );
 }

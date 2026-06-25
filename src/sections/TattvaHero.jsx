@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 /* ─────────────────────────────────────────────────────────────────
    TATTVA — Hero Section (Premium Manuscript Engine)
@@ -242,9 +243,8 @@ function Wordmark() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <motion.div
-      variants={fadeInBlur(0.2, 1.8, 2)}
-      className="absolute top-9 left-9 md:top-11 md:left-13 z-20 cursor-default"
+    <div
+      className="cursor-default"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -313,6 +313,27 @@ function Wordmark() {
            }}
         />
       </div>
+    </div>
+  );
+}
+
+function TopNav() {
+  return (
+    <motion.div
+      variants={fadeInBlur(0.2, 1.8, 2)}
+      className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16"
+    >
+      <Link to="/" className="block">
+        <Wordmark />
+      </Link>
+      
+      <Link to="/inquiry" className="group flex items-center">
+        <span 
+          className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
+        >
+          INQUIRY ARCHIVE
+        </span>
+      </Link>
     </motion.div>
   );
 }
@@ -658,7 +679,7 @@ export function TattvaHero() {
       >
         <SacredGeometryAnchor />
         <AbstractForms />
-        <Wordmark />
+        <TopNav />
 
         <div className="layout-container" style={{ position: 'relative', zIndex: 10 }}>
           <div

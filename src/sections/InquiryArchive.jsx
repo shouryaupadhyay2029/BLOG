@@ -1,28 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const INQUIRIES = [
   {
+    id: 'why-do-innocent-people-suffer',
     number: '01',
     question: 'Why do innocent people suffer?',
     tags: 'KARMA • DHARMA',
   },
   {
+    id: 'does-consciousness-survive-death',
     number: '02',
     question: 'Does consciousness survive death?',
     tags: 'ATMAN • DEATH',
   },
   {
+    id: 'is-free-will-an-illusion',
     number: '03',
     question: 'Is free will an illusion?',
     tags: 'KARMA • AGENCY',
   },
   {
+    id: 'why-are-there-many-religions',
     number: '04',
-    question: 'Why are there many gods?',
+    question: 'Why are there many religions?',
     tags: 'DEVOTION • PHILOSOPHY',
   },
   {
+    id: 'can-truth-be-known',
     number: '05',
     question: 'Can truth be known?',
     tags: 'EPISTEMOLOGY • DHARMA',
@@ -58,94 +64,96 @@ function CreamGrainCanvas() {
    ──────────────────────────────────────────────────────────────── */
 function InquiryItem({ item, index }) {
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
-      whileHover="hover"
-      className="group relative flex flex-col gap-4 py-10 cursor-pointer"
-    >
-      <div className="flex gap-8 items-start">
-        
-        {/* 1. Number (Reveals first) */}
-        <motion.span
-          variants={{
-            hidden: { opacity: 0, x: -10 },
-            visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: EASE_EXPO, delay: index * 0.1 } }
-          }}
-          style={{
-            fontFamily: '"Instrument Serif", serif',
-            fontSize: '18px',
-            color: '#666666',
-            marginTop: '0.6rem' // Optical alignment with the massive serif heading
-          }}
-        >
-          {item.number}
-        </motion.span>
-
-        {/* 2. Question (Reveals second) */}
-        <motion.h3
-          variants={{
-            hidden: { opacity: 0, y: 15, filter: 'blur(4px)' },
-            visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 1.4, ease: EASE_EXPO, delay: index * 0.1 + 0.15 } },
-            // Hover: Slight horizontal drift
-            hover: { x: 12, transition: { duration: 0.8, ease: EASE_EXPO } }
-          }}
-          style={{
-            fontFamily: 'Cormorant, serif',
-            fontSize: 'clamp(2rem, 4vw, 3.8rem)',
-            fontWeight: 300,
-            lineHeight: 1.15,
-            color: '#0A0A0A',
-            letterSpacing: '-0.01em'
-          }}
-        >
-          {item.question}
-        </motion.h3>
-      </div>
-
-      {/* 3. Category Tags (Reveals third) */}
+    <Link to={`/inquiry/${item.id}`} className="block">
       <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 5 },
-          visible: { opacity: 0.5, y: 0, transition: { duration: 1.2, ease: EASE_EXPO, delay: index * 0.1 + 0.3 } },
-          // Hover: Opacity increase
-          hover: { opacity: 1, x: 12, transition: { duration: 0.8, ease: EASE_EXPO } }
-        }}
-        style={{
-          fontFamily: '"General Sans", sans-serif',
-          fontSize: '10px',
-          letterSpacing: '0.25em',
-          // Matches the gap width (8 = 2rem = 32px) + number width (~20px) = ~52px
-          marginLeft: '52px', 
-          color: '#2A2A2A'
-        }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-10%" }}
+        whileHover="hover"
+        className="group relative flex flex-col gap-4 py-10 cursor-pointer"
       >
-        {item.tags}
+        <div className="flex gap-8 items-start">
+          {/* 1. Number (Reveals first) */}
+          <motion.span
+            variants={{
+              hidden: { opacity: 0, x: -10 },
+              visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: EASE_EXPO, delay: index * 0.1 } }
+            }}
+            style={{
+              fontFamily: '"Instrument Serif", serif',
+              fontSize: '18px',
+              color: '#666666',
+              marginTop: '0.6rem' // Optical alignment with the massive serif heading
+            }}
+          >
+            {item.number}
+          </motion.span>
+
+          {/* 2. Question (Reveals second) */}
+          <motion.h3
+            variants={{
+              hidden: { opacity: 0, y: 15, filter: 'blur(4px)' },
+              visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 1.4, ease: EASE_EXPO, delay: index * 0.1 + 0.15 } },
+              // Hover: Slight horizontal drift
+              hover: { x: 12, transition: { duration: 0.8, ease: EASE_EXPO } }
+            }}
+            style={{
+              fontFamily: 'Cormorant, serif',
+              fontSize: 'clamp(2rem, 4vw, 3.8rem)',
+              fontWeight: 300,
+              lineHeight: 1.15,
+              color: '#0A0A0A',
+              letterSpacing: '-0.01em'
+            }}
+          >
+            {item.question}
+          </motion.h3>
+        </div>
+
+        {/* 3. Category Tags (Reveals third) */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 5 },
+            visible: { opacity: 0.5, y: 0, transition: { duration: 1.2, ease: EASE_EXPO, delay: index * 0.1 + 0.3 } },
+            // Hover: Opacity increase
+            hover: { opacity: 1, x: 12, transition: { duration: 0.8, ease: EASE_EXPO } }
+          }}
+          style={{
+            fontFamily: '"General Sans", sans-serif',
+            fontSize: '10px',
+            letterSpacing: '0.25em',
+            // Matches the gap width (8 = 2rem = 32px) + number width (~20px) = ~52px
+            marginLeft: '52px', 
+            color: '#2A2A2A'
+          }}
+        >
+          {item.tags}
+        </motion.div>
+
+        {/* Base divider line (Subtle paper crease tone) */}
+        <div
+          className="absolute bottom-0 left-0 h-[1px] w-full pointer-events-none"
+          style={{
+            background: 'linear-gradient(to right, rgba(207,198,183,0.5), transparent)',
+          }}
+        />
+
+        {/* Hover Reveal Details (Right side, fades in) */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 0 },
+            hover: { opacity: 1, transition: { duration: 0.6, ease: EASE_EXPO } }
+          }}
+          className="absolute right-0 top-1/2 -translate-y-1/2"
+        >
+          <span className="font-general text-[10px] uppercase tracking-[0.2em] text-[#C58B52]">
+            Read Entry
+          </span>
+        </motion.div>
+
       </motion.div>
-
-      {/* Base divider line (Subtle paper crease tone) */}
-      <div
-        className="absolute bottom-0 left-0 h-[1px] w-full pointer-events-none"
-        style={{
-          background: 'linear-gradient(to right, rgba(207,198,183,0.5), transparent)',
-        }}
-      />
-
-      {/* Hover: Aged gold line expansion */}
-      <motion.div
-        variants={{
-          hidden: { scaleX: 0, opacity: 0 },
-          visible: { scaleX: 0, opacity: 0 },
-          hover: { scaleX: 1, opacity: 1, transition: { duration: 0.8, ease: EASE_EXPO } }
-        }}
-        className="absolute bottom-0 left-0 h-[1px] w-full pointer-events-none"
-        style={{
-          background: 'linear-gradient(to right, rgba(197,139,82,0.6), transparent)',
-          transformOrigin: 'left'
-        }}
-      />
-    </motion.div>
+    </Link>
   );
 }
 
@@ -172,24 +180,29 @@ export function InquiryArchive() {
         {/* Left Column: Archival Label */}
         <div className="col-span-12 lg:col-span-3">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 0.6, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 1.6, ease: EASE_EXPO }}
-            className="lg:sticky lg:top-32"
-          >
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: EASE_EXPO }}
+          className="mb-24 flex items-center gap-4"
+        >
+          <div className="w-12 h-[1px] bg-[#0A0A0A] opacity-20" />
+          <Link to="/inquiry" className="group">
             <span
+              className="transition-colors duration-500 group-hover:text-[#C58B52]"
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '9.5px',
-                letterSpacing: '0.38em',
+                fontSize: '10px',
+                letterSpacing: '0.4em',
                 textTransform: 'uppercase',
-                color: '#1A1A1A',
+                color: '#0A0A0A',
+                opacity: 0.6
               }}
             >
               Inquiry Archive
             </span>
-          </motion.div>
+          </Link>
+        </motion.div>
         </div>
 
         {/* Right Column: Question List */}
