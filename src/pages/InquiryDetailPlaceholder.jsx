@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { WhyDoInnocentPeopleSuffer } from './inquiries/WhyDoInnocentPeopleSuffer';
 
 function GrainCanvas() {
   return (
@@ -21,6 +22,11 @@ function GrainCanvas() {
 
 export function InquiryDetailPlaceholder() {
   const { slug } = useParams();
+
+  // Route to the dedicated article if the slug matches
+  if (slug === 'why-do-innocent-people-suffer') {
+    return <WhyDoInnocentPeopleSuffer />;
+  }
 
   // Convert slug to a readable format
   const title = slug ? slug.replace(/-/g, ' ') : 'Archive Entry';
