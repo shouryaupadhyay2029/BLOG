@@ -334,6 +334,22 @@ function TopNav() {
           INQUIRY ARCHIVE
         </span>
       </Link>
+
+      <Link to="/library" className="group flex items-center">
+        <span 
+          className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
+        >
+          TATTVA LIBRARY
+        </span>
+      </Link>
+
+      <Link to="/satya-mithya" className="group flex items-center">
+        <span 
+          className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
+        >
+          SATYA & MITHYĀ
+        </span>
+      </Link>
     </motion.div>
   );
 }

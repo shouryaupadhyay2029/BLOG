@@ -6,6 +6,10 @@ import ScrollToTop from '@/components/ScrollToTop';
 import { HomePage } from '@/pages/HomePage';
 import { InquiryArchivePage } from '@/pages/InquiryArchivePage';
 import { InquiryDetailPlaceholder } from '@/pages/InquiryDetailPlaceholder';
+import { TattvaLibraryPage } from '@/pages/TattvaLibraryPage';
+import { LibraryDetailPlaceholder } from '@/pages/LibraryDetailPlaceholder';
+import { SatyaMithyaPage } from '@/pages/SatyaMithyaPage';
+import { SatyaMithyaPlaceholder } from '@/pages/SatyaMithyaPlaceholder';
 
 /**
  * App — root entry.
@@ -20,6 +24,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/inquiry" element={<InquiryArchivePage />} />
         <Route path="/inquiry/:slug" element={<InquiryDetailPlaceholder />} />
+        <Route path="/library" element={<TattvaLibraryPage />} />
+        <Route path="/library/:slug" element={<LibraryDetailPlaceholder />} />
+        <Route path="/satya-mithya" element={<SatyaMithyaPage />} />
+        <Route path="/satya-mithya/:slug" element={<SatyaMithyaPlaceholder />} />
       </Routes>
     </LenisProvider>
   );

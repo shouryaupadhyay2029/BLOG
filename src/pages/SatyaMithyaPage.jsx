@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const INQUIRIES = [
-  { id: 'why-do-innocent-people-suffer', number: '01', title: 'Why do innocent people suffer?', category: 'KARMA • DHARMA' },
-  { id: 'does-consciousness-survive-death', number: '02', title: 'Does consciousness survive death?', category: 'ĀTMAN • DEATH' },
-  { id: 'what-is-dharma', number: '03', title: 'What is Dharma?', category: 'ACTION • TRUTH' },
-  { id: 'is-free-will-an-illusion', number: '04', title: 'Is free will an illusion?', category: 'FREE WILL • KARMA' },
-  { id: 'can-science-and-spirituality-coexist', number: '05', title: 'Can science and spirituality coexist?', category: 'SCIENCE • SPIRITUALITY' },
-  { id: 'why-does-evil-exist', number: '06', title: 'Why does evil exist?', category: 'DUALITY • KARMA' },
-  { id: 'what-is-karma', number: '07', title: 'What is Karma?', category: 'ACTION • CONSEQUENCE' },
-  { id: 'what-happens-after-death', number: '08', title: 'What happens after death?', category: 'MOKṢA • REBIRTH' },
-  { id: 'why-do-we-fear-death', number: '09', title: 'Why do we fear death?', category: 'ATTACHMENT • EGO' },
-  { id: 'can-god-be-experienced', number: '10', title: 'Can God be experienced?', category: 'DEVOTION • REALIZATION' },
-  { id: 'why-are-there-many-religions', number: '11', title: 'Why are there many religions?', category: 'TRUTH • PATHS' },
-  { id: 'is-liberation-possible-in-kali-yuga', number: '12', title: 'Is liberation possible in Kali Yuga?', category: 'BHAKTI • TIME' }
+const ARTICLES = [
+  { id: 'did-draupadi-really-laugh-at-duryodhana', number: '01', title: 'Did Draupadī really laugh at Duryodhana?', category: 'MAHĀBHĀRATA' },
+  { id: 'was-karna-the-greatest-victim', number: '02', title: 'Was Karṇa the greatest victim?', category: 'MAHĀBHĀRATA' },
+  { id: 'are-there-really-33-crore-gods', number: '03', title: 'Are there really 33 crore gods?', category: 'COMMON MISCONCEPTIONS' },
+  { id: 'did-sri-krishna-encourage-war', number: '04', title: 'Did Śrī Kṛṣṇa encourage war?', category: 'PHILOSOPHY' },
+  { id: 'was-ravana-only-evil', number: '05', title: 'Was Rāvaṇa only evil?', category: 'RĀMĀYAṆA' },
+  { id: 'why-did-bhishma-remain-silent', number: '06', title: 'Why did Bhīṣma remain silent?', category: 'MAHĀBHĀRATA' },
+  { id: 'was-ekalavya-treated-unfairly', number: '07', title: 'Was Ekalavya treated unfairly?', category: 'MAHĀBHĀRATA' },
+  { id: 'is-karma-simply-fate', number: '08', title: 'Is Karma simply fate?', category: 'PHILOSOPHY' },
+  { id: 'is-idol-worship-mentioned-in-the-vedas', number: '09', title: 'Is idol worship mentioned in the Vedas?', category: 'SCRIPTURAL CONTEXT' },
+  { id: 'did-parashurama-destroy-all-ksatriyas', number: '10', title: 'Did Parashurāma destroy all Kṣatriyas?', category: 'SCRIPTURAL CONTEXT' },
+  { id: 'are-puranas-mythology', number: '11', title: 'Are Purāṇas mythology?', category: 'COMMON MISCONCEPTIONS' },
+  { id: 'does-sanatana-dharma-promote-blind-belief', number: '12', title: 'Does Sanātana Dharma promote blind belief?', category: 'PHILOSOPHY' }
 ];
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
@@ -41,11 +41,11 @@ function GrainCanvas() {
   );
 }
 
-function QuestionRow({ index, id, number, title, category }) {
+function ArticleRow({ index, id, number, title, category }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link to={`/inquiry/${id}`} className="block w-full">
+    <Link to={`/satya-mithya/${id}`} className="block w-full">
       <motion.div
         className="relative flex items-center justify-between w-full py-12 border-b border-[#E9E2D4]/10 cursor-pointer group"
         onMouseEnter={() => setIsHovered(true)}
@@ -94,7 +94,7 @@ function QuestionRow({ index, id, number, title, category }) {
   );
 }
 
-export function InquiryArchivePage() {
+export function SatyaMithyaPage() {
   return (
     <div className="relative w-full min-h-screen bg-[#0D0D0C] text-[#E9E2D4] font-sans antialiased">
       <GrainCanvas />
@@ -127,7 +127,7 @@ export function InquiryArchivePage() {
         
         <Link to="/inquiry" className="group flex items-center">
           <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
+            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
@@ -143,7 +143,7 @@ export function InquiryArchivePage() {
 
         <Link to="/satya-mithya" className="group flex items-center">
           <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
           >
             SATYA & MITHYĀ
           </span>
@@ -160,24 +160,23 @@ export function InquiryArchivePage() {
           transition={{ duration: 1.4, ease: EASE_EXPO }}
         >
           <span className="font-general text-[10px] uppercase tracking-[0.4em] text-[#C58B52] mb-6">
-            ARCHIVE I
+            ARCHIVE II
           </span>
           <h1 className="font-instrument text-6xl md:text-8xl lg:text-9xl text-[#E9E2D4] tracking-tighter leading-none mb-12">
-            Inquiry Archive
+            Satya & Mithyā
           </h1>
           <p className="font-cormorant text-xl md:text-2xl font-light italic text-[#E9E2D4]/70 max-w-2xl leading-relaxed">
-            Every civilization has asked questions.<br />
-            Some sought belief. Others sought certainty.<br />
-            This archive preserves the questions that continue to shape humanity's search for truth.
+            Beyond popular narratives lies context.<br />
+            This archive revisits stories, characters and beliefs through authentic scriptures, traditional commentaries and historical context—distinguishing popular interpretation from textual understanding.
           </p>
           
           <div className="w-full h-[1px] bg-[#C58B52]/30 mt-20" />
         </motion.div>
 
-        {/* The Archive List */}
+        {/* The Article Index */}
         <div className="flex flex-col w-full">
-          {INQUIRIES.map((item, index) => (
-            <QuestionRow key={item.id} index={index} {...item} />
+          {ARTICLES.map((item, index) => (
+            <ArticleRow key={item.id} index={index} {...item} />
           ))}
         </div>
 

@@ -19,11 +19,11 @@ function GrainCanvas() {
   );
 }
 
-export function InquiryDetailPlaceholder() {
+export function LibraryDetailPlaceholder() {
   const { slug } = useParams();
 
   // Convert slug to a readable format
-  const title = slug ? slug.replace(/-/g, ' ') : 'Archive Entry';
+  const title = slug ? slug.replace(/-/g, ' ') : 'Library Entry';
 
   return (
     <div className="relative w-full min-h-screen bg-[#0D0D0C] text-[#E9E2D4] flex flex-col items-center justify-center font-sans antialiased px-6 text-center">
@@ -57,7 +57,7 @@ export function InquiryDetailPlaceholder() {
         
         <Link to="/inquiry" className="group flex items-center">
           <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]/70 group-hover:text-[#C58B52]"
+            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
@@ -65,7 +65,7 @@ export function InquiryDetailPlaceholder() {
 
         <Link to="/library" className="group flex items-center">
           <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]/70 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
@@ -90,10 +90,10 @@ export function InquiryDetailPlaceholder() {
           Manuscript Entry
         </span>
         <h1 className="font-instrument text-4xl md:text-6xl text-[#E9E2D4] tracking-tight capitalize mb-12">
-          {title}?
+          {title}
         </h1>
         <p className="font-cormorant italic text-xl text-[#E9E2D4]/50 max-w-lg leading-relaxed mb-16">
-          This philosophical inquiry is currently being transcribed into the archive.
+          This foundational topic is currently being transcribed into the library.
         </p>
       </motion.div>
     </div>

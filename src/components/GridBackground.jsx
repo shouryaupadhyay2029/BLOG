@@ -1,4 +1,3 @@
-import React from 'react';
 import { cn } from '@/utils/cn';
 
 /**
@@ -7,7 +6,7 @@ import { cn } from '@/utils/cn';
  */
 export const GridBackground = ({ className, opacity = 0.04 }) => {
   return (
-    <div 
+    <div
       className={cn(
         "absolute inset-0 pointer-events-none z-0 interactive-grid",
         className
