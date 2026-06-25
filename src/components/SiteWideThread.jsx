@@ -110,36 +110,39 @@ const YUGA_NODES = [
     y: 88,
     events: [
       { 
+        id: 'sri-krishna-janma', 
+        name: 'Śrī Kṛṣṇa Janma', 
+        subtitle: 'The Descent of the Supreme Architect',
+        narrative: 'Śrī Kṛṣṇa, the eighth avatāra of Bhagavān Viṣṇu, was born to Devakī and Vasudeva in the prison of Mathurā during the reign of King Kaṁsa. A divine prophecy foretold that Devakī\'s eighth son would end Kaṁsa\'s tyranny. On the night of His birth, Vasudeva carried the newborn across the Yamunā River to Gokula, where He was raised by Nanda Mahārāja and Yaśodā, ensuring His safety while fulfilling the divine plan.',
+        sources: ['Śrīmad Bhāgavatam (Skandha 10)', 'Harivaṁśa', 'Viṣṇu Purāṇa'] 
+      },
+      { 
+        id: 'childhood-krishna', 
+        name: 'Childhood of Śrī Kṛṣṇa', 
+        subtitle: 'The Divine Pastimes in Vṛndāvana',
+        narrative: 'During His childhood in Gokula and Vṛndāvana, Śrī Kṛṣṇa performed many celebrated līlās. He protected the people from numerous dangers by defeating demons such as Pūtanā, Tṛṇāvarta, Bakāsura and Aghāsura. He subdued Kāliya in the Yamunā River and lifted Govardhana Hill to shelter the people of Vraja from Indra\'s storm. These events established Him as the divine protector of Vraja while revealing His extraordinary nature.',
+        sources: ['Śrīmad Bhāgavatam (Skandha 10)', 'Harivaṁśa', 'Viṣṇu Purāṇa'] 
+      },
+      { 
         id: 'mahabharata', 
         name: 'Mahābhārata', 
         subtitle: 'The Great Epic of Lineage and Duty',
-        narrative: 'The longest epic poem ever written, the Mahābhārata details the intense dynastic struggle between the Pāṇḍava and Kaurava cousins for the throne of Hastināpura. Woven with profound philosophical discourses, complex moral dilemmas, and intricate statecraft, it captures the entirety of human experience, culminating in the devastating Kurukṣetra war.',
-        significance: 'As the "fifth Veda," the Mahābhārata states: "What is found here may be found elsewhere, but what is not found here is found nowhere." It is the ultimate exploration of dharma in its most ambiguous, conflicting, and realistic forms.',
-        sources: ['Vyāsa Mahābhārata'] 
+        narrative: 'The Mahābhārata recounts the conflict between the Pāṇḍavas and the Kauravas over the rightful rule of Hastināpura. Years of political rivalry, exile, broken agreements and failed peace negotiations culminated in the Kurukṣetra War. Guided by Śrī Kṛṣṇa, the Pāṇḍavas ultimately prevailed, restoring lawful rule and bringing one of the greatest epics of Sanātana Dharma to its conclusion.',
+        sources: ['Mahābhārata', 'Harivaṁśa'] 
       },
       { 
         id: 'bhagavad-gita', 
         name: 'Bhagavad Gītā', 
         subtitle: 'The Ultimate Discourse on Action and Liberation',
-        narrative: 'Spoken on the precipice of a devastating war, the Bhagavad Gītā is a dialogue between the despondent warrior Arjuna and his charioteer, Śrī Kṛṣṇa. Over eighteen chapters, Kṛṣṇa dispels Arjuna\'s grief by revealing the immortal nature of the soul, the cosmic structure of the universe, and the paths of knowledge (Jñāna), action (Karma), and devotion (Bhakti).',
-        significance: 'The Gītā is the spiritual synthesis of Vedic thought. It teaches that one can attain supreme liberation not by abandoning the world, but by performing one\'s duties with a detached, dedicated mind, offering all outcomes to the Divine.',
-        sources: ['Mahābhārata (Bhīṣma Parva)'] 
+        narrative: 'On the battlefield of Kurukṣetra, Arjuna became overwhelmed with grief and hesitation before the war began. Śrī Kṛṣṇa then delivered the Bhagavad Gītā, a dialogue explaining dharma, karma, yoga, bhakti and the nature of the Self. This sacred teaching prepared Arjuna to fulfill his duty and has remained one of the most influential spiritual texts in the world.',
+        sources: ['Mahābhārata — Bhīṣma Parva', 'Bhagavad Gītā'] 
       },
       { 
-        id: 'sri-krishna', 
-        name: 'Śrī Kṛṣṇa', 
-        subtitle: 'The Supreme Architect of Cosmic Balance',
-        narrative: 'Unlike previous Avatāras who operated within boundaries, Śrī Kṛṣṇa is Pūrṇāvatāra—the complete, unbounded manifestation of the Supreme. From his enchanting childhood pastimes in Vṛndāvana to his role as a master diplomat, warrior, and spiritual guide in Dvārakā, Kṛṣṇa navigated the extreme complexities of the changing age, orchestrating the re-establishment of dharma.',
-        significance: 'Śrī Kṛṣṇa represents the ultimate synthesis of love and law. He demonstrates that divinity is deeply intimate, accessible through pure love (mādhurya bhava), yet simultaneously the supreme intellect governing the mechanics of the cosmos.',
-        sources: ['Śrīmad Bhāgavatam Canto 10', 'Mahābhārata', 'Harivaṃśa'] 
-      },
-      { 
-        id: 'kurukshetra-war', 
-        name: 'Kurukṣetra War', 
-        subtitle: 'The Battlefield of Dharma Versus Adharma',
-        narrative: 'The catastrophic eighteen-day war at Kurukṣetra involved millions of warriors and the greatest kings of the era. It was a crucible of moral testing where loyalties were divided, ancient oaths were broken, and the cost of righteousness was measured in blood. Guided by Kṛṣṇa, the Pāṇḍavas emerged victorious, but the victory was heavily steeped in sorrow.',
-        significance: 'Kurukṣetra is both a historical event and an eternal psychological metaphor. It represents the perpetual inner conflict between righteous tendencies and egoistic desires within the human heart, demanding the ruthless sacrifice of lower attachments for higher truth.',
-        sources: ['Mahābhārata (Various Parvas)'] 
+        id: 'departure-krishna', 
+        name: 'Departure of Śrī Kṛṣṇa', 
+        subtitle: 'The Ascension and the Dawn of Kali Yuga',
+        narrative: 'After the conclusion of the Yādava dynasty\'s final events, Śrī Kṛṣṇa withdrew His earthly manifestation. While resting in the forest, He was struck by the hunter Jarā, who mistook His foot for a deer. With His departure, Dvāpara Yuga came to an end and Kali Yuga began according to the traditional chronology preserved in the Purāṇas.',
+        sources: ['Śrīmad Bhāgavatam (Skandha 11)', 'Mahābhārata — Mausala Parva', 'Viṣṇu Purāṇa'] 
       }
     ]
   },
@@ -206,7 +209,12 @@ const IMAGE_MAPPING = {
   'Hanumān Janma': 'Hanumān Janma.png',
   'Śrī Rāma Janma': 'Śrī Rāma Janma.png',
   'Rāmāyaṇa': 'Rāmāyaṇa.png',
-  'Lava-Kuśa Janma': 'Lava-Kuśa Janma.png'
+  'Lava-Kuśa Janma': 'Lava-Kuśa Janma.png',
+  'Śrī Kṛṣṇa Janma': 'Śrī Kṛṣṇa Janma.png',
+  'Childhood of Śrī Kṛṣṇa': 'Childhood of Śrī Kṛṣṇa.png',
+  'Mahābhārata': 'Mahābhārata.png',
+  'Bhagavad Gītā': 'Bhagavad Gītā.png',
+  'Departure of Śrī Kṛṣṇa': 'Departure of Śrī Kṛṣṇa.png'
 };
 
 // Power3 easing
