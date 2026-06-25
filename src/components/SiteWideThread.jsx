@@ -273,15 +273,48 @@ function EventItem({ event, isActive, onHoverStart, onHoverEnd }) {
 export function SiteWideThread() {
   const containerRef = useRef(null);
   const beginningRef = useRef(null);
+  const pathRef = useRef(null);
+  
   const [dim, setDim] = useState({ w: 0, h: 0, startY: 0 });
+  const [nodePositions, setNodePositions] = useState(null);
+  const [triggers, setTriggers] = useState({
+    vishnu: 0.05,
+    brahma: 0.25,
+    satya: 0.72,
+    treta: 0.80,
+    dvapara: 0.88,
+    kali: 0.94,
+    kalki: 0.96,
+    mahapralaya: 0.98,
+    mahadeva: 0.999
+  });
 
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
   const [activeNodes, setActiveNodes] = useState({});
   const [hoveredYuga, setHoveredYuga] = useState(null);
   
   // Global state for the active hovered incident
   const [activeIncident, setActiveIncident] = useState(null);
   const [imgError, setImgError] = useState(false);
+
+  const [isCycleCompleting, setIsCycleCompleting] = useState(false);
+  const [cycleFinished, setCycleFinished] = useState(false);
+  const [timelineCompleted, setTimelineCompleted] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    if (activeNodes.mahadevaStage && !isCycleCompleting && !cycleFinished) {
+      timer = setTimeout(() => {
+        setIsCycleCompleting(true);
+      }, 1800);
+    }
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [activeNodes.mahadevaStage, isCycleCompleting, cycleFinished]);
 
   // Reset image error when incident changes
   useEffect(() => {
@@ -312,10 +345,77 @@ export function SiteWideThread() {
     return () => obs.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!pathRef.current || dim.w === 0 || dim.h === 0) return;
+    
+    // We use a small timeout to let the browser draw the path before measuring
+    const timeout = setTimeout(() => {
+      if (!pathRef.current) return;
+      const path = pathRef.current;
+      const totalLength = path.getTotalLength();
+      
+      const extraSpace = window.innerHeight * 0.5; // 50vh added
+      const baseH = Math.max(0, dim.h - extraSpace);
+
+      const findLenForY = (targetY) => {
+        let low = 0, high = totalLength, best = 0;
+        for (let i = 0; i < 30; i++) {
+          const mid = (low + high) / 2;
+          if (path.getPointAtLength(mid).y < targetY) low = mid;
+          else high = mid;
+          best = mid;
+        }
+        return best;
+      };
+
+      const l_vishnu = findLenForY(window.innerHeight * 0.65); // 65vh
+      const l_brahma = findLenForY(baseH * 0.31);
+      const l_satya = findLenForY(baseH * 0.72);
+      const l_treta = findLenForY(baseH * 0.80);
+      const l_dvapara = findLenForY(baseH * 0.88);
+      const l_kali = findLenForY(baseH * 0.94);
+
+      const l_kalki = findLenForY(baseH + extraSpace * 0.08);
+      const l_mahapralaya = findLenForY(baseH + extraSpace * 0.22);
+      const l_mahadeva = totalLength;
+
+      setNodePositions({
+        brahmanda: path.getPointAtLength(0),
+        vishnu: path.getPointAtLength(l_vishnu),
+        brahma: path.getPointAtLength(l_brahma),
+        satya: path.getPointAtLength(l_satya),
+        treta: path.getPointAtLength(l_treta),
+        dvapara: path.getPointAtLength(l_dvapara),
+        kali: path.getPointAtLength(l_kali),
+        kalki: path.getPointAtLength(l_kalki),
+        mahapralaya: path.getPointAtLength(l_mahapralaya),
+        mahadeva: path.getPointAtLength(l_mahadeva)
+      });
+
+      setTriggers({
+        vishnu: l_vishnu / totalLength,
+        brahma: l_brahma / totalLength,
+        satya: l_satya / totalLength,
+        treta: l_treta / totalLength,
+        dvapara: l_dvapara / totalLength,
+        kali: l_kali / totalLength,
+        kalki: l_kalki / totalLength,
+        mahapralaya: l_mahapralaya / totalLength,
+        mahadeva: l_mahadeva / totalLength
+      });
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, [dim.w, dim.h, dim.startY]);
+
   const pathD = useMemo(() => {
     if (dim.w === 0 || dim.h === 0) return '';
+    const extraSpace = window.innerHeight * 0.5; // 50vh added
+    const baseH = Math.max(0, dim.h - extraSpace);
+
     const px = (x) => (x / 100) * dim.w;
-    const py = (y) => (y / 100) * dim.h;
+    const py = (y) => (y / 100) * baseH;
+    const pyExtra = (y) => py(100) + (y / 100) * extraSpace;
     
     return `
       M ${px(85)} ${dim.startY} 
@@ -323,7 +423,27 @@ export function SiteWideThread() {
       C ${px(75)} ${py(60)}, ${px(85)} ${py(65)}, ${px(85)} ${py(72)}
       C ${px(85)} ${py(75)}, ${px(75)} ${py(77)}, ${px(75)} ${py(80)}
       C ${px(75)} ${py(83)}, ${px(85)} ${py(85)}, ${px(85)} ${py(88)}
-      C ${px(85)} ${py(91)}, ${px(75)} ${py(93)}, ${px(75)} ${py(96)}
+      C ${px(85)} ${py(91)}, ${px(75)} ${py(93)}, ${px(75)} ${py(94)}
+      C ${px(75)} ${py(97)}, ${px(85)} ${py(100)}, ${px(85)} ${pyExtra(20)}
+      C ${px(85)} ${pyExtra(30)}, ${px(75)} ${pyExtra(35)}, ${px(75)} ${pyExtra(45)}
+    `;
+  }, [dim.w, dim.h, dim.startY]);
+
+  const loopPathD = useMemo(() => {
+    if (dim.w === 0 || dim.h === 0) return '';
+    const extraSpace = window.innerHeight * 0.5;
+    const baseH = Math.max(0, dim.h - extraSpace);
+
+    const px = (x) => (x / 100) * dim.w;
+    const py = (y) => (y / 100) * baseH;
+    const pyExtra = (y) => py(100) + (y / 100) * extraSpace;
+    
+    return `
+      M ${px(75)} ${pyExtra(45)}
+      C ${px(75)} ${pyExtra(60)}, ${px(50)} ${pyExtra(80)}, ${px(10)} ${pyExtra(80)}
+      C ${px(5)} ${pyExtra(80)}, ${px(5)} ${pyExtra(50)}, ${px(5)} ${py(90)}
+      L ${px(5)} ${dim.startY + 400}
+      C ${px(5)} ${dim.startY}, ${px(40)} ${dim.startY - 50}, ${px(85)} ${dim.startY}
     `;
   }, [dim.w, dim.h, dim.startY]);
 
@@ -334,11 +454,17 @@ export function SiteWideThread() {
   });
 
   useMotionValueEvent(smoothProgress, "change", (latest) => {
+    if (timelineCompleted || isCycleCompleting) return;
     setActiveNodes({
-      satya: latest >= 0.72,
-      treta: latest >= 0.80,
-      dvapara: latest >= 0.88,
-      kali: latest >= 0.96
+      vishnuStage: latest >= triggers.vishnu,
+      brahmaStage: latest >= triggers.brahma,
+      satya: latest >= triggers.satya,
+      treta: latest >= triggers.treta,
+      dvapara: latest >= triggers.dvapara,
+      kali: latest >= triggers.kali,
+      kalkiStage: latest >= triggers.kalki,
+      mahapralayaStage: latest >= triggers.mahapralaya,
+      mahadevaStage: latest >= triggers.mahadeva
     });
   });
 
@@ -466,6 +592,7 @@ export function SiteWideThread() {
           className="absolute inset-0"
         >
           <motion.path
+            ref={pathRef}
             d={pathD}
             fill="none"
             stroke="#C58B52"
@@ -473,8 +600,29 @@ export function SiteWideThread() {
             strokeLinecap="round"
             strokeLinejoin="round"
             style={{
-              pathLength: smoothProgress,
+              pathLength: (timelineCompleted || isCycleCompleting) ? 1 : smoothProgress,
               filter: 'drop-shadow(0px 0px 6px rgba(197,139,82,0.9))'
+            }}
+          />
+          <motion.path
+            d={loopPathD}
+            fill="none"
+            stroke="#C58B52"
+            strokeWidth={1.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: isCycleCompleting ? 1 : 0 }}
+            transition={{ duration: 7, ease: [0.4, 0.0, 0.2, 1] }}
+            style={{
+              filter: 'drop-shadow(0px 0px 6px rgba(197,139,82,0.9))'
+            }}
+            onAnimationComplete={() => {
+              if (isCycleCompleting && !cycleFinished && !timelineCompleted) {
+                setCycleFinished(true);
+                setTimelineCompleted(true);
+                setTimeout(() => setCycleFinished(false), 4000);
+              }
             }}
           />
         </svg>
@@ -484,7 +632,7 @@ export function SiteWideThread() {
       <div 
         ref={beginningRef}
         className="absolute"
-        style={{ top: 'clamp(5rem, 10vw, 8rem)', left: '85%', transform: 'translate(-50%, -50%)' }} 
+        style={nodePositions ? { top: nodePositions.brahmanda.y, left: nodePositions.brahmanda.x, transform: 'translate(-50%, -50%)' } : { top: 'clamp(5rem, 10vw, 8rem)', left: '85%', transform: 'translate(-50%, -50%)' }} 
       >
         <div className="relative flex items-center justify-center">
           <div className="absolute right-6 flex flex-col items-end pt-1 w-[320px]">
@@ -525,24 +673,143 @@ export function SiteWideThread() {
 
           <div className="relative w-[10px] h-[10px] flex items-center justify-center">
             <motion.div
-              animate={{ opacity: [0.3, 0.8, 0.3], scale: [1, 1.5, 1] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              animate={
+                cycleFinished 
+                  ? { opacity: [0.3, 1, 0.3], scale: [1.5, 3, 1.5] } 
+                  : { opacity: [0.3, 0.8, 0.3], scale: [1, 1.5, 1] }
+              }
+              transition={
+                cycleFinished
+                  ? { duration: 3, ease: 'easeOut' }
+                  : { duration: 3, repeat: Infinity, ease: 'easeInOut' }
+              }
               className="absolute inset-[-10px] rounded-full"
-              style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.4) 0%, transparent 70%)' }}
+              style={{ background: cycleFinished ? 'radial-gradient(circle, rgba(255,230,180,0.8) 0%, transparent 70%)' : 'radial-gradient(circle, rgba(197,139,82,0.4) 0%, transparent 70%)' }}
             />
-            <div 
+            <motion.div 
               className="w-[5px] h-[5px] rounded-full relative z-10"
-              style={{ 
-                backgroundColor: '#C58B52',
-                boxShadow: '0 0 10px rgba(197,139,82,1)'
+              animate={{
+                backgroundColor: cycleFinished ? '#FFE6B4' : '#C58B52',
+                boxShadow: cycleFinished ? '0 0 20px rgba(255,230,180,1)' : '0 0 10px rgba(197,139,82,1)'
               }}
+              transition={{ duration: 3, ease: 'easeOut' }}
             />
           </div>
         </div>
       </div>
 
+      {/* SRI VISHNU STAGE (0.05 Progress) */}
+      <AnimatePresence>
+        {activeNodes.vishnuStage && nodePositions && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="absolute"
+            style={{ top: nodePositions.vishnu.y, left: nodePositions.vishnu.x, transform: 'translate(-50%, -50%)' }} 
+          >
+            <div className="relative flex items-center justify-center">
+              
+              <div className="absolute right-8 flex flex-row items-center gap-10 w-[600px] justify-end">
+                
+                {/* Text Block */}
+                <div className="flex flex-col items-end text-right max-w-[320px]">
+                  <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-3">
+                    Śrī Viṣṇu
+                  </span>
+                  <span className="font-cormorant text-[15px] italic text-[#999999] leading-relaxed">
+                    Reclining upon Ādiśeṣa in the infinite Kāraṇodaka, Śrī Viṣṇu remains in perfect stillness before manifestation. Within Him rest all future worlds in their unmanifest state.
+                  </span>
+                  <span className="font-general text-[8.5px] uppercase tracking-widest text-[#C58B52]/60 mt-5">
+                    Viṣṇu Purāṇa • Śrīmad Bhāgavatam • Brahma-saṁhitā
+                  </span>
+                </div>
+
+                {/* Illustration */}
+                <img 
+                  src="/sri_vishnu_figure_transparent.png" 
+                  alt="Śrī Viṣṇu" 
+                  className="w-[200px] object-contain opacity-85"
+                />
+
+              </div>
+
+              {/* Node Dot on Timeline */}
+              <div className="relative w-[10px] h-[10px] flex items-center justify-center">
+                <motion.div
+                  animate={{ opacity: [0.3, 0.7, 0.3], scale: [1, 1.3, 1] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute inset-[-8px] rounded-full"
+                  style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.3) 0%, transparent 70%)' }}
+                />
+                <div 
+                  className="w-[4px] h-[4px] rounded-full relative z-10"
+                  style={{ backgroundColor: '#BA7A3A' }}
+                />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* PADMA UDBHAVA STAGE (0.25 Progress) */}
+      <AnimatePresence>
+        {activeNodes.brahmaStage && nodePositions && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="absolute"
+            style={{ top: nodePositions.brahma.y, left: nodePositions.brahma.x, transform: 'translate(-50%, -50%)' }} 
+          >
+            <div className="relative flex items-center justify-center">
+              
+              <div className="absolute right-8 flex flex-row items-center gap-10 w-[600px] justify-end">
+                
+                {/* Text Block */}
+                <div className="flex flex-col items-end text-right max-w-[320px]">
+                  <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-3">
+                    Padma Udbhava
+                  </span>
+                  <span className="font-cormorant text-[15px] italic text-[#2A2A2A]/80 leading-relaxed">
+                    From the Nābhi of Śrī Viṣṇu arose the divine Padma. Upon that eternal lotus appeared Śrī Brahmā, the first embodied being, who received the responsibility of manifesting the fourteen worlds according to the will of the Supreme.
+                  </span>
+                  <span className="font-general text-[8.5px] uppercase tracking-widest text-[#2A2A2A]/60 mt-5">
+                    Viṣṇu Purāṇa • Śrīmad Bhāgavatam • Brahma-saṁhitā
+                  </span>
+                </div>
+
+                {/* Illustration */}
+                <img 
+                  src="/sri_brahma_figure_transparent.png" 
+                  alt="Padma and Śrī Brahmā" 
+                  className="w-[200px] object-contain opacity-80"
+                />
+
+              </div>
+
+              {/* Node Dot on Timeline */}
+              <div className="relative w-[10px] h-[10px] flex items-center justify-center">
+                <motion.div
+                  animate={{ opacity: [0.3, 0.7, 0.3], scale: [1, 1.3, 1] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute inset-[-8px] rounded-full"
+                  style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.3) 0%, transparent 70%)' }}
+                />
+                <div 
+                  className="w-[4px] h-[4px] rounded-full relative z-10"
+                  style={{ backgroundColor: '#BA7A3A' }}
+                />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* TIMELINE NODES AND ANNOTATION HUBS */}
-      {YUGA_NODES.map((node) => {
+      {nodePositions && YUGA_NODES.map((node) => {
         const isActive = activeNodes[node.id];
         // The node is considered active if we are hovering any of its incidents, or hovering the node itself
         const isNodeHovered = hoveredYuga === node.id || (activeIncident && YUGA_NODES.find(n => n.events.includes(activeIncident.event))?.id === node.id);
@@ -553,8 +820,8 @@ export function SiteWideThread() {
             key={node.id}
             className="absolute pointer-events-auto"
             style={{
-              top: `${node.y}%`,
-              left: `${node.x}%`,
+              top: nodePositions[node.id].y,
+              left: nodePositions[node.id].x,
             }}
             onMouseEnter={() => setHoveredYuga(node.id)}
             onMouseLeave={() => setHoveredYuga(null)}
@@ -646,6 +913,119 @@ export function SiteWideThread() {
           </div>
         );
       })}
+
+      {/* KALKI AVATĀRA STAGE */}
+      <AnimatePresence>
+        {activeNodes.kalkiStage && nodePositions && (
+          <div 
+            className="absolute pointer-events-none"
+            style={{ top: nodePositions.kalki.y, left: nodePositions.kalki.x }} 
+          >
+            <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
+              <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className="relative flex items-center justify-center"
+              >
+                {/* Node Dot on Timeline */}
+                <div className="relative w-[10px] h-[10px] flex items-center justify-center">
+                  <motion.div animate={{ opacity: [0.3, 0.7, 0.3], scale: [1, 1.3, 1] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }} className="absolute inset-[-8px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.3) 0%, transparent 70%)' }} />
+                  <div className="w-[4px] h-[4px] rounded-full relative z-10" style={{ backgroundColor: '#BA7A3A' }} />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* MAHĀPRALAYA STAGE */}
+      <AnimatePresence>
+        {activeNodes.mahapralayaStage && nodePositions && (
+          <div 
+            className="absolute pointer-events-none"
+            style={{ top: nodePositions.mahapralaya.y, left: nodePositions.mahapralaya.x }} 
+          >
+            <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
+              <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className="relative flex items-center justify-center"
+              >
+                {/* Node Dot on Timeline */}
+                <div className="relative w-[10px] h-[10px] flex items-center justify-center">
+                  <motion.div animate={{ opacity: [0.3, 0.7, 0.3], scale: [1, 1.3, 1] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }} className="absolute inset-[-8px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.3) 0%, transparent 70%)' }} />
+                  <div className="w-[4px] h-[4px] rounded-full relative z-10" style={{ backgroundColor: '#BA7A3A' }} />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* ŚRĪ MAHĀDEVA STAGE */}
+      <AnimatePresence>
+        {activeNodes.mahadevaStage && nodePositions && (
+          <div 
+            className="absolute pointer-events-none"
+            style={{ top: nodePositions.mahadeva.y, left: nodePositions.mahadeva.x }} 
+          >
+            <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
+              <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className="relative flex items-center justify-center"
+              >
+                <div className="absolute right-8 flex flex-row items-center gap-10 w-[600px] justify-end">
+                  {/* Text Block */}
+                  <div className="flex flex-col items-end text-right max-w-[320px]">
+                    <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-3">
+                      Śrī Mahādeva <span className="opacity-70 normal-case tracking-normal">— Saṁhāra</span>
+                    </span>
+                    <span className="font-cormorant text-[15px] italic text-[#2A2A2A]/80 leading-relaxed">
+                      Beyond creation and preservation stands Śrī Mahādeva, the eternal principle of Saṁhāra. As the cosmic cycle concludes, He presides over dissolution—not as destruction born of wrath, but as the sacred return of all existence into stillness, making way for the next manifestation of the universe.
+                    </span>
+                    <span className="font-general text-[8.5px] uppercase tracking-widest text-[#2A2A2A]/60 mt-5">
+                      Śiva Purāṇa • Liṅga Purāṇa • Kūrma Purāṇa
+                    </span>
+                  </div>
+                  {/* Illustration */}
+                  <img 
+                    src="/Shiva_transparent.png" 
+                    alt="Śrī Mahādeva" 
+                    className="w-[200px] object-contain opacity-80 pointer-events-auto"
+                  />
+                </div>
+
+                {/* End Dot on Timeline */}
+                <div className="relative w-[16px] h-[16px] flex items-center justify-center pointer-events-auto">
+                  <motion.div
+                    animate={{ opacity: [0.6, 0.9, 0.6], scale: [1, 1.6, 1] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                    className="absolute inset-[-12px] rounded-full"
+                    style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.5) 0%, transparent 70%)' }}
+                  />
+                  <motion.div
+                    animate={{ 
+                      scale: 1.4,
+                      backgroundColor: '#C58B52',
+                      borderColor: '#C58B52',
+                      boxShadow: '0 0 12px rgba(197,139,82,1)'
+                    }}
+                    transition={{ duration: 0.6, ease: EASE_POWER3 }}
+                    className="w-[6px] h-[6px] rounded-full relative z-10 border"
+                  />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

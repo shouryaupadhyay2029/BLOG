@@ -36,7 +36,7 @@ export function CosmicTimeline() {
         backgroundColor: '#E9E2D4',
         // The height ensures there's enough space for the global SiteWideThread to render 
         // its absolute textual content and finish drawing the SVG path before hitting the footer.
-        height: '200vh'
+        height: '250vh'
       }}
     >
       <CreamGrainCanvas />

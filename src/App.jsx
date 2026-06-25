@@ -5,6 +5,7 @@ import { Threshold } from '@/sections/Threshold';
 import { InquiryArchive } from '@/sections/InquiryArchive';
 import { FeaturedDeepDive } from '@/sections/FeaturedDeepDive';
 import { CosmicTimeline } from '@/sections/CosmicTimeline';
+import { ReflectionLibrary } from '@/sections/ReflectionLibrary';
 import { SiteWideThread } from '@/components/SiteWideThread';
 
 /**
@@ -25,6 +26,7 @@ function App() {
         <FeaturedDeepDive />
         <CosmicTimeline />
       </div>
+      <ReflectionLibrary />
     </LenisProvider>
   );
 }
