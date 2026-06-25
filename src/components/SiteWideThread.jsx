@@ -154,44 +154,39 @@ const YUGA_NODES = [
     y: 96,
     events: [
       { 
-        id: 'kali-yuga-start', 
-        name: 'Beginning of Kali Yuga', 
+        id: 'kali-yuga-begins', 
+        name: 'Kali Yuga Begins', 
         subtitle: 'The Onset of the Dark Age',
-        narrative: 'With the physical departure of Śrī Kṛṣṇa to his eternal abode, the protective spiritual canopy over the earth receded, marking the official beginning of Kali Yuga. This age is characterized by a rapid decline in truth, compassion, austerity, and purity. Materialism, conflict, and spiritual ignorance become the dominant forces guiding human civilization.',
-        significance: 'While Kali Yuga is the age of darkness, it offers a unique spiritual advantage: because the environment is so adverse, spiritual progress requires vastly less effort. A single moment of sincere devotion in Kali Yuga yields the same result as centuries of meditation in Satya Yuga.',
-        sources: ['Śrīmad Bhāgavatam 1.15', 'Viṣṇu Purāṇa 4.24'] 
+        narrative: 'Kali Yuga traditionally begins immediately after the departure of Śrī Kṛṣṇa from the earthly realm, marking the conclusion of Dvāpara Yuga. According to traditional Hindu chronology, this transition is dated to approximately 3102 BCE. Scriptures describe this as the beginning of the age in which dharma gradually declines and the influence of Kali increases among humanity.',
+        sources: ['Mahābhārata', 'Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam 12', 'Traditional Yuga chronology'] 
       },
       { 
-        id: 'dharma-preservation', 
-        name: 'Preservation of Dharma', 
-        subtitle: 'The Silent Continuity of the Sacred',
-        narrative: 'As societal structures and spiritual institutions degrade, dharma survives not through empires, but through the quiet, unbroken transmission of knowledge. Sages, scholars, and unseen masters carefully preserve the Vedas, the Upaniṣads, and sacred traditions, passing them down through rigorous lineages (Paramparā) hidden amidst the chaos of the world.',
-        significance: 'This continuous preservation guarantees that the eternal truth (Sanātana Dharma) cannot be extinguished. It emphasizes that true spiritual power does not rely on external validation, existing robustly in the hearts and minds of dedicated practitioners.',
-        sources: ['Manusmṛti', 'Various Āgamas and Tantras'] 
+        id: 'compilation-puranas', 
+        name: 'Compilation of the Purāṇas', 
+        subtitle: 'The Preservation of Sacred Knowledge',
+        narrative: 'Recognizing that humanity in Kali Yuga would possess shorter lifespans, weaker memory and reduced spiritual capacity, Maharṣi Vedavyāsa organized the Vedas into four divisions and is traditionally credited with composing or compiling the Mahābhārata and the eighteen Mahāpurāṇas. These works preserved Vedic wisdom in forms that would remain accessible to future generations throughout Kali Yuga.',
+        sources: ['Mahābhārata', 'Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam', 'Traditional accounts of Vedavyāsa'] 
       },
       { 
         id: 'bhakti-movement', 
         name: 'Bhakti Movement', 
-        subtitle: 'The Rise of Absolute, Ecstatic Devotion',
-        narrative: 'As complex rituals and deep philosophical study became inaccessible to the masses in the dark age, a massive spiritual revolution swept across the subcontinent. Saints, mystics, and poets bypassed institutional religion entirely, demonstrating that God is realized immediately through pure, ecstatic love. They sang, danced, and composed profound poetry in vernacular languages.',
-        significance: 'The Bhakti movement democratized salvation. It proved that liberation (Mokṣa) is independent of caste, gender, or scholarly qualification, relying entirely on the intensity of one\'s emotional connection (Bhāva) to the Divine.',
-        sources: ['Padma Purāṇa', 'Works of the Āḻvārs and Nāyaṉmārs', 'Caitanya Caritāmṛta'] 
+        subtitle: 'The Path of Devotion',
+        narrative: 'Throughout Kali Yuga, devotion (Bhakti) became one of the most accessible spiritual paths. Across different regions of Bhārata, saints, ācāryas and devotees revitalized devotion to Bhagavān through kīrtana, temple worship, scriptural teaching and personal devotion. Their efforts helped preserve Sanātana Dharma and made spiritual practice accessible to people from all backgrounds.',
+        sources: ['Bhāgavata Purāṇa', 'Various Bhakti traditions', 'Traditional Vaiṣṇava literature'] 
       },
       { 
-        id: 'current-age', 
-        name: 'Current Age', 
-        subtitle: 'The Epoch of Rapid Spiritual Decline',
-        narrative: 'We are currently situated within the first few millennia of Kali Yuga. While technological and material advancements reach unprecedented heights, the internal spiritual condition of humanity continues to fragment. Attention spans shorten, authentic truth becomes difficult to discern, and society grows increasingly disconnected from the natural and divine orders.',
-        significance: 'The current era tests the individual soul\'s resolve. Amidst endless distraction and illusion (Māyā), the conscious choice to seek inner stillness and connect with the eternal becomes an act of profound spiritual rebellion and clarity.',
-        sources: ['Śrīmad Bhāgavatam Canto 12', 'Liṅga Purāṇa'] 
+        id: 'present-age', 
+        name: 'Present Age', 
+        subtitle: 'The Current Epoch',
+        narrative: 'According to traditional Hindu understanding, humanity is presently living in the early portion of Kali Yuga. Scriptures describe this age as one in which truthfulness, compassion, purity and memory gradually diminish while conflict, material attachment and adharma increase. Despite these challenges, the scriptures repeatedly emphasize that sincere devotion, remembrance of Bhagavān and study of sacred texts remain powerful means of spiritual progress during this age.',
+        sources: ['Śrīmad Bhāgavatam 12.2', 'Mahābhārata', 'Viṣṇu Purāṇa'] 
       },
       { 
-        id: 'kalki-avatar', 
-        name: 'Kalki Avatāra', 
-        subtitle: 'The Prophesied Restorer of the Golden Age',
-        narrative: 'As Kali Yuga reaches its absolute nadir, when dharma is entirely forgotten and humanity descends into complete barbarism, it is prophesied that Bhagavān will descend for the final time in this cycle as Kalki. Riding a brilliant white horse and wielding a blazing sword, he will obliterate the corrupt order, cleanse the earth, and re-establish the pristine purity of Satya Yuga.',
-        significance: 'Kalki represents the inevitable cosmic reset. His arrival promises that evil and ignorance are strictly temporary anomalies within the vast spans of time, and that the divine order will always brutally correct the imbalance to birth a new era of truth.',
-        sources: ['Kalki Purāṇa', 'Śrīmad Bhāgavatam 12.2', 'Viṣṇu Purāṇa 4.24'] 
+        id: 'kalki-avatara', 
+        name: 'Kalki Avatāra (Future)', 
+        subtitle: 'The Prophesied Restorer',
+        narrative: 'The Purāṇas describe Kalki as the future and final avatāra of Bhagavān Viṣṇu who will appear near the end of Kali Yuga when adharma has reached its peak. Born in Śambhala to the brāhmaṇa Viṣṇuyaśas, Kalki is described as restoring righteousness, removing entrenched evil, and inaugurating the beginning of a new Satya Yuga, continuing the eternal cycle of cosmic time.',
+        sources: ['Śrīmad Bhāgavatam 12.2', 'Kalki Purāṇa', 'Viṣṇu Purāṇa'] 
       }
     ]
   }
@@ -214,7 +209,12 @@ const IMAGE_MAPPING = {
   'Childhood of Śrī Kṛṣṇa': 'Childhood of Śrī Kṛṣṇa.png',
   'Mahābhārata': 'Mahābhārata.png',
   'Bhagavad Gītā': 'Bhagavad Gītā.png',
-  'Departure of Śrī Kṛṣṇa': 'Departure of Śrī Kṛṣṇa.png'
+  'Departure of Śrī Kṛṣṇa': 'Departure of Śrī Kṛṣṇa.png',
+  'Kali Yuga Begins': 'Kali Yuga Begins.png',
+  'Compilation of the Purāṇas': 'Compilation of the Purāṇas.png',
+  'Bhakti Movement': 'Bhakti Movement.png',
+  'Present Age': 'Present Age.png',
+  'Kalki Avatāra (Future)': 'Kalki Avatāra.png'
 };
 
 // Power3 easing
@@ -487,7 +487,17 @@ export function SiteWideThread() {
         style={{ top: 'clamp(5rem, 10vw, 8rem)', left: '85%', transform: 'translate(-50%, -50%)' }} 
       >
         <div className="relative flex items-center justify-center">
-          <div className="absolute right-6 flex flex-col items-end pt-1 whitespace-nowrap">
+          <div className="absolute right-6 flex flex-col items-end pt-1 w-[320px]">
+            {/* Future Compatibility Sequence container */}
+            <div className="flex flex-col items-end mb-4">
+              <img 
+                src="/om_sacred_symbol_transparent.png" 
+                alt="Sacred Om Symbol" 
+                className="w-[55px] md:w-[65px] object-contain opacity-80"
+              />
+              {/* Future elements (Vishnu, Lotus, Brahma) can be sequentially added here */}
+            </div>
+
             <span 
               style={{
                 fontFamily: '"General Sans", sans-serif',
@@ -497,17 +507,19 @@ export function SiteWideThread() {
                 textTransform: 'uppercase'
               }}
             >
-              Beginning
+              Brahmāṇḍa
             </span>
             <span
+              className="text-right mt-3 leading-relaxed"
               style={{
                 fontFamily: 'Cormorant, serif',
-                fontSize: '12px',
+                fontSize: '14px',
                 fontStyle: 'italic',
-                color: '#666666'
+                color: '#888888'
               }}
             >
-              The search begins.
+              The unmanifest source from which creation emerges.<br/>
+              Before time, before matter, before the Yugas, existence rests in the Supreme.
             </span>
           </div>
 
