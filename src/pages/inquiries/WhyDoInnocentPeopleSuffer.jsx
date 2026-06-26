@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 function GrainCanvas() {
@@ -21,7 +21,6 @@ function GrainCanvas() {
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
 
-// A minimal Dharma Chakra SVG for the subtle background watermark
 function DharmaChakraWatermark() {
   return (
     <svg 
@@ -47,16 +46,22 @@ function DharmaChakraWatermark() {
 }
 
 const SECTIONS = [
-  { id: 'intro', label: '00 Introduction' },
-  { id: 'sec-1', label: '01 The Soul' },
-  { id: 'sec-2', label: '02 Karma' },
-  { id: 'sec-3', label: '03 Suffering' },
-  { id: 'sec-4', label: '04 Human Vision' },
-  { id: 'sec-5', label: '05 Compassion' },
-  { id: 'sec-6', label: '06 Misconceptions' },
-  { id: 'sec-7', label: '07 Philosophy' },
-  { id: 'sec-8', label: '08 Consensus' },
-  { id: 'sec-9', label: '09 Reflection' }
+  { id: 'intro', label: '00 The Question' },
+  { id: 'sec-1', label: '01 Empathy' },
+  { id: 'sec-2', label: '02 History' },
+  { id: 'sec-3', label: '03 Clichés' },
+  { id: 'sec-4', label: '04 Introduction' },
+  { id: 'sec-5', label: '05 The Soul' },
+  { id: 'sec-6', label: '06 Karma' },
+  { id: 'sec-7', label: '07 Suffering' },
+  { id: 'sec-8', label: '08 Vision' },
+  { id: 'sec-9', label: '09 Compassion' },
+  { id: 'sec-10', label: '10 Misconceptions' },
+  { id: 'sec-11', label: '11 Philosophy' },
+  { id: 'sec-12', label: '12 Consensus' },
+  { id: 'sec-13', label: '13 Today' },
+  { id: 'sec-14', label: '14 For You' },
+  { id: 'sec-15', label: '15 Reflection' }
 ];
 
 export function WhyDoInnocentPeopleSuffer() {
@@ -69,7 +74,6 @@ export function WhyDoInnocentPeopleSuffer() {
         const el = document.getElementById(section.id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          // If the section top is above the middle of the viewport
           if (rect.top <= window.innerHeight / 2) {
             current = section.id;
           }
@@ -114,25 +118,19 @@ export function WhyDoInnocentPeopleSuffer() {
         </Link>
         
         <Link to="/inquiry" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
-          >
+          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]">
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
-          >
+          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
-          >
+          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
             SATYA & MITHYĀ
           </span>
         </Link>
@@ -172,7 +170,7 @@ export function WhyDoInnocentPeopleSuffer() {
 
           <div className="relative z-10 flex flex-col items-center">
             <span className="font-general text-[10px] uppercase tracking-[0.4em] text-[#C58B52] mb-6 block text-center">
-              INQUIRY II
+              INQUIRY I
             </span>
             <h1 className="font-instrument text-5xl md:text-7xl lg:text-8xl text-[#E9E2D4] tracking-tight mb-8 text-center leading-none">
               Why do innocent<br />people suffer?
@@ -185,7 +183,7 @@ export function WhyDoInnocentPeopleSuffer() {
             <div className="flex flex-wrap justify-center gap-8 md:gap-16 border-t border-b border-[#C58B52]/20 py-4 w-full max-w-2xl">
               <div className="flex flex-col items-center">
                 <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#C58B52]/60 mb-1">READING TIME</span>
-                <span className="font-general text-[10px] uppercase tracking-widest text-[#E9E2D4]/80">9 MIN</span>
+                <span className="font-general text-[10px] uppercase tracking-widest text-[#E9E2D4]/80">14 MIN</span>
               </div>
               <div className="flex flex-col items-center">
                 <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#C58B52]/60 mb-1">TRADITION</span>
@@ -203,59 +201,159 @@ export function WhyDoInnocentPeopleSuffer() {
           </div>
         </motion.div>
 
-        {/* INTRODUCTION */}
-        <motion.div
+        {/* 1. HUMAN OPENING */}
+        <motion.section
+          id="intro"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 1.2, ease: EASE_EXPO, delay: 0.1 }}
+          transition={{ duration: 1.2, ease: EASE_EXPO }}
+          className="mb-32 w-full max-w-3xl text-center"
+        >
+          <p className="font-cormorant text-2xl md:text-3xl font-light text-[#E9E2D4]/90 leading-relaxed mx-auto italic mb-12">
+            A father waits outside an operation theatre.<br />
+            A mother loses her only child.<br />
+            Someone who has always lived honestly suddenly loses everything.
+          </p>
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mx-auto mb-8">
+            In moments like these, philosophy is rarely the first thing people seek.
+          </p>
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mx-auto mb-8">
+            They ask only one question.
+          </p>
+          <p className="font-instrument text-5xl md:text-6xl text-[#E9E2D4] tracking-tight mb-8">
+            "Why?"
+          </p>
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mx-auto">
+            Not as scholars.<br />
+            Not as philosophers.<br />
+            As human beings.
+          </p>
+        </motion.section>
+
+        {/* 2. BEFORE WE OPEN THE SCRIPTURES */}
+        <motion.section
+          id="sec-1"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 1.2, ease: EASE_EXPO }}
           className="mb-32 w-full max-w-3xl"
         >
-          <p className="font-cormorant text-xl md:text-2xl font-light text-[#E9E2D4]/80 leading-relaxed mx-auto">
-            A child is born into suffering.<br />
-            A kind person loses everything.<br />
-            The dishonest sometimes seem to prosper.<br />
-            Across civilizations, humanity has always asked the same question:<br />
-            <span className="italic">Why do innocent people suffer?</span>
-            <br /><br />
-            Sanātana Dharma does not dismiss this question.<br />
-            It answers it through scripture, philosophy, and a deep understanding of the soul, karma, rebirth, dharma, and liberation.
+          <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12 text-center">
+            Before we open the scriptures
+          </h2>
+          <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12 mx-auto" />
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed text-center mx-auto mb-8">
+            Before we discuss karma, destiny, or suffering, something deeply important must be acknowledged.
           </p>
-        </motion.div>
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed text-center mx-auto mb-8">
+            If someone has just lost a loved one, simply saying <em>"It is your karma"</em> is not compassion. It is not how Sanātana Dharma teaches wisdom.
+          </p>
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed text-center mx-auto">
+            True understanding never removes empathy. Philosophy should never be used to silence grief.
+          </p>
+        </motion.section>
 
-        {/* SHORT ANSWER */}
-        <motion.div
+        {/* 3. WHY THIS QUESTION HAS ALWAYS EXISTED */}
+        <motion.section
+          id="sec-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 1.2, ease: EASE_EXPO, delay: 0.2 }}
-          className="mb-48 w-[100vw] py-16 px-8 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.02] flex justify-center"
+          transition={{ duration: 1.2, ease: EASE_EXPO }}
+          className="mb-32 w-full max-w-3xl"
         >
-          <p className="font-cormorant text-3xl md:text-4xl text-[#E9E2D4] leading-relaxed text-center font-light max-w-4xl">
-            According to Sanātana Dharma, suffering is not random, and it is not simply divine punishment. The soul is eternal, life extends beyond one birth, and present conditions may arise from karma, free will, collective causes, and cosmic law. At the same time, the tradition does not justify cruelty or apathy. It insists that the wise respond to suffering with compassion, dharma, and selfless action.
+          <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12 text-center">
+            A timeless sorrow
+          </h2>
+          <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12 mx-auto" />
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed text-center mx-auto mb-8">
+            This question is not unique to modern times.
           </p>
-        </motion.div>
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed text-center mx-auto">
+            Across thousands of years, parents, kings, sages, and seekers have all struggled with the same agonizing mystery. The scriptures preserve these profound questions because they recognize them as deeply human. The sages did not write answers to dismiss our pain, but to elevate it.
+          </p>
+        </motion.section>
 
-        {/* ARTICLE SECTIONS */}
+        {/* 4. WHAT PEOPLE COMMONLY HEAR */}
+        <motion.section
+          id="sec-3"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 1.2, ease: EASE_EXPO }}
+          className="mb-32 w-full max-w-3xl"
+        >
+          <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12 text-center">
+            What we are often told
+          </h2>
+          <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12 mx-auto" />
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed text-center mx-auto mb-8">
+            When tragedy strikes, people are often offered well-meaning but hollow clichés:
+          </p>
+          <ul className="font-cormorant text-2xl font-light text-[#C58B52] leading-relaxed space-y-4 mb-12 text-center italic">
+            <li>"It is karma."</li>
+            <li>"It was God's will."</li>
+            <li>"Everything happens for a reason."</li>
+            <li>"It was destiny."</li>
+          </ul>
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed text-center mx-auto mb-8">
+            But...
+          </p>
+          <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed text-center mx-auto">
+            do the scriptures actually say these things in this way?
+          </p>
+        </motion.section>
+
+        {/* EXISTING INTRODUCTION & SHORT ANSWER */}
+        <motion.section
+          id="sec-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 1.2, ease: EASE_EXPO }}
+          className="mb-48 w-[100vw] py-16 px-8 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.02] flex flex-col items-center"
+        >
+          <div className="w-full max-w-3xl text-center mb-16">
+            <p className="font-cormorant text-xl md:text-2xl font-light text-[#E9E2D4]/80 leading-relaxed mx-auto">
+              A child is born into suffering.<br />
+              A kind person loses everything.<br />
+              The dishonest sometimes seem to prosper.<br />
+              Across civilizations, humanity has always asked the same question:<br />
+              <span className="italic">Why do innocent people suffer?</span>
+              <br /><br />
+              Sanātana Dharma does not dismiss this question.<br />
+              It answers it through scripture, philosophy, and a deep understanding of the soul, karma, rebirth, dharma, and liberation.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl flex flex-col items-center pt-8 border-t border-[#C58B52]/20">
+            <p className="font-cormorant text-3xl md:text-4xl text-[#E9E2D4] leading-relaxed text-center font-light mt-8 mb-12">
+              According to Sanātana Dharma, suffering is not random, and it is not simply divine punishment. The soul is eternal, life extends beyond one birth, and present conditions may arise from karma, free will, collective causes, and cosmic law. At the same time, the tradition does not justify cruelty or apathy. It insists that the wise respond to suffering with compassion, dharma, and selfless action.
+            </p>
+            <div className="w-[60px] h-[1px] bg-[#C58B52]/40" />
+          </div>
+        </motion.section>
+
         <div className="space-y-48 w-full max-w-3xl">
           
-          {/* Section 1 */}
+          {/* Section 5: The Soul */}
           <motion.section
-            id="sec-1"
+            id="sec-5"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
             <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
-              1. The soul is eternal
+              The soul is eternal
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-16">
               The fundamental truth established in the Bhagavad Gītā and the Upaniṣads is that the true self, the Ātman, is indestructible. It is never born, nor does it ever die. The suffering experienced by a living being, however profound and agonizing, belongs to the realm of the body, the mind, and Saṃsāra (the cycle of worldly existence). Because the Ātman traverses across countless lifetimes, the narrative of one's existence is far broader than a single birth. What appears as a cruel and abrupt injustice in the frame of a single lifetime is recognized as merely one brief chapter in the eternal journey of the soul.
             </p>
 
-            {/* SCRIPTURE BLOCK */}
             <div className="border border-[#C58B52]/20 bg-[#121212] p-12 my-16 flex flex-col items-center text-center w-full">
               <span className="font-general text-[10px] uppercase tracking-widest text-[#C58B52]/70 block mb-8">Bhagavad Gītā 2.20</span>
               <p className="font-sanskrit text-3xl md:text-4xl text-[#E9E2D4] mb-6 leading-relaxed font-light">न जायते म्रियते वा कदाचित्</p>
@@ -264,51 +362,48 @@ export function WhyDoInnocentPeopleSuffer() {
             </div>
           </motion.section>
 
-          {/* Section 2 */}
+          {/* Section 6: Karma (with Storytelling Expansion) */}
           <motion.section
-            id="sec-2"
+            id="sec-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
             <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
-              2. Karma is real, but it is not simplistic
+              Karma is real, but it is not simplistic
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
               Karma is frequently misunderstood as fatalism or divine spite. In reality, it is a universal law of cause and effect. It operates across three distinct modalities: Sañcita Karma (the accumulated storehouse of past actions), Prārabdha Karma (the specific portion of past actions bearing fruit in the present life), and Kriyāmāṇa Karma (the actions actively being created right now through free will). 
             </p>
-            <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">
-              Because these interwoven layers span lifetimes and generations, reducing someone's present tragedy to a simple "they must have done something bad" is not only unscriptural, it is a gross oversimplification. Not every instance of suffering can be neatly traced to a single, visible karmic cause.
+            
+            <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-12">
+              To understand the staggering complexity of Sañcita Karma, the Mahābhārata offers the story of Sage Māṇḍavya. The great ascetic was once falsely accused of theft and wrongly impaled by a king. Surviving through his spiritual power, he later confronted Dharma (the god of justice) to ask what sin could possibly justify such agony. Dharma revealed it was because, as a small boy, Māṇḍavya had pierced insects with a blade of grass. 
             </p>
+            <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
+              Māṇḍavya was outraged. He argued that the actions of an ignorant child should not dictate the fate of a conscious man, fundamentally reforming the cosmic laws of accountability. This story beautifully illustrates that because these interwoven layers span lifetimes and generations, reducing someone's present tragedy to a simple "they must have done something bad" is not only unscriptural, it is a gross oversimplification. Not every instance of suffering can be neatly traced to a single, visible karmic cause.
+            </p>
+
+            <div className="w-full flex flex-col items-center justify-center py-16">
+              <div className="w-[40px] h-[1px] bg-[#C58B52]/40 mb-16" />
+              <p className="font-cormorant text-3xl md:text-5xl text-[#C58B52] leading-tight text-center italic">
+                "We cannot judge another person's karma.<br/>We can only choose our own Dharma."
+              </p>
+              <div className="w-[40px] h-[1px] bg-[#C58B52]/40 mt-16" />
+            </div>
           </motion.section>
 
-          {/* PULL QUOTE */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 1.2, ease: EASE_EXPO }}
-            className="w-full flex flex-col items-center justify-center py-16"
-          >
-            <div className="w-[40px] h-[1px] bg-[#C58B52]/40 mb-16" />
-            <p className="font-cormorant text-3xl md:text-5xl text-[#C58B52] leading-tight text-center italic">
-              "We cannot judge another person's karma.<br/>We can only choose our own Dharma."
-            </p>
-            <div className="w-[40px] h-[1px] bg-[#C58B52]/40 mt-16" />
-          </motion.div>
-
-          {/* Section 3 */}
+          {/* Section 7: Suffering */}
           <motion.section
-            id="sec-3"
+            id="sec-7"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
             <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
-              3. Suffering is not always punishment
+              Suffering is not always punishment
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">
@@ -316,16 +411,16 @@ export function WhyDoInnocentPeopleSuffer() {
             </p>
           </motion.section>
 
-          {/* Section 4 */}
+          {/* Section 8: Human Vision */}
           <motion.section
-            id="sec-4"
+            id="sec-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
             <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
-              4. Human beings cannot see the whole picture
+              Human beings cannot see the whole picture
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
@@ -336,16 +431,16 @@ export function WhyDoInnocentPeopleSuffer() {
             </p>
           </motion.section>
 
-          {/* Section 5 */}
+          {/* Section 9: Compassion */}
           <motion.section
-            id="sec-5"
+            id="sec-9"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
             <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
-              5. The scriptures also speak about compassion
+              The scriptures also speak about compassion
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
@@ -356,16 +451,16 @@ export function WhyDoInnocentPeopleSuffer() {
             </p>
           </motion.section>
 
-          {/* Section 6 */}
+          {/* Section 10: Misconceptions */}
           <motion.section
-            id="sec-6"
+            id="sec-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
             <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
-              6. What the tradition does not say
+              What the tradition does not say
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <ul className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed space-y-6 list-none">
@@ -377,16 +472,16 @@ export function WhyDoInnocentPeopleSuffer() {
             </ul>
           </motion.section>
 
-          {/* Section 7 */}
+          {/* Section 11: Philosophy */}
           <motion.section
-            id="sec-7"
+            id="sec-11"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
             <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
-              7. Different philosophical lenses
+              Different philosophical lenses
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-12">
@@ -408,16 +503,16 @@ export function WhyDoInnocentPeopleSuffer() {
             </div>
           </motion.section>
 
-          {/* Section 8 */}
+          {/* Section 12: Consensus */}
           <motion.section
-            id="sec-8"
+            id="sec-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
             <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
-              8. Scriptural consensus
+              Scriptural consensus
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16" />
             
@@ -474,9 +569,66 @@ export function WhyDoInnocentPeopleSuffer() {
             </div>
           </motion.section>
 
-          {/* Section 9 */}
+          {/* 13. WHAT DOES THIS MEAN TODAY? */}
           <motion.section
-            id="sec-9"
+            id="sec-13"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 1.2, ease: EASE_EXPO }}
+          >
+            <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
+              What does this mean today?
+            </h2>
+            <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
+            <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
+              Whether you are losing a loved one, enduring an unexpected tragedy, watching innocent people suffer, or feeling an overwhelming sense of helplessness and anger—the scriptures do not ask you to suppress your grief. 
+            </p>
+            <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
+              Questioning God, feeling angry at the silence of the cosmos, or weeping at injustice are deeply human experiences, recognized by every tradition of Vedānta. 
+            </p>
+            <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">
+              However, the tradition teaches that we must not remain paralyzed there. Grief, in time, may gradually transform into compassion for others who hurt, wisdom about the temporary nature of the world, and a profound responsibility to uphold Dharma.
+            </p>
+          </motion.section>
+
+          {/* 14. IF YOU ARE ASKING THIS BECAUSE... */}
+          <motion.section
+            id="sec-14"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 1.2, ease: EASE_EXPO }}
+          >
+            <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12">
+              If you are asking this...
+            </h2>
+            <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
+            <div className="space-y-12">
+              <div>
+                <p className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] mb-3">...because you recently lost someone,</p>
+                <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">
+                  Know that your sorrow is honored. Do not force philosophy onto your pain before you are ready; simply breathe, remember their eternal Ātman, and take the time you need to heal.
+                </p>
+              </div>
+              <div>
+                <p className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] mb-3">...because you are questioning God,</p>
+                <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">
+                  The tradition holds space for your doubt. Searching for justice in a painful world is a profound spiritual act that often leads directly into the deepest truths of the Upaniṣads.
+                </p>
+              </div>
+              <div>
+                <p className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] mb-3">...because you are simply searching for truth,</p>
+                <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">
+                  Let this philosophy become a call to action. The realization of cosmic law should never make us passive observers, but fiercely active protectors of the vulnerable.
+                </p>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* 15. BEFORE YOU LEAVE (Reflection) */}
+          <motion.section
+            id="sec-15"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
@@ -484,16 +636,17 @@ export function WhyDoInnocentPeopleSuffer() {
             className="pt-16"
           >
             <h2 className="font-instrument text-4xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12 text-center">
-              9. Reflection
+              Before You Leave...
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16 mx-auto" />
-            <p className="font-cormorant text-2xl md:text-3xl font-light text-[#E9E2D4]/90 leading-relaxed max-w-3xl italic text-center mx-auto">
-              Sanātana Dharma does not ask us to become judges of another person’s pain.<br />
-              It asks us to become more compassionate, more responsible, and more awake.<br />
-              Even when we cannot fully explain why someone suffers, we can still choose how we respond.<br />
-              And the right response is always:
+            <p className="font-cormorant text-2xl md:text-3xl font-light text-[#E9E2D4]/90 leading-relaxed max-w-3xl italic text-center mx-auto mb-16">
+              Sanātana Dharma does not ask us to become cold, unfeeling judges of another person’s pain.<br />
+              It asks us to become more compassionate, more responsible, and more awake.
             </p>
-            <p className="font-instrument text-5xl md:text-6xl text-[#C58B52] mt-16 text-center tracking-tight">
+            <p className="font-cormorant text-2xl font-light text-[#E9E2D4]/70 leading-relaxed max-w-2xl text-center mx-auto">
+              Even when we cannot fully explain the vast geometry of destiny or why innocence is broken, we still retain our most profound freedom—the freedom to choose how we respond.
+            </p>
+            <p className="font-instrument text-5xl md:text-6xl text-[#C58B52] mt-24 text-center tracking-tight">
               Dharma. Compassion. Service.
             </p>
           </motion.section>
@@ -539,9 +692,9 @@ export function WhyDoInnocentPeopleSuffer() {
             Continue Your Inquiry
           </span>
           <div className="flex flex-col w-full">
-            <Link to="/inquiry/is-free-will-an-illusion" className="group flex items-center justify-between py-8 border-b border-[#E9E2D4]/10 w-full">
+            <Link to="/inquiry/free-will-or-destiny" className="group flex items-center justify-between py-8 border-b border-[#E9E2D4]/10 w-full">
               <span className="font-cormorant text-3xl font-light text-[#E9E2D4]/80 group-hover:text-[#E9E2D4] transition-colors duration-500">
-                Can Free Will Rewrite Destiny?
+                Do we truly have free will?
               </span>
               <span className="text-[#C58B52] transform translate-x-0 group-hover:translate-x-2 transition-transform duration-500">→</span>
             </Link>
@@ -551,7 +704,7 @@ export function WhyDoInnocentPeopleSuffer() {
               </span>
               <span className="text-[#C58B52] transform translate-x-0 group-hover:translate-x-2 transition-transform duration-500">→</span>
             </Link>
-            <Link to="/learning" className="group flex items-center justify-between py-8 border-b border-[#E9E2D4]/10 w-full">
+            <Link to="/library" className="group flex items-center justify-between py-8 border-b border-[#E9E2D4]/10 w-full">
               <span className="font-cormorant text-3xl font-light text-[#E9E2D4]/80 group-hover:text-[#E9E2D4] transition-colors duration-500">
                 How Time Flows in Sanātana Dharma
               </span>

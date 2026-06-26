@@ -8,6 +8,7 @@ import { InquiryArchivePage } from '@/pages/InquiryArchivePage';
 import { InquiryDetailPlaceholder } from '@/pages/InquiryDetailPlaceholder';
 import { TattvaLibraryPage } from '@/pages/TattvaLibraryPage';
 import { LibraryDetailPlaceholder } from '@/pages/LibraryDetailPlaceholder';
+import { HowTimeFlowsArticle } from '@/pages/library/HowTimeFlowsArticle';
 import { SatyaMithyaPage } from '@/pages/SatyaMithyaPage';
 import { SatyaMithyaPlaceholder } from '@/pages/SatyaMithyaPlaceholder';
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/inquiry" element={<InquiryArchivePage />} />
         <Route path="/inquiry/:slug" element={<InquiryDetailPlaceholder />} />
         <Route path="/library" element={<TattvaLibraryPage />} />
+        <Route path="/library/how-time-flows-in-sanatana-dharma" element={<HowTimeFlowsArticle />} />
         <Route path="/library/:slug" element={<LibraryDetailPlaceholder />} />
         <Route path="/satya-mithya" element={<SatyaMithyaPage />} />
         <Route path="/satya-mithya/:slug" element={<SatyaMithyaPlaceholder />} />

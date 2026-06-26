@@ -5,41 +5,23 @@ import { Link } from 'react-router-dom';
 const LIBRARY_TOPICS = [
   { id: 'how-time-flows-in-sanatana-dharma', number: '01', title: 'How Time Flows in Sanātana Dharma', category: 'TIME' },
   { id: 'science-and-spirituality', number: '02', title: 'Science & Spirituality', category: 'PHILOSOPHY' },
-  { id: 'understanding-karma', number: '03', title: 'Understanding Karma', category: 'DHARMA' },
-  { id: 'dharma-explained', number: '04', title: 'Dharma Explained', category: 'DHARMA' },
-  { id: 'the-four-yugas', number: '05', title: 'The Four Yugas', category: 'TIME' },
-  { id: 'trimurti', number: '06', title: 'Trimūrti', category: 'COSMOLOGY' },
-  { id: 'creation-of-the-universe', number: '07', title: 'Creation of the Universe', category: 'COSMOLOGY' },
-  { id: 'atman-and-consciousness', number: '08', title: 'Ātman and Consciousness', category: 'CONSCIOUSNESS' },
-  { id: 'moksa', number: '09', title: 'Mokṣa', category: 'PHILOSOPHY' },
-  { id: 'the-four-vedas', number: '10', title: 'The Four Vedas', category: 'SCRIPTURE' },
-  { id: 'upanisads', number: '11', title: 'Upaniṣads', category: 'SCRIPTURE' },
-  { id: 'lokas-and-cosmic-structure', number: '12', title: 'Lokas and Cosmic Structure', category: 'COSMOLOGY' },
-  { id: 'avataras', number: '13', title: 'Avatāras', category: 'PHILOSOPHY' },
-  { id: 'pralaya', number: '14', title: 'Pralaya', category: 'COSMOLOGY' },
-  { id: 'sacred-symbols', number: '15', title: 'Sacred Symbols', category: 'PHILOSOPHY' },
-  { id: 'meditation-and-yoga', number: '16', title: 'Meditation and Yoga', category: 'YOGA' }
+  { id: 'understanding-karma', number: '03', title: 'Understanding Karma', category: 'DHARMA' }
 ];
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
 
-function GrainCanvas() {
+function CreamGrainCanvas() {
   return (
     <>
       <div
         aria-hidden="true"
         className="fixed inset-0 pointer-events-none z-[9998] noise-fine"
-        style={{ mixBlendMode: 'overlay', opacity: 0.65 }}
+        style={{ mixBlendMode: 'multiply', opacity: 0.15 }}
       />
       <div
         aria-hidden="true"
         className="fixed inset-0 pointer-events-none z-[9999] noise-coarse"
-        style={{ mixBlendMode: 'soft-light', opacity: 0.45 }}
-      />
-      <div
-        aria-hidden="true"
-        className="fixed inset-0 pointer-events-none z-[9999] noise-heavy"
-        style={{ mixBlendMode: 'color-dodge', opacity: 0.18 }}
+        style={{ mixBlendMode: 'color-burn', opacity: 0.1 }}
       />
     </>
   );
@@ -51,7 +33,7 @@ function LibraryRow({ index, id, number, title, category }) {
   return (
     <Link to={`/library/${id}`} className="block w-full">
       <motion.div
-        className="relative flex items-center justify-between w-full py-12 border-b border-[#E9E2D4]/10 cursor-pointer group"
+        className="relative flex items-center justify-between w-full py-12 border-b border-[#0D0D0C]/10 cursor-pointer group"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         initial={{ opacity: 0, y: 20 }}
@@ -69,11 +51,11 @@ function LibraryRow({ index, id, number, title, category }) {
         />
 
         <div className="flex gap-12 items-baseline pl-8 md:pl-12">
-          <span className="font-instrument text-2xl text-[#E9E2D4]/40">
+          <span className="font-instrument text-2xl text-[#0D0D0C]/40">
             {number}
           </span>
           <div className="flex flex-col">
-            <h3 className="font-instrument text-3xl md:text-5xl lg:text-6xl text-[#E9E2D4]/70 transition-colors duration-500 ease-out group-hover:text-[#E9E2D4] tracking-tight">
+            <h3 className="font-instrument text-3xl md:text-5xl lg:text-6xl text-[#0D0D0C]/70 transition-colors duration-500 ease-out group-hover:text-[#0D0D0C] tracking-tight">
               {title}
             </h3>
             <span className="font-general text-[10px] uppercase tracking-[0.2em] text-[#C58B52]/70 mt-4 transition-colors duration-500 group-hover:text-[#C58B52]">
@@ -100,8 +82,8 @@ function LibraryRow({ index, id, number, title, category }) {
 
 export function TattvaLibraryPage() {
   return (
-    <div className="relative w-full min-h-screen bg-[#0D0D0C] text-[#E9E2D4] font-sans antialiased">
-      <GrainCanvas />
+    <div className="relative w-full min-h-screen bg-[#E9E2D4] text-[#0D0D0C] font-sans antialiased">
+      <CreamGrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
       <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16">
@@ -117,7 +99,7 @@ export function TattvaLibraryPage() {
                     letterSpacing: '0.45em',
                     textTransform: 'uppercase',
                     fontWeight: 300,
-                    color: '#E9E2D4',
+                    color: '#0D0D0C',
                     opacity: 0.5
                   }}
                   className="hover:opacity-100 transition-opacity duration-600"
@@ -131,7 +113,7 @@ export function TattvaLibraryPage() {
         
         <Link to="/inquiry" className="group flex items-center">
           <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
@@ -147,7 +129,7 @@ export function TattvaLibraryPage() {
 
         <Link to="/satya-mithya" className="group flex items-center">
           <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]"
           >
             SATYA & MITHYĀ
           </span>
@@ -166,10 +148,10 @@ export function TattvaLibraryPage() {
           <span className="font-general text-[10px] uppercase tracking-[0.4em] text-[#C58B52] mb-6">
             LIBRARY I
           </span>
-          <h1 className="font-instrument text-6xl md:text-8xl lg:text-9xl text-[#E9E2D4] tracking-tighter leading-none mb-12">
+          <h1 className="font-instrument text-6xl md:text-8xl lg:text-9xl text-[#0D0D0C] tracking-tighter leading-none mb-12">
             Tattva Library
           </h1>
-          <p className="font-cormorant text-xl md:text-2xl font-light italic text-[#E9E2D4]/70 max-w-2xl leading-relaxed">
+          <p className="font-cormorant text-xl md:text-2xl font-light italic text-[#0D0D0C]/70 max-w-2xl leading-relaxed">
             Understanding begins before belief.<br />
             Explore the foundational principles, cosmology, philosophy and scriptures of Sanātana Dharma through carefully organized knowledge rooted in authentic sources.
           </p>
@@ -178,11 +160,29 @@ export function TattvaLibraryPage() {
         </motion.div>
 
         {/* The Library Index */}
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full mb-32">
           {LIBRARY_TOPICS.map((item, index) => (
             <LibraryRow key={item.id} index={index} {...item} />
           ))}
         </div>
+
+        {/* Editorial Message */}
+        <motion.div 
+          className="w-full max-w-3xl pt-16 border-t border-[#0D0D0C]/10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 1.2, ease: EASE_EXPO }}
+        >
+          <h4 className="font-cormorant text-2xl font-medium text-[#0D0D0C] mb-6">
+            Library Under Continuous Expansion
+          </h4>
+          <p className="font-cormorant text-lg font-light text-[#0D0D0C]/60 leading-relaxed max-w-2xl">
+            TATTVA is a living knowledge library dedicated to Sanātana Dharma.<br /><br />
+            Every article is researched individually using primary scriptures, classical commentaries and careful editorial review before publication.<br /><br />
+            Rather than publishing unfinished material, new entries are added only after they meet our research standards.
+          </p>
+        </motion.div>
 
       </div>
     </div>

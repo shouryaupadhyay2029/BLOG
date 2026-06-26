@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const INQUIRIES = [
   { id: 'why-do-innocent-people-suffer', number: '01', title: 'Why do innocent people suffer?', category: 'KARMA • DHARMA' },
   { id: 'why-do-innocent-children-suffer', number: '02', title: 'Why do innocent children suffer?', category: 'KARMA • COMPASSION' },
-  { id: 'free-will-or-destiny', number: '03', title: 'Do we truly have free will?', subtitle: 'Or is everything already destined?', category: 'KARMA • DESTINY • FREE WILL' },
+  { id: 'free-will-or-destiny', number: '03', title: 'Do we truly have free will?', subtitle: 'Or is everything already destined?', category: 'KARMA • DHARMA • DESTINY' },
   { id: 'does-consciousness-survive-death', number: '04', title: 'Does consciousness survive death?', category: 'ĀTMAN • DEATH' },
   { id: 'what-is-dharma', number: '05', title: 'What is Dharma?', category: 'ACTION • TRUTH' },
   { id: 'is-free-will-an-illusion', number: '06', title: 'Is free will an illusion?', category: 'FREE WILL • KARMA' },
