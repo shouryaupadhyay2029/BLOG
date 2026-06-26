@@ -25,8 +25,8 @@ const SCALES = [
 function TimeScaleItem({ scale, i, scrollYProgress }) {
   // We create a cascading activation based on scroll progress
   const start = i * 0.25;
-  const fullyActive = start + 0.15;
-  const end = fullyActive + 0.15;
+  const fullyActive = Math.min(start + 0.15, 0.99);
+  const end = Math.min(fullyActive + 0.15, 1);
   
   // Transform values
   const opacity = useTransform(scrollYProgress, [start, fullyActive, end], [0.2, 1, 1]);

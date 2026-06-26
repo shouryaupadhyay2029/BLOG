@@ -2,10 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-import { TimeScaleHierarchy } from '@/components/library/time/TimeScaleHierarchy';
 import { CosmicLadder } from '@/components/library/time/CosmicLadder';
 import { CyclicalAnimation } from '@/components/library/time/CyclicalAnimation';
-import { YugaTimeline } from '@/components/library/time/YugaTimeline';
 import { CosmicAddress } from '@/components/library/time/CosmicAddress';
 import { PralayaPanels } from '@/components/library/time/PralayaPanels';
 import { ScienceComparison } from '@/components/library/time/ScienceComparison';
@@ -155,27 +153,7 @@ export function HowTimeFlowsArticle() {
           </p>
         </motion.section>
 
-        {/* INTERACTIVE HIERARCHY */}
-        <TimeScaleHierarchy />
-
-        {/* SECTION 3: ZOOMING OUT */}
-        <motion.section 
-          className="mt-32 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 1.2, ease: EASE_EXPO }}
-        >
-          <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-8">
-            3. Expanding the Cosmic Lens
-          </h2>
-          <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
-            If we zoom out from the human perspective, the measurements of reality stretch into proportions that defy imagination. Scroll slowly, and watch as the scale of existence expands outward, from the smallest human action to the lifespan of the universe itself.
-          </p>
-        </motion.section>
-
-
-        {/* SECTION 4: THE COSMIC LADDER */}
+        {/* SECTION 4: THE COMPLETE COSMIC LADDER (UNIFIED) */}
         <motion.section 
           className="mt-32 mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -184,10 +162,10 @@ export function HowTimeFlowsArticle() {
           transition={{ duration: 1.2, ease: EASE_EXPO }}
         >
           <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-8">
-            4. The Complete Cosmic Ladder
+            3. The Complete Hierarchy
           </h2>
           <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed max-w-2xl mx-auto">
-            If we zoom out from the human perspective, the measurements of reality stretch into proportions that defy imagination. Scroll slowly, and watch as the scale of existence physically expands outward—from a single human breath to the lifespan of the universe itself.
+            If we zoom out from the human perspective, the measurements of reality stretch into proportions that defy imagination. Scroll slowly, and watch as the scale of existence physically expands outward—from the blink of an eye to the dissolution of the universe itself.
           </p>
         </motion.section>
 
@@ -195,28 +173,7 @@ export function HowTimeFlowsArticle() {
           <CosmicLadder />
         </div>
 
-        {/* SECTION 5: CYCLICAL TIME */}
-        <motion.section 
-          className="mt-48 mb-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 1.2, ease: EASE_EXPO }}
-        >
-          <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-8">
-            5. The Circle, Not the Line
-          </h2>
-          <p className="font-cormorant text-2xl font-light text-[#0D0D0C]/80 leading-relaxed mb-6 italic max-w-2xl mx-auto">
-            "What if history never truly ends? What if endings are only pauses before another beginning?"
-          </p>
-          <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed max-w-3xl mx-auto">
-            Western history assumes time is an arrow shot from a bow: it has one beginning, moves in a straight line, and will end exactly once. But if everything in nature—the seasons, the moon, the tides, a human heartbeat—moves in cycles, why would the universe itself be a straight line? In Sanātana Dharma, time is a wheel (Kālachakra). Creation, preservation, and dissolution are simply the inhale, hold, and exhale of God.
-          </p>
-        </motion.section>
-
-        <CyclicalAnimation />
-
-        {/* SECTION 6: THE FOUR YUGAS */}
+        {/* SECTION 5: WHERE ARE WE TODAY? */}
         <motion.section 
           className="mt-48 mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -225,28 +182,7 @@ export function HowTimeFlowsArticle() {
           transition={{ duration: 1.2, ease: EASE_EXPO }}
         >
           <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-8 text-center">
-            6. The Four Yugas
-          </h2>
-          <p className="font-cormorant text-2xl font-light text-[#0D0D0C]/80 leading-relaxed mb-6 italic max-w-2xl mx-auto text-center">
-            "If time has seasons, civilizations do too."
-          </p>
-          <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed max-w-3xl mx-auto text-center">
-            Time is not a flat, unchanging line. With each advancing Yuga, spiritual consciousness, virtue (Dharma), and human capability gradually fade. Observe how morality declines as we move through the four ages of the cosmos.
-          </p>
-        </motion.section>
-
-        <YugaTimeline />
-
-        {/* SECTION 7: WHERE ARE WE TODAY? */}
-        <motion.section 
-          className="mt-48 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 1.2, ease: EASE_EXPO }}
-        >
-          <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-8 text-center">
-            7. So... Where Are We Today?
+            4. So... Where Are We Today?
           </h2>
           <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed max-w-3xl mx-auto text-center">
             According to traditional reckoning, we are currently navigating the turbulence of Kali Yuga. While scholars distinguish ancient scripture from later chronological calculations, the traditional "Cosmic Address" of humanity places us precisely here within the Creator's vast lifespan:

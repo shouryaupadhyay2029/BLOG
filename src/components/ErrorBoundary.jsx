@@ -35,9 +35,12 @@ export class ErrorBoundary extends React.Component {
           <h1 className="font-instrument text-5xl md:text-7xl text-[#0D0D0C] tracking-tight mb-8 text-center relative z-10 max-w-2xl">
             Something went wrong.
           </h1>
-          <p className="font-cormorant text-xl md:text-2xl font-light text-[#0D0D0C]/80 text-center mb-16 relative z-10 max-w-xl leading-relaxed">
-            Even the most perfect systems sometimes lose their balance. The page encountered an unexpected interruption.
+          <p className="font-cormorant text-xl md:text-2xl font-light text-[#0D0D0C]/80 text-center mb-4 relative z-10 max-w-xl leading-relaxed">
+            {this.state.error && this.state.error.message}
           </p>
+          <pre className="text-xs text-left text-red-800 bg-red-100 p-4 max-w-4xl overflow-auto mb-16 relative z-10">
+            {this.state.error && this.state.error.stack}
+          </pre>
 
           <button
             onClick={() => {
