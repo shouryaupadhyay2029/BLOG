@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { WhyDoInnocentPeopleSuffer } from './inquiries/WhyDoInnocentPeopleSuffer';
+import { WhyDoInnocentChildrenSuffer } from './inquiries/WhyDoInnocentChildrenSuffer';
+import { FreeWillOrDestiny } from './inquiries/FreeWillOrDestiny';
 
 function GrainCanvas() {
   return (
@@ -26,6 +28,12 @@ export function InquiryDetailPlaceholder() {
   // Route to the dedicated article if the slug matches
   if (slug === 'why-do-innocent-people-suffer') {
     return <WhyDoInnocentPeopleSuffer />;
+  }
+  if (slug === 'why-do-innocent-children-suffer') {
+    return <WhyDoInnocentChildrenSuffer />;
+  }
+  if (slug === 'free-will-or-destiny') {
+    return <FreeWillOrDestiny />;
   }
 
   // Convert slug to a readable format

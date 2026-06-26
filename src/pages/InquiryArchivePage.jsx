@@ -4,17 +4,19 @@ import { Link } from 'react-router-dom';
 
 const INQUIRIES = [
   { id: 'why-do-innocent-people-suffer', number: '01', title: 'Why do innocent people suffer?', category: 'KARMA • DHARMA' },
-  { id: 'does-consciousness-survive-death', number: '02', title: 'Does consciousness survive death?', category: 'ĀTMAN • DEATH' },
-  { id: 'what-is-dharma', number: '03', title: 'What is Dharma?', category: 'ACTION • TRUTH' },
-  { id: 'is-free-will-an-illusion', number: '04', title: 'Is free will an illusion?', category: 'FREE WILL • KARMA' },
-  { id: 'can-science-and-spirituality-coexist', number: '05', title: 'Can science and spirituality coexist?', category: 'SCIENCE • SPIRITUALITY' },
-  { id: 'why-does-evil-exist', number: '06', title: 'Why does evil exist?', category: 'DUALITY • KARMA' },
-  { id: 'what-is-karma', number: '07', title: 'What is Karma?', category: 'ACTION • CONSEQUENCE' },
-  { id: 'what-happens-after-death', number: '08', title: 'What happens after death?', category: 'MOKṢA • REBIRTH' },
-  { id: 'why-do-we-fear-death', number: '09', title: 'Why do we fear death?', category: 'ATTACHMENT • EGO' },
-  { id: 'can-god-be-experienced', number: '10', title: 'Can God be experienced?', category: 'DEVOTION • REALIZATION' },
-  { id: 'why-are-there-many-religions', number: '11', title: 'Why are there many religions?', category: 'TRUTH • PATHS' },
-  { id: 'is-liberation-possible-in-kali-yuga', number: '12', title: 'Is liberation possible in Kali Yuga?', category: 'BHAKTI • TIME' }
+  { id: 'why-do-innocent-children-suffer', number: '02', title: 'Why do innocent children suffer?', category: 'KARMA • COMPASSION' },
+  { id: 'free-will-or-destiny', number: '03', title: 'Do we truly have free will?', subtitle: 'Or is everything already destined?', category: 'KARMA • DESTINY • FREE WILL' },
+  { id: 'does-consciousness-survive-death', number: '04', title: 'Does consciousness survive death?', category: 'ĀTMAN • DEATH' },
+  { id: 'what-is-dharma', number: '05', title: 'What is Dharma?', category: 'ACTION • TRUTH' },
+  { id: 'is-free-will-an-illusion', number: '06', title: 'Is free will an illusion?', category: 'FREE WILL • KARMA' },
+  { id: 'can-science-and-spirituality-coexist', number: '07', title: 'Can science and spirituality coexist?', category: 'SCIENCE • SPIRITUALITY' },
+  { id: 'why-does-evil-exist', number: '08', title: 'Why does evil exist?', category: 'DUALITY • KARMA' },
+  { id: 'what-is-karma', number: '09', title: 'What is Karma?', category: 'ACTION • CONSEQUENCE' },
+  { id: 'what-happens-after-death', number: '10', title: 'What happens after death?', category: 'MOKṢA • REBIRTH' },
+  { id: 'why-do-we-fear-death', number: '11', title: 'Why do we fear death?', category: 'ATTACHMENT • EGO' },
+  { id: 'can-god-be-experienced', number: '12', title: 'Can God be experienced?', category: 'DEVOTION • REALIZATION' },
+  { id: 'why-are-there-many-religions', number: '13', title: 'Why are there many religions?', category: 'TRUTH • PATHS' },
+  { id: 'is-liberation-possible-in-kali-yuga', number: '14', title: 'Is liberation possible in Kali Yuga?', category: 'BHAKTI • TIME' }
 ];
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
