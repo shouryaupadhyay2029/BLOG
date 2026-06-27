@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 
 const LIBRARY_TOPICS = [
   { id: 'how-time-flows-in-sanatana-dharma', number: '01', title: 'How Time Flows in Sanātana Dharma', category: 'TIME' },
-  { id: 'science-and-spirituality', number: '02', title: 'Science & Spirituality', category: 'PHILOSOPHY' },
-  { id: 'understanding-karma', number: '03', title: 'Understanding Karma', category: 'DHARMA' }
+  { id: 'the-architecture-of-the-cosmos', number: '02', title: 'The Architecture of the Cosmos', category: 'COSMOLOGY' },
+  { id: 'science-and-spirituality', number: '03', title: 'Science & Spirituality', category: 'PHILOSOPHY' },
+  { id: 'understanding-karma', number: '04', title: 'Understanding Karma', category: 'DHARMA' }
 ];
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
