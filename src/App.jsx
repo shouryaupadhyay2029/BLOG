@@ -10,6 +10,7 @@ import { TattvaLibraryPage } from '@/pages/TattvaLibraryPage';
 import { LibraryDetailPlaceholder } from '@/pages/LibraryDetailPlaceholder';
 import { HowTimeFlowsArticle } from '@/pages/library/HowTimeFlowsArticle';
 import { TheArchitectureOfTheCosmos } from '@/pages/library/TheArchitectureOfTheCosmos';
+import { SrstiArticle } from '@/pages/library/SrstiArticle';
 import { SatyaMithyaPage } from '@/pages/SatyaMithyaPage';
 import { SatyaMithyaPlaceholder } from '@/pages/SatyaMithyaPlaceholder';
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/library" element={<TattvaLibraryPage />} />
         <Route path="/library/how-time-flows-in-sanatana-dharma" element={<HowTimeFlowsArticle />} />
         <Route path="/library/the-architecture-of-the-cosmos" element={<TheArchitectureOfTheCosmos />} />
+        <Route path="/library/srsthi" element={<SrstiArticle />} />
         <Route path="/library/:slug" element={<LibraryDetailPlaceholder />} />
         <Route path="/satya-mithya" element={<SatyaMithyaPage />} />
         <Route path="/satya-mithya/:slug" element={<SatyaMithyaPlaceholder />} />

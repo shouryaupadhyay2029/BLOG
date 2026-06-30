@@ -1,10 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MasterCosmicAtlas } from '@/components/library/cosmology/appendices/MasterCosmicAtlas';
-import { MythVsScriptureConsolidated } from '@/components/library/cosmology/appendices/MythVsScriptureConsolidated';
-import { MasterFAQ } from '@/components/library/cosmology/appendices/MasterFAQ';
 import { MasterGlossary } from '@/components/library/cosmology/appendices/MasterGlossary';
-import { Bibliography } from '@/components/library/cosmology/appendices/Bibliography';
 import { FinalReaderJourney } from '@/components/library/cosmology/appendices/FinalReaderJourney';
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
@@ -18,11 +15,8 @@ export function CosmologyAppendices() {
         <div className="sticky top-32 w-48 h-fit space-y-4 font-general text-[10px] uppercase tracking-[0.2em] text-[#0D0D0C]/40">
           <div className="text-[#C58B52] font-bold">APPENDICES</div>
           <div>1. Cosmic Atlas</div>
-          <div>2. Myth vs. Scripture</div>
-          <div>3. 100-Question FAQ</div>
-          <div>4. Master Glossary</div>
-          <div>5. Bibliography</div>
-          <div>6. Final Journey</div>
+          <div>2. Master Glossary</div>
+          <div>3. Final Journey</div>
         </div>
       </div>
 
@@ -49,10 +43,7 @@ export function CosmologyAppendices() {
         <MasterCosmicAtlas />
       </motion.section>
 
-      <MythVsScriptureConsolidated />
-      <MasterFAQ />
       <MasterGlossary />
-      <Bibliography />
       <FinalReaderJourney />
 
     </div>
