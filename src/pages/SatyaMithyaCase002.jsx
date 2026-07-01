@@ -711,7 +711,7 @@ export function SatyaMithyaCase002() {
               The Vedic Evidence
             </h2>
             <p className="font-cormorant text-base md:text-lg text-[#1C1C1A]/80 leading-relaxed font-light mb-8">
-              We now step out of linguistics and search the earliest scriptures themselves. If Hinduism is fundamentally defined by 330 million gods, we should find this massive numerical census detailed in the oldest layers of Vedic literature.
+              This investigation now steps out of linguistics to search the earliest scriptures themselves. If Hinduism is fundamentally defined by 330 million gods, this massive numerical census should be detailed in the oldest layers of Vedic literature.
             </p>
           </Reveal>
 
@@ -1038,7 +1038,7 @@ export function SatyaMithyaCase002() {
               One Reality. Many Manifestations.
             </h2>
             <p className="font-cormorant text-base md:text-lg text-[#1C1C1A]/80 leading-relaxed font-light mb-8">
-              To understand the final piece of evidence, we must examine the philosophical structure of Sanātana Dharma. The coexistence of unity and diversity is not a theological conflict, but a basic design feature of Hindu metaphysics.
+              To understand the final piece of evidence, it is necessary to examine the philosophical structure of Sanātana Dharma. The coexistence of unity and diversity is not a theological conflict, but a basic design feature of Hindu metaphysics.
             </p>
           </Reveal>
 
@@ -1153,7 +1153,7 @@ export function SatyaMithyaCase002() {
               Common Misconceptions
             </h2>
             <p className="font-cormorant text-base md:text-lg text-[#1C1C1A]/80 leading-relaxed font-light mb-8">
-              We now subject several widely-encountered popular assertions to direct evidentiary cross-examination under TATTVA standards.
+              Several widely-encountered popular assertions are now subjected to direct evidentiary cross-examination under TATTVA standards.
             </p>
           </Reveal>
 
@@ -1383,7 +1383,7 @@ export function SatyaMithyaCase002() {
           <Reveal className="my-8">
             <div className="border border-[#C58B52]/30 bg-white/40 p-6 md:p-8 max-w-xl mx-auto">
               <span className="font-general text-[8px] uppercase tracking-[0.25em] text-[#C58B52] block mb-6 text-center font-bold">
-                HOW WE INVESTIGATE CLAIMS
+                HOW TATTVA INVESTIGATES EVERY CLAIM
               </span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {tattvaPrinciples.map((val, idx) => (

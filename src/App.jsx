@@ -14,6 +14,8 @@ import { SrstiArticle } from '@/pages/library/SrstiArticle';
 import { SatyaMithyaPage } from '@/pages/SatyaMithyaPage';
 import { SatyaMithyaCase001 } from '@/pages/SatyaMithyaCase001';
 import { SatyaMithyaCase002 } from '@/pages/SatyaMithyaCase002';
+import { SatyaMithyaCase003 } from '@/pages/SatyaMithyaCase003';
+import { SatyaMithyaCase004 } from '@/pages/SatyaMithyaCase004';
 import { SatyaMithyaPlaceholder } from '@/pages/SatyaMithyaPlaceholder';
 
 /**
@@ -37,6 +39,8 @@ function App() {
         <Route path="/satya-mithya" element={<SatyaMithyaPage />} />
         <Route path="/satya-mithya/does-gita-teach-war" element={<SatyaMithyaCase001 />} />
         <Route path="/satya-mithya/are-there-really-33-crore-gods" element={<SatyaMithyaCase002 />} />
+        <Route path="/satya-mithya/hinduism-worships-idols" element={<SatyaMithyaCase003 />} />
+        <Route path="/satya-mithya/does-bhagavad-gita-support-caste" element={<SatyaMithyaCase004 />} />
         <Route path="/satya-mithya/:slug" element={<SatyaMithyaPlaceholder />} />
       </Routes>
     </LenisProvider>

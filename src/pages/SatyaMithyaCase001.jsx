@@ -1486,7 +1486,7 @@ export function SatyaMithyaCase001() {
               Final Verdict
             </h2>
             <p className="font-instrument italic text-lg text-[#C58B52] mb-8">
-              After examining the evidence... what conclusion can we honestly reach?
+              After examining the evidence... what conclusion can honestly be reached?
             </p>
           </Reveal>
 
@@ -1815,10 +1815,10 @@ export function SatyaMithyaCase001() {
           {/* Research Standard Box */}
           <div className="border border-[#C58B52]/20 bg-white/30 p-8 my-8 text-center max-w-xl mx-auto">
             <span className="font-general text-[9px] uppercase tracking-[0.35em] text-[#C58B52] block mb-4 font-bold">
-              Our Research Standard
+              TATTVA's Research Standard
             </span>
             <p className="font-cormorant text-base text-[#1C1C1A]/85 leading-relaxed font-light mb-6">
-              Every investigation on TATTVA follows the same method. We begin with the claim, examine primary scripture, establish historical context, distinguish scripture from later commentary, and separate evidence from personal opinion. Only then do we reach a conclusion.
+              Every investigation on TATTVA follows the same method. The process begins with the claim, examines primary scripture, establishes historical context, distinguishes scripture from later commentary, and separates evidence from personal opinion. Only then is a conclusion reached.
             </p>
             <div className="w-12 h-[1px] bg-[#C58B52]/40 mx-auto" />
           </div>
@@ -1829,7 +1829,7 @@ export function SatyaMithyaCase001() {
               Have you heard another claim about Sanātana Dharma that you\'d like investigated?
             </h4>
             <p className="font-cormorant text-sm text-[#1C1C1A]/70 leading-relaxed font-light">
-              Future Case Files are selected based on questions repeatedly asked by readers and commonly encountered misconceptions. We invite you to send in claims you want analyzed objectively.
+              Future Case Files are selected based on questions repeatedly asked by readers and commonly encountered misconceptions. Readers are invited to send in claims to be analyzed objectively.
             </p>
           </div>
         </section>
@@ -1851,12 +1851,12 @@ export function SatyaMithyaCase001() {
           <div className="my-12 text-center flex flex-col gap-4 max-w-lg mx-auto">
             <Reveal delay={0.2}>
               <p className="font-instrument text-xl text-[#1C1C1A]/90 font-light animate-fade-in">
-                "The purpose of an investigation is not to confirm what we already believe."
+                "The purpose of an investigation is not to confirm pre-existing beliefs."
               </p>
             </Reveal>
             <Reveal delay={0.4}>
               <p className="font-instrument text-xl text-[#1C1C1A]/90 font-light animate-fade-in">
-                "It is to discover what the evidence allows us to conclude."
+                "It is to discover what the evidence actually supports."
               </p>
             </Reveal>
             <Reveal delay={0.6}>
@@ -1901,7 +1901,7 @@ export function SatyaMithyaCase001() {
               Inquiry
             </span>
             <p className="font-instrument italic text-xl md:text-2xl text-[#1C1C1A]/85 leading-relaxed">
-              How many beliefs do we carry... simply because we have never investigated them ourselves?
+              How many beliefs are carried... simply because they have never been investigated?
             </p>
           </Reveal>
 

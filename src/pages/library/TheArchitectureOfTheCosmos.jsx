@@ -193,7 +193,7 @@ export function TheArchitectureOfTheCosmos() {
                 <span className="text-[#C58B52] text-xl">01</span> Primary Scriptures First
               </h4>
               <p className="font-cormorant text-lg font-light text-[#0D0D0C]/80 leading-relaxed">
-                All claims are traced back to original Sanskrit source texts. We prioritize the original verses over secondary modern summaries.
+                All claims are traced back to original Sanskrit source texts. This research prioritizes original verses over secondary modern summaries.
               </p>
             </div>
             <div>
@@ -201,7 +201,7 @@ export function TheArchitectureOfTheCosmos() {
                 <span className="text-[#C58B52] text-xl">02</span> Sectarian Neutrality
               </h4>
               <p className="font-cormorant text-lg font-light text-[#0D0D0C]/80 leading-relaxed">
-                We present Vaiṣṇava, Śaiva, and Śākta cosmological perspectives without declaring one tradition as the exclusive "truth" of Hinduism.
+                Vaiṣṇava, Śaiva, and Śākta cosmological perspectives are presented without declaring one tradition as the exclusive "truth" of Hinduism.
               </p>
             </div>
             <div>
@@ -209,7 +209,7 @@ export function TheArchitectureOfTheCosmos() {
                 <span className="text-[#C58B52] text-xl">03</span> Linguistic Analysis
               </h4>
               <p className="font-cormorant text-lg font-light text-[#0D0D0C]/80 leading-relaxed">
-                We carefully distinguish between literal terms (e.g., measuring distance) and poetic/symbolic terms that were never meant to be taken literally.
+                This methodology distinguishes between literal terms (e.g., measuring distance) and poetic/symbolic terms that were never meant to be taken literally.
               </p>
             </div>
             <div>
@@ -217,7 +217,7 @@ export function TheArchitectureOfTheCosmos() {
                 <span className="text-[#C58B52] text-xl">04</span> Source Criticism
               </h4>
               <p className="font-cormorant text-lg font-light text-[#0D0D0C]/80 leading-relaxed">
-                We clearly label the difference between a claim found in ancient Veda versus a claim popularized in 19th-century colonial interpretations.
+                A clear distinction is drawn between claims found in ancient Vedas versus claims popularized in 19th-century colonial interpretations.
               </p>
             </div>
           </div>

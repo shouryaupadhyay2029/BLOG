@@ -29,15 +29,26 @@ const ALL_CASES = [
   },
   {
     number: 'CASE 003',
-    title: 'Did the Ṛgveda Say Viṣṇu Created the Universe?',
-    categoryLabel: 'Vedas • Cosmology',
-    categories: ['Vedas', 'Cosmology'],
-    status: 'Research in Progress',
-    id: 'did-rgveda-say-vishnu-created-universe',
-    desc: 'Investigating whether the earliest Vedic mantras identify a personal creator deity or describe a unified cosmic order.'
+    title: 'Hinduism Worships Idols?',
+    categoryLabel: 'Vedas • Philosophy',
+    categories: ['Vedas', 'Philosophy', 'Language'],
+    status: 'Completed',
+    id: 'hinduism-worships-idols',
+    desc: 'Investigating the translation of Sanskrit words like Mūrti and Pratimā and exploring original scriptural instructions.'
   },
   {
     number: 'CASE 004',
+    title: 'Does the Bhagavad Gītā Support the Caste System?',
+    categoryLabel: 'Gītā • Society',
+    categories: ['Bhagavad Gītā', 'Society'],
+    status: 'Completed',
+    verdict: 'Oversimplified',
+    readingTime: '22 min',
+    id: 'does-bhagavad-gita-support-caste',
+    desc: 'Analyzing scriptural descriptions of varṇa-dharma based on qualities vs modern hereditary caste structures.'
+  },
+  {
+    number: 'CASE 005',
     title: 'Does Karma Mean Everything Is Predetermined?',
     categoryLabel: 'Karma • Philosophy',
     categories: ['Philosophy', 'Upanishads'],
@@ -46,7 +57,7 @@ const ALL_CASES = [
     desc: 'Examining scriptural descriptions of agency, causality, and moral responsibility vs popular fatalistic definitions.'
   },
   {
-    number: 'CASE 005',
+    number: 'CASE 006',
     title: 'Are the Rāmāyaṇa and Mahābhārata Just Mythology?',
     categoryLabel: 'Itihāsa',
     categories: ['Itihāsa'],
@@ -55,16 +66,16 @@ const ALL_CASES = [
     desc: 'Unfolding what the scriptures claim about historical recording and the traditional concept of Itihāsa.'
   },
   {
-    number: 'CASE 006',
-    title: 'Does the Bhagavad Gītā Support the Caste System?',
-    categoryLabel: 'Gītā • Society',
-    categories: ['Bhagavad Gītā', 'Society'],
+    number: 'CASE 007',
+    title: 'Did the Ṛgveda Say Viṣṇu Created the Universe?',
+    categoryLabel: 'Vedas • Cosmology',
+    categories: ['Vedas', 'Cosmology'],
     status: 'Planned',
-    id: 'does-bhagavad-gita-support-caste',
-    desc: 'Analyzing scriptural descriptions of varṇa-dharma based on qualities vs modern hereditary caste structures.'
+    id: 'did-rgveda-say-vishnu-created-universe',
+    desc: 'Investigating whether the earliest Vedic mantras identify a personal creator deity or describe a unified cosmic order.'
   },
   {
-    number: 'CASE 007',
+    number: 'CASE 008',
     title: 'Did Draupadī Really Laugh at Duryodhana?',
     categoryLabel: 'Itihāsa • Society',
     categories: ['Itihāsa', 'Society'],
@@ -73,7 +84,7 @@ const ALL_CASES = [
     desc: 'Tracing popular narrative lore of the palace of illusions back to Sanskrit critical editions of the Mahābhārata.'
   },
   {
-    number: 'CASE 008',
+    number: 'CASE 009',
     title: 'Do the Upanishads Reject Ritualism Entirely?',
     categoryLabel: 'Upanishads • Philosophy',
     categories: ['Upanishads', 'Philosophy'],
@@ -82,7 +93,7 @@ const ALL_CASES = [
     desc: 'Deconstructing the relationship between the ritualistic section (Karma-kanda) and knowledge section (Jnana-kanda).'
   },
   {
-    number: 'CASE 009',
+    number: 'CASE 010',
     title: 'Is the Word "Hindu" Found in Ancient Scriptures?',
     categoryLabel: 'Language • Society',
     categories: ['Language', 'Society'],
@@ -91,7 +102,7 @@ const ALL_CASES = [
     desc: 'Investigating the geographical, historical, and etymological roots of the word "Hindu" in Sanskrit texts.'
   },
   {
-    number: 'CASE 010',
+    number: 'CASE 011',
     title: 'Did Sītā Walk Into the Fire Out of Submission?',
     categoryLabel: 'Itihāsa • Society',
     categories: ['Itihāsa', 'Society'],
@@ -100,7 +111,7 @@ const ALL_CASES = [
     desc: 'Analyzing the ethical and administrative context of the Agni Parīkṣā in Vālmīki\'s Rāmāyaṇa.'
   },
   {
-    number: 'CASE 011',
+    number: 'CASE 012',
     title: 'Does the Ṛgveda Contain Advanced Modern Science?',
     categoryLabel: 'Vedas • Cosmology',
     categories: ['Vedas', 'Cosmology'],
@@ -109,7 +120,7 @@ const ALL_CASES = [
     desc: 'Critically reviewing claims of advanced physics, speed of light, and cosmology inside early Vedic mantras.'
   },
   {
-    number: 'CASE 012',
+    number: 'CASE 013',
     title: 'Is Idol Worship (Mūrti Pūjā) Forbidden in the Vedas?',
     categoryLabel: 'Vedas • Philosophy',
     categories: ['Vedas', 'Philosophy'],
@@ -118,7 +129,7 @@ const ALL_CASES = [
     desc: 'Investigating representations of the formless supreme (Nirguna) vs worship through physical symbols (Saguna).'
   },
   {
-    number: 'CASE 013',
+    number: 'CASE 014',
     title: 'Did Kṛṣṇa Have 16,000 Wives Literally?',
     categoryLabel: 'Itihāsa • Society',
     categories: ['Itihāsa', 'Society'],
@@ -127,7 +138,7 @@ const ALL_CASES = [
     desc: 'Reviewing the narrative context of the liberation of captive women from Narakāsura\'s fortress.'
   },
   {
-    number: 'CASE 014',
+    number: 'CASE 015',
     title: 'Does Manu Smṛti Govern Modern Hindu Practice?',
     categoryLabel: 'Society',
     categories: ['Society'],
@@ -136,7 +147,7 @@ const ALL_CASES = [
     desc: 'Investigating the canonical authority of Smṛti literature vs Śruti in modern living traditions.'
   },
   {
-    number: 'CASE 015',
+    number: 'CASE 016',
     title: 'Is Hell (Naraka) Eternal in Hinduism?',
     categoryLabel: 'Cosmology • Philosophy',
     categories: ['Cosmology', 'Philosophy'],
@@ -145,7 +156,7 @@ const ALL_CASES = [
     desc: 'Evaluating scriptural descriptions of temporary cleansing lokas vs concepts of eternal damnation.'
   },
   {
-    number: 'CASE 016',
+    number: 'CASE 017',
     title: 'Did the Buddha Initiate the Decline of Vedic Tradition?',
     categoryLabel: 'Philosophy • Society',
     categories: ['Philosophy', 'Society'],
@@ -154,7 +165,7 @@ const ALL_CASES = [
     desc: 'Examining historical and philosophical debates between Buddhist logicians and early Mimamsa scholars.'
   },
   {
-    number: 'CASE 017',
+    number: 'CASE 018',
     title: 'Was the Bhagavad Gītā Interpolated Into the Epic Later?',
     categoryLabel: 'Gītā • Itihāsa',
     categories: ['Bhagavad Gītā', 'Itihāsa'],
@@ -163,7 +174,7 @@ const ALL_CASES = [
     desc: 'Analyzing linguistic meters and structural continuity of the Gītā within the Bhīṣma Parva.'
   },
   {
-    number: 'CASE 018',
+    number: 'CASE 019',
     title: 'Are All Sanskrit Mantras Mystical Sound Keys?',
     categoryLabel: 'Language • Upanishads',
     categories: ['Language', 'Upanishads'],
@@ -172,7 +183,7 @@ const ALL_CASES = [
     desc: 'Deconstructing language theory in Vedic speech (Vak) vs modern psychological interpretations.'
   },
   {
-    number: 'CASE 019',
+    number: 'CASE 020',
     title: 'Did Chanakya Author the Entire Arthashastra?',
     categoryLabel: 'Ethics • Society',
     categories: ['Ethics', 'Society'],
@@ -181,7 +192,7 @@ const ALL_CASES = [
     desc: 'Evaluating textual layers and historic codifications of ancient statecraft and political ethics.'
   },
   {
-    number: 'CASE 020',
+    number: 'CASE 021',
     title: 'Does Hinduism Prohibit Crossing the Oceans?',
     categoryLabel: 'Society',
     categories: ['Society'],
@@ -190,7 +201,7 @@ const ALL_CASES = [
     desc: 'Investigating dynamic medieval rules on purity (Kala Pani) vs ancient active maritime trade routes.'
   },
   {
-    number: 'CASE 021',
+    number: 'CASE 022',
     title: 'Is Advaita the Only Authentic Upaniṣadic Philosophy?',
     categoryLabel: 'Upanishads • Philosophy',
     categories: ['Upanishads', 'Philosophy'],
@@ -199,7 +210,7 @@ const ALL_CASES = [
     desc: 'Reviewing non-dualism alongside qualified non-dualism (Viśiṣṭādvaita) and dualism (Dvaita) scriptural bases.'
   },
   {
-    number: 'CASE 022',
+    number: 'CASE 023',
     title: 'Does the Rigveda Mandate Cow Sacrifice (Gomedha)?',
     categoryLabel: 'Vedas • Ethics',
     categories: ['Vedas', 'Ethics'],
@@ -208,7 +219,7 @@ const ALL_CASES = [
     desc: 'Examining semantic interpretations of "Gomedha" and "Aghnya" in early Vedic liturgical layers.'
   },
   {
-    number: 'CASE 023',
+    number: 'CASE 024',
     title: 'Did Vyāsa Author Every Purāṇa Personally?',
     categoryLabel: 'Philosophy • Itihāsa',
     categories: ['Philosophy', 'Itihāsa'],
@@ -217,7 +228,7 @@ const ALL_CASES = [
     desc: 'Investigating the traditional role of Vyāsa as compiler vs regional authorship expansions.'
   },
   {
-    number: 'CASE 024',
+    number: 'CASE 025',
     title: 'Is Reincarnation Taught in the Earliest Vedas?',
     categoryLabel: 'Vedas • Philosophy',
     categories: ['Vedas', 'Philosophy'],
@@ -533,7 +544,7 @@ export function SatyaMithyaPage() {
               Every civilization carries beliefs that become accepted through repetition. Some are rooted directly in scripture. Others emerge through translation, historical evolution, commentary, or popular storytelling.
             </p>
             <p className="font-cormorant text-lg md:text-xl text-[#1C1C1A]/80 leading-relaxed font-light">
-              SATYA / MITHYĀ investigates these claims using the same rigorous editorial methodology applied throughout TATTVA. We seek neither to defend nor to attack, but to clarify the boundary between original scriptural sources and later popular traditions.
+              SATYA / MITHYĀ investigates these claims using the same rigorous editorial methodology applied throughout TATTVA. The objective is neither to defend nor to attack, but to clarify the boundary between original scriptural sources and later popular traditions.
             </p>
           </Reveal>
         </section>
@@ -542,7 +553,7 @@ export function SatyaMithyaPage() {
         <section className="py-12 border-t border-[#C58B52]/15 my-12">
           <Reveal>
             <span className="font-general text-[9px] uppercase tracking-[0.25em] text-[#C58B52] block mb-4 font-bold text-center">
-              Our Research Process
+              TATTVA's Research Process
             </span>
             <h2 className="font-instrument text-3xl text-[#1C1C1A] mb-12 text-center">
               How Every Investigation Works
@@ -815,7 +826,7 @@ export function SatyaMithyaPage() {
               Knowledge Connections
             </h2>
             <p className="font-cormorant text-center text-sm text-[#1C1C1A]/60 max-w-md mx-auto mb-12">
-              Discover how our investigations link back to cosmic principles, temporal layers, and philosophical models in the Library.
+              Discover how these investigations link back to cosmic principles, temporal layers, and philosophical models in the Library.
             </p>
           </Reveal>
 

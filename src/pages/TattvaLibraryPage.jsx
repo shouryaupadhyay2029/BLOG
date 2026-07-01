@@ -182,7 +182,7 @@ export function TattvaLibraryPage() {
           <p className="font-cormorant text-lg font-light text-[#0D0D0C]/60 leading-relaxed max-w-2xl">
             TATTVA is a living knowledge library dedicated to Sanātana Dharma.<br /><br />
             Every article is researched individually using primary scriptures, classical commentaries and careful editorial review before publication.<br /><br />
-            Rather than publishing unfinished material, new entries are added only after they meet our research standards.
+            Rather than publishing unfinished material, new entries are added only after they meet rigorous research standards.
           </p>
         </motion.div>
 
