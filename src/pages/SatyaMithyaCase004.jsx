@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -42,6 +42,9 @@ export function SatyaMithyaCase004() {
   const [activeThinkerIdx, setActiveThinkerIdx] = useState(0);
   const [expandedReformRow, setExpandedReformRow] = useState(null);
   const [expandedVerdictNote, setExpandedVerdictNote] = useState(false);
+  const [expandedAccessCard, setExpandedAccessCard] = useState(null);
+  const [expandedCaseStudy, setExpandedCaseStudy] = useState(null);
+  const [expandedScholarPanel, setExpandedScholarPanel] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +54,8 @@ export function SatyaMithyaCase004() {
         { id: 'section-scripture', label: 'Scriptural Investigation' },
         { id: 'section-gita', label: 'Bhagavad Gītā Investigation' },
         { id: 'section-history', label: 'Historical Development' },
+        { id: 'section-access', label: 'Duties, Rights and Access' },
+        { id: 'section-casestudies', label: 'Case Studies' },
         { id: 'section-distinction', label: 'Varṇa, Jāti and Untouchability' },
         { id: 'section-reformers', label: 'Reformers and Modern Scholarship' },
         { id: 'section-verdict', label: 'Final Verdict' },
@@ -79,6 +84,8 @@ export function SatyaMithyaCase004() {
     { label: 'Scriptural Investigation', checked: true, active: activeSection === 'Scriptural Investigation' },
     { label: 'Bhagavad Gītā Investigation', checked: true, active: activeSection === 'Bhagavad Gītā Investigation' },
     { label: 'Historical Development', checked: true, active: activeSection === 'Historical Development' },
+    { label: 'Duties & Access', checked: true, active: activeSection === 'Duties, Rights and Access' },
+    { label: 'Case Studies', checked: true, active: activeSection === 'Case Studies' },
     { label: 'Varṇa vs Jāti', checked: true, active: activeSection === 'Varṇa, Jāti and Untouchability' },
     { label: 'Reformers & Scholarship', checked: true, active: activeSection === 'Reformers and Modern Scholarship' },
     { label: 'Final Verdict', checked: activeSection === 'Final Verdict', active: activeSection === 'Final Verdict' }
@@ -1822,7 +1829,506 @@ export function SatyaMithyaCase004() {
           {/* TRANSITION & NEXT SECTION CTA */}
           <Reveal className="my-16 text-center max-w-xl mx-auto">
             <p className="font-cormorant text-base md:text-lg text-[#1C1C1A]/75 leading-relaxed mb-6">
-              History explains how societies changed. But one of the greatest sources of confusion still remains. Are Varṇa, Jāti and Untouchability actually the same thing?
+              Lived history shows continuous evolution. But what were the practical rules governing daily life? How did different social groups access religious education, rituals and duties?
+            </p>
+            <span className="font-general text-[7px] text-[#C58B52] block uppercase tracking-[0.25em] mb-2 font-bold">Next Phase</span>
+            <h4 className="font-instrument text-2xl text-[#9E2A2B] font-semibold">
+              Duties, Rights and Religious Access
+            </h4>
+          </Reveal>
+        </section>
+
+        {/* NEW SECTION: DUTIES, RIGHTS AND RELIGIOUS ACCESS */}
+        <section id="section-access" className="py-16 border-b border-[#C58B52]/20">
+          <Reveal>
+            <span className="font-general text-[8px] uppercase tracking-[0.2em] text-[#9E2A2B] block mb-2">
+              SECTION V • DUTIES, RIGHTS & ACCESS
+            </span>
+            <h2 className="font-instrument text-3xl md:text-4xl text-[#1C1C1A] mb-4">
+              Duties, Rights and Religious Access
+            </h2>
+            <p className="font-instrument italic text-base text-[#C58B52] mb-6">
+              Did different social groups have different religious duties and privileges?
+            </p>
+            <p className="font-cormorant text-base md:text-lg text-[#1C1C1A]/80 leading-relaxed font-light mb-8">
+              One of the most common questions readers ask is whether different social groups had different rights, duties and access to religious life. Some historical texts describe distinct responsibilities for different Varṇas. Other texts emphasize the spiritual potential of all human beings. Historical practice also changed across regions and centuries. Understanding these differences requires careful investigation rather than simple generalizations.
+            </p>
+          </Reveal>
+
+          {/* EXPANDABLE INVESTIGATION PANELS */}
+          <div className="my-10 space-y-4 select-none">
+            {[
+              {
+                q: "Did some texts assign different duties to different Varṇas?",
+                ans: "Yes. Texts like the Bhagavad Gītā (18.41–44) outline functional duties based on qualities (Guṇas) and actions (Karma), while Dharmashāstra manuals codify these into legalistic categories. However, different literary genres serve different purposes. While Dharmashāstras operate as prescriptive social-legal manuals representing the ideals of specific priestly schools, philosophical texts like the Gītā focus on inner qualities, and narrative Epics (Itihāsa) frequently record exceptions of individuals transcending their traditional roles."
+              },
+              {
+                q: "Were Vedic study and recitation discussed differently for different Varṇas?",
+                ans: "Yes. Traditional initiation (Upanayana) and formal Sanskrit Vedic study were historically prescribed for the twice-born (Dvija) classes, with legal commentators arguing that Vedic recitation required specific ritual purification. However, Hindu traditions also declared that the Epics (Itihāsa) and Purāṇas were specifically composed to make the highest spiritual knowledge accessible to everyone, regardless of Varṇa or gender. In practice, spiritual knowledge was shared widely through vernacular translations, oral storytelling, and folk arts."
+              },
+              {
+                q: "Were yajñas and major rituals restricted in some traditions?",
+                ans: "Yes. Large-scale public sacrifices (Śrauta Yajñas) required specific initiation, wealthy royal patronage, and specialized priests, which restricted direct participation. However, domestic rituals (Gṛhya acts) and temple-based devotional worship (Pūjā) allowed much broader regional participation. Lived history shows that daily religious practice for the vast majority of communities centered on localized shrines and community ceremonies rather than grand Vedic sacrifices."
+              },
+              {
+                q: "Did all Hindu traditions follow the same rules?",
+                ans: "No. The Hindu tradition is highly decentralized and diverse. Bhakti movements openly rejected ritualistic exclusions, declaring that direct devotion to the Divine transcends all social classes. Tantric traditions explicitly opened initiation (Dīkṣā) and advanced spiritual practice to everyone, asserting that spiritual capacity depends on spiritual initiation, not birth. Additionally, all Sannyāsa (ascetic) orders required renouncing Varṇa and caste identity completely."
+              }
+            ].map((card, idx) => {
+              const isOpen = expandedAccessCard === idx;
+              return (
+                <Reveal key={idx}>
+                  <div className="border border-[#C58B52]/25 bg-white/40 p-6 rounded-sm transition-all duration-300">
+                    <button
+                      onClick={() => setExpandedAccessCard(isOpen ? null : idx)}
+                      className="w-full flex justify-between items-center text-left focus:outline-none"
+                    >
+                      <span className="font-instrument text-base md:text-lg font-bold text-[#1C1C1A] pr-4">
+                        {card.q}
+                      </span>
+                      <span className="font-general text-[8.5px] uppercase tracking-widest text-[#C58B52] shrink-0">
+                        {isOpen ? '[ COLLAPSE ]' : '[ EXPAND ]'}
+                      </span>
+                    </button>
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="mt-4 pt-4 border-t border-[#C58B52]/10">
+                            <p className="font-cormorant text-sm md:text-base text-[#1C1C1A]/85 leading-relaxed font-light whitespace-pre-line">
+                              {card.ans}
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+
+          {/* SCRIPTURE VS HISTORY COMPARISON */}
+          <Reveal className="my-16">
+            <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">
+              Comparative Analysis
+            </span>
+            <div className="border border-[#C58B52]/20 bg-white/40 p-6 md:p-8 rounded-sm">
+              <span className="font-general text-[7px] text-[#C58B52] uppercase block tracking-widest mb-1.5 text-center">Synthesis Model</span>
+              <h4 className="font-instrument text-2xl text-[#9E2A2B] font-bold mb-6 text-center">
+                Scripture vs. Lived History
+              </h4>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                {/* Column 1 */}
+                <div className="border-b md:border-b-0 md:border-r border-[#C58B52]/15 pb-6 md:pb-0 md:pr-6">
+                  <span className="font-general text-[8.5px] text-[#9E2A2B] uppercase block tracking-wider mb-3 font-bold">Scriptural Prescriptions</span>
+                  <p className="font-cormorant text-sm text-[#1C1C1A]/80 leading-relaxed font-light">
+                    Normative, theoretical frameworks written by priestly scholars (e.g., Dharmashāstras). They describe an idealized social and ritual order, outlining what the authors believed society <em>ought</em> to do under cosmic law.
+                  </p>
+                </div>
+                {/* Column 2 */}
+                <div className="border-b md:border-b-0 md:border-r border-[#C58B52]/15 py-6 md:py-0 md:px-6">
+                  <span className="font-general text-[8.5px] text-[#9E2A2B] uppercase block tracking-wider mb-3 font-bold">Historical Practice</span>
+                  <p className="font-cormorant text-sm text-[#1C1C1A]/80 leading-relaxed font-light">
+                    Empirical evidence from stone inscriptions, copper plates, travelers' diaries, and court records. These show individuals regularly changing professions, performing rituals outside standard rules, and negotiating social status.
+                  </p>
+                </div>
+                {/* Column 3 */}
+                <div className="pt-6 md:pt-0 md:pl-6">
+                  <span className="font-general text-[8.5px] text-[#9E2A2B] uppercase block tracking-wider mb-3 font-bold">Regional Variation</span>
+                  <p className="font-cormorant text-sm text-[#1C1C1A]/80 leading-relaxed font-light">
+                    Local adaptations across the vast Indian subcontinent. Rules widely accepted in one kingdom or geographic zone were often completely unknown, modified, or rejected in others, reflecting a highly decentralized society.
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-[#C58B52]/15 mt-8 pt-4 text-center">
+                <p className="font-cormorant italic text-xs text-[#1C1C1A]/60 max-w-xl mx-auto leading-relaxed">
+                  <strong>Why these must not be treated as identical:</strong> Prescriptive manuals represent the ideals of their authors rather than a direct transcription of lived daily life. Conflating scriptural theory with historical reality overlooks the rich diversity of actual practices.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* SCHOLAR NOTE */}
+          <Reveal className="my-10">
+            <div className="border border-[#C58B52]/25 bg-[#F4EFE6] p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[#9E2A2B] text-xs">◆</span>
+                <span className="font-instrument text-base font-bold text-[#1C1C1A]">
+                  Scholar Note • Prescriptive Texts and Historical Reality
+                </span>
+              </div>
+              <p className="text-xs font-cormorant text-[#1C1C1A]/70 leading-relaxed font-light">
+                Many ancient legal and ritual texts describe how society ought to function according to their authors. Historians distinguish these prescriptive texts from evidence showing how people actually lived in different regions and historical periods. Understanding this distinction is essential for responsible historical analysis.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* MYTH VS EVIDENCE */}
+          <Reveal className="my-12">
+            <div className="border border-[#C58B52]/30 bg-white/40 p-6 md:p-8">
+              <span className="font-general text-[9px] uppercase tracking-widest text-[#C58B52] block mb-4 font-bold">
+                Myth vs. Evidence
+              </span>
+              <div className="flex justify-between items-baseline mb-4 border-b border-[#C58B52]/10 pb-2">
+                <span className="font-general text-[7px] text-[#1C1C1A]/40 uppercase tracking-widest block mb-1">Claim Statement</span>
+                <span className="font-general text-[8.5px] uppercase tracking-wider px-2 py-0.5 border border-red-700 bg-red-700/5 text-red-700 font-bold">
+                  🔴 Not Supported
+                </span>
+              </div>
+              <h4 className="font-instrument text-xl text-[#1C1C1A] font-semibold mb-4">
+                "Every Hindu community throughout history followed exactly the same religious restrictions."
+              </h4>
+              <p className="font-cormorant text-sm md:text-base text-[#1C1C1A]/70 leading-relaxed font-light">
+                Historical evidence demonstrates considerable variation across time, region and tradition. Tantric movements, Bhakti saints, and regional customary laws regularly challenged or operated entirely outside the strict boundaries described in standard Dharmashāstra texts.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* KEY OBSERVATIONS */}
+          <Reveal className="my-16">
+            <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">
+              Key Observations
+            </span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 select-none">
+              {[
+                'Different texts assign different social duties.',
+                'Literary genres serve different purposes.',
+                'Prescriptive texts are not identical to historical reality.',
+                'Regional practice varied considerably.',
+                'Bhakti and other traditions often expanded devotional participation.',
+                'Modern scholarship emphasizes distinguishing textual ideals from lived history.'
+              ].map((item, idx) => (
+                <div key={idx} className="border border-[#C58B52]/15 bg-white/20 p-5 flex items-start gap-3">
+                  <span className="text-[#9E2A2B] text-xs mt-0.5">◆</span>
+                  <p className="font-cormorant text-sm text-[#1C1C1A]/85 leading-relaxed font-light">{item}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* THINK ABOUT IT */}
+          <Reveal className="my-16 text-center max-w-lg mx-auto">
+            <span className="font-general text-[8px] uppercase tracking-[0.2em] text-[#9E2A2B] block mb-3 font-bold">
+              Think About It
+            </span>
+            <p className="font-instrument italic text-xl md:text-2xl text-[#1C1C1A]/85 leading-relaxed">
+              "How can we understand a civilization's spiritual history by looking only at its legal manuals while ignoring its devotional songs?"
+            </p>
+            <div className="w-12 h-[1px] bg-[#C58B52]/40 mx-auto mt-6" />
+          </Reveal>
+
+          {/* TRANSITION & NEXT SECTION CTA */}
+          <Reveal className="my-16 text-center max-w-xl mx-auto">
+            <p className="font-cormorant text-base md:text-lg text-[#1C1C1A]/75 leading-relaxed mb-6">
+              Distinguishing ideals from practice opens a further question. What do the actual narratives of the tradition reveal? Do scriptural and historical examples support one single understanding?
+            </p>
+            <span className="font-general text-[7px] text-[#C58B52] block uppercase tracking-[0.25em] mb-2 font-bold">Next Phase</span>
+            <h4 className="font-instrument text-2xl text-[#9E2A2B] font-semibold">
+              Case Studies from Scripture and Tradition
+            </h4>
+          </Reveal>
+        </section>
+
+        {/* NEW SECTION: CASE STUDIES FROM SCRIPTURE AND TRADITION */}
+        <section id="section-casestudies" className="py-16 border-b border-[#C58B52]/20">
+          <Reveal>
+            <span className="font-general text-[8px] uppercase tracking-[0.2em] text-[#9E2A2B] block mb-2">
+              SECTION VI • HISTORICAL CASE STUDIES
+            </span>
+            <h2 className="font-instrument text-3xl md:text-4xl text-[#1C1C1A] mb-4">
+              Case Studies from Scripture and Tradition
+            </h2>
+            <p className="font-instrument italic text-base text-[#C58B52] mb-6">
+              Do historical and scriptural examples support one single understanding of caste?
+            </p>
+            <p className="font-cormorant text-base md:text-lg text-[#1C1C1A]/80 leading-relaxed font-light mb-8">
+              Historical traditions are often understood through individual stories. Some narratives appear to reinforce existing social structures. Others appear to challenge them. Readers frequently encounter isolated examples used to support opposite conclusions — some citing evidence of social mobility, others citing evidence of exclusion. Examining both types of examples together prevents selective reading of the tradition.
+            </p>
+          </Reveal>
+
+          {/* SIX EXPANDABLE CASE STUDY CARDS */}
+          <Reveal className="my-4">
+            <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">
+              Primary Case Studies
+            </span>
+          </Reveal>
+          <div className="space-y-4 select-none mb-16">
+            {[
+              {
+                tag: 'CHĀNDOGYA UPANIṢAD',
+                name: 'Satyakāma Jābāla',
+                summary: 'A narrative frequently cited in discussions about truth, eligibility and the nature of spiritual education.',
+                body: `The Chāndogya Upaniṣad (4.4–9) records the story of Satyakāma Jābāla, a young student who wished to pursue formal Vedic education under the sage Gautama. When Gautama asked about his lineage, Satyakāma reported that his mother Jābālā did not know his father's identity, as she had served in many households. Gautama accepted him as a student, stating that one who speaks such truth could only be a Brāhmaṇa.\n\nTraditional interpretation: This passage has been cited by commentators such as Ādi Śaṅkarācārya as evidence that spiritual knowledge was accessible to those who demonstrated truthfulness and sincerity, independent of documented birth lineage.\n\nModern scholarly interpretation: Historians note that this narrative appears in a philosophical dialogue, not a legal manual. Some scholars read it as a deliberate challenge to ritualistic purity norms, while others observe it reflects an earlier period before later Dharmashāstric restrictions became codified. The narrative does not resolve wider historical questions about access to education.`
+              },
+              {
+                tag: 'BHAKTI TRADITION',
+                name: 'Vālmīki',
+                summary: 'Traditional biography of the author of the Rāmāyaṇa, frequently referenced in discussions about transformation and spiritual attainment.',
+                body: `Traditional accounts describe Vālmīki as having lived a life of wrongdoing before undergoing a profound spiritual transformation, ultimately composing the Rāmāyaṇa after receiving instruction from the sage Nārada. Some traditional narratives associate him with low birth or outcast communities, presenting his transformation as evidence that spiritual attainment transcends social origin.\n\nImportant distinction: These accounts represent hagiographical biography — pious traditional narration — rather than verifiable historical documentation. Modern scholarship does not have independent historical evidence about Vālmīki's actual life, background, or social status.\n\nWhy this narrative is cited: Bhakti and reform traditions have frequently invoked Vālmīki's story as evidence that devoted spiritual practice can transcend social origin. However, responsible interpretation must distinguish traditional narrative from historical claim.`
+              },
+              {
+                tag: 'VEDIC TRADITION',
+                name: 'Vedavyāsa',
+                summary: 'The traditional compiler of the Vedas and author of the Mahābhārata, whose lineage is cited in discussions about the relationship between birth and intellectual attainment.',
+                body: `According to tradition, Vedavyāsa — considered the compiler of the four Vedas, author of the Mahābhārata, and founder of the Purāṇic tradition — was born to Satyavatī, a fisherwoman, and the wandering sage Parāśara. This parentage places his birth outside typical Brāhmaṇa lineage conventions.\n\nWhy this is frequently cited: His traditional role as the foremost intellectual and spiritual authority in the Hindu canon, combined with mixed genealogy according to the texts themselves, is regularly cited as evidence that scriptural authority was not determined exclusively by birth in earlier traditions.\n\nScholarly caution: Historians note that Vedavyāsa is likely a composite attribution representing centuries of editorial and authorial activity across multiple traditions. Drawing direct social conclusions from a figure who may be as much literary construction as historical individual requires considerable methodological care.`
+              },
+              {
+                tag: 'MAHĀBHĀRATA',
+                name: 'Vidura',
+                summary: 'A figure in the Mahābhārata known for wisdom and counsel, whose social background is referenced in discussions about merit and position.',
+                body: `Vidura appears in the Mahābhārata as the half-brother of Dhṛtarāṣṭra and Pāṇḍu, and serves as chief minister (Mahāmātra) of Hastināpura. According to the text, his birth was to a Śūdra mother and a sage father, placing him outside conventional Kṣatriya lineage. Yet he is consistently portrayed as the voice of ethical wisdom, whose counsel is sought by kings and who embodies the principle that knowledge and dharmic discernment transcend social origin.\n\nTraditional reading: Vidura is cited in classical commentary as an exemplar of wisdom, demonstrating that qualities of understanding and right conduct are not determined by birth status.\n\nMahābhārata context: This narrative exists within an epic that itself repeatedly interrogates the relationship between lineage, quality and duty. The Mahābhārata as a literary tradition does not present a single uniform position on caste.`
+              },
+              {
+                tag: 'MAHĀBHĀRATA — MOST DEBATED',
+                name: 'Ekalavya',
+                summary: 'One of the most frequently debated episodes in discussions about social exclusion, talent and systemic hierarchy. Multiple conflicting interpretations exist.',
+                body: `The Mahābhārata describes Ekalavya as a young Niṣāda prince who wished to learn archery from the renowned teacher Droṇācārya. When Droṇa refused to accept him as a student — the text suggests because Droṇa had pledged to make Arjuna the greatest archer — Ekalavya taught himself by creating a clay image of Droṇa and practising before it. He attained extraordinary skill. When Droṇa later encountered Ekalavya and demanded his right thumb as guru-dakṣiṇā (the customary gift to a teacher), Ekalavya gave it.\n\nInterpretation divergence: This is genuinely one of the most debated episodes in discussions about caste and social exclusion.\n\n• Traditional interpretation: Some classical commentators read this as Droṇa recognising a deeper spiritual connection and Ekalavya fulfilling his dharmic obligation of gratitude.\n\n• Reform and critical interpretation: Modern readers and reform traditions widely read this as an episode illustrating how institutional access to education and mentorship was restricted along lines of social origin, and how exceptional ability was systematically suppressed.\n\n• Neither interpretation is universally accepted. The text itself does not offer a single moral resolution. The Mahābhārata presents the episode and allows readers to evaluate it.\n\nHistorical significance: The episode's continued presence in scholarly and public debate reflects genuine unresolved questions about how social access functioned in practice across different historical periods.`
+              },
+              {
+                tag: 'BHAKTI MOVEMENT',
+                name: 'Nandanar',
+                summary: 'A Tamil Nāyaṉār saint from the Bhakti tradition, cited in discussions about devotional access beyond social boundaries.',
+                body: `Nandanar (also called Thirunaḷaiyār Nandanar) is revered as one of the 63 Nāyaṉār saints of the Tamil Śaiva tradition. According to the hagiographical literature of the Periya Purāṇam, Nandanar was born into a Dalit community traditionally associated with drumming and funerary duties. Despite facing rejection at temple sites due to his social origin, his intense devotion to Śiva eventually led, according to the tradition, to a miraculous transformation that granted him access to the sacred space of Chidambaram.\n\nWhy this narrative matters: The Bhakti traditions of South India repeatedly produced saints, poets and mystics from across the social spectrum, many of whom explicitly challenged the authority of ritual specialists to control access to the divine. These traditions are significant evidence of internal dissent within Hindu civilization.\n\nHistorical note: Hagiographies are devotional literature that preserve the memory of saints as understood by their community of practice. They provide evidence of how communities understood and contested social boundaries, even if the miraculous elements are understood differently by traditional believers and modern historians.`
+              }
+            ].map((cs, idx) => {
+              const isOpen = expandedCaseStudy === idx;
+              return (
+                <Reveal key={idx}>
+                  <div className={`border bg-white/40 transition-all duration-300 ${isOpen ? 'border-[#9E2A2B]/40' : 'border-[#C58B52]/25'}`}>
+                    <button
+                      onClick={() => setExpandedCaseStudy(isOpen ? null : idx)}
+                      className="w-full p-6 flex items-start justify-between text-left focus:outline-none group"
+                    >
+                      <div className="flex-1 pr-4">
+                        <span className="font-general text-[7.5px] uppercase tracking-[0.25em] text-[#C58B52] block mb-1.5 font-bold">{cs.tag}</span>
+                        <h4 className="font-instrument text-xl md:text-2xl text-[#1C1C1A] font-bold mb-1">{cs.name}</h4>
+                        <p className="font-cormorant text-sm text-[#1C1C1A]/60 leading-relaxed font-light">{cs.summary}</p>
+                      </div>
+                      <div className="shrink-0 mt-1">
+                        <span className={`font-general text-[8px] uppercase tracking-widest font-bold transition-colors ${isOpen ? 'text-[#9E2A2B]' : 'text-[#C58B52]'}`}>
+                          {isOpen ? '[ COLLAPSE ]' : '[ INVESTIGATE ]'}
+                        </span>
+                      </div>
+                    </button>
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-6 pb-6 border-t border-[#C58B52]/15 pt-5">
+                            {cs.body.split('\n\n').map((para, pi) => (
+                              <p key={pi} className={`font-cormorant text-sm md:text-base text-[#1C1C1A]/80 leading-relaxed font-light mb-4 last:mb-0 ${para.startsWith('•') ? 'ml-4' : ''}`}>
+                                {para}
+                              </p>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+
+          {/* THREE-COLUMN CLASSIFICATION PANEL */}
+          <Reveal className="my-16">
+            <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">
+              Comparative Classification
+            </span>
+            <div className="border border-[#C58B52]/20 bg-white/40 p-6 md:p-8 rounded-sm">
+              <span className="font-general text-[7px] text-[#C58B52] uppercase block tracking-widest mb-1.5 text-center">Examples Often Cited</span>
+              <h4 className="font-instrument text-2xl text-[#9E2A2B] font-bold mb-8 text-center">
+                How These Narratives Have Been Interpreted
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#C58B52]/15">
+                {[
+                  {
+                    label: 'Supporting Rigid Hierarchy',
+                    color: 'text-[#9E2A2B]',
+                    bg: 'bg-[#9E2A2B]/5',
+                    items: ["Drona refusal of Ekalavya as a formal student", "Dharmashastra prescriptions assigning ritual roles by Varna", "Temple entry restrictions documented in some historical periods", "Textual prohibitions on Shudra Vedic study in Manusmriti"]
+                  },
+                  {
+                    label: 'Challenging Rigid Hierarchy',
+                    color: 'text-emerald-700',
+                    bg: 'bg-emerald-700/5',
+                    items: ["Satyakama accepted on grounds of truthfulness rather than lineage", "Vedavyasa authority despite mixed genealogy", "Vidura wisdom transcending his social origin", "Bhakti saints across the social spectrum achieving revered status"]
+                  },
+                  {
+                    label: 'Historically Debated',
+                    color: 'text-[#C58B52]',
+                    bg: 'bg-[#C58B52]/5',
+                    items: ["Ekalavya episode: multiple valid traditional and modern readings", "Valmiki biography: hagiography vs. historical claim", "What acceptance meant in specific historical contexts", "Whether Epics reflect descriptive or prescriptive social norms"]
+                  }
+                ].map((col, ci) => (
+                  <div key={ci} className={`${col.bg} p-6 ${ci < 2 ? 'border-b md:border-b-0 md:border-r' : ''} border-[#C58B52]/15`}>
+                    <span className={`font-general text-[8.5px] uppercase block tracking-wider mb-4 font-bold ${col.color}`}>{col.label}</span>
+                    <ul className="space-y-3">
+                      {col.items.map((item, ii) => (
+                        <li key={ii} className="flex items-start gap-2">
+                          <span className={`text-xs mt-0.5 shrink-0 ${col.color}`}>◆</span>
+                          <p className="font-cormorant text-sm text-[#1C1C1A]/80 leading-relaxed font-light">{item}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="border-t border-[#C58B52]/15 mt-6 pt-4">
+                <p className="font-cormorant italic text-xs text-[#1C1C1A]/60 max-w-2xl mx-auto leading-relaxed text-center">
+                  Different narratives have been interpreted differently by traditional schools, reform movements and modern scholars. The same text can carry different meanings in different interpretive contexts.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* EDITORIAL NOTE */}
+          <Reveal className="my-10">
+            <div className="border-l-2 border-[#9E2A2B] bg-[#F4EFE6] p-6 md:p-8">
+              <span className="font-general text-[8px] uppercase tracking-widest text-[#9E2A2B] block mb-3 font-bold">Editorial Note</span>
+              <h4 className="font-instrument text-xl text-[#1C1C1A] font-bold mb-3">One Story Is Not an Entire Civilization</h4>
+              <p className="font-cormorant text-sm md:text-base text-[#1C1C1A]/75 leading-relaxed font-light">
+                Individual narratives are valuable historical and literary sources, but they should not automatically be treated as universal descriptions of every community, every period or every tradition. A civilization spanning several thousand years across a vast and diverse subcontinent contains far more evidence than any single story can represent. Responsible historical investigation considers both individual examples and the broader linguistic, scriptural and historical record.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* EXPANDABLE SCHOLAR PERSPECTIVES */}
+          <Reveal className="my-10">
+            <div className="border border-[#C58B52]/25 bg-white/40">
+              <button
+                onClick={() => setExpandedScholarPanel(!expandedScholarPanel)}
+                className="w-full p-6 flex justify-between items-center text-left focus:outline-none"
+              >
+                <div>
+                  <span className="font-general text-[8px] uppercase tracking-widest text-[#C58B52] block mb-1 font-bold">Scholar Perspectives</span>
+                  <span className="font-instrument text-base font-bold text-[#1C1C1A]">How do historians and Indologists interpret these narratives?</span>
+                </div>
+                <span className="font-general text-[8px] uppercase tracking-widest text-[#C58B52] shrink-0 ml-4">
+                  {expandedScholarPanel ? '[ COLLAPSE ]' : '[ EXPAND ]'}
+                </span>
+              </button>
+              <AnimatePresence>
+                {expandedScholarPanel && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 border-t border-[#C58B52]/15 pt-5 grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div>
+                        <span className="font-general text-[8px] uppercase tracking-widest text-emerald-700 block mb-3 font-bold">Areas of Broad Agreement</span>
+                        <ul className="space-y-3">
+                          {[
+                            'Individual scriptural narratives cannot be treated as universal social descriptions.',
+                            'Epics and Upaniṣads are not legal codes; they serve different literary and philosophical purposes.',
+                            'Hagiographical accounts preserve community memory but require careful historical evaluation.',
+                            'The Bhakti tradition produced documented evidence of trans-boundary devotional participation.',
+                            'The same narrative frequently carries different meanings across different interpretive traditions.'
+                          ].map((pt, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-emerald-700 text-xs mt-0.5 shrink-0">◆</span>
+                              <p className="font-cormorant text-sm text-[#1C1C1A]/80 leading-relaxed font-light">{pt}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <span className="font-general text-[8px] uppercase tracking-widest text-[#9E2A2B] block mb-3 font-bold">Areas of Continuing Debate</span>
+                        <ul className="space-y-3">
+                          {[
+                            'Whether the Ekalavya episode reflects a descriptive reality or a deliberate moral challenge.',
+                            'How much social mobility actually existed in practice across different historical periods.',
+                            'Whether Bhakti traditions represented genuine social transformation or devotional exception within existing hierarchies.',
+                            'The historical relationship between textual exception and lived social practice.',
+                            'How narrative authority was constructed and contested within different traditions.'
+                          ].map((pt, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-[#9E2A2B] text-xs mt-0.5 shrink-0">◆</span>
+                              <p className="font-cormorant text-sm text-[#1C1C1A]/80 leading-relaxed font-light">{pt}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </Reveal>
+
+          {/* MYTH VS EVIDENCE */}
+          <Reveal className="my-12">
+            <div className="border border-[#C58B52]/30 bg-white/40 p-6 md:p-8">
+              <span className="font-general text-[9px] uppercase tracking-widest text-[#C58B52] block mb-4 font-bold">
+                Myth vs. Evidence
+              </span>
+              <div className="flex flex-wrap justify-between items-baseline mb-4 border-b border-[#C58B52]/10 pb-2 gap-2">
+                <span className="font-general text-[7px] text-[#1C1C1A]/40 uppercase tracking-widest block">Claim Statement</span>
+                <span className="font-general text-[8.5px] uppercase tracking-wider px-2 py-0.5 border border-red-700 bg-red-700/5 text-red-700 font-bold">
+                  🔴 Not Supported
+                </span>
+              </div>
+              <h4 className="font-instrument text-xl text-[#1C1C1A] font-semibold mb-4">
+                "One story is enough to explain the entire history of caste."
+              </h4>
+              <p className="font-cormorant text-sm md:text-base text-[#1C1C1A]/70 leading-relaxed font-light">
+                Individual narratives illuminate important aspects of the tradition, but they cannot substitute for the broader linguistic, scriptural and historical evidence examined throughout this investigation. A civilization spanning thousands of years across a continent-sized subcontinent requires correspondingly broad evidence to evaluate responsibly.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* KEY OBSERVATIONS */}
+          <Reveal className="my-16">
+            <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">
+              Key Observations
+            </span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 select-none">
+              {[
+                'Scriptural narratives are diverse and serve multiple literary purposes.',
+                'Some stories appear to reinforce existing social structures.',
+                'Others explicitly question or transcend those structures.',
+                'Traditional interpretations of the same narrative frequently differ.',
+                'Modern scholarship continues to debate many of these narratives.',
+                'No single example can explain the entire historical development of caste.'
+              ].map((item, idx) => (
+                <div key={idx} className="border border-[#C58B52]/15 bg-white/20 p-5 flex items-start gap-3">
+                  <span className="text-[#9E2A2B] text-xs mt-0.5">◆</span>
+                  <p className="font-cormorant text-sm text-[#1C1C1A]/85 leading-relaxed font-light">{item}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* THINK ABOUT IT */}
+          <Reveal className="my-16 text-center max-w-lg mx-auto">
+            <span className="font-general text-[8px] uppercase tracking-[0.2em] text-[#9E2A2B] block mb-3 font-bold">
+              Think About It
+            </span>
+            <p className="font-instrument italic text-xl md:text-2xl text-[#1C1C1A]/85 leading-relaxed">
+              "Can one civilization spanning thousands of years be understood through only one story?"
+            </p>
+            <div className="w-12 h-[1px] bg-[#C58B52]/40 mx-auto mt-6" />
+          </Reveal>
+
+          {/* TRANSITION & NEXT SECTION CTA */}
+          <Reveal className="my-16 text-center max-w-xl mx-auto">
+            <p className="font-cormorant text-base md:text-lg text-[#1C1C1A]/75 leading-relaxed mb-6">
+              Individual stories provide valuable insight into how communities understood themselves and their traditions. The broader conceptual question, however, still requires investigation. How do the core categories of Varṇa, Jāti and Untouchability actually relate to each other?
             </p>
             <span className="font-general text-[7px] text-[#C58B52] block uppercase tracking-[0.25em] mb-2 font-bold">Next Phase</span>
             <h4 className="font-instrument text-2xl text-[#9E2A2B] font-semibold">
@@ -1831,11 +2337,11 @@ export function SatyaMithyaCase004() {
           </Reveal>
         </section>
 
-        {/* SECTION VI: VARNA, JATI AND UNTOUCHABILITY */}
+        {/* SECTION VII: VARNA, JATI AND UNTOUCHABILITY */}
         <section id="section-distinction" className="py-16 border-b border-[#C58B52]/20">
           <Reveal>
             <span className="font-general text-[8px] uppercase tracking-[0.2em] text-[#9E2A2B] block mb-2">
-              SECTION V • CONCEPTUAL DISTINCTIONS
+              SECTION VII • CONCEPTUAL DISTINCTIONS
             </span>
             <h2 className="font-instrument text-3xl md:text-4xl text-[#1C1C1A] mb-4">
               Varṇa, Jāti and Untouchability
@@ -2116,11 +2622,11 @@ export function SatyaMithyaCase004() {
           </Reveal>
         </section>
 
-        {/* SECTION VII: VOICES ACROSS HISTORY */}
+        {/* SECTION VIII: VOICES ACROSS HISTORY */}
         <section id="section-reformers" className="py-16 border-b border-[#C58B52]/20">
           <Reveal>
             <span className="font-general text-[8px] uppercase tracking-[0.2em] text-[#9E2A2B] block mb-2">
-              SECTION VI • VOICES ACROSS HISTORY
+              SECTION VIII • VOICES ACROSS HISTORY
             </span>
             <h2 className="font-instrument text-3xl md:text-4xl text-[#1C1C1A] mb-4">
               Voices Across History
@@ -2449,11 +2955,11 @@ export function SatyaMithyaCase004() {
           </Reveal>
         </section>
 
-        {/* SECTION VIII: FINAL VERDICT */}
+        {/* SECTION IX: FINAL VERDICT */}
         <section id="section-verdict" className="py-16 border-b border-[#C58B52]/20">
           <Reveal>
             <span className="font-general text-[8px] uppercase tracking-[0.2em] text-[#9E2A2B] block mb-2">
-              SECTION VII • CONCLUSION
+              SECTION IX • CONCLUSION
             </span>
             <h2 className="font-instrument text-3xl md:text-4xl text-[#1C1C1A] mb-4">
               Final Verdict
