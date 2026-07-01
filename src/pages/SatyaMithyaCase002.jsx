@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useScrollSpy from '@/hooks/useScrollSpy';
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
 
@@ -31,7 +32,6 @@ function GrainCanvas() {
 
 export function SatyaMithyaCase002() {
   // Page states for active stages
-  const [activeSection, setActiveSection] = useState('Claim Identified');
   const [isBottomReached, setIsBottomReached] = useState(false);
 
   // SECTION 1 (Linguistic Explorer)
@@ -63,41 +63,36 @@ export function SatyaMithyaCase002() {
   const [verdictTab, setVerdictTab] = useState('Linguistic');
 
   // Scrollspy active section
+  const spySections = useMemo(() => [
+    { id: 'section-hero', label: 'Claim Identified' },
+    { id: 'section-word', label: 'Language Investigated' },
+    { id: 'section-vedic', label: 'Scriptural Evidence' },
+    { id: 'section-devas', label: 'Cosmic Administration' },
+    { id: 'section-evolution', label: 'Historical Development' },
+    { id: 'section-plurality', label: 'Philosophical Context' },
+    { id: 'section-misconceptions', label: 'Common Misconceptions' },
+    { id: 'section-scholars', label: 'Scholar Perspectives' },
+    { id: 'section-verdict', label: 'Final Verdict' },
+    { id: 'section-reflection', label: 'Final Reflection' }
+  ], []);
+
+  const activeSection = useScrollSpy(spySections, { rootMargin: '-20% 0px -60% 0px' });
+
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    let ticking = false;
     const handleScroll = () => {
-      const sections = [
-        { id: 'section-hero', label: 'Claim Identified' },
-        { id: 'section-word', label: 'Language Investigated' },
-        { id: 'section-vedic', label: 'Scriptural Evidence' },
-        { id: 'section-devas', label: 'Cosmic Administration' },
-        { id: 'section-evolution', label: 'Historical Development' },
-        { id: 'section-plurality', label: 'Philosophical Context' },
-        { id: 'section-misconceptions', label: 'Common Misconceptions' },
-        { id: 'section-scholars', label: 'Scholar Perspectives' },
-        { id: 'section-verdict', label: 'Final Verdict' },
-        { id: 'section-reflection', label: 'Final Reflection' }
-      ];
-
-      let current = 'Claim Identified';
-      for (const s of sections) {
-        const el = document.getElementById(s.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 260) {
-            current = s.label;
-          }
-        }
-      }
-      setActiveSection(current);
-
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 150) {
-        setIsBottomReached(true);
-      } else {
-        setIsBottomReached(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const reached = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 180;
+          setIsBottomReached(reached);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -431,6 +426,14 @@ export function SatyaMithyaCase002() {
             SATYA & MITHYĀ
           </span>
         </Link>
+
+<Link to="/the-origin" className="group flex items-center">
+  <span 
+    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+  >
+    THE ORIGIN
+  </span>
+</Link>
       </nav>
 
       {/* STICKY EVIDENCE SIDEBAR PANEL */}

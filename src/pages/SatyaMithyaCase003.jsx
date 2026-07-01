@@ -443,6 +443,14 @@ export function SatyaMithyaCase003() {
             SATYA & MITHYĀ
           </span>
         </Link>
+
+<Link to="/the-origin" className="group flex items-center">
+  <span 
+    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+  >
+    THE ORIGIN
+  </span>
+</Link>
       </nav>
 
       {/* STICKY EVIDENCE SIDEBAR PANEL */}

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useScrollSpy from '@/hooks/useScrollSpy';
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
 
@@ -143,7 +144,6 @@ function GrainCanvas() {
 }
 
 export function SatyaMithyaCase005() {
-  const [activeSection, setActiveSection] = useState('Claim Defined');
   const [expandedStoryNote, setExpandedStoryNote] = useState(false);
   const [activeVedicTab, setActiveVedicTab] = useState(0);
   const [expandedCompareRow, setExpandedCompareRow] = useState(null);
@@ -173,36 +173,19 @@ export function SatyaMithyaCase005() {
   const [expandedDebateCard, setExpandedDebateCard] = useState(null);
   const [expandedScholarRow, setExpandedScholarRow] = useState(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        { id: 'section-hero', label: 'Claim Defined' },
-        { id: 'section-language', label: 'Language Investigation' },
-        { id: 'section-vedic', label: 'Vedic Investigation' },
-        { id: 'section-later-scriptures', label: 'Later Scriptures' },
-        { id: 'section-historical-development', label: 'Historical Development' },
-        { id: 'section-why-spread', label: 'Why Did Sati Spread?' },
-        { id: 'section-case-studies', label: 'Case Studies' },
-        { id: 'section-modern-scholarship', label: 'Modern Scholarship' },
-        { id: 'section-final-verdict', label: 'Final Verdict' }
-      ];
+  const spySections = useMemo(() => [
+    { id: 'section-hero', label: 'Claim Defined' },
+    { id: 'section-language', label: 'Language Investigation' },
+    { id: 'section-vedic', label: 'Vedic Investigation' },
+    { id: 'section-later-scriptures', label: 'Later Scriptures' },
+    { id: 'section-historical-development', label: 'Historical Development' },
+    { id: 'section-why-spread', label: 'Why Did Sati Spread?' },
+    { id: 'section-case-studies', label: 'Case Studies' },
+    { id: 'section-modern-scholarship', label: 'Modern Scholarship' },
+    { id: 'section-final-verdict', label: 'Final Verdict' }
+  ], []);
 
-      let current = 'Claim Defined';
-      for (const section of sections) {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 260) {
-            current = section.label;
-          }
-        }
-      }
-      setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const activeSection = useScrollSpy(spySections, { rootMargin: '-20% 0px -60% 0px' });
 
   const otherCases = [
     { number: '#001', title: 'Does the Bhagavad Gītā Teach War?', id: 'does-gita-teach-war' },
@@ -336,6 +319,14 @@ export function SatyaMithyaCase005() {
             SATYA & MITHYĀ
           </span>
         </Link>
+
+<Link to="/the-origin" className="group flex items-center">
+  <span 
+    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+  >
+    THE ORIGIN
+  </span>
+</Link>
       </nav>
 
       {/* STICKY EVIDENCE SIDEBAR PANEL */}

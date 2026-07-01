@@ -14,4 +14,27 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('framer-motion')) {
+              return 'vendor-framer-motion';
+            }
+            if (id.includes('gsap')) {
+              return 'vendor-gsap';
+            }
+            if (id.includes('react-router-dom') || id.includes('@remix-run') || id.includes('react-router')) {
+              return 'vendor-router';
+            }
+            if (id.includes('react') || id.includes('scheduler')) {
+              return 'vendor-react-core';
+            }
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
 })

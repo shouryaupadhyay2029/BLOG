@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, memo } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -100,7 +100,7 @@ const fadeInBlur = (delay = 0, duration = 1.6, blur = 4) => ({
 /* ─────────────────────────────────────────────────────────────────
    GRAIN LAYERS (Static)
    ──────────────────────────────────────────────────────────────── */
-function GrainCanvas() {
+const GrainCanvas = memo(function GrainCanvas() {
   return (
     <>
       <div
@@ -120,12 +120,12 @@ function GrainCanvas() {
       />
     </>
   );
-}
+});
 
 /* ─────────────────────────────────────────────────────────────────
    VIGNETTE
    ──────────────────────────────────────────────────────────────── */
-function Vignette() {
+const Vignette = memo(function Vignette() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1]">
       <div className="absolute inset-0" style={{
@@ -139,12 +139,12 @@ function Vignette() {
       }} />
     </div>
   );
-}
+});
 
 /* ─────────────────────────────────────────────────────────────────
    ABSTRACT FORMS
    ──────────────────────────────────────────────────────────────── */
-function SacredGeometryAnchor() {
+const SacredGeometryAnchor = memo(function SacredGeometryAnchor() {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
@@ -207,9 +207,9 @@ function SacredGeometryAnchor() {
       <div className="absolute top-1/2 left-[-10%] right-[-10%] h-[1px] bg-[#1A1A1A] -translate-y-1/2 opacity-20 -rotate-45" />
     </motion.div>
   );
-}
+});
 
-function AbstractForms() {
+const AbstractForms = memo(function AbstractForms() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[2] overflow-hidden">
       <motion.div
@@ -234,7 +234,7 @@ function AbstractForms() {
       />
     </div>
   );
-}
+});
 
 /* ─────────────────────────────────────────────────────────────────
    WORDMARK
@@ -317,7 +317,7 @@ function Wordmark() {
   );
 }
 
-function TopNav() {
+const TopNav = memo(function TopNav() {
   return (
     <motion.div
       variants={fadeInBlur(0.2, 1.8, 2)}
@@ -350,9 +350,17 @@ function TopNav() {
           SATYA & MITHYĀ
         </span>
       </Link>
+      
+      <Link to="/the-origin" className="group flex items-center">
+        <span 
+          className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
+        >
+          THE ORIGIN
+        </span>
+      </Link>
     </motion.div>
   );
-}
+});
 
 /* ─────────────────────────────────────────────────────────────────
    ARCHIVAL COUNTER
@@ -586,7 +594,7 @@ function QuoteEngine() {
 /* ─────────────────────────────────────────────────────────────────
    TAGLINE
    ──────────────────────────────────────────────────────────────── */
-function Tagline() {
+const Tagline = memo(function Tagline() {
   return (
     <motion.p
       variants={fadeUpBlur(1.6, 10, 2)}
@@ -604,12 +612,12 @@ function Tagline() {
       {'A space for reflection,\nwisdom and inquiry.'}
     </motion.p>
   );
-}
+});
 
 /* ─────────────────────────────────────────────────────────────────
    SCROLL CUE
    ──────────────────────────────────────────────────────────────── */
-function ScrollCue() {
+const ScrollCue = memo(function ScrollCue() {
   return (
     <motion.div
       variants={fadeInBlur(2.0, 2, 2)}
@@ -644,7 +652,7 @@ function ScrollCue() {
       </span>
     </motion.div>
   );
-}
+});
 
 /* ─────────────────────────────────────────────────────────────────
    ROOT HERO

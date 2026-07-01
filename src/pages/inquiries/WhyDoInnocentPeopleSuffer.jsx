@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useScrollSpy from '@/hooks/useScrollSpy';
 
 function GrainCanvas() {
   return (
@@ -65,27 +66,8 @@ const SECTIONS = [
 ];
 
 export function WhyDoInnocentPeopleSuffer() {
-  const [activeSection, setActiveSection] = useState('intro');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      let current = 'intro';
-      for (const section of SECTIONS) {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2) {
-            current = section.id;
-          }
-        }
-      }
-      setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const spySections = useMemo(() => SECTIONS, []);
+  const activeSection = useScrollSpy(spySections, { rootMargin: '-10% 0px -50% 0px' });
 
   return (
     <div className="relative w-full min-h-screen bg-[#0D0D0C] text-[#E9E2D4] flex flex-col items-center font-sans antialiased overflow-x-hidden">

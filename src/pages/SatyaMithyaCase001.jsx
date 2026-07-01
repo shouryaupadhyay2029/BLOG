@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useScrollSpy from '@/hooks/useScrollSpy';
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
 
@@ -53,36 +54,16 @@ export function SatyaMithyaCase001() {
   const [transparencyOpen, setTransparencyOpen] = useState(false);
 
   // Scrollspy Active Section State
-  const [activeSection, setActiveSection] = useState('Claim Defined');
+  const spySections = useMemo(() => [
+    { id: 'section-hero', label: 'Claim Defined' },
+    { id: 'section-timeline', label: 'Historical Context' },
+    { id: 'section-crisis', label: 'Arjuna\'s Crisis' },
+    { id: 'section-response', label: 'Kṛṣṇa\'s Response' },
+    { id: 'section-evidence', label: 'Evidence Reviewed' },
+    { id: 'section-verdict', label: 'Final Verdict' },
+  ], []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        { id: 'section-hero', label: 'Claim Defined' },
-        { id: 'section-timeline', label: 'Historical Context' },
-        { id: 'section-crisis', label: 'Arjuna\'s Crisis' },
-        { id: 'section-response', label: 'Kṛṣṇa\'s Response' },
-        { id: 'section-evidence', label: 'Evidence Reviewed' },
-        { id: 'section-verdict', label: 'Final Verdict' },
-      ];
-
-      let current = 'Claim Defined';
-      for (const section of sections) {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          // Adjust threshold to match user's reading viewport
-          if (rect.top <= 260) {
-            current = section.label;
-          }
-        }
-      }
-      setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const activeSection = useScrollSpy(spySections, { rootMargin: '-20% 0px -60% 0px' });
 
   const otherCases = [
     { number: '#002', title: 'Are there really 33 crore gods?', id: 'are-there-really-33-crore-gods' },
@@ -601,6 +582,14 @@ export function SatyaMithyaCase001() {
             SATYA & MITHYĀ
           </span>
         </Link>
+
+<Link to="/the-origin" className="group flex items-center">
+  <span 
+    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+  >
+    THE ORIGIN
+  </span>
+</Link>
       </nav>
 
       {/* STICKY EVIDENCE SIDEBAR PANEL WITH SCROLL-SPY ACTIVE STAGES */}

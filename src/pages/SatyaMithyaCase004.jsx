@@ -1,6 +1,7 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useScrollSpy from '@/hooks/useScrollSpy';
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
 
@@ -30,7 +31,6 @@ function GrainCanvas() {
 }
 
 export function SatyaMithyaCase004() {
-  const [activeSection, setActiveSection] = useState('Claim Defined');
   const [activeLexMeaningIdx, setActiveLexMeaningIdx] = useState(null);
   const [expandedHistoricalOrigin, setExpandedHistoricalOrigin] = useState(false);
   const [activeTimelineIdx, setActiveTimelineIdx] = useState(0);
@@ -46,37 +46,20 @@ export function SatyaMithyaCase004() {
   const [expandedCaseStudy, setExpandedCaseStudy] = useState(null);
   const [expandedScholarPanel, setExpandedScholarPanel] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        { id: 'section-hero', label: 'Claim Defined' },
-        { id: 'section-language', label: 'Language Investigation' },
-        { id: 'section-scripture', label: 'Scriptural Investigation' },
-        { id: 'section-gita', label: 'Bhagavad Gītā Investigation' },
-        { id: 'section-history', label: 'Historical Development' },
-        { id: 'section-access', label: 'Duties, Rights and Access' },
-        { id: 'section-casestudies', label: 'Case Studies' },
-        { id: 'section-distinction', label: 'Varṇa, Jāti and Untouchability' },
-        { id: 'section-reformers', label: 'Reformers and Modern Scholarship' },
-        { id: 'section-verdict', label: 'Final Verdict' },
-      ];
+  const spySections = useMemo(() => [
+    { id: 'section-hero', label: 'Claim Defined' },
+    { id: 'section-language', label: 'Language Investigation' },
+    { id: 'section-scripture', label: 'Scriptural Investigation' },
+    { id: 'section-gita', label: 'Bhagavad Gītā Investigation' },
+    { id: 'section-history', label: 'Historical Development' },
+    { id: 'section-access', label: 'Duties, Rights and Access' },
+    { id: 'section-casestudies', label: 'Case Studies' },
+    { id: 'section-distinction', label: 'Varṇa, Jāti and Untouchability' },
+    { id: 'section-reformers', label: 'Reformers and Modern Scholarship' },
+    { id: 'section-verdict', label: 'Final Verdict' },
+  ], []);
 
-      let current = 'Claim Defined';
-      for (const section of sections) {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 260) {
-            current = section.label;
-          }
-        }
-      }
-      setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const activeSection = useScrollSpy(spySections, { rootMargin: '-20% 0px -60% 0px' });
 
   const sidebarSteps = [
     { label: 'Claim Identified', checked: true, active: activeSection === 'Claim Defined' },
@@ -779,6 +762,14 @@ export function SatyaMithyaCase004() {
             SATYA & MITHYĀ
           </span>
         </Link>
+
+<Link to="/the-origin" className="group flex items-center">
+  <span 
+    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+  >
+    THE ORIGIN
+  </span>
+</Link>
       </nav>
 
       {/* STICKY EVIDENCE SIDEBAR PANEL */}
