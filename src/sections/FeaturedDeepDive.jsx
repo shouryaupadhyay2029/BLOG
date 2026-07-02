@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const EASE_EXPO = [0.16, 1, 0.3, 1];
 
@@ -60,10 +61,10 @@ export function FeaturedDeepDive() {
     >
       <CreamGrainCanvas />
       
-      <div className="layout-container relative z-10 w-full grid grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="layout-container relative z-10 w-full flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-12 lg:items-center gap-10">
         
         {/* Left Column: Context, Label, and Actions */}
-        <div className="col-span-12 lg:col-span-4 flex flex-col gap-10 lg:pl-4">
+        <div className="w-full lg:col-span-4 flex flex-col gap-6 lg:gap-10 lg:pl-4 items-center lg:items-start text-center lg:text-left">
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -89,15 +90,16 @@ export function FeaturedDeepDive() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO, delay: 0.1 }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-4 lg:gap-6"
           >
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: 'clamp(0.9rem, 1vw, 1rem)',
+                fontSize: 'clamp(0.85rem, 1vw, 1rem)',
                 lineHeight: 1.6,
                 color: '#2A2A2A',
-                fontWeight: 400
+                fontWeight: 400,
+                maxWidth: '45ch'
               }}
             >
               An exploration into the mechanics of action, consequence, and cosmic justice. Before finding resolution, we must confront the architecture of suffering and its place within the fabric of Dharma.
@@ -122,8 +124,8 @@ export function FeaturedDeepDive() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO, delay: 0.2 }}
           >
-            <a 
-              href="#explore"
+            <Link 
+              to="/inquiry/why-do-innocent-people-suffer"
               className="group relative inline-flex items-center gap-3 cursor-pointer"
               style={{
                 fontFamily: '"General Sans", sans-serif',
@@ -141,13 +143,13 @@ export function FeaturedDeepDive() {
               <div 
                 className="absolute -bottom-2 left-0 h-[1px] w-full bg-[#C58B52]/40 origin-left transform scale-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100" 
               />
-            </a>
+            </Link>
           </motion.div>
           
         </div>
 
         {/* Right Column: Featured Question */}
-        <div className="col-span-12 lg:col-span-8 relative">
+        <div className="w-full lg:col-span-8 relative flex justify-center lg:justify-start">
           <AbstractAnchor />
           
           <motion.h2
@@ -157,14 +159,15 @@ export function FeaturedDeepDive() {
             transition={{ duration: 1.6, ease: EASE_EXPO, delay: 0.3 }}
             style={{
               fontFamily: 'Cormorant, serif',
-              fontSize: 'clamp(3rem, 6.5vw, 6.5rem)',
+              fontSize: 'clamp(2.2rem, 5vw, 6.5rem)',
               fontWeight: 300,
-              lineHeight: 1.05,
+              lineHeight: 1.1,
               color: '#0A0A0A',
               letterSpacing: '-0.02em',
               position: 'relative',
               zIndex: 10
             }}
+            className="text-center lg:text-left"
           >
             Why do innocent<br />
             <span className="italic opacity-90" style={{ paddingRight: '0.1em' }}>people</span> suffer?

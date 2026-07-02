@@ -78,19 +78,19 @@ export function FreeWillOrDestiny() {
         </Link>
 
         <Link to="/inquiry" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#C58B52]">
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
             SATYA & MITHYĀ
           </span>
         </Link>
@@ -108,7 +108,7 @@ export function FreeWillOrDestiny() {
 
           return (
             <div key={sec.id} className="flex items-center gap-4">
-              <span className={`font-general text-[9px] uppercase tracking-[0.2em] transition-colors duration-700 ${textColor}`}>
+              <span className={`tattva-nav-link transition-colors duration-700 ${textColor}`}>
                 {sec.label}
               </span>
             </div>
@@ -116,7 +116,7 @@ export function FreeWillOrDestiny() {
         })}
       </div>
 
-      <div className="w-full max-w-4xl px-6 pt-48 pb-32 relative z-10 flex flex-col items-center">
+      <div className="w-full max-w-3xl px-6 xl:px-12 pt-48 pb-32 relative z-10 flex flex-col items-center xl:ml-32">
 
         {/* PAGE HEADER */}
         <motion.div
@@ -127,36 +127,36 @@ export function FreeWillOrDestiny() {
           className="relative w-full mb-16 pt-16 pb-8"
         >
           <div className="relative z-10 flex flex-col items-center">
-            <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52] mb-6 block text-center">
+            <span className="tattva-nav-link text-[#C58B52] mb-6 block text-center">
               INQUIRY III
             </span>
-            <h1 className="font-instrument text-5xl md:text-7xl lg:text-8xl text-[#0D0D0C] tracking-tight mb-4 text-center leading-none">
+            <h1 className="tattva-hero-title mb-4 text-center">
               Do we truly have free will?
             </h1>
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C]/80 tracking-tight mb-8 text-center leading-none">
+            <h2 className="tattva-section-title text-[#0D0D0C]/80 mb-8 text-center">
               Or is everything already destined?
             </h2>
-            <p className="font-cormorant italic text-2xl text-[#0D0D0C]/70 max-w-2xl mx-auto text-center leading-relaxed mb-12">
+            <p className="tattva-hero-desc text-center mx-auto mb-12">
               Understanding Karma, Destiny, Human Choice and Liberation in Sanātana Dharma.
             </p>
 
             {/* Metadata Row */}
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 pt-8 border-t border-[#C58B52]/20">
               <div className="flex flex-col items-center">
-                <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#0D0D0C]/40 mb-1">READING TIME</span>
-                <span className="font-general text-[10px] tracking-widest text-[#C58B52]">≈10–12 MIN</span>
+                <span className="tattva-nav-link text-[8px] text-[#0D0D0C]/40 mb-1">READING TIME</span>
+                <span className="tattva-nav-link text-[#C58B52]">≈10–12 MIN</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#0D0D0C]/40 mb-1">TRADITION</span>
-                <span className="font-general text-[10px] tracking-widest text-[#C58B52]">VEDĀNTA</span>
+                <span className="tattva-nav-link text-[8px] text-[#0D0D0C]/40 mb-1">TRADITION</span>
+                <span className="tattva-nav-link text-[#C58B52]">VEDĀNTA</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#0D0D0C]/40 mb-1">PRIMARY SOURCES</span>
-                <span className="font-general text-[10px] tracking-widest text-[#C58B52] text-center max-w-[200px]">UPANIṢADS • BHAGAVAD GĪTĀ • BRAHMA SŪTRAS • MAHĀBHĀRATA</span>
+                <span className="tattva-nav-link text-[8px] text-[#0D0D0C]/40 mb-1">PRIMARY SOURCES</span>
+                <span className="tattva-nav-link text-[#C58B52] text-center max-w-[200px]">UPANIṢADS • BHAGAVAD GĪTĀ • BRAHMA SŪTRAS • MAHĀBHĀRATA</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#0D0D0C]/40 mb-1">LEVEL</span>
-                <span className="font-general text-[10px] tracking-widest text-[#C58B52]">INTERMEDIATE</span>
+                <span className="tattva-nav-link text-[8px] text-[#0D0D0C]/40 mb-1">LEVEL</span>
+                <span className="tattva-nav-link text-[#C58B52]">INTERMEDIATE</span>
               </div>
             </div>
 
@@ -173,15 +173,15 @@ export function FreeWillOrDestiny() {
           transition={{ duration: 1.2, ease: EASE_EXPO }}
           className="mb-32 w-full max-w-3xl text-center"
         >
-          <p className="font-cormorant text-2xl font-light text-[#0D0D0C]/90 leading-relaxed mx-auto italic mb-12">
+          <p className="tattva-body text-2xl text-[#0D0D0C]/90 mx-auto italic mb-12">
             Every single day...<br />
             we make choices.
           </p>
-          <p className="font-cormorant text-2xl font-light text-[#0D0D0C]/90 leading-relaxed mx-auto mb-12">
+          <p className="tattva-body text-2xl text-[#0D0D0C]/90 mx-auto mb-12">
             Some disappear by tomorrow.<br />
             Some quietly change the rest of our lives.
           </p>
-          <p className="font-cormorant text-2xl font-light text-[#0D0D0C]/90 leading-relaxed mx-auto mb-12">
+          <p className="tattva-body text-2xl text-[#0D0D0C]/90 mx-auto mb-12">
             Choosing a career.<br />
             Forgiving someone.<br />
             Walking away.<br />
@@ -190,7 +190,7 @@ export function FreeWillOrDestiny() {
             Helping a stranger.<br />
             Hurting someone we love.
           </p>
-          <p className="font-cormorant text-2xl font-light text-[#0D0D0C]/90 leading-relaxed mx-auto mb-12">
+          <p className="tattva-body text-2xl text-[#0D0D0C]/90 mx-auto mb-12">
             Years later...<br />
             many of us look back and ask only one question.
           </p>
@@ -209,14 +209,14 @@ export function FreeWillOrDestiny() {
           transition={{ duration: 1.2, ease: EASE_EXPO }}
           className="mb-32 w-full max-w-3xl"
         >
-          <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12 text-center">
+          <h2 className="tattva-section-title text-center mb-12">
             Before we decide...
           </h2>
           <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12 mx-auto" />
-          <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed text-center mx-auto mb-12">
+          <p className="tattva-body text-[#0D0D0C]/80 text-center mx-auto mb-12">
             Before deciding whether everything is already destined, consider something.
           </p>
-          <p className="font-cormorant text-2xl font-light text-[#C58B52] leading-relaxed text-center mx-auto mb-12 italic">
+          <p className="tattva-body text-2xl text-[#C58B52] text-center mx-auto mb-12 italic">
             If every decision has already been made...<br />
             why do we regret our mistakes?<br />
             Why do parents teach children?<br />
@@ -224,10 +224,10 @@ export function FreeWillOrDestiny() {
             Why do courts exist?<br />
             Why does Dharma ask us to choose righteousness?
           </p>
-          <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed text-center mx-auto mb-6">
+          <p className="tattva-body text-[#0D0D0C]/80 text-center mx-auto mb-6">
             And perhaps the most important question...
           </p>
-          <p className="font-cormorant text-2xl font-light text-[#0D0D0C]/90 leading-relaxed text-center mx-auto italic">
+          <p className="tattva-body text-2xl text-[#0D0D0C]/90 text-center mx-auto italic">
             Why did Śrī Kṛṣṇa spend eighteen chapters teaching Arjuna...<br />
             instead of simply saying, "The war is already destined."
           </p>
@@ -242,14 +242,14 @@ export function FreeWillOrDestiny() {
           transition={{ duration: 1.2, ease: EASE_EXPO }}
           className="mb-32 w-full max-w-3xl"
         >
-          <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12 text-center">
+          <h2 className="tattva-section-title text-center mb-12">
             The eternal question
           </h2>
           <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12 mx-auto" />
-          <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed text-center mx-auto mb-8">
+          <p className="tattva-body text-[#0D0D0C]/80 text-center mx-auto mb-8">
             Every civilization has struggled with this question.
           </p>
-          <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed text-center mx-auto">
+          <p className="tattva-body text-[#0D0D0C]/80 text-center mx-auto">
             Within Sanātana Dharma, the question appears repeatedly because Dharma itself assumes moral responsibility. This has challenged kings, warriors, sages, philosophers, and ordinary people alike. The tension between divine orchestration and human action forms the very heart of spiritual inquiry.
           </p>
         </motion.section>
@@ -263,14 +263,14 @@ export function FreeWillOrDestiny() {
           transition={{ duration: 1.2, ease: EASE_EXPO }}
           className="mb-48 w-full max-w-3xl"
         >
-          <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12 text-center">
+          <h2 className="tattva-section-title text-center mb-12">
             Questions we quietly ask
           </h2>
           <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12 mx-auto" />
-          <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed text-center mx-auto mb-8">
+          <p className="tattva-body text-[#0D0D0C]/80 text-center mx-auto mb-8">
             The debate over destiny is not merely an intellectual exercise. It surfaces in our most intimate moments of doubt:
           </p>
-          <ul className="font-cormorant text-2xl font-light text-[#C58B52] leading-relaxed space-y-4 text-center italic">
+          <ul className="tattva-body text-2xl text-[#C58B52] space-y-4 text-center italic">
             <li>Did I ruin my own life?</li>
             <li>Could I have saved that relationship?</li>
             <li>Was I meant to meet this person?</li>
@@ -286,25 +286,25 @@ export function FreeWillOrDestiny() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1.2, ease: EASE_EXPO }}
-          className="mb-48 w-full md:w-[100vw] max-w-full md:max-w-none md:relative md:left-1/2 md:right-1/2 md:-translate-x-1/2 py-16 px-6 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.03] flex flex-col items-center"
+          className="mb-48 w-full py-16 px-6 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.03] flex flex-col items-center"
         >
           <div className="w-full max-w-3xl text-center mb-16">
-            <p className="font-cormorant text-xl md:text-2xl font-light text-[#0D0D0C]/80 leading-relaxed mx-auto mb-8">
+            <p className="tattva-hero-desc text-[#0D0D0C]/80 mx-auto mb-8">
               "If everything is already written, why should we strive?"
             </p>
-            <p className="font-cormorant text-xl md:text-2xl font-light text-[#0D0D0C]/80 leading-relaxed mx-auto mb-8">
+            <p className="tattva-hero-desc text-[#0D0D0C]/80 mx-auto mb-8">
               "If destiny governs life, do our choices truly matter?"
             </p>
-            <p className="font-cormorant text-xl md:text-2xl font-light text-[#0D0D0C]/80 leading-relaxed mx-auto mb-8">
+            <p className="tattva-hero-desc text-[#0D0D0C]/80 mx-auto mb-8">
               "Why did Śrī Kṛṣṇa urge Arjuna to fight if the outcome was already known?"
             </p>
-            <p className="font-cormorant text-xl md:text-2xl font-light text-[#0D0D0C]/80 leading-relaxed mx-auto">
+            <p className="tattva-hero-desc text-[#0D0D0C]/80 mx-auto">
               This question has been debated for thousands of years. Sanātana Dharma offers a nuanced answer that rejects both absolute fatalism and unlimited free will, viewing human agency as a profound journey of spiritual responsibility.
             </p>
           </div>
 
           <div className="max-w-4xl flex flex-col items-center pt-8 border-t border-[#C58B52]/20">
-            <p className="font-cormorant text-3xl md:text-4xl text-[#0D0D0C] leading-relaxed text-center font-light mt-8 mb-12">
+            <p className="tattva-section-title text-[#0D0D0C] text-center font-light mt-8 mb-12">
               Sanātana Dharma rejects both absolute determinism and absolute free will. Human beings inherit circumstances through past karma (Prārabdha), yet retain meaningful freedom to think, choose and act in the present. These present choices become future karma and shape one's spiritual journey. The highest freedom is not unlimited worldly choice but Mokṣa, where the Ātman realizes its true nature beyond ignorance and karmic bondage.
             </p>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40" />
@@ -321,20 +321,20 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               1. The Freedom We Already Possess
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-8">
               In modern discourse, freedom is often defined as the absence of all constraints—the unrestricted ability to do whatever we desire at any moment. But Sanātana Dharma views such "freedom" as merely another form of bondage. True freedom is not the ability to act on every impulse; it is the mastery over those impulses.
             </p>
             <div className="bg-[#C58B52]/5 border-l border-[#C58B52]/30 p-8 my-10 max-w-2xl mx-auto">
-              <p className="font-cormorant text-2xl font-light text-[#0D0D0C] italic leading-relaxed text-center">
+              <p className="tattva-translation text-[#0D0D0C] text-center">
                 "A person who is not disturbed by the incessant flow of desires—that enter like rivers into the ocean, which is ever being filled but is always still—can alone achieve peace, and not the man who strives to satisfy such desires."
               </p>
               <p className="font-general text-[10px] uppercase tracking-widest text-[#C58B52] mt-6 text-center">— Bhagavad Gītā 2.70</p>
             </div>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+            <p className="tattva-body text-[#0D0D0C]/80">
               The freedom we already possess is the freedom to observe, to deliberate, and to choose Dharma over our conditioning. Even when external circumstances are severely restricted, the quiet space between stimulus and response belongs entirely to us. This internal agency is the foundation of all spiritual evolution.
             </p>
           </motion.section>
@@ -347,20 +347,20 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               2. The Circumstances We Never Chose
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-8">
               We are not born onto a blank canvas. We are born into specific families, inherit specific temperaments, and face certain unavoidable events. In Sanātana Dharma, this framework of predetermined circumstances is often called destiny, or <span className="italic">daiva</span>.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-12">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-12">
               However, destiny is fundamentally misunderstood when equated with absolute fatalism. Destiny is simply the momentum of our own past actions (karma) ripening in the present. It sets the stage, but it does not write the script.
             </p>
-            <p className="font-cormorant text-2xl font-light text-[#C58B52] leading-relaxed mb-12 italic text-center mx-auto max-w-xl">
+            <p className="tattva-body text-2xl text-[#C58B52] mb-12 italic text-center mx-auto max-w-xl">
               "Destiny may shape the road.<br />Dharma shapes the traveller."
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+            <p className="tattva-body text-[#0D0D0C]/80">
               Just as a farmer cannot change the soil he has inherited, but retains complete agency over what seeds he chooses to plant today, we cannot alter the circumstances that have already arrived, but we retain total command over how we respond to them.
             </p>
           </motion.section>
@@ -373,14 +373,14 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               3. Every Choice Leaves an Echo
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-10">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-10">
               To understand the delicate balance between what is fixed and what is free, we must understand the mechanics of action. Every thought, word, and deed leaves a subtle imprint on consciousness. Over time, these imprints weave the fabric of our future. Classical traditions classify this into three elegant categories:
             </p>
-            <ul className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed space-y-8 mb-12 pl-6 border-l border-[#C58B52]/20">
+            <ul className="tattva-body text-[#0D0D0C]/80 space-y-8 mb-12 pl-6 border-l border-[#C58B52]/20">
               <li>
                 <span className="text-[#C58B52] font-medium block mb-2">Sañcita Karma (The Accumulated Past)</span>
                 The vast, dormant reservoir of all past actions gathered over countless lifetimes. It is the warehouse of seeds not yet ready to sprout.
@@ -410,14 +410,14 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               4. What Can Still Change?
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-6">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-6">
               Almost everything about tomorrow. By applying fierce self-effort (<span className="italic">puruṣārtha</span>) through discipline, devotion, and ethical action, we actively override the momentum of the past. The scriptures insist that human agency is a potent force capable of altering the trajectory of the soul.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+            <p className="tattva-body text-[#0D0D0C]/80">
               When we consciously choose Dharma over our automatic conditioning, we do not just change our external circumstances; we dissolve the internal ignorance that binds us.
             </p>
           </motion.section>
@@ -430,14 +430,14 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               5. What We Inherit
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-6">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-6">
               There are events in life that arrive like a storm, completely outside our control. These are the manifestations of <span className="italic">Prārabdha Karma</span>—the arrows already in flight. Illness, unexpected loss, natural disasters, or being born into a specific family in a specific era.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+            <p className="tattva-body text-[#0D0D0C]/80">
               We inherit these circumstances without the immediate power to erase them. But while the event itself cannot be changed, our interpretation of it and our response to it are entirely unfettered. The event is destiny; the response is free will.
             </p>
           </motion.section>
@@ -452,10 +452,10 @@ export function FreeWillOrDestiny() {
           className="w-full md:w-[100vw] max-w-full md:max-w-none md:relative md:left-1/2 md:right-1/2 md:-translate-x-1/2 min-h-[80vh] flex flex-col justify-center items-center py-32 px-6 md:px-8 text-center bg-[#E9E2D4]"
         >
           <div className="max-w-4xl mx-auto flex flex-col items-center">
-            <h2 className="font-instrument text-4xl md:text-6xl text-[#0D0D0C] tracking-tight leading-tight mb-12 italic">
+            <h2 className="tattva-verse text-center mb-12">
               "If everything were already decided...<br />why did Śrī Kṛṣṇa teach?"
             </h2>
-            <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52]">
+            <span className="tattva-nav-link text-[#C58B52]">
               THE QUESTION THAT CHANGES EVERYTHING
             </span>
           </div>
@@ -471,43 +471,43 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               6. The Day Arjuna Put Down His Bow
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-8">
               The air on the battlefield of Kurukṣetra was thick with the deafening sound of conch shells and war drums. Millions of warriors stood in formation, waiting for the signal that would begin the greatest war of their age.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-8">
               In the center of it all, standing in a golden chariot, the greatest archer in the world broke down.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-8">
               Arjuna looked across the lines and saw his own teachers, his grandfathers, his cousins. Overwhelmed by a profound moral crisis, his hands trembled. The legendary divine bow, the Gāṇḍīva, slipped from his grasp. With tears in his eyes, he declared that he would rather live as a beggar than rule a kingdom soaked in the blood of his kin. He sat down in the chariot. He fell completely silent.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-12">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-12">
               At that exact moment, Śrī Kṛṣṇa, who knows the entirety of the past, present, and future, was sitting right beside him.
             </p>
             <div className="bg-[#C58B52]/5 border-l border-[#C58B52]/30 p-8 my-12 mx-auto max-w-2xl text-center">
-              <p className="font-cormorant text-2xl font-light text-[#0D0D0C] italic leading-relaxed">
+              <p className="tattva-translation text-[#0D0D0C]">
                 If the future were already fixed in stone... if Arjuna were merely a helpless puppet... why did Śrī Kṛṣṇa not simply tell him to stand aside? Why did He not say, "The war will happen regardless of what you do. Sit quietly, for your choices mean nothing"?
               </p>
             </div>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-8">
               Instead, Śrī Kṛṣṇa paused. For eighteen profound chapters, He reasoned with Arjuna. He explained the eternal nature of the soul, the intricate mechanics of action, the psychology of human attachment, and the vast cosmic order of Dharma. He answered every doubt, dismantled every excuse, and illuminated the path of selfless action.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+            <p className="tattva-body text-[#0D0D0C]/80">
               And at the very climax of this magnificent discourse, having revealed the ultimate truth of the universe, Śrī Kṛṣṇa did not issue a command. He looked at Arjuna and said:
             </p>
             <div className="my-10 text-center">
-              <p className="font-cormorant text-2xl font-medium text-[#C58B52] leading-relaxed italic">
+              <p className="tattva-verse text-2xl text-[#C58B52]">
                 "vimṛśyaitadaśeṣeṇa yathecchasi tathā kuru"
               </p>
-              <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mt-4 italic">
+              <p className="tattva-body text-[#0D0D0C]/80 mt-4 italic">
                 "Reflect fully on what I have told you, and then do as you choose." <br />
                 <span className="text-[14px] text-[#0D0D0C]/50 not-italic mt-2 block">— Bhagavad Gītā 18.63</span>
               </p>
             </div>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+            <p className="tattva-body text-[#0D0D0C]/80">
               That breathtaking invitation—<span className="italic">do as you choose</span>—proves that even in the presence of God Himself, human agency is sacred. Responsibility, duty, and spiritual growth only possess meaning because we genuinely hold the power to choose.
             </p>
           </motion.section>
@@ -520,7 +520,7 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               7. Different Philosophical Perspectives
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
@@ -528,23 +528,23 @@ export function FreeWillOrDestiny() {
             <div className="space-y-12 pl-4 border-l border-[#C58B52]/30">
               <div className="pl-6">
                 <span className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] block mb-3">Advaita Vedānta</span>
-                <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">In the empirical reality (vyāvahārika), free will and karma are entirely real and govern human experience. However, from the ultimate standpoint (pāramārthika), the true Self (Ātman) is neither a doer nor an experiencer, transcending both karma and destiny entirely.</p>
+                <p className="tattva-body text-[#0D0D0C]/80">In the empirical reality (vyāvahārika), free will and karma are entirely real and govern human experience. However, from the ultimate standpoint (pāramārthika), the true Self (Ātman) is neither a doer nor an experiencer, transcending both karma and destiny entirely.</p>
               </div>
               <div className="pl-6">
                 <span className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] block mb-3">Viśiṣṭādvaita</span>
-                <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">Individual souls possess real agency, granted by the Supreme Lord. However, this freedom is dependent and relational. God acts as the inner controller (Antaryāmin), but respects the soul's moral choices, allowing karma to unfold according to one's actions.</p>
+                <p className="tattva-body text-[#0D0D0C]/80">Individual souls possess real agency, granted by the Supreme Lord. However, this freedom is dependent and relational. God acts as the inner controller (Antaryāmin), but respects the soul's moral choices, allowing karma to unfold according to one's actions.</p>
               </div>
               <div className="pl-6">
                 <span className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] block mb-3">Dvaita</span>
-                <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">The soul's agency is real and eternal, though eternally subordinate to God. Individual effort is necessary for liberation, and moral responsibility lies squarely with the individual, even though God is the ultimate enabler of all action.</p>
+                <p className="tattva-body text-[#0D0D0C]/80">The soul's agency is real and eternal, though eternally subordinate to God. Individual effort is necessary for liberation, and moral responsibility lies squarely with the individual, even though God is the ultimate enabler of all action.</p>
               </div>
               <div className="pl-6">
                 <span className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] block mb-3">Sāṅkhya & Yoga</span>
-                <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">Bondage occurs when pure consciousness (Puruṣa) falsely identifies with nature (Prakṛti) and its mechanical laws of cause and effect. Freedom is not about making better worldly choices, but realizing one's complete independence from the machinery of karma.</p>
+                <p className="tattva-body text-[#0D0D0C]/80">Bondage occurs when pure consciousness (Puruṣa) falsely identifies with nature (Prakṛti) and its mechanical laws of cause and effect. Freedom is not about making better worldly choices, but realizing one's complete independence from the machinery of karma.</p>
               </div>
               <div className="pl-6">
                 <span className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] block mb-3">Nyāya & Mīmāṃsā</span>
-                <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">Nyāya strictly defends logical moral agency, asserting that without free will, the concept of justice collapses. Mīmāṃsā emphasizes that ritual and ethical duties (Dharma) are meaningless unless humans have the genuine capacity to intentionally perform them.</p>
+                <p className="tattva-body text-[#0D0D0C]/80">Nyāya strictly defends logical moral agency, asserting that without free will, the concept of justice collapses. Mīmāṃsā emphasizes that ritual and ethical duties (Dharma) are meaningless unless humans have the genuine capacity to intentionally perform them.</p>
               </div>
             </div>
           </motion.section>
@@ -557,7 +557,7 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               8. Scriptural Consensus
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16" />
@@ -577,7 +577,7 @@ export function FreeWillOrDestiny() {
                     <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mt-1">{item.title}</span>
                   </div>
                   <div className="w-full md:w-2/3">
-                    <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">{item.desc}</p>
+                    <p className="tattva-body text-[#0D0D0C]/80">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -592,7 +592,7 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               9. Evidence Map
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16" />
@@ -612,7 +612,7 @@ export function FreeWillOrDestiny() {
                     <span className={`font-general text-[10px] uppercase tracking-[0.2em] ${item.color}`}>{item.assessment}</span>
                   </div>
                   <div className="w-full md:w-2/3">
-                    <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">{item.claim}</p>
+                    <p className="tattva-body text-[#0D0D0C]/80">{item.claim}</p>
                   </div>
                 </div>
               ))}
@@ -627,14 +627,14 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               10. What the scriptures never ask you to believe
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-8">
               There is a profound difference between acknowledging the weight of our past and surrendering to helplessness. The scriptures do not explicitly teach that everything is already written in stone. They do not say that humans are merely puppets, that karma removes moral responsibility, that destiny replaces effort, or that God forces every decision we make.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+            <p className="tattva-body text-[#0D0D0C]/80">
               Instead, they consistently elevate the opposite: conscious action, self-effort (Puruṣārtha), taking moral responsibility for one's life, and fiercely choosing Dharma even when the odds seem overwhelmingly predetermined.
             </p>
           </motion.section>
@@ -647,17 +647,17 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               11. Living With Destiny
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-8">
               Centuries remove us from the battlefield of Kurukṣetra, yet the fundamental crisis of agency remains identical. Today, this tension does not unfold on chariots, but in the silent turning points of modern life.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-8">
               It appears in the agonizing over career decisions, when we wonder if we missed our true calling. It surfaces in the heartache of a broken relationship, haunting us with questions of what we could have done differently. It emerges when a child struggles despite our best parenting, or when a business collapses despite relentless effort. In our darkest moments, we are tempted to surrender everything to fate to soothe the sting of failure.
             </p>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-12">
+            <p className="tattva-body text-[#0D0D0C]/80 mb-12">
               Sanātana Dharma asks us to hold two profound truths simultaneously. Yes, the sudden illness, the economic crash, the unexpected loss—these are the unfolding of past momentum. But how you stand within the wreckage is entirely up to you.
             </p>
             <div className="bg-[#C58B52]/5 border-l border-[#C58B52]/30 p-8 my-12 mx-auto max-w-2xl text-center">
@@ -665,7 +665,7 @@ export function FreeWillOrDestiny() {
                 "The future is influenced by the past,<br />but it is not imprisoned by it."
               </p>
             </div>
-            <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+            <p className="tattva-body text-[#0D0D0C]/80">
               When someone betrays you, that is an inherited circumstance. But whether you respond with enduring bitterness or quiet forgiveness is your active choice. That very choice is the chisel carving out your future. By consciously aligning our responses with Dharma, we slowly unbind ourselves from compulsive emotional cycles, transforming blind destiny into spiritual freedom.
             </p>
           </motion.section>
@@ -678,7 +678,7 @@ export function FreeWillOrDestiny() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: EASE_EXPO }}
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12">
+            <h2 className="tattva-section-title mb-12">
               If you are reading this...
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
@@ -686,19 +686,19 @@ export function FreeWillOrDestiny() {
             <div className="space-y-12">
               <div>
                 <p className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] mb-3">...because you regret a decision,</p>
-                <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+                <p className="tattva-body text-[#0D0D0C]/80">
                   Understand that Sanātana Dharma teaches responsibility without hopelessness. The past influences us deeply, but it does not imprison us. Your recognition of the mistake is itself the first act of new, conscious karma.
                 </p>
               </div>
               <div>
                 <p className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] mb-3">...because you feel trapped by destiny,</p>
-                <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+                <p className="tattva-body text-[#0D0D0C]/80">
                   The scriptures never encourage helplessness. They encourage fierce effort, discipline, self-transformation, and Dharma. Whatever walls destiny has built around you, your response remains yours to command.
                 </p>
               </div>
               <div>
                 <p className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] mb-3">...because you simply seek truth,</p>
-                <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
+                <p className="tattva-body text-[#0D0D0C]/80">
                   Welcome. Some of the greatest conversations in the Upaniṣads, the Mahābhārata, and the Bhagavad Gītā began precisely because someone was willing to sit down and ask these difficult questions.
                 </p>
               </div>
@@ -714,7 +714,7 @@ export function FreeWillOrDestiny() {
             transition={{ duration: 1.2, ease: EASE_EXPO }}
             className="pt-16"
           >
-            <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-12 text-center">
+            <h2 className="tattva-section-title text-center mb-12">
               Before You Leave...
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16 mx-auto" />
@@ -725,7 +725,7 @@ export function FreeWillOrDestiny() {
             <p className="font-cormorant text-2xl font-light text-[#0D0D0C]/80 leading-relaxed max-w-2xl text-center mx-auto mb-16">
               The scriptures suggest that while we do not choose every circumstance into which we are born, we are constantly invited to choose how we respond.
             </p>
-            <p className="font-cormorant text-2xl font-light text-[#C58B52] leading-relaxed max-w-2xl text-center mx-auto italic mb-16">
+            <p className="tattva-body text-2xl text-[#C58B52] max-w-2xl text-center mx-auto italic mb-16">
               Truth or falsehood.<br />
               Compassion or indifference.<br />
               Courage or fear.<br />

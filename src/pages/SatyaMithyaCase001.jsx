@@ -561,7 +561,7 @@ export function SatyaMithyaCase001() {
 
         <Link to="/inquiry" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
@@ -569,7 +569,7 @@ export function SatyaMithyaCase001() {
 
         <Link to="/library" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
@@ -577,7 +577,7 @@ export function SatyaMithyaCase001() {
 
         <Link to="/satya-mithya" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
+            className="tattva-nav-link transition-colors duration-500 text-[#9E2A2B]"
           >
             SATYA & MITHYĀ
           </span>
@@ -585,7 +585,7 @@ export function SatyaMithyaCase001() {
 
         <Link to="/the-origin" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             THE ORIGIN
           </span>
@@ -796,10 +796,10 @@ export function SatyaMithyaCase001() {
                 <div
                   key={idx}
                   className={`border transition-all duration-300 p-5 ${isExpanded
-                      ? 'border-[#9E2A2B] bg-white shadow-sm'
-                      : isSpecial
-                        ? 'border-[#C58B52]/60 bg-[#C58B52]/5 hover:border-[#9E2A2B]'
-                        : 'border-[#C58B52]/20 bg-white/20 hover:border-[#9E2A2B]/40'
+                    ? 'border-[#9E2A2B] bg-white shadow-sm'
+                    : isSpecial
+                      ? 'border-[#C58B52]/60 bg-[#C58B52]/5 hover:border-[#9E2A2B]'
+                      : 'border-[#C58B52]/20 bg-white/20 hover:border-[#9E2A2B]/40'
                     }`}
                 >
                   <div className="flex justify-between items-center mb-2">
@@ -932,8 +932,8 @@ export function SatyaMithyaCase001() {
                     key={reason.id}
                     onClick={() => handleReasonClick(idx)}
                     className={`border p-5 cursor-pointer transition-all duration-300 flex flex-col justify-between min-h-[140px] ${isExpanded
-                        ? 'border-[#9E2A2B] bg-white shadow-sm'
-                        : 'border-[#C58B52]/25 bg-white/20 hover:border-[#9E2A2B]/40'
+                      ? 'border-[#9E2A2B] bg-white shadow-sm'
+                      : 'border-[#C58B52]/25 bg-white/20 hover:border-[#9E2A2B]/40'
                       }`}
                   >
                     <div>
@@ -983,8 +983,8 @@ export function SatyaMithyaCase001() {
                   key={idx}
                   onClick={() => setActiveVerseIdx(idx)}
                   className={`font-general text-[9px] uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${activeVerseIdx === idx
-                      ? 'text-[#9E2A2B] font-bold'
-                      : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]/70'
+                    ? 'text-[#9E2A2B] font-bold'
+                    : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]/70'
                     }`}
                 >
                   {v.label}
@@ -1132,8 +1132,8 @@ export function SatyaMithyaCase001() {
                   key={p.id}
                   onClick={() => setActivePanelIdx(idx)}
                   className={`p-5 border text-left transition-all duration-300 flex flex-col justify-between min-h-[110px] ${activePanelIdx === idx
-                      ? 'border-[#9E2A2B] bg-[#9E2A2B]/5 shadow-sm'
-                      : 'border-[#1C1C1A]/10 bg-white/20 hover:border-[#C58B52]/40'
+                    ? 'border-[#9E2A2B] bg-[#9E2A2B]/5 shadow-sm'
+                    : 'border-[#1C1C1A]/10 bg-white/20 hover:border-[#C58B52]/40'
                     }`}
                 >
                   <div className="flex justify-between w-full mb-2">
@@ -1200,8 +1200,8 @@ export function SatyaMithyaCase001() {
                   key={idx}
                   onClick={() => setActiveEvidenceVerseIdx(idx)}
                   className={`font-general text-[9px] uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${activeEvidenceVerseIdx === idx
-                      ? 'text-[#9E2A2B] font-bold'
-                      : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]/70'
+                    ? 'text-[#9E2A2B] font-bold'
+                    : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]/70'
                     }`}
                 >
                   {v.label}
@@ -1336,8 +1336,8 @@ export function SatyaMithyaCase001() {
                   <div
                     key={item.id}
                     className={`border transition-all duration-300 ${isExpanded
-                        ? 'border-[#9E2A2B] bg-white shadow-sm'
-                        : 'border-[#C58B52]/20 bg-white/20 hover:border-[#9E2A2B]'
+                      ? 'border-[#9E2A2B] bg-white shadow-sm'
+                      : 'border-[#C58B52]/20 bg-white/20 hover:border-[#9E2A2B]'
                       }`}
                   >
                     {/* Header */}
@@ -1532,8 +1532,8 @@ export function SatyaMithyaCase001() {
                   <div
                     key={card.id}
                     className={`border transition-all duration-300 p-5 cursor-pointer flex flex-col justify-between min-h-[120px] ${isExpanded
-                        ? 'border-[#9E2A2B] bg-white shadow-sm'
-                        : 'border-[#C58B52]/20 bg-white/20 hover:border-[#9E2A2B]'
+                      ? 'border-[#9E2A2B] bg-white shadow-sm'
+                      : 'border-[#C58B52]/20 bg-white/20 hover:border-[#9E2A2B]'
                       }`}
                     onClick={() => setExpandedVerdictCardIdx(isExpanded ? null : idx)}
                   >
@@ -1895,8 +1895,8 @@ export function SatyaMithyaCase001() {
               {knowledgeNetwork.map((node, idx) => (
                 <React.Fragment key={idx}>
                   <div className={`p-4 border transition-all duration-500 text-center min-w-[130px] ${node.status === 'current'
-                      ? 'border-[#9E2A2B] bg-[#9E2A2B]/5 shadow-sm'
-                      : 'border-[#1C1C1A]/10 bg-white/10 opacity-40'
+                    ? 'border-[#9E2A2B] bg-[#9E2A2B]/5 shadow-sm'
+                    : 'border-[#1C1C1A]/10 bg-white/10 opacity-40'
                     }`}>
                     <span className="font-general text-[7px] text-[#C58B52] block mb-1 uppercase">
                       {node.desc}

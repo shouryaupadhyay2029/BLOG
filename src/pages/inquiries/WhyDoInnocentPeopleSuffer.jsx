@@ -100,19 +100,19 @@ export function WhyDoInnocentPeopleSuffer() {
         </Link>
 
         <Link to="/inquiry" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#C58B52]">
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
             SATYA & MITHYĀ
           </span>
         </Link>
@@ -130,7 +130,7 @@ export function WhyDoInnocentPeopleSuffer() {
 
           return (
             <div key={sec.id} className="flex items-center gap-4">
-              <span className={`font-general text-[9px] uppercase tracking-[0.2em] transition-colors duration-700 ${textColor}`}>
+              <span className={`tattva-nav-link transition-colors duration-700 ${textColor}`}>
                 {sec.label}
               </span>
             </div>
@@ -138,7 +138,7 @@ export function WhyDoInnocentPeopleSuffer() {
         })}
       </div>
 
-      <div className="w-full max-w-4xl px-6 pt-48 pb-32 relative z-10 flex flex-col items-center">
+      <div className="w-full max-w-3xl px-6 xl:px-12 pt-48 pb-32 relative z-10 flex flex-col items-center xl:ml-32">
 
         {/* PAGE HEADER */}
         <motion.div
@@ -151,7 +151,7 @@ export function WhyDoInnocentPeopleSuffer() {
           <DharmaChakraWatermark />
 
           <div className="relative z-10 flex flex-col items-center">
-            <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52] mb-6 block text-center">
+            <span className="tattva-nav-link text-[#C58B52] mb-6 block text-center">
               INQUIRY I
             </span>
             <h1 className="font-instrument text-5xl md:text-7xl lg:text-8xl text-[#E9E2D4] tracking-tight mb-8 text-center leading-none">
@@ -164,19 +164,19 @@ export function WhyDoInnocentPeopleSuffer() {
             {/* READING METADATA */}
             <div className="flex flex-wrap justify-center gap-8 md:gap-16 border-t border-b border-[#C58B52]/20 py-4 w-full max-w-2xl">
               <div className="flex flex-col items-center">
-                <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#C58B52]/60 mb-1">READING TIME</span>
+                <span className="tattva-nav-link text-[8px] text-[#C58B52]/60 mb-1">READING TIME</span>
                 <span className="font-general text-[10px] uppercase tracking-widest text-[#E9E2D4]/80">14 MIN</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#C58B52]/60 mb-1">TRADITION</span>
+                <span className="tattva-nav-link text-[8px] text-[#C58B52]/60 mb-1">TRADITION</span>
                 <span className="font-general text-[10px] uppercase tracking-widest text-[#E9E2D4]/80">VEDĀNTA</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#C58B52]/60 mb-1">PRIMARY SOURCES</span>
+                <span className="tattva-nav-link text-[8px] text-[#C58B52]/60 mb-1">PRIMARY SOURCES</span>
                 <span className="font-general text-[10px] uppercase tracking-widest text-[#E9E2D4]/80">8 SCRIPTURES</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-general text-[8px] uppercase tracking-[0.3em] text-[#C58B52]/60 mb-1">LEVEL</span>
+                <span className="tattva-nav-link text-[8px] text-[#C58B52]/60 mb-1">LEVEL</span>
                 <span className="font-general text-[10px] uppercase tracking-widest text-[#E9E2D4]/80">INTERMEDIATE</span>
               </div>
             </div>
@@ -274,7 +274,7 @@ export function WhyDoInnocentPeopleSuffer() {
           <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed text-center mx-auto mb-8">
             When tragedy strikes, people are often offered well-meaning but hollow clichés:
           </p>
-          <ul className="font-cormorant text-2xl font-light text-[#C58B52] leading-relaxed space-y-4 mb-12 text-center italic">
+          <ul className="tattva-body text-2xl text-[#C58B52] space-y-4 mb-12 text-center italic">
             <li>"It is karma."</li>
             <li>"It was God's will."</li>
             <li>"Everything happens for a reason."</li>
@@ -295,7 +295,7 @@ export function WhyDoInnocentPeopleSuffer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1.2, ease: EASE_EXPO }}
-          className="mb-48 w-full md:w-[100vw] max-w-full md:max-w-none md:relative md:left-1/2 md:right-1/2 md:-translate-x-1/2 py-16 px-6 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.02] flex flex-col items-center"
+          className="mb-48 w-full py-16 px-6 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.02] flex flex-col items-center"
         >
           <div className="w-full max-w-3xl text-center mb-16">
             <p className="font-cormorant text-xl md:text-2xl font-light text-[#E9E2D4]/80 leading-relaxed mx-auto">
@@ -311,7 +311,7 @@ export function WhyDoInnocentPeopleSuffer() {
           </div>
 
           <div className="max-w-4xl flex flex-col items-center pt-8 border-t border-[#C58B52]/20">
-            <p className="font-cormorant text-3xl md:text-4xl text-[#E9E2D4] leading-relaxed text-center font-light mt-8 mb-12">
+            <p className="tattva-editorial-summary text-[#E9E2D4] text-center mt-8 mb-12">
               According to Sanātana Dharma, suffering is not random, and it is not simply divine punishment. The soul is eternal, life extends beyond one birth, and present conditions may arise from karma, free will, collective causes, and cosmic law. At the same time, the tradition does not justify cruelty or apathy. It insists that the wise respond to suffering with compassion, dharma, and selfless action.
             </p>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40" />

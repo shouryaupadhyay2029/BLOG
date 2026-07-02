@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-
 import { Link } from 'react-router-dom';
 
 const TOPICS = [
@@ -44,7 +43,7 @@ function TopicItem({ index, id, title, description }) {
   return (
     <Link to={`/library/${id}`} className="block w-full">
       <motion.div 
-        className="relative flex flex-col py-8 cursor-pointer border-b border-[#E9E2D4]/10 group"
+        className="relative flex flex-col py-6 lg:py-8 cursor-pointer border-b border-[#E9E2D4]/10 group"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         initial={{ opacity: 0, y: 20 }}
@@ -53,16 +52,23 @@ function TopicItem({ index, id, title, description }) {
         transition={{ duration: 1.2, ease: EASE_EXPO, delay: index * 0.1 }}
       >
         <div className="flex flex-row items-baseline justify-between w-full">
-          <h3 className="font-instrument text-3xl md:text-5xl tracking-tight text-[#E9E2D4]/80 transition-colors duration-500 ease-out group-hover:text-[#E9E2D4]">
+          <h3 className="font-instrument text-2xl md:text-5xl tracking-tight text-[#E9E2D4]/80 transition-colors duration-500 ease-out group-hover:text-[#E9E2D4] pr-4">
             {title}
           </h3>
-          <span className="font-general text-[10px] uppercase tracking-widest text-[#C58B52]/0 transition-all duration-500 ease-out group-hover:text-[#C58B52]/100 ml-4 whitespace-nowrap">
+          <span className="font-general text-[10px] uppercase tracking-widest text-[#C58B52]/0 transition-all duration-500 ease-out group-hover:text-[#C58B52]/100 ml-4 whitespace-nowrap hidden lg:inline">
             Explore
           </span>
         </div>
 
+        {/* ALWAYS VISIBLE ON MOBILE, HOVER-ONLY ON DESKTOP */}
+        <div className="block lg:hidden mt-2">
+          <p className="font-cormorant text-base font-light italic text-[#E9E2D4]/60 leading-relaxed">
+            {description}
+          </p>
+        </div>
+
         <motion.div 
-          className="overflow-hidden"
+          className="hidden lg:block overflow-hidden"
           initial={{ height: 0, opacity: 0 }}
           animate={{ 
             height: isHovered ? 'auto' : 0, 
@@ -70,7 +76,7 @@ function TopicItem({ index, id, title, description }) {
           }}
           transition={{ duration: 0.6, ease: EASE_EXPO }}
         >
-          <p className="font-cormorant text-lg md:text-xl font-light italic text-[#E9E2D4]/60 pt-4 max-w-3xl leading-relaxed">
+          <p className="font-cormorant text-xl font-light italic text-[#E9E2D4]/60 pt-4 max-w-3xl leading-relaxed">
             {description}
           </p>
         </motion.div>
@@ -94,26 +100,26 @@ export function ReflectionLibrary() {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full bg-[#0D0D0C] text-[#E9E2D4] py-32 md:py-48 z-10 flex flex-col items-center border-t border-[#C58B52]/10"
+      className="relative w-full bg-[#0D0D0C] text-[#E9E2D4] py-24 md:py-48 z-10 flex flex-col items-center border-t border-[#C58B52]/10"
     >
       <div className="w-full max-w-6xl px-6 md:px-12 lg:px-24">
         
         {/* Header */}
         <motion.div 
-          className="mb-24 md:mb-32 flex flex-col"
+          className="mb-16 md:mb-32 flex flex-col items-start text-left"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.4, ease: EASE_EXPO }}
         >
-          <span className="font-general text-[11px] uppercase tracking-[0.3em] text-[#C58B52] mb-6 block">
+          <span className="font-general text-[11px] uppercase tracking-[0.3em] text-[#C58B52] mb-4 md:mb-6 block">
             Endless Cycle
           </span>
           <Link to="/library" className="group">
-            <h2 className="font-instrument text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-none mb-8 text-[#E9E2D4] group-hover:text-[#C58B52] transition-colors duration-500">
+            <h2 className="font-instrument text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-none mb-6 md:mb-8 text-[#E9E2D4] group-hover:text-[#C58B52] transition-colors duration-500">
               REFLECTION LIBRARY
             </h2>
           </Link>
-          <p className="font-cormorant text-xl md:text-2xl font-light italic text-[#E9E2D4]/70 max-w-2xl leading-relaxed">
+          <p className="font-cormorant text-lg md:text-2xl font-light italic text-[#E9E2D4]/70 max-w-2xl leading-relaxed">
             The timeline is only a frame. True understanding comes from reflection on the eternal principles that govern creation, preservation, and dissolution.
           </p>
         </motion.div>
@@ -128,17 +134,15 @@ export function ReflectionLibrary() {
       </div>
 
       {/* FINAL CONCLUSION SECTION */}
-      <div className="w-full flex flex-col items-center justify-center mt-[35vh] pb-[20vh] relative">
+      <div className="w-full flex flex-col items-center justify-center mt-[15vh] lg:mt-[35vh] pb-[10vh] lg:pb-[20vh] relative">
         
         {/* Massive Typography Watermark */}
         <div 
           className="absolute inset-0 flex flex-col items-center justify-end pb-[10vh] pointer-events-none select-none z-0 overflow-hidden"
         >
           <span 
-            className="font-instrument text-[#E9E2D4] leading-none text-center"
+            className="font-instrument text-[#E9E2D4] leading-none text-center text-[24vw] lg:text-[28vw] opacity-[0.02]"
             style={{ 
-              fontSize: '28vw', 
-              opacity: 0.03, 
               letterSpacing: '-0.02em',
               transform: 'translateY(15%)'
             }}
@@ -155,24 +159,24 @@ export function ReflectionLibrary() {
           transition={{ duration: 1.4, ease: EASE_EXPO }}
         >
           {/* Top Label */}
-          <span className="font-general text-[9px] uppercase tracking-[0.4em] text-[#C58B52] mb-12">
+          <span className="font-general text-[9px] uppercase tracking-[0.4em] text-[#C58B52] mb-8 lg:mb-12">
             The Journey Continues
           </span>
 
           {/* Main Quote */}
-          <h2 className="font-instrument text-4xl md:text-6xl lg:text-7xl text-[#E9E2D4] leading-tight max-w-4xl tracking-tight mb-8">
-            "There is no final answer.<br />
+          <h2 className="font-instrument text-3xl md:text-6xl lg:text-7xl text-[#E9E2D4] leading-tight max-w-4xl tracking-tight mb-8">
+            "There is no final answer.<br className="hidden md:block" />
             <span className="italic opacity-80">Only deeper questions.</span>"
           </h2>
 
           {/* Secondary Text */}
-          <p className="font-cormorant text-lg md:text-xl font-light italic text-[#E9E2D4]/50 mb-16 max-w-md leading-relaxed">
+          <p className="font-cormorant text-base md:text-xl font-light italic text-[#E9E2D4]/50 mb-12 lg:mb-16 max-w-md leading-relaxed">
             The search does not end here.<br />
             It begins again with every question.
           </p>
 
           {/* Divider */}
-          <div className="w-[90px] h-[1px] bg-[#C58B52]/40 mb-16" />
+          <div className="w-[60px] lg:w-[90px] h-[1px] bg-[#C58B52]/40 mb-12 lg:mb-16" />
 
           {/* Signature */}
           <div className="flex flex-col items-center">

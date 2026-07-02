@@ -129,7 +129,7 @@ export function InquiryArchivePage() {
 
         <Link to="/inquiry" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
@@ -137,7 +137,7 @@ export function InquiryArchivePage() {
 
         <Link to="/library" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
@@ -145,7 +145,7 @@ export function InquiryArchivePage() {
 
         <Link to="/satya-mithya" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             SATYA & MITHYĀ
           </span>
@@ -153,7 +153,7 @@ export function InquiryArchivePage() {
 
         <Link to="/the-origin" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             THE ORIGIN
           </span>
@@ -169,13 +169,13 @@ export function InquiryArchivePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, ease: EASE_EXPO }}
         >
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52] mb-6">
+          <span className="tattva-nav-link text-[#C58B52] mb-6">
             ARCHIVE I
           </span>
-          <h1 className="font-instrument text-6xl md:text-8xl lg:text-9xl text-[#E9E2D4] tracking-tighter leading-none mb-12">
+          <h1 className="tattva-hero-title text-[#E9E2D4] mb-12">
             Inquiry Archive
           </h1>
-          <p className="font-cormorant text-xl md:text-2xl font-light italic text-[#E9E2D4]/70 max-w-2xl leading-relaxed">
+          <p className="tattva-hero-desc text-[#E9E2D4]/70 max-w-2xl">
             Every civilization has asked questions.<br />
             Some sought belief. Others sought certainty.<br />
             This archive preserves the questions that continue to shape humanity's search for truth.

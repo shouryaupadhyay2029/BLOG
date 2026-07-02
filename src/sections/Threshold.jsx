@@ -86,12 +86,12 @@ export function Threshold() {
           visible: { transition: { staggerChildren: 0.2 } }
         }}
       >
-        <div className="grid grid-cols-12 gap-6 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8 items-center">
           
-          <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-start-4">
+          <div className="w-full lg:col-span-8 lg:col-start-3 xl:col-start-4">
             
             {/* Archival Label */}
-            <motion.div variants={fadeUpBlur} className="mb-8 md:mb-12">
+            <motion.div variants={fadeUpBlur} className="mb-6 lg:mb-12">
               <span 
                 style={{
                   fontFamily: '"General Sans", sans-serif',
@@ -111,7 +111,7 @@ export function Threshold() {
               variants={fadeUpBlur}
               style={{
                 fontFamily: 'Cormorant, serif',
-                fontSize: 'clamp(2.6rem, 5vw, 4.8rem)',
+                fontSize: 'clamp(2.0rem, 4.5vw, 4.8rem)',
                 fontWeight: 300,
                 letterSpacing: '-0.01em',
                 lineHeight: 1.15,
@@ -134,8 +134,8 @@ export function Threshold() {
                 // Using the requested Muted Shadow Tone (#CFC6B7) for the rule
                 background: 'linear-gradient(to right, rgba(207,198,183,0.8), transparent)',
                 transformOrigin: 'left',
-                marginTop: 'clamp(2rem, 4vw, 3.5rem)',
-                marginBottom: 'clamp(2rem, 4vw, 3.5rem)'
+                marginTop: 'clamp(1.5rem, 3.5vw, 3.5rem)',
+                marginBottom: 'clamp(1.5rem, 3.5vw, 3.5rem)'
               }}
             />
 
@@ -144,7 +144,7 @@ export function Threshold() {
               variants={fadeUpBlur}
               style={{
                 fontFamily: 'Manrope, sans-serif',
-                fontSize: 'clamp(0.9rem, 1.2vw, 1.1rem)',
+                fontSize: 'clamp(0.85rem, 1.2vw, 1.1rem)',
                 fontWeight: 300,
                 letterSpacing: '0.02em',
                 lineHeight: 1.8,

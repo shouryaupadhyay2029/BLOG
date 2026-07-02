@@ -467,7 +467,7 @@ export function SatyaMithyaPage() {
 
         <Link to="/inquiry" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
@@ -475,7 +475,7 @@ export function SatyaMithyaPage() {
 
         <Link to="/library" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
@@ -483,7 +483,7 @@ export function SatyaMithyaPage() {
 
         <Link to="/satya-mithya" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
+            className="tattva-nav-link transition-colors duration-500 text-[#9E2A2B]"
           >
             SATYA & MITHYĀ
           </span>
@@ -491,7 +491,7 @@ export function SatyaMithyaPage() {
 
         <Link to="/the-origin" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             THE ORIGIN
           </span>
@@ -507,13 +507,13 @@ export function SatyaMithyaPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, ease: EASE_EXPO }}
         >
-          <span className="font-general text-[10px] uppercase tracking-[0.45em] text-[#9E2A2B] mb-5 font-bold">
+          <span className="tattva-nav-link tracking-[0.45em] text-[#9E2A2B] mb-5 font-bold">
             INVESTIGATIVE ARCHIVE
           </span>
-          <h1 className="font-instrument text-6xl md:text-8xl lg:text-9xl text-[#1C1C1A] tracking-tighter leading-none mb-10 select-none">
+          <h1 className="tattva-hero-title text-[#1C1C1A] mb-10 select-none">
             SATYA / MITHYĀ
           </h1>
-          <p className="font-cormorant text-xl md:text-2xl font-light italic text-[#1C1C1A]/70 max-w-2xl leading-relaxed mb-12">
+          <p className="tattva-hero-desc text-[#1C1C1A]/70 max-w-2xl mb-12">
             Separating scriptural truth from popular misconception through evidence, scripture, language, history and philosophy.
           </p>
 

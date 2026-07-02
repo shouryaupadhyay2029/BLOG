@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect, memo } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+
 /* ─────────────────────────────────────────────────────────────────
    TATTVA — Hero Section (Premium Manuscript Engine)
    ──────────────────────────────────────────────────────────────── */
@@ -170,26 +171,31 @@ const SacredGeometryAnchor = memo(function SacredGeometryAnchor() {
   const x = useTransform(smoothX, [0, typeof window !== 'undefined' ? window.innerWidth : 1000], [-10, 10]);
   const y = useTransform(smoothY, [0, typeof window !== 'undefined' ? window.innerHeight : 1000], [-10, 10]);
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
   return (
     <motion.div
       aria-hidden="true"
       style={{
         position: 'absolute',
         top: '50%',
-        right: '-15%', // Partially cropped by viewport edge
-        width: 'clamp(900px, 80vw, 1200px)', 
-        height: 'clamp(900px, 80vw, 1200px)',
-        marginTop: '-50vh', // Half height offset visually
-        x,
-        y,
+        left: isMobile ? '50%' : 'auto',
+        right: isMobile ? 'auto' : '-15%',
+        width: isMobile ? '280px' : 'clamp(900px, 80vw, 1200px)', 
+        height: isMobile ? '280px' : 'clamp(900px, 80vw, 1200px)',
+        marginTop: isMobile ? '0' : '-50vh',
+        x: isMobile ? 0 : x,
+        y: isMobile ? 0 : y,
+        transform: isMobile ? 'translate(-50%, -50%)' : 'none',
         scale,
-        opacity: 0.05, // 5% opacity (between 3% and 8%)
-        zIndex: 3,
+        opacity: isMobile ? 0.03 : 0.05,
+        zIndex: isMobile ? 1 : 3,
         pointerEvents: 'none',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}
+      className="lg:absolute"
     >
       {/* Concentric Circles */}
       <div className="absolute inset-0 rounded-full border-[1px] border-[#C58B52] opacity-80" />
@@ -453,16 +459,18 @@ function QuoteEngine() {
 
   return (
     <>
-      <ArchivalCounter index={currentIndex} total={QUOTES.length} />
+      <div className="hidden lg:block">
+        <ArchivalCounter index={currentIndex} total={QUOTES.length} />
+      </div>
 
       {/* Wrapping container traps the hover pause */}
       <div 
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        style={{ display: 'flex', flexDirection: 'column', gap: '0' }}
+        className="flex flex-col items-center lg:items-start text-center lg:text-left w-full"
       >
         <AnimatePresence mode="wait">
-          <motion.div key={currentIndex} className="flex flex-col">
+          <motion.div key={currentIndex} className="flex flex-col items-center lg:items-start">
             
             {/* Gold Divider Line Animation */}
             <motion.div
@@ -472,21 +480,21 @@ function QuoteEngine() {
               transition={{ duration: 1.8, ease: EASE_EXPO }}
               style={{
                 height: '1px',
-                width: '3rem',
+                width: '2.5rem',
                 background: 'linear-gradient(to right, rgba(212,175,55,0.45), transparent)',
-                marginBottom: 'clamp(1.4rem, 2.5vw, 2.2rem)',
-                transformOrigin: 'left',
+                transformOrigin: 'center',
               }}
+              className="mb-6 lg:mb-8 mx-auto lg:mx-0"
             />
 
             {/* Sanskrit */}
-            <div style={{ marginBottom: 'clamp(1.6rem, 3vw, 2.8rem)' }}>
+            <div className="mb-6 lg:mb-8 text-center lg:text-left">
               <motion.div variants={sanskritVariants} initial="enter" animate="center" exit="exit" style={{ display: 'block' }}>
                 <span
                   style={{
                     display: 'block',
                     fontFamily: '"Tiro Devanagari Sanskrit", serif',
-                    fontSize: 'clamp(2.4rem, 5vw, 4.8rem)',
+                    fontSize: 'clamp(1.8rem, 4.5vw, 4.8rem)',
                     fontWeight: 400,
                     lineHeight: 1.25,
                     letterSpacing: '0',
@@ -501,13 +509,13 @@ function QuoteEngine() {
                     style={{
                       display: 'block',
                       fontFamily: '"Tiro Devanagari Sanskrit", serif',
-                      fontSize: 'clamp(2.4rem, 5vw, 4.8rem)',
+                      fontSize: 'clamp(1.8rem, 4.5vw, 4.8rem)',
                       fontWeight: 400,
                       lineHeight: 1.25,
                       letterSpacing: '0',
-                      paddingLeft: 'clamp(1.8rem, 3.5vw, 3.8rem)',
                       color: 'var(--text-primary)',
                     }}
+                    className="lg:pl-[clamp(1.8rem,3.5vw,3.8rem)] text-center lg:text-left"
                     lang="sa"
                   >
                     {quote.sanskrit_l2}
@@ -517,13 +525,13 @@ function QuoteEngine() {
             </div>
 
             {/* Transliteration */}
-            <div style={{ marginBottom: 'clamp(1.2rem, 2.2vw, 2rem)' }}>
+            <div className="mb-4 lg:mb-6 text-center lg:text-left">
               <motion.p
                 variants={translitVariants} initial="enter" animate="center" exit="exit"
                 lang="sa-Latn"
                 style={{
                   fontFamily: '"Cormorant Garamond", serif',
-                  fontSize: 'clamp(1rem, 1.6vw, 1.25rem)',
+                  fontSize: 'clamp(0.85rem, 1.4vw, 1.25rem)',
                   fontWeight: 400,
                   fontStyle: 'italic',
                   letterSpacing: '0.05em',
@@ -537,12 +545,18 @@ function QuoteEngine() {
             </div>
 
             {/* Translation & Source Group */}
-            <motion.div variants={englishVariants} initial="enter" animate="center" exit="exit">
-              <div style={{ marginBottom: 'clamp(1.4rem, 2.5vw, 2.2rem)' }}>
+            <motion.div 
+              variants={englishVariants} 
+              initial="enter" 
+              animate="center" 
+              exit="exit"
+              className="flex flex-col items-center lg:items-start"
+            >
+              <div className="mb-6 lg:mb-8 text-center lg:text-left">
                 <p
                   style={{
                     fontFamily: 'Manrope, sans-serif',
-                    fontSize: 'clamp(0.78rem, 1.1vw, 0.9rem)',
+                    fontSize: 'clamp(0.75rem, 1.1vw, 0.9rem)',
                     fontWeight: 300,
                     letterSpacing: '0.018em',
                     color: 'var(--text-secondary)',
@@ -555,7 +569,7 @@ function QuoteEngine() {
                 </p>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
+              <div className="flex items-baseline gap-2 justify-center lg:justify-start">
                 <span
                   style={{
                     fontFamily: '"Cormorant SC", serif',
@@ -608,6 +622,7 @@ const Tagline = memo(function Tagline() {
         lineHeight: 1.8,
         whiteSpace: 'pre-line',
       }}
+      className="text-center lg:text-left mx-auto lg:mx-0"
     >
       {'A space for reflection,\nwisdom and inquiry.'}
     </motion.p>
@@ -621,22 +636,27 @@ const ScrollCue = memo(function ScrollCue() {
   return (
     <motion.div
       variants={fadeInBlur(2.0, 2, 2)}
-      className="absolute bottom-9 left-9 md:bottom-11 md:left-13 z-10 cursor-pointer"
-      style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
+      className="absolute bottom-6 md:bottom-9 lg:bottom-11 left-1/2 -translate-x-1/2 lg:left-13 lg:translate-x-0 z-10 cursor-pointer flex flex-col lg:flex-row items-center gap-2 lg:gap-3"
       whileHover={{ y: 3, opacity: 1 }}
       transition={{ duration: 0.6, ease: EASE_EXPO }}
     >
       <div
         style={{
           position: 'relative',
-          height: '2.5rem',
+          height: '2rem',
           width: '1px',
           background: 'var(--text-muted)',
           opacity: 0.5,
-          transition: 'opacity 0.6s',
         }}
-        className="group-hover:opacity-100"
+        className="hidden lg:block"
       />
+      <motion.span
+        animate={{ y: [0, 4, 0] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        className="text-[var(--text-muted)] text-sm lg:hidden mb-1"
+      >
+        ↓
+      </motion.span>
       <span
         style={{
           fontFamily: '"General Sans", sans-serif',
@@ -703,28 +723,10 @@ export function TattvaHero() {
       >
         <SacredGeometryAnchor />
         <AbstractForms />
-        <TopNav />
 
         <div className="layout-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              alignItems: 'center',
-              minHeight: '100svh',
-              paddingTop: 'clamp(5rem, 10vw, 8rem)',
-              paddingBottom: 'clamp(5rem, 10vw, 8rem)',
-            }}
-          >
-            <div
-              style={{
-                gridColumn: 'span 12',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 'clamp(2rem, 4vw, 3.5rem)',
-              }}
-              className="lg:col-span-7 xl:col-span-6"
-            >
+          <div className="flex flex-col lg:grid lg:grid-cols-12 items-center justify-center min-h-[100svh] pt-32 pb-24 lg:py-32">
+            <div className="w-full lg:col-span-7 xl:col-span-6 flex flex-col gap-6 lg:gap-14">
               <QuoteEngine />
               <Tagline />
             </div>
@@ -733,6 +735,8 @@ export function TattvaHero() {
 
         <ScrollCue />
       </motion.div>
+
+
     </section>
   );
 }

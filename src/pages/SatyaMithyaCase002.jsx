@@ -405,7 +405,7 @@ export function SatyaMithyaCase002() {
 
         <Link to="/inquiry" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
@@ -413,7 +413,7 @@ export function SatyaMithyaCase002() {
 
         <Link to="/library" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
@@ -421,7 +421,7 @@ export function SatyaMithyaCase002() {
 
         <Link to="/satya-mithya" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
+            className="tattva-nav-link transition-colors duration-500 text-[#9E2A2B]"
           >
             SATYA & MITHYĀ
           </span>
@@ -429,7 +429,7 @@ export function SatyaMithyaCase002() {
 
         <Link to="/the-origin" className="group flex items-center">
           <span
-            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="tattva-nav-link transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             THE ORIGIN
           </span>

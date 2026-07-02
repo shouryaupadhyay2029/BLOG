@@ -77,25 +77,25 @@ export function TheOriginPage() {
         </Link>
 
         <Link to="/inquiry" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]">
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]">
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]">
             SATYA & MITHYĀ
           </span>
         </Link>
 
         <Link to="/the-origin" className="group flex items-center">
-          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]">
+          <span className="tattva-nav-link transition-colors duration-500 text-[#9E2A2B]">
             THE ORIGIN
           </span>
         </Link>
@@ -109,10 +109,10 @@ export function TheOriginPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, ease: EASE_EXPO }}
         >
-          <span className="font-general text-[10px] uppercase tracking-[0.45em] text-[#C58B52] mb-5 font-bold">
+          <span className="tattva-nav-link tracking-[0.45em] text-[#C58B52] mb-5 font-bold">
             EDITORIAL ARCHIVE
           </span>
-          <h1 className="font-instrument text-5xl md:text-7xl lg:text-8xl text-[#1C1C1A] tracking-tighter leading-none mb-10 select-none">
+          <h1 className="tattva-hero-title text-[#1C1C1A] mb-10 select-none">
             The Origin
           </h1>
           <p className="font-cormorant text-2xl md:text-3xl font-light italic text-[#1C1C1A]/80 max-w-2xl leading-relaxed mb-12">

@@ -272,6 +272,10 @@ function EventItem({ event, isActive, onHoverStart, onHoverEnd }) {
       >
         {event.name}
       </span>
+      {/* Desktop-only description */}
+      <span className="hidden md:block font-general text-[9px] uppercase tracking-widest text-[#888888] mt-1 text-right max-w-[220px]">
+        {event.subtitle}
+      </span>
     </div>
   );
 }
@@ -282,6 +286,7 @@ export function SiteWideThread() {
   const pathRef = useRef(null);
 
   const [dim, setDim] = useState({ w: 0, h: 0, startY: 0 });
+  const [isMobile, setIsMobile] = useState(false);
   const [nodePositions, setNodePositions] = useState(null);
   const [triggers, setTriggers] = useState({
     vishnu: 0.05,
@@ -328,6 +333,15 @@ export function SiteWideThread() {
   }, [activeIncident?.event?.id]);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
     if (!containerRef.current) return;
 
     const updateDimensions = () => {
@@ -352,21 +366,24 @@ export function SiteWideThread() {
   }, []);
 
   useEffect(() => {
-    if (!pathRef.current || dim.w === 0 || dim.h === 0) return;
+    if (dim.w === 0 || dim.h === 0) return;
 
-    // We use a small timeout to let the browser draw the path before measuring
+    // Delay measurement to ensure the SVG path has been committed to the DOM
     const timeout = setTimeout(() => {
       if (!pathRef.current) return;
       const path = pathRef.current;
       const totalLength = path.getTotalLength();
 
-      const extraSpace = window.innerHeight * 0.5; // 50vh added
+      const extraSpace = window.innerHeight * 0.5;
       const baseH = Math.max(0, dim.h - extraSpace);
 
+      // Path now starts at Brahmanda (top) so higher scroll = further down.
+      // findLenForY searches increasing Y (downward) from path start.
       const findLenForY = (targetY) => {
         let low = 0, high = totalLength, best = 0;
         for (let i = 0; i < 30; i++) {
           const mid = (low + high) / 2;
+          // Path goes top→bottom: Y increases as length increases
           if (path.getPointAtLength(mid).y < targetY) low = mid;
           else high = mid;
           best = mid;
@@ -374,19 +391,18 @@ export function SiteWideThread() {
         return best;
       };
 
-      const l_vishnu = findLenForY(window.innerHeight * 0.65); // 65vh
+      const l_vishnu = findLenForY(window.innerHeight * 0.65);
       const l_brahma = findLenForY(baseH * 0.31);
       const l_satya = findLenForY(baseH * 0.72);
       const l_treta = findLenForY(baseH * 0.80);
       const l_dvapara = findLenForY(baseH * 0.88);
       const l_kali = findLenForY(baseH * 0.94);
-
       const l_kalki = findLenForY(baseH + extraSpace * 0.08);
       const l_mahapralaya = findLenForY(baseH + extraSpace * 0.22);
-      const l_mahadeva = totalLength;
+      const l_mahadeva = totalLength; // End of path (bottom)
 
       setNodePositions({
-        brahmanda: path.getPointAtLength(0),
+        brahmanda: path.getPointAtLength(0),           // Start = Om symbol (top)
         vishnu: path.getPointAtLength(l_vishnu),
         brahma: path.getPointAtLength(l_brahma),
         satya: path.getPointAtLength(l_satya),
@@ -409,55 +425,31 @@ export function SiteWideThread() {
         mahapralaya: l_mahapralaya / totalLength,
         mahadeva: l_mahadeva / totalLength
       });
-    }, 100);
+    }, 250);
 
     return () => clearTimeout(timeout);
-  }, [dim.w, dim.h, dim.startY]);
+  }, [dim.w, dim.h, dim.startY, isMobile]);
 
   const pathD = useMemo(() => {
     if (dim.w === 0 || dim.h === 0) return '';
-    const extraSpace = window.innerHeight * 0.5; // 50vh added
+    const extraSpace = window.innerHeight * 0.5;
     const baseH = Math.max(0, dim.h - extraSpace);
-
-    const px = (x) => {
-      const isMobile = dim.w < 1024;
-      const targetX = isMobile ? (x === 85 ? 93 : (x === 75 ? 89 : x)) : x;
-      return (targetX / 100) * dim.w;
-    };
+    const px = (x) => (x / 100) * dim.w;
     const py = (y) => (y / 100) * baseH;
     const pyExtra = (y) => py(100) + (y / 100) * extraSpace;
 
+    // Path starts at Brahmanda (Om symbol, top = dim.startY) and travels downward.
+    // pathLength: smoothProgress draws from start→end as user scrolls, so the
+    // golden thread grows downward from the Om symbol as expected.
     return `
-      M ${px(85)} ${dim.startY} 
-      C ${px(85)} ${py(20)}, ${px(75)} ${py(35)}, ${px(75)} ${py(50)} 
+      M ${px(85)} ${dim.startY}
+      C ${px(85)} ${py(20)}, ${px(75)} ${py(35)}, ${px(75)} ${py(50)}
       C ${px(75)} ${py(60)}, ${px(85)} ${py(65)}, ${px(85)} ${py(72)}
       C ${px(85)} ${py(75)}, ${px(75)} ${py(77)}, ${px(75)} ${py(80)}
       C ${px(75)} ${py(83)}, ${px(85)} ${py(85)}, ${px(85)} ${py(88)}
       C ${px(85)} ${py(91)}, ${px(75)} ${py(93)}, ${px(75)} ${py(94)}
       C ${px(75)} ${py(97)}, ${px(85)} ${py(100)}, ${px(85)} ${pyExtra(20)}
       C ${px(85)} ${pyExtra(30)}, ${px(75)} ${pyExtra(35)}, ${px(75)} ${pyExtra(45)}
-    `;
-  }, [dim.w, dim.h, dim.startY]);
-
-  const loopPathD = useMemo(() => {
-    if (dim.w === 0 || dim.h === 0) return '';
-    const extraSpace = window.innerHeight * 0.5;
-    const baseH = Math.max(0, dim.h - extraSpace);
-
-    const px = (x) => {
-      const isMobile = dim.w < 1024;
-      const targetX = isMobile ? (x === 85 ? 93 : (x === 75 ? 89 : x)) : x;
-      return (targetX / 100) * dim.w;
-    };
-    const py = (y) => (y / 100) * baseH;
-    const pyExtra = (y) => py(100) + (y / 100) * extraSpace;
-
-    return `
-      M ${px(75)} ${pyExtra(45)}
-      C ${px(75)} ${pyExtra(60)}, ${px(50)} ${pyExtra(80)}, ${px(10)} ${pyExtra(80)}
-      C ${px(5)} ${pyExtra(80)}, ${px(5)} ${pyExtra(50)}, ${px(5)} ${py(90)}
-      L ${px(5)} ${dim.startY + 400}
-      C ${px(5)} ${dim.startY}, ${px(40)} ${dim.startY - 50}, ${px(85)} ${dim.startY}
     `;
   }, [dim.w, dim.h, dim.startY]);
 
@@ -468,7 +460,6 @@ export function SiteWideThread() {
   });
 
   useMotionValueEvent(smoothProgress, "change", (latest) => {
-    if (timelineCompleted || isCycleCompleting) return;
     setActiveNodes({
       vishnuStage: latest >= triggers.vishnu,
       brahmaStage: latest >= triggers.brahma,
@@ -675,29 +666,8 @@ export function SiteWideThread() {
             strokeLinecap="round"
             strokeLinejoin="round"
             style={{
-              pathLength: (timelineCompleted || isCycleCompleting) ? 1 : smoothProgress,
+              pathLength: smoothProgress,
               filter: 'drop-shadow(0px 0px 6px rgba(197,139,82,0.9))'
-            }}
-          />
-          <motion.path
-            d={loopPathD}
-            fill="none"
-            stroke="#C58B52"
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: isCycleCompleting ? 1 : 0 }}
-            transition={{ duration: 7, ease: [0.4, 0.0, 0.2, 1] }}
-            style={{
-              filter: 'drop-shadow(0px 0px 6px rgba(197,139,82,0.9))'
-            }}
-            onAnimationComplete={() => {
-              if (isCycleCompleting && !cycleFinished && !timelineCompleted) {
-                setCycleFinished(true);
-                setTimelineCompleted(true);
-                setTimeout(() => setCycleFinished(false), 4000);
-              }
             }}
           />
         </svg>
@@ -707,16 +677,20 @@ export function SiteWideThread() {
       <div
         ref={beginningRef}
         className="absolute"
-        style={nodePositions ? { top: nodePositions.brahmanda.y, left: nodePositions.brahmanda.x, transform: 'translate(-50%, -50%)' } : { top: 'clamp(5rem, 10vw, 8rem)', left: '85%', transform: 'translate(-50%, -50%)' }}
+        style={
+          nodePositions
+            ? { top: nodePositions.brahmanda.y, left: nodePositions.brahmanda.x, transform: 'translate(-50%, -50%)' }
+            : { top: 'clamp(5rem, 10vw, 8rem)', left: '85%', transform: 'translate(-50%, -50%)' }
+        }
       >
         <div className="relative flex items-center justify-center">
-          <div className="absolute right-6 flex flex-col items-end pt-1 w-[320px]">
+          <div className="absolute right-6 flex flex-col items-end pt-1 w-[200px] md:w-[320px]">
             {/* Future Compatibility Sequence container */}
-            <div className="flex flex-col items-end mb-4">
+            <div className="flex flex-col items-end mb-2 md:mb-4">
               <img
                 src="/om_sacred_symbol_transparent.png"
                 alt="Sacred Om Symbol"
-                className="w-[55px] md:w-[65px] object-contain opacity-80"
+                className="w-[45px] md:w-[65px] object-contain opacity-80"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
               {/* Future elements (Vishnu, Lotus, Brahma) can be sequentially added here */}
@@ -734,7 +708,7 @@ export function SiteWideThread() {
               Brahmāṇḍa
             </span>
             <span
-              className="text-right mt-3 leading-relaxed"
+              className="hidden md:block text-right mt-3 leading-relaxed"
               style={{
                 fontFamily: 'Cormorant, serif',
                 fontSize: '14px',
@@ -776,7 +750,7 @@ export function SiteWideThread() {
 
       {/* SRI VISHNU STAGE (0.05 Progress) */}
       <AnimatePresence>
-        {activeNodes.vishnuStage && nodePositions && (
+        {activeNodes.vishnuStage && nodePositions && !isMobile && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -787,18 +761,18 @@ export function SiteWideThread() {
           >
             <div className="relative flex items-center justify-center">
 
-              <div className="absolute right-8 flex flex-row items-center gap-10 w-[600px] justify-end">
+              <div className="absolute right-8 flex flex-col md:flex-row items-center gap-4 md:gap-10 w-[240px] md:w-[600px] justify-end">
 
                 {/* Text Block */}
-                <div className="flex flex-col items-end text-right max-w-[320px]">
-                  <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-3">
+                <div className="flex flex-col items-end text-right max-w-[220px] md:max-w-[320px]">
+                  <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-1 md:mb-3">
                     Śrī Viṣṇu
                   </span>
-                  <span className="font-cormorant text-[15px] italic text-[#999999] leading-relaxed">
+                  <span className="hidden md:block font-cormorant text-[15px] italic text-[#999999] leading-relaxed">
                     Reclining upon Ādiśeṣa in the infinite Kāraṇodaka, Śrī Viṣṇu remains in perfect stillness before manifestation. Within Him rest all future worlds in their unmanifest state.
                   </span>
-                  <span className="font-general text-[8.5px] uppercase tracking-widest text-[#C58B52]/60 mt-5">
-                    Viṣṇu Purāṇa • Śrīmad Bhāgavatam • Brahma-saṁhitā
+                  <span className="font-general text-[8.5px] uppercase tracking-widest text-[#C58B52]/60 mt-2 md:mt-5 text-right">
+                    Viṣṇu Purāṇa • Śrīmad Bhāgavatam
                   </span>
                 </div>
 
@@ -806,7 +780,7 @@ export function SiteWideThread() {
                 <img
                   src="/sri_vishnu_figure_transparent.png"
                   alt="Śrī Viṣṇu"
-                  className="w-[200px] object-contain opacity-85"
+                  className="w-[110px] md:w-[200px] object-contain opacity-85"
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
 
@@ -832,7 +806,7 @@ export function SiteWideThread() {
 
       {/* PADMA UDBHAVA STAGE (0.25 Progress) */}
       <AnimatePresence>
-        {activeNodes.brahmaStage && nodePositions && (
+        {activeNodes.brahmaStage && nodePositions && !isMobile && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -843,18 +817,18 @@ export function SiteWideThread() {
           >
             <div className="relative flex items-center justify-center">
 
-              <div className="absolute right-8 flex flex-row items-center gap-10 w-[600px] justify-end">
+              <div className="absolute right-8 flex flex-col md:flex-row items-center gap-4 md:gap-10 w-[240px] md:w-[600px] justify-end">
 
                 {/* Text Block */}
-                <div className="flex flex-col items-end text-right max-w-[320px]">
-                  <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-3">
+                <div className="flex flex-col items-end text-right max-w-[220px] md:max-w-[320px]">
+                  <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-1 md:mb-3">
                     Padma Udbhava
                   </span>
-                  <span className="font-cormorant text-[15px] italic text-[#2A2A2A]/80 leading-relaxed">
+                  <span className="hidden md:block font-cormorant text-[15px] italic text-[#2A2A2A]/80 leading-relaxed">
                     From the Nābhi of Śrī Viṣṇu arose the divine Padma. Upon that eternal lotus appeared Śrī Brahmā, the first embodied being, who received the responsibility of manifesting the fourteen worlds according to the will of the Supreme.
                   </span>
-                  <span className="font-general text-[8.5px] uppercase tracking-widest text-[#2A2A2A]/60 mt-5">
-                    Viṣṇu Purāṇa • Śrīmad Bhāgavatam • Brahma-saṁhitā
+                  <span className="font-general text-[8.5px] uppercase tracking-widest text-[#2A2A2A]/60 mt-2 md:mt-5 text-right">
+                    Viṣṇu Purāṇa • Śrīmad Bhāgavatam
                   </span>
                 </div>
 
@@ -862,7 +836,7 @@ export function SiteWideThread() {
                 <img
                   src="/sri_brahma_figure_transparent.png"
                   alt="Padma and Śrī Brahmā"
-                  className="w-[200px] object-contain opacity-80"
+                  className="w-[110px] md:w-[200px] object-contain opacity-80"
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
 
@@ -1046,7 +1020,7 @@ export function SiteWideThread() {
 
       {/* ŚRĪ MAHĀDEVA STAGE */}
       <AnimatePresence>
-        {activeNodes.mahadevaStage && nodePositions && (
+        {activeNodes.mahadevaStage && nodePositions && !isMobile && (
           <div
             className="absolute pointer-events-none"
             style={{ top: nodePositions.mahadeva.y, left: nodePositions.mahadeva.x }}
@@ -1059,24 +1033,24 @@ export function SiteWideThread() {
                 transition={{ duration: 1, ease: 'easeOut' }}
                 className="relative flex items-center justify-center"
               >
-                <div className="absolute right-8 flex flex-row items-center gap-10 w-[600px] justify-end">
+                <div className="absolute right-8 flex flex-col md:flex-row items-center gap-4 md:gap-10 w-[240px] md:w-[600px] justify-end">
                   {/* Text Block */}
-                  <div className="flex flex-col items-end text-right max-w-[320px]">
-                    <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-3">
+                  <div className="flex flex-col items-end text-right max-w-[220px] md:max-w-[320px]">
+                    <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-1 md:mb-3">
                       Śrī Mahādeva <span className="opacity-70 normal-case tracking-normal">— Saṁhāra</span>
                     </span>
-                    <span className="font-cormorant text-[15px] italic text-[#2A2A2A]/80 leading-relaxed">
+                    <span className="hidden md:block font-cormorant text-[15px] italic text-[#2A2A2A]/80 leading-relaxed">
                       Beyond creation and preservation stands Śrī Mahādeva, the eternal principle of Saṁhāra. As the cosmic cycle concludes, He presides over dissolution—not as destruction born of wrath, but as the sacred return of all existence into stillness, making way for the next manifestation of the universe.
                     </span>
-                    <span className="font-general text-[8.5px] uppercase tracking-widest text-[#2A2A2A]/60 mt-5">
-                      Śiva Purāṇa • Liṅga Purāṇa • Kūrma Purāṇa
+                    <span className="font-general text-[8.5px] uppercase tracking-widest text-[#2A2A2A]/60 mt-2 md:mt-5 text-right">
+                      Śiva Purāṇa • Liṅga Purāṇa
                     </span>
                   </div>
                   {/* Illustration */}
                   <img
                     src="/Shiva_transparent.png"
                     alt="Śrī Mahādeva"
-                    className="w-[200px] object-contain opacity-80 pointer-events-auto"
+                    className="w-[110px] md:w-[200px] object-contain opacity-80 pointer-events-auto"
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>
