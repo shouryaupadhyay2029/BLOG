@@ -12,7 +12,8 @@ export function PriyavrataGenealogy() {
         </p>
       </div>
 
-      <div className="min-w-[800px] flex flex-col items-center">
+      {/* DESKTOP GENEALOGY (Unchanged) */}
+      <div className="hidden md:flex min-w-[800px] flex-col items-center">
         {/* Root Node */}
         <div className="border border-[#C58B52] p-4 bg-[#C58B52]/10 mb-8 rounded-sm">
           <span className="font-instrument text-2xl">King Priyavrata</span>
@@ -61,7 +62,63 @@ export function PriyavrataGenealogy() {
             <span className="text-[14px] text-[#E9E2D4]/50">Puṣkaradvīpa</span>
           </div>
         </div>
+      </div>
 
+      {/* MOBILE GENEALOGY (Reflowed) */}
+      <div className="flex md:hidden flex-col items-center w-full relative">
+        {/* Root Node */}
+        <div className="border border-[#C58B52] p-3 bg-[#C58B52]/10 mb-8 rounded-sm z-10">
+          <span className="font-instrument text-xl">King Priyavrata</span>
+        </div>
+
+        {/* Mobile Sons Tree */}
+        <div className="flex flex-col w-full max-w-[280px] gap-8 relative pb-4">
+          {/* Central Trunk */}
+          <div className="absolute left-1/2 top-[-32px] bottom-8 w-px bg-[#C58B52]/30 -translate-x-1/2 z-0" />
+          
+          <div className="flex justify-between w-full relative z-10">
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[100px] h-px bg-[#C58B52]/30 -z-10" />
+            <div className="w-24 text-center bg-[#1A1A18] py-1">
+              <span className="text-[#C58B52] block mb-1 font-cormorant text-lg">Āgnīdhra</span>
+              <span className="text-[10px] text-[#E9E2D4]/50 uppercase tracking-[0.1em]">Jambūdvīpa</span>
+            </div>
+            <div className="w-24 text-center bg-[#1A1A18] py-1">
+              <span className="text-[#C58B52] block mb-1 font-cormorant text-lg">Idhmajihva</span>
+              <span className="text-[10px] text-[#E9E2D4]/50 uppercase tracking-[0.1em]">Plakṣadvīpa</span>
+            </div>
+          </div>
+          
+          <div className="flex justify-between w-full relative z-10">
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[100px] h-px bg-[#C58B52]/30 -z-10" />
+            <div className="w-24 text-center bg-[#1A1A18] py-1">
+              <span className="text-[#C58B52] block mb-1 font-cormorant text-lg">Yajñabāhu</span>
+              <span className="text-[10px] text-[#E9E2D4]/50 uppercase tracking-[0.1em]">Śālmaladvīpa</span>
+            </div>
+            <div className="w-24 text-center bg-[#1A1A18] py-1">
+              <span className="text-[#C58B52] block mb-1 font-cormorant text-lg">Hiraṇyaretā</span>
+              <span className="text-[10px] text-[#E9E2D4]/50 uppercase tracking-[0.1em]">Kuśadvīpa</span>
+            </div>
+          </div>
+          
+          <div className="flex justify-between w-full relative z-10">
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[100px] h-px bg-[#C58B52]/30 -z-10" />
+            <div className="w-24 text-center bg-[#1A1A18] py-1">
+              <span className="text-[#C58B52] block mb-1 font-cormorant text-lg">Ghṛtapṛṣṭha</span>
+              <span className="text-[10px] text-[#E9E2D4]/50 uppercase tracking-[0.1em]">Krauñcadvīpa</span>
+            </div>
+            <div className="w-24 text-center bg-[#1A1A18] py-1">
+              <span className="text-[#C58B52] block mb-1 font-cormorant text-lg">Medhātithi</span>
+              <span className="text-[10px] text-[#E9E2D4]/50 uppercase tracking-[0.1em]">Śākadvīpa</span>
+            </div>
+          </div>
+          
+          <div className="flex justify-center w-full relative z-10">
+            <div className="w-24 text-center bg-[#1A1A18] py-1">
+              <span className="text-[#C58B52] block mb-1 font-cormorant text-lg">Vītihotra</span>
+              <span className="text-[10px] text-[#E9E2D4]/50 uppercase tracking-[0.1em]">Puṣkaradvīpa</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

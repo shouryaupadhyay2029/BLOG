@@ -40,9 +40,9 @@ function MasterCosmicUnfolding() {
   return (
     <div
       ref={containerRef}
-      className="w-full border border-[#C58B52]/10 bg-white/20 p-6 md:p-10 relative overflow-hidden flex flex-col items-center min-h-[360px] justify-center select-none"
+      className="w-full border border-[#C58B52]/30 bg-[#1A1A18] p-6 md:p-10 relative overflow-hidden flex flex-col items-center min-h-[400px] justify-center select-none shadow-xl"
     >
-      <span className="font-general text-[8px] uppercase tracking-[0.4em] text-[#C58B52]/50 block absolute top-6">
+      <span className="font-general text-[8px] uppercase tracking-[0.4em] text-[#C58B52]/80 block absolute top-6">
         Master Visualization (Scroll to witness unfolding)
       </span>
 
@@ -50,7 +50,7 @@ function MasterCosmicUnfolding() {
       <motion.svg
         style={{ opacity: geomOpacity }}
         viewBox="0 0 200 200"
-        className="absolute w-44 h-44 pointer-events-none stroke-[#C58B52]/30 fill-none stroke-[0.8]"
+        className="absolute w-44 h-44 pointer-events-none stroke-[#C58B52]/50 fill-none stroke-[1.2]"
       >
         <polygon points="100,20 169,60 169,140 100,180 31,140 31,60" />
         <circle cx="100" cy="100" r="50" />
@@ -62,7 +62,7 @@ function MasterCosmicUnfolding() {
         style={{ opacity: waveOpacity }}
         className="absolute inset-0 flex flex-col justify-center items-center pointer-events-none"
       >
-        <svg viewBox="0 0 200 60" className="w-56 stroke-[#C58B52]/40 fill-none stroke-[0.8]">
+        <svg viewBox="0 0 200 60" className="w-56 stroke-[#C58B52]/60 fill-none stroke-[1.5]">
           <motion.path
             d="M 10,30 Q 30,10 50,30 T 90,30 T 130,30 T 170,30 T 190,30"
             animate={{ d: [
@@ -80,7 +80,7 @@ function MasterCosmicUnfolding() {
               "M 10,30 Q 30,50 50,30 T 90,30 T 130,30 T 170,30 T 190,30"
             ]}}
             transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-            className="stroke-[#C58B52]/20"
+            className="stroke-[#C58B52]/30"
           />
         </svg>
       </motion.div>
@@ -90,8 +90,8 @@ function MasterCosmicUnfolding() {
         style={{ opacity: spaceOpacity }}
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
       >
-        <div className="w-36 h-36 border border-[#C58B52]/25 rounded-full animate-ping" style={{ animationDuration: '4s' }} />
-        <div className="absolute w-20 h-20 border border-[#C58B52]/15 rounded-full animate-ping" style={{ animationDuration: '6s' }} />
+        <div className="w-36 h-36 border border-[#C58B52]/40 rounded-full animate-ping" style={{ animationDuration: '4s' }} />
+        <div className="absolute w-20 h-20 border border-[#C58B52]/20 rounded-full animate-ping" style={{ animationDuration: '6s' }} />
       </motion.div>
 
       {/* Layer 4: Gross Elements (Air, Fire, Water, Earth) */}
@@ -102,12 +102,12 @@ function MasterCosmicUnfolding() {
         <div className="text-center">
           <span className="font-general text-[7px] uppercase tracking-[0.25em] text-[#C58B52] block mb-2">Matter Materialized</span>
           {/* Faint earth circle */}
-          <div className="w-24 h-24 rounded-full border border-[#C58B52]/30 flex items-center justify-center bg-gradient-to-b from-[#C58B52]/5 to-[#C58B52]/15 relative">
+          <div className="w-24 h-24 rounded-full border border-[#C58B52]/40 flex items-center justify-center bg-gradient-to-b from-[#C58B52]/10 to-[#C58B52]/20 relative">
             {/* Water ripples inside */}
-            <div className="absolute inset-2 border border-blue-400/20 rounded-full" />
+            <div className="absolute inset-2 border border-blue-400/30 rounded-full" />
             {/* Fire flame indicator */}
-            <div className="w-2 h-4 bg-amber-400/30 rounded-t-full filter blur-[1px] absolute top-4" />
-            <span className="font-instrument italic text-xs text-[#0D0D0C]/70">Pṛthvī</span>
+            <div className="w-2 h-4 bg-amber-400/40 rounded-t-full filter blur-[1px] absolute top-4" />
+            <span className="font-instrument italic text-xs text-[#E9E2D4]/90">Pṛthvī</span>
           </div>
         </div>
       </motion.div>

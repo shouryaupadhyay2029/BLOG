@@ -52,7 +52,7 @@ const ALL_CASES = [
     title: 'Hinduism Commands Sati (Widow Immolation)',
     categoryLabel: 'Society • History',
     categories: ['Society', 'History'],
-    status: 'Research in Progress',
+    status: 'Completed',
     id: 'hinduism-commands-sati',
     desc: 'Investigating scriptural descriptions, linguistic meanings, archaeological findings, and colonial debates surrounding widow immolation.'
   },

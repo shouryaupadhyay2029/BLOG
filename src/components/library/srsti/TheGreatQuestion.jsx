@@ -55,7 +55,7 @@ const CIVILISATIONS = [
 /* ─── Single scroll-pinned question ────────────────────────── */
 function ScrollQuestion({ question }) {
   return (
-    <section className="w-full min-h-[45vh] flex items-center justify-center px-6 py-12">
+    <section className="w-full py-12 md:py-20 flex items-center justify-center px-6">
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

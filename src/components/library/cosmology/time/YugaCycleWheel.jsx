@@ -13,48 +13,48 @@ export function YugaCycleWheel() {
         </p>
       </div>
 
-      <div className="relative w-full max-w-xl aspect-square rounded-full border border-[#C58B52]/30 flex items-center justify-center p-8">
+      <div className="relative w-full max-w-xl aspect-square rounded-full border border-[#C58B52]/30 flex items-center justify-center p-2 sm:p-4 md:p-8">
         
         {/* CSS visualization of the 4:3:2:1 ratio using conic-gradients could go here, but for React we'll build a layered structure or explicit blocks to ensure compatibility and layout stability */}
         <div className="w-full h-full rounded-full relative flex items-center justify-center border border-[#C58B52]/10 overflow-hidden">
           
           {/* Satya Yuga (40%) */}
-          <div className="absolute top-0 right-0 w-1/2 h-1/2 border-l border-b border-[#1A1A18] bg-[#E9E2D4]/20 flex items-center justify-center p-4 text-center">
-            <div>
-              <span className="block font-instrument text-2xl text-[#E9E2D4]">Satya Yuga</span>
-              <span className="block font-cormorant text-[#E9E2D4]/70 text-sm">4 parts (1,728,000 yrs)</span>
+          <div className="absolute top-0 right-0 w-1/2 h-1/2 border-l border-b border-[#1A1A18] bg-[#E9E2D4]/20 flex items-center justify-center p-2 md:p-4 text-center">
+            <div className="ml-2 mb-2 md:m-0">
+              <span className="block font-instrument text-sm sm:text-lg md:text-2xl text-[#E9E2D4]">Satya Yuga</span>
+              <span className="block font-cormorant text-[#E9E2D4]/70 text-[9px] sm:text-[11px] md:text-sm leading-tight">4 parts<br className="md:hidden"/> (1,728,000 yrs)</span>
             </div>
           </div>
           
-          {/* Treta Yuga (30%) - Approximated visually as quadrants for simplicity in this MVP, but labeled correctly */}
-          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 border-l border-t border-[#1A1A18] bg-[#E9E2D4]/15 flex items-center justify-center p-4 text-center">
-            <div>
-              <span className="block font-instrument text-2xl text-[#E9E2D4]">Tretā Yuga</span>
-              <span className="block font-cormorant text-[#E9E2D4]/70 text-sm">3 parts (1,296,000 yrs)</span>
+          {/* Treta Yuga (30%) */}
+          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 border-l border-t border-[#1A1A18] bg-[#E9E2D4]/15 flex items-center justify-center p-2 md:p-4 text-center">
+            <div className="ml-2 mt-2 md:m-0">
+              <span className="block font-instrument text-sm sm:text-lg md:text-2xl text-[#E9E2D4]">Tretā Yuga</span>
+              <span className="block font-cormorant text-[#E9E2D4]/70 text-[9px] sm:text-[11px] md:text-sm leading-tight">3 parts<br className="md:hidden"/> (1,296,000 yrs)</span>
             </div>
           </div>
           
           {/* Dvapara Yuga (20%) */}
-          <div className="absolute bottom-0 left-0 w-1/2 h-1/2 border-r border-t border-[#1A1A18] bg-[#E9E2D4]/10 flex items-center justify-center p-4 text-center">
-            <div>
-              <span className="block font-instrument text-2xl text-[#E9E2D4]">Dvāpara Yuga</span>
-              <span className="block font-cormorant text-[#E9E2D4]/70 text-sm">2 parts (864,000 yrs)</span>
+          <div className="absolute bottom-0 left-0 w-1/2 h-1/2 border-r border-t border-[#1A1A18] bg-[#E9E2D4]/10 flex items-center justify-center p-2 md:p-4 text-center">
+            <div className="mr-2 mt-2 md:m-0">
+              <span className="block font-instrument text-sm sm:text-lg md:text-2xl text-[#E9E2D4]">Dvāpara Yuga</span>
+              <span className="block font-cormorant text-[#E9E2D4]/70 text-[9px] sm:text-[11px] md:text-sm leading-tight">2 parts<br className="md:hidden"/> (864,000 yrs)</span>
             </div>
           </div>
           
           {/* Kali Yuga (10%) */}
-          <div className="absolute top-0 left-0 w-1/2 h-1/2 border-r border-b border-[#1A1A18] bg-[#E9E2D4]/5 flex items-center justify-center p-4 text-center">
-            <div>
-              <span className="block font-instrument text-2xl text-[#C58B52]">Kali Yuga</span>
-              <span className="block font-cormorant text-[#C58B52]/70 text-sm">1 part (432,000 yrs)</span>
+          <div className="absolute top-0 left-0 w-1/2 h-1/2 border-r border-b border-[#1A1A18] bg-[#E9E2D4]/5 flex items-center justify-center p-2 md:p-4 text-center">
+            <div className="mr-2 mb-2 md:m-0">
+              <span className="block font-instrument text-sm sm:text-lg md:text-2xl text-[#C58B52]">Kali Yuga</span>
+              <span className="block font-cormorant text-[#C58B52]/70 text-[9px] sm:text-[11px] md:text-sm leading-tight">1 part<br className="md:hidden"/> (432,000 yrs)</span>
             </div>
           </div>
 
           {/* Central Hub */}
-          <div className="absolute w-32 h-32 bg-[#1A1A18] rounded-full flex flex-col items-center justify-center border border-[#C58B52]/30 shadow-2xl">
-            <span className="font-general text-[8px] uppercase tracking-[0.2em] text-[#C58B52]">Total</span>
-            <span className="font-instrument text-xl text-[#E9E2D4]">4.32M</span>
-            <span className="font-cormorant text-xs text-[#E9E2D4]/50">Years</span>
+          <div className="absolute w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-[#1A1A18] rounded-full flex flex-col items-center justify-center border border-[#C58B52]/30 shadow-2xl">
+            <span className="font-general text-[6px] md:text-[8px] uppercase tracking-[0.2em] text-[#C58B52]">Total</span>
+            <span className="font-instrument text-sm sm:text-lg md:text-xl text-[#E9E2D4]">4.32M</span>
+            <span className="font-cormorant text-[10px] md:text-xs text-[#E9E2D4]/50">Years</span>
           </div>
 
         </div>
