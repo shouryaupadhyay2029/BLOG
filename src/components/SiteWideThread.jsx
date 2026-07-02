@@ -220,48 +220,22 @@ const IMAGE_MAPPING = {
 // Power3 easing
 const EASE_POWER3 = [0.215, 0.61, 0.355, 1];
 
-function EventItem({ event, isActive, onHoverStart, onHoverEnd }) {
-  const textRef = useRef(null);
-
+function EventItem({ event, isActive, onHoverStart }) {
   const handleInteraction = (e) => {
-    if (textRef.current) {
-      const rect = textRef.current.getBoundingClientRect();
-      const isMobile = window.innerWidth < 1024;
-      const panelWidth = isMobile ? window.innerWidth - 48 : Math.min(window.innerWidth * 0.35, 500);
-      const panelLeft = isMobile ? 24 : window.innerWidth * 0.08;
-      const panelRightEdge = panelLeft + panelWidth;
-
-      const gapToCard = 40;
-      const gapToText = 24;
-
-      const lineLeft = panelRightEdge + gapToCard;
-      const lineRight = rect.left - gapToText;
-      const lineWidth = Math.max(0, lineRight - lineLeft);
-
-      onHoverStart({
-        event,
-        centerY: rect.top + (rect.height / 2),
-        panelLeft,
-        panelWidth,
-        lineLeft,
-        lineWidth,
-        isMobile
-      });
-    }
+    if (window.innerWidth < 1024) return; // Completely disable on mobile
+    onHoverStart({ event });
   };
 
   return (
     <div
       className="flex flex-col items-end cursor-pointer group w-full relative"
       onMouseEnter={handleInteraction}
-      onMouseLeave={onHoverEnd}
       onClick={(e) => {
         e.stopPropagation();
         handleInteraction(e);
       }}
     >
       <span
-        ref={textRef}
         style={{
           fontFamily: '"Instrument Serif", serif',
           fontSize: '1.4rem',
@@ -307,8 +281,8 @@ export function SiteWideThread() {
   const [activeNodes, setActiveNodes] = useState({});
   const [hoveredYuga, setHoveredYuga] = useState(null);
 
-  // Global state for the active hovered incident
-  const [activeIncident, setActiveIncident] = useState(null);
+  // Global state for the active hovered incident. Defaults to Matsya Avatāra for desktop.
+  const [activeIncident, setActiveIncident] = useState({ event: YUGA_NODES[0].events[0] });
   const [imgError, setImgError] = useState(false);
 
   const [isCycleCompleting, setIsCycleCompleting] = useState(false);
@@ -479,174 +453,85 @@ export function SiteWideThread() {
       className="absolute inset-0 z-[100] pointer-events-none overflow-hidden"
       aria-hidden="true"
     >
-      {/* GLOBAL KNOWLEDGE ARCHIVE PANEL */}
+      {/* DESKTOP FIXED PREVIEW PANEL */}
       <AnimatePresence>
-        {activeIncident && (
-          activeIncident.isMobile ? (
-            <div
-              className="fixed inset-0 bg-[#050504]/60 backdrop-blur-sm z-[250] flex items-center justify-center p-6 pointer-events-auto select-none font-sans"
-              onClick={onHoverEnd}
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, ease: EASE_POWER3 }}
-                className="w-full max-w-md bg-[#E9E2D4] border border-[#C58B52]/35 p-6 shadow-2xl relative flex flex-col max-h-[80vh] overflow-y-auto custom-scrollbar"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Close Button */}
-                <button
-                  className="absolute top-4 right-4 font-general text-[8.5px] uppercase tracking-wider text-[#9E2A2B] font-bold"
-                  onClick={onHoverEnd}
-                >
-                  [ CLOSE ]
-                </button>
+        {!isMobile && activeIncident && activeIncident.event && (
+          <div className="fixed inset-0 pointer-events-none z-[200]">
+            {/* The Dedicated Left Panel */}
+            <div className="absolute top-1/2 left-[8%] transform -translate-y-1/2 w-[35%] max-w-[500px]">
+              <div className="w-full text-left relative flex flex-col pr-4 pointer-events-auto custom-scrollbar">
 
-                {/* Image */}
-                <div className="w-full h-44 mb-6 overflow-hidden border border-[#C58B52]/20 shrink-0 relative bg-[#E9E2D4] mt-4">
-                  {!imgError ? (
-                    <img
-                      src={encodeURI(`/${IMAGE_MAPPING[activeIncident.event.name] || activeIncident.event.name + '.jpg'}`)}
-                      alt={activeIncident.event.name}
-                      className="w-full h-full object-cover"
-                      onError={() => setImgError(true)}
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="font-instrument italic text-[#C58B52]/50 text-base">Archive Entry Missing</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Title */}
-                <div className="mb-4 text-left">
-                  <h3 className="font-instrument text-3xl text-[#1A1A1A] leading-none mb-1 tracking-tight">
-                    {activeIncident.event.name}
-                  </h3>
-                  <span className="block font-general text-[8.5px] tracking-widest uppercase text-[#C58B52]">
-                    {activeIncident.event.subtitle}
-                  </span>
-                </div>
-
-                {/* Narrative */}
-                <p className="font-cormorant text-[1.15rem] font-light text-[#333333] leading-relaxed text-left mb-6">
-                  {activeIncident.event.narrative}
-                </p>
-
-                {/* Sources */}
-                <div className="border-t border-[#C58B52]/20 pt-4 text-left">
-                  <span className="font-general text-[8px] uppercase tracking-widest text-[#C58B52] block mb-2 font-bold font-general">Scriptural Sources</span>
-                  <ul className="flex flex-col gap-1">
-                    {activeIncident.event.sources.map((src, i) => (
-                      <li key={i} className="font-instrument text-base text-[#1A1A1A]">{src}</li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            </div>
-          ) : (
-            <div className="fixed inset-0 pointer-events-none z-[200]">
-
-              {/* The Connecting Line */}
-              <motion.div
-                className="absolute h-[1px] bg-[#C58B52]"
-                style={{
-                  left: activeIncident.lineLeft,
-                  top: activeIncident.centerY,
-                  width: activeIncident.lineWidth,
-                  transformOrigin: 'right'
-                }}
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                exit={{ scaleX: 0, opacity: 0 }}
-                transition={{ duration: 0.8, ease: EASE_POWER3 }}
-              />
-
-              {/* The Dedicated Left Panel */}
-              <div
-                className="absolute transform -translate-y-1/2"
-                style={{
-                  left: activeIncident.panelLeft,
-                  top: activeIncident.centerY,
-                  width: activeIncident.panelWidth
-                }}
-              >
-                <div className="w-full text-left relative flex flex-col max-h-[85vh] overflow-y-auto pr-4 pointer-events-auto custom-scrollbar">
-
-                  {/* Image Fade & Blur */}
-                  <div className="w-full min-h-[220px] aspect-[4/3] mb-6 overflow-hidden border border-[#C58B52]/20 shrink-0 relative bg-[#E9E2D4]">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={activeIncident.event.id}
-                        initial={{ opacity: 0, filter: 'blur(8px)' }}
-                        animate={{ opacity: 1, filter: 'blur(0px)' }}
-                        exit={{ opacity: 0, filter: 'blur(8px)' }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
-                        className="absolute inset-0"
-                      >
-                        {!imgError ? (
-                          <img
-                            src={encodeURI(`/${IMAGE_MAPPING[activeIncident.event.name] || activeIncident.event.name + '.jpg'}`)}
-                            alt={activeIncident.event.name}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              console.error('Failed to load image:', e.target.src);
-                              setImgError(true);
-                            }}
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center">
-                            <span className="font-instrument italic text-[#C58B52]/50 text-xl">Archive Entry Missing</span>
-                          </div>
-                        )}
-                      </motion.div>
-                    </AnimatePresence>
-                  </div>
-
-                  {/* Title, Subtitle, Narrative, Sources */}
+                {/* Image Fade & Blur */}
+                <div className="w-full min-h-[220px] aspect-[4/3] mb-6 overflow-hidden border border-[#C58B52]/20 shrink-0 relative bg-[#E9E2D4]">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeIncident.event.id}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="flex flex-col shrink-0"
+                      initial={{ opacity: 0, filter: 'blur(4px)' }}
+                      animate={{ opacity: 1, filter: 'blur(0px)' }}
+                      exit={{ opacity: 0, filter: 'blur(4px)' }}
+                      transition={{ duration: 0.3, ease: 'easeOut' }}
+                      className="absolute inset-0"
                     >
-                      {/* Title and Subtitle */}
-                      <div className="mb-6">
-                        <h3 className="font-instrument text-4xl text-[#1A1A1A] leading-none mb-2 tracking-tight">
-                          {activeIncident.event.name}
-                        </h3>
-                        <span className="block font-general text-[10px] tracking-widest uppercase text-[#C58B52]">
-                          {activeIncident.event.subtitle}
-                        </span>
-                      </div>
-
-                      {/* Detailed Narrative */}
-                      <div className="mb-6">
-                        <p className="font-cormorant text-[1.2rem] font-light text-[#333333] leading-relaxed">
-                          {activeIncident.event.narrative}
-                        </p>
-                      </div>
-
-                      {/* Sources */}
-                      <div className="border-t border-[#C58B52]/20 pt-6 mt-2 pb-8">
-                        <h4 className="font-general text-[9px] uppercase tracking-widest text-[#C58B52] mb-3">Scriptural Sources</h4>
-                        <ul className="flex flex-col gap-1">
-                          {activeIncident.event.sources.map((src, i) => (
-                            <li key={i} className="font-instrument text-lg text-[#1A1A1A]">{src}</li>
-                          ))}
-                        </ul>
-                      </div>
+                      {!imgError ? (
+                        <img
+                          src={encodeURI(`/${IMAGE_MAPPING[activeIncident.event.name] || activeIncident.event.name + '.jpg'}`)}
+                          alt={activeIncident.event.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            console.error('Failed to load image:', e.target.src);
+                            setImgError(true);
+                          }}
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <span className="font-instrument italic text-[#C58B52]/50 text-xl">Archive Entry Missing</span>
+                        </div>
+                      )}
                     </motion.div>
                   </AnimatePresence>
                 </div>
-              </div>
 
+                {/* Title, Subtitle, Narrative, Sources */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeIncident.event.id}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                    className="flex flex-col shrink-0"
+                  >
+                    {/* Title and Subtitle */}
+                    <div className="mb-6">
+                      <h3 className="font-instrument text-4xl text-[#1A1A1A] leading-none mb-2 tracking-tight">
+                        {activeIncident.event.name}
+                      </h3>
+                      <span className="block font-general text-[10px] tracking-widest uppercase text-[#C58B52]">
+                        {activeIncident.event.subtitle}
+                      </span>
+                    </div>
+
+                    {/* Detailed Narrative */}
+                    <div className="mb-6">
+                      <p className="font-cormorant text-[1.2rem] font-light text-[#333333] leading-relaxed">
+                        {activeIncident.event.narrative}
+                      </p>
+                    </div>
+
+                    {/* Sources */}
+                    <div className="border-t border-[#C58B52]/20 pt-6 mt-2 pb-8">
+                      <h4 className="font-general text-[9px] uppercase tracking-widest text-[#C58B52] mb-3">Scriptural Sources</h4>
+                      <ul className="flex flex-col gap-1">
+                        {activeIncident.event.sources.map((src, i) => (
+                          <li key={i} className="font-instrument text-lg text-[#1A1A1A]">{src}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
-          )
+          </div>
         )}
       </AnimatePresence>
 
@@ -957,7 +842,6 @@ export function SiteWideThread() {
                     event={evt}
                     isActive={activeIncident?.event?.id === evt.id}
                     onHoverStart={setActiveIncident}
-                    onHoverEnd={() => setActiveIncident(null)}
                   />
                 ))}
               </div>
