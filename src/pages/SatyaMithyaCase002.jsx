@@ -719,16 +719,18 @@ export function SatyaMithyaCase002() {
 
           {/* CHRONOLOGICAL TIMELINE NAVIGATION */}
           <Reveal className="my-8">
-            <div className="border border-[#C58B52]/25 bg-white/40 p-4">
-              <span className="font-general text-[8px] uppercase tracking-widest text-[#C58B52] block mb-4 text-center font-bold">
+            <div className="border border-[#C58B52]/25 bg-white/40 p-5 md:p-8">
+              <span className="font-general text-[8px] md:text-[9px] uppercase tracking-widest text-[#C58B52] block mb-6 text-center font-bold">
                 Vedic Chronological Timeline
               </span>
-              <div className="flex justify-between border-b border-[#C58B52]/20 pb-2 mb-6 text-center select-none">
+              
+              {/* Timeline Navigation: horizontally scrollable on mobile, justified on desktop */}
+              <div className="flex overflow-x-auto no-scrollbar md:overflow-visible gap-8 md:gap-0 md:justify-between border-b border-[#C58B52]/20 pb-2 mb-8 select-none whitespace-nowrap -mx-5 px-5 md:mx-0 md:px-0">
                 {scripturalEvidenceTimeline.map((item, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleVedicTimelineClick(idx)}
-                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${activeVedicTimelineIdx === idx
+                    className={`font-general text-[10px] md:text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 flex-shrink-0 ${activeVedicTimelineIdx === idx
                         ? 'text-[#9E2A2B] border-b border-[#9E2A2B] font-bold'
                         : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]'
                       }`}
@@ -748,45 +750,45 @@ export function SatyaMithyaCase002() {
                   transition={{ duration: 0.4 }}
                   className="flex flex-col"
                 >
-                  <div className="flex justify-between items-baseline mb-4">
-                    <span className="font-general text-[9px] text-[#9E2A2B] border border-[#9E2A2B]/20 bg-[#9E2A2B]/5 px-2 py-0.5 font-bold uppercase tracking-wider">
+                  <div className="flex flex-col md:flex-row md:justify-between items-start md:items-baseline mb-5 gap-2 md:gap-0">
+                    <span className="font-general text-[9px] text-[#9E2A2B] border border-[#9E2A2B]/20 bg-[#9E2A2B]/5 px-2 py-1 font-bold uppercase tracking-wider inline-block">
                       {scripturalEvidenceTimeline[activeVedicTimelineIdx].classification}
                     </span>
-                    <span className="font-cormorant text-xs text-[#1C1C1A]/50 italic">
+                    <span className="font-cormorant text-sm md:text-xs text-[#1C1C1A]/50 italic">
                       Era: {scripturalEvidenceTimeline[activeVedicTimelineIdx].era}
                     </span>
                   </div>
 
-                  <div className="border border-[#C58B52]/15 bg-[#F4EFE6] p-6 mb-4">
-                    <pre className="font-instrument text-base md:text-lg text-[#9E2A2B] font-semibold text-center whitespace-pre-wrap leading-relaxed">
+                  <div className="border border-[#C58B52]/15 bg-[#F4EFE6] p-6 md:p-8 mb-6">
+                    <pre className="font-instrument text-lg md:text-xl text-[#9E2A2B] font-semibold text-center whitespace-pre-wrap leading-relaxed">
                       {scripturalEvidenceTimeline[activeVedicTimelineIdx].verse}
                     </pre>
-                    <div className="w-8 h-[1px] bg-[#C58B52]/30 mx-auto my-3" />
-                    <pre className="font-instrument text-[11px] text-[#1C1C1A]/60 text-center whitespace-pre-wrap leading-relaxed italic">
+                    <div className="w-8 h-[1px] bg-[#C58B52]/30 mx-auto my-4" />
+                    <pre className="font-instrument text-[12px] md:text-[11px] text-[#1C1C1A]/60 text-center whitespace-pre-wrap leading-relaxed italic">
                       {scripturalEvidenceTimeline[activeVedicTimelineIdx].iast}
                     </pre>
                   </div>
 
-                  <p className="font-cormorant text-base text-[#1C1C1A] leading-relaxed font-light mb-4">
-                    <strong>Translation:</strong> {scripturalEvidenceTimeline[activeVedicTimelineIdx].translation}
+                  <p className="font-cormorant text-lg md:text-base text-[#1C1C1A] leading-relaxed font-light mb-6">
+                    <strong className="font-semibold">Translation:</strong> {scripturalEvidenceTimeline[activeVedicTimelineIdx].translation}
                   </p>
 
-                  <div className="bg-white/40 p-4 border border-[#C58B52]/10 mb-4">
-                    <span className="font-general text-[7.5px] uppercase tracking-wider text-[#C58B52] block mb-1">
+                  <div className="bg-white/40 p-5 md:p-4 border border-[#C58B52]/10 mb-6">
+                    <span className="font-general text-[8.5px] md:text-[7.5px] uppercase tracking-wider text-[#C58B52] block mb-2">
                       Context & Significance
                     </span>
-                    <p className="font-cormorant text-xs text-[#1C1C1A]/70 leading-relaxed font-light">
+                    <p className="font-cormorant text-sm md:text-xs text-[#1C1C1A]/80 md:text-[#1C1C1A]/70 leading-relaxed font-light">
                       {scripturalEvidenceTimeline[activeVedicTimelineIdx].explanation}
                     </p>
                   </div>
 
-                  <div className="flex justify-between items-baseline mt-2">
-                    <span className="font-general text-[7.5px] text-[#1C1C1A]/40 uppercase tracking-widest font-semibold">
+                  <div className="flex flex-col md:flex-row md:justify-between items-start md:items-baseline mt-2 gap-3 md:gap-0">
+                    <span className="font-general text-[8.5px] md:text-[7.5px] text-[#1C1C1A]/50 md:text-[#1C1C1A]/40 uppercase tracking-widest font-semibold">
                       Source: {scripturalEvidenceTimeline[activeVedicTimelineIdx].citation}
                     </span>
                     <button
                       onClick={() => setEvidenceCardExpanded(!evidenceCardExpanded)}
-                      className="font-general text-[7.5px] text-[#9E2A2B] uppercase tracking-widest hover:underline focus:outline-none"
+                      className="font-general text-[9px] md:text-[7.5px] text-[#9E2A2B] uppercase tracking-widest hover:underline focus:outline-none p-2 md:p-0 -ml-2 md:ml-0"
                     >
                       {evidenceCardExpanded ? 'Collapse Academic Note ▲' : 'Read Academic Note ▼'}
                     </button>
@@ -796,9 +798,9 @@ export function SatyaMithyaCase002() {
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
-                      className="border-t border-[#C58B52]/20 mt-4 pt-4 text-xs font-cormorant text-[#1C1C1A]/65 leading-relaxed font-light"
+                      className="border-t border-[#C58B52]/20 mt-4 pt-5 md:pt-4 text-sm md:text-xs font-cormorant text-[#1C1C1A]/75 md:text-[#1C1C1A]/65 leading-relaxed font-light"
                     >
-                      <strong>Scholar Interpretation:</strong> {scripturalEvidenceTimeline[activeVedicTimelineIdx].significance}
+                      <strong className="font-semibold">Scholar Interpretation:</strong> {scripturalEvidenceTimeline[activeVedicTimelineIdx].significance}
                     </motion.div>
                   )}
                 </motion.div>
@@ -808,14 +810,18 @@ export function SatyaMithyaCase002() {
 
           {/* CROSS REFERENCE */}
           <Reveal className="my-8">
-            <div className="bg-[#C58B52]/5 border border-[#C58B52]/20 p-4 flex items-center justify-between">
+            <div className="bg-[#C58B52]/5 border border-[#C58B52]/20 p-5 md:p-4 flex flex-col md:flex-row md:items-center justify-between gap-5 md:gap-0">
               <div>
-                <span className="font-general text-[7.5px] text-[#C58B52] uppercase block tracking-wider mb-1 font-bold">Connected Library Path</span>
-                <span className="font-instrument text-sm text-[#1C1C1A] font-semibold">Sṛṣṭi — How the Universe Emerges</span>
+                <span className="font-general text-[8.5px] md:text-[7.5px] text-[#C58B52] uppercase block tracking-wider mb-1.5 md:mb-1 font-bold">
+                  Connected Library Path
+                </span>
+                <span className="font-instrument text-base md:text-sm text-[#1C1C1A] font-semibold block">
+                  Sṛṣṭi — How the Universe Emerges
+                </span>
               </div>
               <Link
                 to="/library/srsthi"
-                className="font-general text-[8px] uppercase tracking-widest text-[#9E2A2B] border border-[#9E2A2B] px-3 py-1 hover:bg-[#9E2A2B] hover:text-white transition-colors duration-300 font-bold"
+                className="font-general text-[10px] md:text-[8px] uppercase tracking-widest text-[#9E2A2B] border border-[#9E2A2B] px-4 py-2.5 md:px-3 md:py-1 hover:bg-[#9E2A2B] hover:text-white transition-colors duration-300 font-bold text-center w-full md:w-auto"
               >
                 Read Article
               </Link>
