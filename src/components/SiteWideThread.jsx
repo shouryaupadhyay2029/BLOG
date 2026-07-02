@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { motion, useScroll, useSpring, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 
 const YUGA_NODES = [
@@ -220,16 +220,41 @@ const IMAGE_MAPPING = {
 // Power3 easing
 const EASE_POWER3 = [0.215, 0.61, 0.355, 1];
 
-function EventItem({ event, isActive, onHoverStart }) {
+function EventItem({ event, isActive, onHoverStart, onHoverEnd, registerPosition }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      const updatePosition = () => {
+        // We calculate the Y center of this item relative to the document
+        // But since we want to place the absolute panel relative to the SiteWideThread container,
+        // we can just find the closest absolute container (SiteWideThread)
+        const container = ref.current.closest('.sitewide-thread-container');
+        if (container) {
+          const rect = ref.current.getBoundingClientRect();
+          const containerRect = container.getBoundingClientRect();
+          const relativeY = rect.top - containerRect.top + (rect.height / 2);
+          registerPosition(event.id, relativeY);
+        }
+      };
+      
+      updatePosition();
+      window.addEventListener('resize', updatePosition);
+      return () => window.removeEventListener('resize', updatePosition);
+    }
+  }, [event.id, registerPosition]);
+
   const handleInteraction = (e) => {
     if (window.innerWidth < 1024) return; // Completely disable on mobile
-    onHoverStart({ event });
+    onHoverStart(event);
   };
 
   return (
     <div
+      ref={ref}
       className="flex flex-col items-end cursor-pointer group w-full relative"
       onMouseEnter={handleInteraction}
+      onMouseLeave={onHoverEnd}
       onClick={(e) => {
         e.stopPropagation();
         handleInteraction(e);
@@ -281,8 +306,15 @@ export function SiteWideThread() {
   const [activeNodes, setActiveNodes] = useState({});
   const [hoveredYuga, setHoveredYuga] = useState(null);
 
-  // Global state for the active hovered incident. Defaults to Matsya Avatāra for desktop.
-  const [activeIncident, setActiveIncident] = useState({ event: YUGA_NODES[0].events[0] });
+  // Synchronization states for Context-Aware Timeline Preview
+  const [activeYugaId, setActiveYugaId] = useState(YUGA_NODES[0].id);
+  const [hoveredEvent, setHoveredEvent] = useState(null);
+  const [eventPositions, setEventPositions] = useState({});
+
+  const registerEventPosition = useCallback((id, y) => {
+    setEventPositions(prev => ({ ...prev, [id]: y }));
+  }, []);
+  
   const [imgError, setImgError] = useState(false);
 
   const [isCycleCompleting, setIsCycleCompleting] = useState(false);
@@ -301,10 +333,19 @@ export function SiteWideThread() {
     };
   }, [activeNodes.mahadevaStage, isCycleCompleting, cycleFinished]);
 
+  // Derived state for the synchronized preview
+  const activeYugaNode = YUGA_NODES.find(y => y.id === activeYugaId) || YUGA_NODES[0];
+  const defaultEvent = activeYugaNode.events[0];
+  
+  // Only display the hovered event if it belongs to the currently active scroll Yuga
+  const displayEvent = (hoveredEvent && hoveredEvent.yugaId === activeYugaId)
+    ? hoveredEvent.event
+    : defaultEvent;
+
   // Reset image error when incident changes
   useEffect(() => {
     setImgError(false);
-  }, [activeIncident?.event?.id]);
+  }, [displayEvent?.id]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -434,7 +475,7 @@ export function SiteWideThread() {
   });
 
   useMotionValueEvent(smoothProgress, "change", (latest) => {
-    setActiveNodes({
+    const newActiveNodes = {
       vishnuStage: latest >= triggers.vishnu,
       brahmaStage: latest >= triggers.brahma,
       satya: latest >= triggers.satya,
@@ -444,28 +485,43 @@ export function SiteWideThread() {
       kalkiStage: latest >= triggers.kalki,
       mahapralayaStage: latest >= triggers.mahapralaya,
       mahadevaStage: latest >= triggers.mahadeva
-    });
+    };
+    setActiveNodes(newActiveNodes);
+
+    // Determine the active Yuga based on scroll
+    let currentYugaId = 'satya';
+    if (newActiveNodes.kali) currentYugaId = 'kali';
+    else if (newActiveNodes.dvapara) currentYugaId = 'dvapara';
+    else if (newActiveNodes.treta) currentYugaId = 'treta';
+    else if (newActiveNodes.satya) currentYugaId = 'satya';
+
+    setActiveYugaId(currentYugaId);
   });
 
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 z-[100] pointer-events-none overflow-hidden"
+      className="sitewide-thread-container absolute inset-0 z-[100] pointer-events-none overflow-hidden"
       aria-hidden="true"
     >
-      {/* DESKTOP FIXED PREVIEW PANEL */}
+      {/* DESKTOP DYNAMIC PREVIEW PANEL */}
       <AnimatePresence>
-        {!isMobile && activeIncident && activeIncident.event && (
-          <div className="fixed inset-0 pointer-events-none z-[200]">
+        {!isMobile && displayEvent && eventPositions[displayEvent.id] && (
+          <div className="absolute inset-0 pointer-events-none z-[200]">
             {/* The Dedicated Left Panel */}
-            <div className="absolute top-1/2 left-[8%] transform -translate-y-1/2 w-[35%] max-w-[500px]">
+            <motion.div 
+              className="absolute left-[8%] transform -translate-y-1/2 w-[35%] max-w-[500px]"
+              initial={{ top: eventPositions[displayEvent.id] }}
+              animate={{ top: eventPositions[displayEvent.id] }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            >
               <div className="w-full text-left relative flex flex-col pr-4 pointer-events-auto custom-scrollbar">
 
                 {/* Image Fade & Blur */}
                 <div className="w-full min-h-[220px] aspect-[4/3] mb-6 overflow-hidden border border-[#C58B52]/20 shrink-0 relative bg-[#E9E2D4]">
                   <AnimatePresence mode="wait">
                     <motion.div
-                      key={activeIncident.event.id}
+                      key={displayEvent.id}
                       initial={{ opacity: 0, filter: 'blur(4px)' }}
                       animate={{ opacity: 1, filter: 'blur(0px)' }}
                       exit={{ opacity: 0, filter: 'blur(4px)' }}
@@ -474,8 +530,8 @@ export function SiteWideThread() {
                     >
                       {!imgError ? (
                         <img
-                          src={encodeURI(`/${IMAGE_MAPPING[activeIncident.event.name] || activeIncident.event.name + '.jpg'}`)}
-                          alt={activeIncident.event.name}
+                          src={encodeURI(`/${IMAGE_MAPPING[displayEvent.name] || displayEvent.name + '.jpg'}`)}
+                          alt={displayEvent.name}
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             console.error('Failed to load image:', e.target.src);
@@ -494,7 +550,7 @@ export function SiteWideThread() {
                 {/* Title, Subtitle, Narrative, Sources */}
                 <AnimatePresence mode="wait">
                   <motion.div
-                    key={activeIncident.event.id}
+                    key={displayEvent.id}
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
@@ -504,17 +560,17 @@ export function SiteWideThread() {
                     {/* Title and Subtitle */}
                     <div className="mb-6">
                       <h3 className="font-instrument text-4xl text-[#1A1A1A] leading-none mb-2 tracking-tight">
-                        {activeIncident.event.name}
+                        {displayEvent.name}
                       </h3>
                       <span className="block font-general text-[10px] tracking-widest uppercase text-[#C58B52]">
-                        {activeIncident.event.subtitle}
+                        {displayEvent.subtitle}
                       </span>
                     </div>
 
                     {/* Detailed Narrative */}
                     <div className="mb-6">
                       <p className="font-cormorant text-[1.2rem] font-light text-[#333333] leading-relaxed">
-                        {activeIncident.event.narrative}
+                        {displayEvent.narrative}
                       </p>
                     </div>
 
@@ -522,7 +578,7 @@ export function SiteWideThread() {
                     <div className="border-t border-[#C58B52]/20 pt-6 mt-2 pb-8">
                       <h4 className="font-general text-[9px] uppercase tracking-widest text-[#C58B52] mb-3">Scriptural Sources</h4>
                       <ul className="flex flex-col gap-1">
-                        {activeIncident.event.sources.map((src, i) => (
+                        {displayEvent.sources.map((src, i) => (
                           <li key={i} className="font-instrument text-lg text-[#1A1A1A]">{src}</li>
                         ))}
                       </ul>
@@ -530,7 +586,7 @@ export function SiteWideThread() {
                   </motion.div>
                 </AnimatePresence>
               </div>
-            </div>
+            </motion.div>
           </div>
         )}
       </AnimatePresence>
@@ -749,8 +805,8 @@ export function SiteWideThread() {
       {nodePositions && YUGA_NODES.map((node) => {
         const isActive = activeNodes[node.id];
         // The node is considered active if we are hovering any of its incidents, or hovering the node itself
-        const isNodeHovered = hoveredYuga === node.id || (activeIncident && YUGA_NODES.find(n => n.events.includes(activeIncident.event))?.id === node.id);
-        const isDimmed = (hoveredYuga !== null || activeIncident !== null) && !isNodeHovered;
+        const isNodeHovered = hoveredYuga === node.id || (hoveredEvent && hoveredEvent.yugaId === node.id);
+        const isDimmed = (hoveredYuga !== null || hoveredEvent !== null) && !isNodeHovered;
 
         return (
           <div
@@ -840,8 +896,10 @@ export function SiteWideThread() {
                   <EventItem
                     key={i}
                     event={evt}
-                    isActive={activeIncident?.event?.id === evt.id}
-                    onHoverStart={setActiveIncident}
+                    isActive={displayEvent?.id === evt.id}
+                    onHoverStart={(event) => setHoveredEvent({ event, yugaId: node.id })}
+                    onHoverEnd={() => setHoveredEvent(null)}
+                    registerPosition={registerEventPosition}
                   />
                 ))}
               </div>
