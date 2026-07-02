@@ -318,7 +318,7 @@ export function WhyDoInnocentPeopleSuffer() {
           </div>
         </motion.section>
 
-        <div className="space-y-48 w-full max-w-3xl">
+        <div className="space-y-32 w-full max-w-3xl">
 
           {/* Section 5: The Soul */}
           <motion.section

@@ -131,7 +131,7 @@ export function WhyDoInnocentChildrenSuffer() {
             <span className="tattva-nav-link text-[#C58B52] mb-6 block text-center">
               INQUIRY II
             </span>
-            <h1 className="font-instrument text-5xl md:text-7xl lg:text-8xl text-[#0D0D0C] tracking-tight mb-8 text-center leading-none">
+            <h1 className="tattva-hero-title text-[#0D0D0C] mb-8 text-center">
               Why do innocent<br />children suffer?
             </h1>
             <p className="tattva-hero-desc text-center mx-auto mb-12">
@@ -177,7 +177,7 @@ export function WhyDoInnocentChildrenSuffer() {
         </motion.div>
 
         {/* ARTICLE SECTIONS */}
-        <div className="space-y-48 w-full max-w-3xl">
+        <div className="space-y-32 w-full max-w-3xl">
 
           {/* Section 1 */}
           <motion.section

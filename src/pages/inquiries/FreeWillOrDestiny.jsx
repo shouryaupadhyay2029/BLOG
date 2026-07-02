@@ -130,7 +130,7 @@ export function FreeWillOrDestiny() {
             <span className="tattva-nav-link text-[#C58B52] mb-6 block text-center">
               INQUIRY III
             </span>
-            <h1 className="tattva-hero-title mb-4 text-center">
+            <h1 className="tattva-hero-title text-[#0D0D0C] mb-4 text-center">
               Do we truly have free will?
             </h1>
             <h2 className="tattva-section-title text-[#0D0D0C]/80 mb-8 text-center">
@@ -311,7 +311,7 @@ export function FreeWillOrDestiny() {
           </div>
         </motion.section>
 
-        <div className="space-y-48 w-full max-w-3xl">
+        <div className="space-y-32 w-full max-w-3xl">
 
           {/* Section 6: Free Will */}
           <motion.section
@@ -449,7 +449,7 @@ export function FreeWillOrDestiny() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1.5, ease: EASE_EXPO }}
-          className="w-full md:w-[100vw] max-w-full md:max-w-none md:relative md:left-1/2 md:right-1/2 md:-translate-x-1/2 min-h-[80vh] flex flex-col justify-center items-center py-32 px-6 md:px-8 text-center bg-[#E9E2D4]"
+          className="w-full min-h-[80vh] flex flex-col justify-center items-center py-32 px-6 md:px-8 text-center bg-[#E9E2D4]"
         >
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <h2 className="tattva-verse text-center mb-12">
@@ -461,7 +461,7 @@ export function FreeWillOrDestiny() {
           </div>
         </motion.div>
 
-        <div className="space-y-48 w-full max-w-3xl mt-48">
+        <div className="space-y-32 w-full max-w-3xl mt-48">
 
           {/* Section 11: The Gāṇḍīva Bow (Expanded Arjuna Story) */}
           <motion.section
