@@ -321,7 +321,7 @@ const TopNav = memo(function TopNav() {
   return (
     <motion.div
       variants={fadeInBlur(0.2, 1.8, 2)}
-      className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16"
+      className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-80px)] sm:max-w-[calc(100%-100px)] md:max-w-none select-none"
     >
       <Link to="/" className="block">
         <Wordmark />
@@ -329,7 +329,7 @@ const TopNav = memo(function TopNav() {
       
       <Link to="/inquiry" className="group flex items-center">
         <span 
-          className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
+          className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
         >
           INQUIRY ARCHIVE
         </span>
@@ -337,7 +337,7 @@ const TopNav = memo(function TopNav() {
 
       <Link to="/library" className="group flex items-center">
         <span 
-          className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
+          className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
         >
           TATTVA LIBRARY
         </span>
@@ -345,7 +345,7 @@ const TopNav = memo(function TopNav() {
 
       <Link to="/satya-mithya" className="group flex items-center">
         <span 
-          className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
+          className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
         >
           SATYA & MITHYĀ
         </span>
@@ -353,7 +353,7 @@ const TopNav = memo(function TopNav() {
       
       <Link to="/the-origin" className="group flex items-center">
         <span 
-          className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
+          className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[var(--text-muted)] group-hover:text-[#C58B52]"
         >
           THE ORIGIN
         </span>

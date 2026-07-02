@@ -714,7 +714,7 @@ export function SatyaMithyaCase004() {
       <GrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16 select-none">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)] select-none">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -738,38 +738,38 @@ export function SatyaMithyaCase004() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
           >
             SATYA & MITHYĀ
           </span>
         </Link>
 
-<Link to="/the-origin" className="group flex items-center">
-  <span 
-    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
-  >
-    THE ORIGIN
-  </span>
-</Link>
+        <Link to="/the-origin" className="group flex items-center">
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+          >
+            THE ORIGIN
+          </span>
+        </Link>
       </nav>
 
       {/* STICKY EVIDENCE SIDEBAR PANEL */}
@@ -830,7 +830,7 @@ export function SatyaMithyaCase004() {
       </aside>
 
       <div className="w-full max-w-3xl mx-auto px-6 pt-44 relative z-10 flex flex-col">
-        
+
         {/* HERO SECTION */}
         <section id="section-hero" className="mb-12 border-b border-[#C58B52]/20 pb-16">
           <motion.div
@@ -979,7 +979,7 @@ export function SatyaMithyaCase004() {
             <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">
               Sanskrit Concept Repository
             </span>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 select-none">
               {sanskritVocabulary.map((item, idx) => {
                 const isOpen = activeLexMeaningIdx === idx;
@@ -1182,9 +1182,8 @@ export function SatyaMithyaCase004() {
                 <button
                   key={idx}
                   onClick={() => setActiveTimelineIdx(idx)}
-                  className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 whitespace-nowrap ${
-                    activeTimelineIdx === idx ? 'border-b-2 border-[#9E2A2B] text-[#9E2A2B] font-bold' : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]/75'
-                  }`}
+                  className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 whitespace-nowrap ${activeTimelineIdx === idx ? 'border-b-2 border-[#9E2A2B] text-[#9E2A2B] font-bold' : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]/75'
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -1434,9 +1433,8 @@ export function SatyaMithyaCase004() {
                           <button
                             key={tIdx}
                             onClick={() => setActiveVerseTabs({ ...activeVerseTabs, [idx]: tIdx })}
-                            className={`font-general text-[8.5px] uppercase tracking-wider px-3 py-1 border transition-all duration-300 ${
-                              isTabActive ? 'bg-[#9E2A2B] text-white border-[#9E2A2B]' : 'bg-[#F4EFE6]/50 text-[#1C1C1A]/60 border-[#C58B52]/20 hover:border-[#C58B52]/55'
-                            }`}
+                            className={`font-general text-[8.5px] uppercase tracking-wider px-3 py-1 border transition-all duration-300 ${isTabActive ? 'bg-[#9E2A2B] text-white border-[#9E2A2B]' : 'bg-[#F4EFE6]/50 text-[#1C1C1A]/60 border-[#C58B52]/20 hover:border-[#C58B52]/55'
+                              }`}
                           >
                             {tab.title}
                           </button>
@@ -1624,9 +1622,8 @@ export function SatyaMithyaCase004() {
                 <button
                   key={idx}
                   onClick={() => setActiveHistoryIdx(idx)}
-                  className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 whitespace-nowrap ${
-                    activeHistoryIdx === idx ? 'border-b-2 border-[#9E2A2B] text-[#9E2A2B] font-bold' : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]/75'
-                  }`}
+                  className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 whitespace-nowrap ${activeHistoryIdx === idx ? 'border-b-2 border-[#9E2A2B] text-[#9E2A2B] font-bold' : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]/75'
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -1670,7 +1667,7 @@ export function SatyaMithyaCase004() {
               <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 font-bold">
                 Historical Development Flow
               </span>
-              
+
               <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 select-none">
                 {[
                   { label: 'Varṇa', sub: 'Theoretical ideal' },
@@ -1913,7 +1910,7 @@ export function SatyaMithyaCase004() {
               <h4 className="font-instrument text-2xl text-[#9E2A2B] font-bold mb-6 text-center">
                 Scripture vs. Lived History
               </h4>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                 {/* Column 1 */}
                 <div className="border-b md:border-b-0 md:border-r border-[#C58B52]/15 pb-6 md:pb-0 md:pr-6">
@@ -2391,43 +2388,45 @@ export function SatyaMithyaCase004() {
             <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">
               Evidentiary Matrix
             </span>
-            <div className="border border-[#C58B52]/25 bg-white/40 rounded-sm overflow-hidden select-none">
-              <div className="grid grid-cols-4 bg-[#F4EFE6] px-4 py-3 border-b border-[#C58B52]/25 text-left font-general text-[9px] uppercase tracking-wider font-bold">
-                <div>Metric</div>
-                <div>Varṇa</div>
-                <div>Jāti</div>
-                <div>Untouchability</div>
-              </div>
+            <div className="overflow-x-auto w-full scrollbar-none">
+              <div className="border border-[#C58B52]/25 bg-white/40 rounded-sm overflow-hidden select-none min-w-[700px] md:min-w-0">
+                <div className="grid grid-cols-4 bg-[#F4EFE6] px-4 py-3 border-b border-[#C58B52]/25 text-left font-general text-[9px] uppercase tracking-wider font-bold">
+                  <div>Metric</div>
+                  <div>Varṇa</div>
+                  <div>Jāti</div>
+                  <div>Untouchability</div>
+                </div>
 
-              <div className="divide-y divide-[#C58B52]/15">
-                {compareRows.map((row, idx) => {
-                  const isExpanded = expandedCompareRow === idx;
-                  return (
-                    <div key={idx} className="flex flex-col">
-                      <div
-                        onClick={() => setExpandedCompareRow(isExpanded ? null : idx)}
-                        className="grid grid-cols-4 px-4 py-4 cursor-pointer hover:bg-[#F4EFE6]/30 transition-colors text-left"
-                      >
-                        <div className="font-sans font-bold text-xs text-[#9E2A2B] flex items-center gap-1.5">
-                          <span>{isExpanded ? '▼' : '▶'}</span>
-                          <span>{row.metric}</span>
+                <div className="divide-y divide-[#C58B52]/15">
+                  {compareRows.map((row, idx) => {
+                    const isExpanded = expandedCompareRow === idx;
+                    return (
+                      <div key={idx} className="flex flex-col">
+                        <div
+                          onClick={() => setExpandedCompareRow(isExpanded ? null : idx)}
+                          className="grid grid-cols-4 px-4 py-4 cursor-pointer hover:bg-[#F4EFE6]/30 transition-colors text-left"
+                        >
+                          <div className="font-sans font-bold text-xs text-[#9E2A2B] flex items-center gap-1.5">
+                            <span>{isExpanded ? '▼' : '▶'}</span>
+                            <span>{row.metric}</span>
+                          </div>
+                          <div className="font-cormorant text-xs md:text-sm text-[#1C1C1A]/70 truncate pr-4">{row.varna}</div>
+                          <div className="font-cormorant text-xs md:text-sm text-[#1C1C1A]/70 truncate pr-4">{row.jati}</div>
+                          <div className="font-cormorant text-xs md:text-sm text-[#1C1C1A]/70 truncate pr-4">{row.untouchability}</div>
                         </div>
-                        <div className="font-cormorant text-xs md:text-sm text-[#1C1C1A]/70 truncate pr-4">{row.varna}</div>
-                        <div className="font-cormorant text-xs md:text-sm text-[#1C1C1A]/70 truncate pr-4">{row.jati}</div>
-                        <div className="font-cormorant text-xs md:text-sm text-[#1C1C1A]/70 truncate pr-4">{row.untouchability}</div>
+
+                        {isExpanded && (
+                          <div className="bg-[#F4EFE6]/10 px-6 py-4 grid grid-cols-4 text-xs md:text-sm font-cormorant text-[#1C1C1A]/80 leading-relaxed font-light border-t border-b border-[#C58B52]/10">
+                            <div className="font-sans text-[10px] text-[#9E2A2B] uppercase tracking-wider pt-0.5">Details</div>
+                            <div className="pr-4 whitespace-pre-line">{row.varna}</div>
+                            <div className="pr-4 whitespace-pre-line">{row.jati}</div>
+                            <div className="pr-4 whitespace-pre-line">{row.untouchability}</div>
+                          </div>
+                        )}
                       </div>
-
-                      {isExpanded && (
-                        <div className="bg-[#F4EFE6]/10 px-6 py-4 grid grid-cols-4 text-xs md:text-sm font-cormorant text-[#1C1C1A]/80 leading-relaxed font-light border-t border-b border-[#C58B52]/10">
-                          <div className="font-sans text-[10px] text-[#9E2A2B] uppercase tracking-wider pt-0.5">Details</div>
-                          <div className="pr-4 whitespace-pre-line">{row.varna}</div>
-                          <div className="pr-4 whitespace-pre-line">{row.jati}</div>
-                          <div className="pr-4 whitespace-pre-line">{row.untouchability}</div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </Reveal>
@@ -2493,9 +2492,8 @@ export function SatyaMithyaCase004() {
                   <button
                     key={idx}
                     onClick={() => setActiveScholarTab(idx)}
-                    className={`font-general text-[8.5px] uppercase tracking-wider px-3 py-1 border transition-all duration-300 ${
-                      activeScholarTab === idx ? 'bg-[#9E2A2B] text-white border-[#9E2A2B]' : 'bg-[#F4EFE6]/50 text-[#1C1C1A]/60 border-[#C58B52]/20 hover:border-[#C58B52]/55'
-                    }`}
+                    className={`font-general text-[8.5px] uppercase tracking-wider px-3 py-1 border transition-all duration-300 ${activeScholarTab === idx ? 'bg-[#9E2A2B] text-white border-[#9E2A2B]' : 'bg-[#F4EFE6]/50 text-[#1C1C1A]/60 border-[#C58B52]/20 hover:border-[#C58B52]/55'
+                      }`}
                   >
                     {item.group}
                   </button>
@@ -2642,9 +2640,8 @@ export function SatyaMithyaCase004() {
                   <button
                     key={idx}
                     onClick={() => setActiveThinkerIdx(idx)}
-                    className={`font-general text-[8.5px] uppercase tracking-wider px-3 py-1.5 border transition-all duration-300 ${
-                      activeThinkerIdx === idx ? 'bg-[#9E2A2B] text-white border-[#9E2A2B]' : 'bg-[#F4EFE6]/50 text-[#1C1C1A]/60 border-[#C58B52]/20 hover:border-[#C58B52]/55'
-                    }`}
+                    className={`font-general text-[8.5px] uppercase tracking-wider px-3 py-1.5 border transition-all duration-300 ${activeThinkerIdx === idx ? 'bg-[#9E2A2B] text-white border-[#9E2A2B]' : 'bg-[#F4EFE6]/50 text-[#1C1C1A]/60 border-[#C58B52]/20 hover:border-[#C58B52]/55'
+                      }`}
                   >
                     {t.name}
                   </button>
@@ -2721,49 +2718,51 @@ export function SatyaMithyaCase004() {
             <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">
               Evidentiary Spectrum Matrix
             </span>
-            <div className="border border-[#C58B52]/25 bg-white/40 rounded-sm overflow-hidden select-none">
-              <div className="grid grid-cols-6 bg-[#F4EFE6] px-4 py-3 border-b border-[#C58B52]/25 text-left font-general text-[8.5px] uppercase tracking-wider font-bold">
-                <div>Thinker</div>
-                <div>Scriptural Emphasis</div>
-                <div>View of Varṇa</div>
-                <div>View of Jāti</div>
-                <div>Social Equality</div>
-                <div>Approach to Reform</div>
-              </div>
+            <div className="overflow-x-auto w-full scrollbar-none">
+              <div className="border border-[#C58B52]/25 bg-white/40 rounded-sm overflow-hidden select-none min-w-[900px] md:min-w-0">
+                <div className="grid grid-cols-6 bg-[#F4EFE6] px-4 py-3 border-b border-[#C58B52]/25 text-left font-general text-[8.5px] uppercase tracking-wider font-bold">
+                  <div>Thinker</div>
+                  <div>Scriptural Emphasis</div>
+                  <div>View of Varṇa</div>
+                  <div>View of Jāti</div>
+                  <div>Social Equality</div>
+                  <div>Approach to Reform</div>
+                </div>
 
-              <div className="divide-y divide-[#C58B52]/15">
-                {reformComparisonRows.map((row, idx) => {
-                  const isExpanded = expandedReformRow === idx;
-                  return (
-                    <div key={idx} className="flex flex-col">
-                      <div
-                        onClick={() => setExpandedReformRow(isExpanded ? null : idx)}
-                        className="grid grid-cols-6 px-4 py-4 cursor-pointer hover:bg-[#F4EFE6]/30 transition-colors text-left"
-                      >
-                        <div className="font-sans font-bold text-xs text-[#9E2A2B] flex items-center gap-1.5">
-                          <span>{isExpanded ? '▼' : '▶'}</span>
-                          <span>{row.thinker}</span>
+                <div className="divide-y divide-[#C58B52]/15">
+                  {reformComparisonRows.map((row, idx) => {
+                    const isExpanded = expandedReformRow === idx;
+                    return (
+                      <div key={idx} className="flex flex-col">
+                        <div
+                          onClick={() => setExpandedReformRow(isExpanded ? null : idx)}
+                          className="grid grid-cols-6 px-4 py-4 cursor-pointer hover:bg-[#F4EFE6]/30 transition-colors text-left"
+                        >
+                          <div className="font-sans font-bold text-xs text-[#9E2A2B] flex items-center gap-1.5">
+                            <span>{isExpanded ? '▼' : '▶'}</span>
+                            <span>{row.thinker}</span>
+                          </div>
+                          <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.scripture}</div>
+                          <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.varna}</div>
+                          <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.jati}</div>
+                          <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.equality}</div>
+                          <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.reform}</div>
                         </div>
-                        <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.scripture}</div>
-                        <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.varna}</div>
-                        <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.jati}</div>
-                        <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.equality}</div>
-                        <div className="font-cormorant text-xs text-[#1C1C1A]/70 truncate pr-4">{row.reform}</div>
+
+                        {isExpanded && (
+                          <div className="bg-[#F4EFE6]/10 px-6 py-4 grid grid-cols-6 text-xs md:text-sm font-cormorant text-[#1C1C1A]/80 leading-relaxed font-light border-t border-b border-[#C58B52]/10">
+                            <div className="font-sans text-[10px] text-[#9E2A2B] uppercase tracking-wider pt-0.5">Details</div>
+                            <div className="pr-4 whitespace-pre-line">{row.scripture}</div>
+                            <div className="pr-4 whitespace-pre-line">{row.varna}</div>
+                            <div className="pr-4 whitespace-pre-line">{row.jati}</div>
+                            <div className="pr-4 whitespace-pre-line">{row.equality}</div>
+                            <div className="pr-4 whitespace-pre-line">{row.reform}</div>
+                          </div>
+                        )}
                       </div>
-
-                      {isExpanded && (
-                        <div className="bg-[#F4EFE6]/10 px-6 py-4 grid grid-cols-6 text-xs md:text-sm font-cormorant text-[#1C1C1A]/80 leading-relaxed font-light border-t border-b border-[#C58B52]/10">
-                          <div className="font-sans text-[10px] text-[#9E2A2B] uppercase tracking-wider pt-0.5">Details</div>
-                          <div className="pr-4 whitespace-pre-line">{row.scripture}</div>
-                          <div className="pr-4 whitespace-pre-line">{row.varna}</div>
-                          <div className="pr-4 whitespace-pre-line">{row.jati}</div>
-                          <div className="pr-4 whitespace-pre-line">{row.equality}</div>
-                          <div className="pr-4 whitespace-pre-line">{row.reform}</div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </Reveal>

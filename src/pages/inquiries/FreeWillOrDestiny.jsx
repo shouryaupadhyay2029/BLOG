@@ -52,7 +52,7 @@ export function FreeWillOrDestiny() {
       <CreamGrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)]">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -76,21 +76,21 @@ export function FreeWillOrDestiny() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]">
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
             SATYA & MITHYĀ
           </span>
         </Link>
@@ -101,7 +101,7 @@ export function FreeWillOrDestiny() {
         {SECTIONS.map((sec, i) => {
           const isActive = activeSection === sec.id;
           const isPast = SECTIONS.findIndex(s => s.id === activeSection) > i;
-          
+
           let textColor = 'text-[#0D0D0C]/20';
           if (isActive) textColor = 'text-[#0D0D0C]';
           else if (isPast) textColor = 'text-[#0D0D0C]/40';
@@ -115,11 +115,11 @@ export function FreeWillOrDestiny() {
           );
         })}
       </div>
-      
+
       <div className="w-full max-w-4xl px-6 pt-48 pb-32 relative z-10 flex flex-col items-center">
-        
+
         {/* PAGE HEADER */}
-        <motion.div 
+        <motion.div
           id="intro"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ export function FreeWillOrDestiny() {
           className="relative w-full mb-16 pt-16 pb-8"
         >
           <div className="relative z-10 flex flex-col items-center">
-            <span className="font-general text-[10px] uppercase tracking-[0.4em] text-[#C58B52] mb-6 block text-center">
+            <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52] mb-6 block text-center">
               INQUIRY III
             </span>
             <h1 className="font-instrument text-5xl md:text-7xl lg:text-8xl text-[#0D0D0C] tracking-tight mb-4 text-center leading-none">
@@ -139,7 +139,7 @@ export function FreeWillOrDestiny() {
             <p className="font-cormorant italic text-2xl text-[#0D0D0C]/70 max-w-2xl mx-auto text-center leading-relaxed mb-12">
               Understanding Karma, Destiny, Human Choice and Liberation in Sanātana Dharma.
             </p>
-            
+
             {/* Metadata Row */}
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 pt-8 border-t border-[#C58B52]/20">
               <div className="flex flex-col items-center">
@@ -286,7 +286,7 @@ export function FreeWillOrDestiny() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1.2, ease: EASE_EXPO }}
-          className="mb-48 w-[100vw] py-16 px-8 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.03] flex flex-col items-center"
+          className="mb-48 w-full md:w-[100vw] max-w-full md:max-w-none md:relative md:left-1/2 md:right-1/2 md:-translate-x-1/2 py-16 px-6 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.03] flex flex-col items-center"
         >
           <div className="w-full max-w-3xl text-center mb-16">
             <p className="font-cormorant text-xl md:text-2xl font-light text-[#0D0D0C]/80 leading-relaxed mx-auto mb-8">
@@ -302,7 +302,7 @@ export function FreeWillOrDestiny() {
               This question has been debated for thousands of years. Sanātana Dharma offers a nuanced answer that rejects both absolute fatalism and unlimited free will, viewing human agency as a profound journey of spiritual responsibility.
             </p>
           </div>
-          
+
           <div className="max-w-4xl flex flex-col items-center pt-8 border-t border-[#C58B52]/20">
             <p className="font-cormorant text-3xl md:text-4xl text-[#0D0D0C] leading-relaxed text-center font-light mt-8 mb-12">
               Sanātana Dharma rejects both absolute determinism and absolute free will. Human beings inherit circumstances through past karma (Prārabdha), yet retain meaningful freedom to think, choose and act in the present. These present choices become future karma and shape one's spiritual journey. The highest freedom is not unlimited worldly choice but Mokṣa, where the Ātman realizes its true nature beyond ignorance and karmic bondage.
@@ -312,7 +312,7 @@ export function FreeWillOrDestiny() {
         </motion.section>
 
         <div className="space-y-48 w-full max-w-3xl">
-          
+
           {/* Section 6: Free Will */}
           <motion.section
             id="sec-5"
@@ -418,7 +418,7 @@ export function FreeWillOrDestiny() {
               Almost everything about tomorrow. By applying fierce self-effort (<span className="italic">puruṣārtha</span>) through discipline, devotion, and ethical action, we actively override the momentum of the past. The scriptures insist that human agency is a potent force capable of altering the trajectory of the soul.
             </p>
             <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
-              When we consciously choose Dharma over our automatic conditioning, we do not just change our external circumstances; we dissolve the internal ignorance that binds us. 
+              When we consciously choose Dharma over our automatic conditioning, we do not just change our external circumstances; we dissolve the internal ignorance that binds us.
             </p>
           </motion.section>
 
@@ -449,20 +449,20 @@ export function FreeWillOrDestiny() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1.5, ease: EASE_EXPO }}
-          className="w-[100vw] min-h-[80vh] flex flex-col justify-center items-center py-32 px-8 text-center bg-[#E9E2D4]"
+          className="w-full md:w-[100vw] max-w-full md:max-w-none md:relative md:left-1/2 md:right-1/2 md:-translate-x-1/2 min-h-[80vh] flex flex-col justify-center items-center py-32 px-6 md:px-8 text-center bg-[#E9E2D4]"
         >
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <h2 className="font-instrument text-4xl md:text-6xl text-[#0D0D0C] tracking-tight leading-tight mb-12 italic">
               "If everything were already decided...<br />why did Śrī Kṛṣṇa teach?"
             </h2>
-            <span className="font-general text-[10px] uppercase tracking-[0.4em] text-[#C58B52]">
+            <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52]">
               THE QUESTION THAT CHANGES EVERYTHING
             </span>
           </div>
         </motion.div>
 
         <div className="space-y-48 w-full max-w-3xl mt-48">
-          
+
           {/* Section 11: The Gāṇḍīva Bow (Expanded Arjuna Story) */}
           <motion.section
             id="sec-10"
@@ -479,7 +479,7 @@ export function FreeWillOrDestiny() {
               The air on the battlefield of Kurukṣetra was thick with the deafening sound of conch shells and war drums. Millions of warriors stood in formation, waiting for the signal that would begin the greatest war of their age.
             </p>
             <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
-              In the center of it all, standing in a golden chariot, the greatest archer in the world broke down. 
+              In the center of it all, standing in a golden chariot, the greatest archer in the world broke down.
             </p>
             <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
               Arjuna looked across the lines and saw his own teachers, his grandfathers, his cousins. Overwhelmed by a profound moral crisis, his hands trembled. The legendary divine bow, the Gāṇḍīva, slipped from his grasp. With tears in his eyes, he declared that he would rather live as a beggar than rule a kingdom soaked in the blood of his kin. He sat down in the chariot. He fell completely silent.
@@ -524,7 +524,7 @@ export function FreeWillOrDestiny() {
               7. Different Philosophical Perspectives
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            
+
             <div className="space-y-12 pl-4 border-l border-[#C58B52]/30">
               <div className="pl-6">
                 <span className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] block mb-3">Advaita Vedānta</span>
@@ -561,7 +561,7 @@ export function FreeWillOrDestiny() {
               8. Scriptural Consensus
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16" />
-            
+
             <div className="w-full border-t border-[#0D0D0C]/10">
               {[
                 { title: "Bhagavad Gītā", desc: "Consistently emphasizes self-effort. Declares that one must uplift oneself by oneself and never degrade oneself, for the self alone is one's friend, and the self alone is one's enemy (BG 6.5)." },
@@ -596,7 +596,7 @@ export function FreeWillOrDestiny() {
               9. Evidence Map
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16" />
-            
+
             <div className="w-full border-t border-[#0D0D0C]/10">
               {[
                 { claim: "Human beings possess inherent moral responsibility for their actions.", assessment: "Explicit Scriptural Teaching", color: "text-[#0D0D0C]/50" },
@@ -635,7 +635,7 @@ export function FreeWillOrDestiny() {
               There is a profound difference between acknowledging the weight of our past and surrendering to helplessness. The scriptures do not explicitly teach that everything is already written in stone. They do not say that humans are merely puppets, that karma removes moral responsibility, that destiny replaces effort, or that God forces every decision we make.
             </p>
             <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
-              Instead, they consistently elevate the opposite: conscious action, self-effort (Puruṣārtha), taking moral responsibility for one's life, and fiercely choosing Dharma even when the odds seem overwhelmingly predetermined. 
+              Instead, they consistently elevate the opposite: conscious action, self-effort (Puruṣārtha), taking moral responsibility for one's life, and fiercely choosing Dharma even when the odds seem overwhelmingly predetermined.
             </p>
           </motion.section>
 
@@ -658,7 +658,7 @@ export function FreeWillOrDestiny() {
               It appears in the agonizing over career decisions, when we wonder if we missed our true calling. It surfaces in the heartache of a broken relationship, haunting us with questions of what we could have done differently. It emerges when a child struggles despite our best parenting, or when a business collapses despite relentless effort. In our darkest moments, we are tempted to surrender everything to fate to soothe the sting of failure.
             </p>
             <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-12">
-              Sanātana Dharma asks us to hold two profound truths simultaneously. Yes, the sudden illness, the economic crash, the unexpected loss—these are the unfolding of past momentum. But how you stand within the wreckage is entirely up to you. 
+              Sanātana Dharma asks us to hold two profound truths simultaneously. Yes, the sudden illness, the economic crash, the unexpected loss—these are the unfolding of past momentum. But how you stand within the wreckage is entirely up to you.
             </p>
             <div className="bg-[#C58B52]/5 border-l border-[#C58B52]/30 p-8 my-12 mx-auto max-w-2xl text-center">
               <p className="font-cormorant text-2xl font-light text-[#C58B52] italic leading-relaxed">
@@ -682,7 +682,7 @@ export function FreeWillOrDestiny() {
               If you are reading this...
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
-            
+
             <div className="space-y-12">
               <div>
                 <p className="font-general text-[12px] uppercase tracking-widest text-[#C58B52] mb-3">...because you regret a decision,</p>
@@ -741,7 +741,7 @@ export function FreeWillOrDestiny() {
         </div>
 
         {/* REFERENCE SECTION */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -768,7 +768,7 @@ export function FreeWillOrDestiny() {
         </motion.div>
 
         {/* PREMIUM ENDING */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "0%" }}

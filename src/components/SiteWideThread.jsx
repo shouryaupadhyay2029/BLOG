@@ -9,45 +9,45 @@ const YUGA_NODES = [
     x: 85,
     y: 72,
     events: [
-      { 
-        id: 'matsya-avatar', 
-        name: 'Matsya Avatāra', 
+      {
+        id: 'matsya-avatar',
+        name: 'Matsya Avatāra',
         subtitle: 'The Preservation of Sacred Knowledge',
         narrative: 'During the cosmic dissolution (Pralaya), Bhagavān Viṣṇu manifested as Matsya Avatāra to protect the Vedas and guide King Satyavrata through the flood that marked the end of a cosmic cycle. The king was instructed to gather sages, seeds, and living beings within a great vessel. Matsya then guided the vessel through the waters until creation could begin anew.',
         significance: 'Matsya Avatāra symbolizes divine guidance during periods of chaos and transition. The narrative teaches that sacred knowledge survives even when entire worlds dissolve, and that dharma remains protected by Bhagavān across all cycles of creation.',
-        sources: ['Matsya Purāṇa', 'Śrīmad Bhāgavatam 8.24', 'Mahābhārata Śānti Parva'] 
+        sources: ['Matsya Purāṇa', 'Śrīmad Bhāgavatam 8.24', 'Mahābhārata Śānti Parva']
       },
-      { 
-        id: 'kurma-avatar', 
-        name: 'Kūrma Avatāra', 
+      {
+        id: 'kurma-avatar',
+        name: 'Kūrma Avatāra',
         subtitle: 'The Foundation of Cosmic Churning',
         narrative: 'When the devas and asuras united to churn the ocean of milk (Samudra Manthana) for the nectar of immortality (Amṛta), they used Mount Mandara as the churning rod. As the mountain began to sink into the ocean floor, Viṣṇu incarnated as a massive tortoise, Kūrma, to support the mountain on his impenetrable shell, allowing the churning to continue.',
         significance: 'Kūrma Avatāra represents absolute stability and the foundational support required for spiritual endeavor. It illustrates that the quest for divine nectar (immortality and truth) demands an unshakeable base, provided only by the grace of the Supreme.',
-        sources: ['Kūrma Purāṇa', 'Śrīmad Bhāgavatam 8.7', 'Viṣṇu Purāṇa 1.9'] 
+        sources: ['Kūrma Purāṇa', 'Śrīmad Bhāgavatam 8.7', 'Viṣṇu Purāṇa 1.9']
       },
-      { 
-        id: 'varaha-avatar', 
-        name: 'Varāha Avatāra', 
+      {
+        id: 'varaha-avatar',
+        name: 'Varāha Avatāra',
         subtitle: 'The Rescue of the Earth',
         narrative: 'When the demon Hiraṇyākṣa dragged the earth goddess (Bhūdevī) into the depths of the cosmic ocean, Viṣṇu assumed the form of a magnificent boar, Varāha. Plunging into the dark waters, Varāha engaged in a cataclysmic battle with the demon, ultimately slaying him and lifting the earth safely upon his massive tusks, restoring her to her rightful orbit.',
         significance: 'Varāha Avatāra demonstrates the fierce protective nature of the Divine toward creation. It is a powerful allegory for the upliftment of the soul and the material world from the dark depths of ignorance (avidyā) back into the light of dharma.',
-        sources: ['Varāha Purāṇa', 'Śrīmad Bhāgavatam 3.13', 'Taittirīya Saṃhitā'] 
+        sources: ['Varāha Purāṇa', 'Śrīmad Bhāgavatam 3.13', 'Taittirīya Saṃhitā']
       },
-      { 
-        id: 'narasimha-avatar', 
-        name: 'Narasiṁha Avatāra', 
+      {
+        id: 'narasimha-avatar',
+        name: 'Narasiṁha Avatāra',
         subtitle: 'The Fierce Protector of Devotion',
         narrative: 'The tyrant Hiraṇyakaśipu obtained a boon making him nearly invincible, unable to be killed by man or beast, inside or outside, by day or night. To protect his greatest devotee, the child Prahlāda, Viṣṇu burst forth from a pillar as Narasiṁha—half-man, half-lion. At twilight, upon the threshold of a courtyard, he vanquished the tyrant, perfectly satisfying the conditions of the boon.',
         significance: 'Narasiṁha embodies the terrifying yet profoundly compassionate aspect of the Divine. It proves that Bhagavān is omnipresent—existing even within inanimate pillars—and will transcend all natural laws to protect a true bhakta (devotee).',
-        sources: ['Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam 7.8', 'Narasiṁha Purāṇa'] 
+        sources: ['Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam 7.8', 'Narasiṁha Purāṇa']
       },
-      { 
-        id: 'prahlada', 
-        name: 'Prahlāda', 
+      {
+        id: 'prahlada',
+        name: 'Prahlāda',
         subtitle: 'The Embodiment of Unshakeable Devotion',
         narrative: 'Born to the greatest enemy of the devas, the child Prahlāda was instinctively devoted to Nārāyaṇa. Despite enduring extreme torture, assassination attempts, and psychological warfare from his own father, Hiraṇyakaśipu, Prahlāda remained completely serene. He constantly perceived the presence of Nārāyaṇa everywhere, turning poisons to nectar and fire to a cooling breeze.',
         significance: 'Prahlāda represents the zenith of Śuddha Bhakti (pure devotion). His life establishes that spiritual enlightenment and divine grace are entirely independent of lineage, circumstance, or external environment, depending solely on inner surrender.',
-        sources: ['Śrīmad Bhāgavatam 7.4', 'Viṣṇu Purāṇa 1.15'] 
+        sources: ['Śrīmad Bhāgavatam 7.4', 'Viṣṇu Purāṇa 1.15']
       }
     ]
   },
@@ -58,47 +58,47 @@ const YUGA_NODES = [
     x: 75,
     y: 80,
     events: [
-      { 
-        id: 'vamana-avatar', 
-        name: 'Vāmana Avatāra', 
+      {
+        id: 'vamana-avatar',
+        name: 'Vāmana Avatāra',
         subtitle: 'The Divine Beggar Reclaiming the Worlds',
         narrative: 'Daitya-rāja Bali became ruler of the three worlds through his power and sacrifice. To restore cosmic balance, Bhagavān Viṣṇu appeared as Vāmana, a young brāhmaṇa dwarf. During Bali\'s great sacrifice, Vāmana requested three steps of land. He then expanded into a cosmic form, covering earth and heaven in two steps. Bali offered his own head for the third step and was granted Sutala-loka while retaining divine favor.',
-        sources: ['Śrīmad Bhāgavatam Skandha 8', 'Viṣṇu Purāṇa', 'Vāmana Purāṇa'] 
+        sources: ['Śrīmad Bhāgavatam Skandha 8', 'Viṣṇu Purāṇa', 'Vāmana Purāṇa']
       },
-      { 
-        id: 'parashurama-avatar', 
-        name: 'Paraśurāma Avatāra', 
+      {
+        id: 'parashurama-avatar',
+        name: 'Paraśurāma Avatāra',
         subtitle: 'The Warrior Sage Cleansing Corruption',
         narrative: 'Bhagavān Viṣṇu appeared as Paraśurāma, son of Maharṣi Jamadagni and Reṇukā. During this age many kṣatriya rulers had become oppressive and abandoned dharma. After the murder of his father, Paraśurāma launched campaigns against corrupt rulers. Scriptures describe him restoring balance between spiritual authority and political power. Unlike many avatāras, Paraśurāma continues to appear in later Yuga narratives.',
-        sources: ['Mahābhārata', 'Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam'] 
+        sources: ['Mahābhārata', 'Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam']
       },
-      { 
-        id: 'hanuman-janma', 
-        name: 'Hanumān Janma', 
+      {
+        id: 'hanuman-janma',
+        name: 'Hanumān Janma',
         subtitle: 'The Birth of Rudra\'s Incarnation',
         narrative: 'Hanumān was born to Añjanā and Kesari through the blessings of Vāyu Deva. From childhood he displayed extraordinary strength and divine abilities. Ancient accounts describe him leaping toward the Sun, mistaking it for a fruit. Various devas granted him blessings and protections. Hanumān would later become the greatest ally of Śrī Rāma and a central figure of the Rāmāyaṇa.',
-        sources: ['Vālmīki Rāmāyaṇa', 'Various Purāṇas'] 
+        sources: ['Vālmīki Rāmāyaṇa', 'Various Purāṇas']
       },
-      { 
-        id: 'sri-rama-janma', 
-        name: 'Śrī Rāma Janma', 
+      {
+        id: 'sri-rama-janma',
+        name: 'Śrī Rāma Janma',
         subtitle: 'The Descent of the Perfect Sovereign',
         narrative: 'King Daśaratha performed the Putrakāmeṣṭi Yajña seeking heirs. As a result, Rāma, Bharata, Lakṣmaṇa, and Śatrughna were born. Śrī Rāma grew under the guidance of Sage Vasiṣṭha and later accompanied Sage Viśvāmitra to protect sacred rituals. His early life culminated in the breaking of Lord Śiva\'s bow and marriage to Sītā Devī.',
-        sources: ['Vālmīki Rāmāyaṇa', 'Adhyātma Rāmāyaṇa'] 
+        sources: ['Vālmīki Rāmāyaṇa', 'Adhyātma Rāmāyaṇa']
       },
-      { 
-        id: 'ramayana', 
-        name: 'Rāmāyaṇa', 
+      {
+        id: 'ramayana',
+        name: 'Rāmāyaṇa',
         subtitle: 'The Eternal Epic of Dharma',
         narrative: 'The Rāmāyaṇa narrates the life and journey of Śrī Rāma. Following fourteen years of exile, Sītā Devī was abducted by Rāvaṇa, ruler of Laṅkā. Hanumān discovered her location and carried Rāma\'s message across the ocean. A great alliance was formed and a bridge to Laṅkā was constructed. The resulting war ended with the defeat of Rāvaṇa and the return of Rāma to Ayodhyā, where Rāma-rājya was established.',
-        sources: ['Vālmīki Rāmāyaṇa', 'Adhyātma Rāmāyaṇa'] 
+        sources: ['Vālmīki Rāmāyaṇa', 'Adhyātma Rāmāyaṇa']
       },
-      { 
-        id: 'lava-kusha-janma', 
-        name: 'Lava-Kuśa Janma', 
+      {
+        id: 'lava-kusha-janma',
+        name: 'Lava-Kuśa Janma',
         subtitle: 'The Birth of the Twin Heirs',
         narrative: 'Lava and Kuśa were born in the āśrama of Maharṣi Vālmīki. They received education in scriptures, warfare, and sacred traditions. Under Vālmīki\'s guidance they learned the Rāmāyaṇa and became its earliest reciters. Their story forms one of the concluding chapters of the Treta Yuga narrative and preserves the legacy of Śrī Rāma for future generations.',
-        sources: ['Uttara Kāṇḍa', 'Vālmīki Rāmāyaṇa'] 
+        sources: ['Uttara Kāṇḍa', 'Vālmīki Rāmāyaṇa']
       }
     ]
   },
@@ -109,40 +109,40 @@ const YUGA_NODES = [
     x: 85,
     y: 88,
     events: [
-      { 
-        id: 'sri-krishna-janma', 
-        name: 'Śrī Kṛṣṇa Janma', 
+      {
+        id: 'sri-krishna-janma',
+        name: 'Śrī Kṛṣṇa Janma',
         subtitle: 'The Descent of the Supreme Architect',
         narrative: 'Śrī Kṛṣṇa, the eighth avatāra of Bhagavān Viṣṇu, was born to Devakī and Vasudeva in the prison of Mathurā during the reign of King Kaṁsa. A divine prophecy foretold that Devakī\'s eighth son would end Kaṁsa\'s tyranny. On the night of His birth, Vasudeva carried the newborn across the Yamunā River to Gokula, where He was raised by Nanda Mahārāja and Yaśodā, ensuring His safety while fulfilling the divine plan.',
-        sources: ['Śrīmad Bhāgavatam (Skandha 10)', 'Harivaṁśa', 'Viṣṇu Purāṇa'] 
+        sources: ['Śrīmad Bhāgavatam (Skandha 10)', 'Harivaṁśa', 'Viṣṇu Purāṇa']
       },
-      { 
-        id: 'childhood-krishna', 
-        name: 'Childhood of Śrī Kṛṣṇa', 
+      {
+        id: 'childhood-krishna',
+        name: 'Childhood of Śrī Kṛṣṇa',
         subtitle: 'The Divine Pastimes in Vṛndāvana',
         narrative: 'During His childhood in Gokula and Vṛndāvana, Śrī Kṛṣṇa performed many celebrated līlās. He protected the people from numerous dangers by defeating demons such as Pūtanā, Tṛṇāvarta, Bakāsura and Aghāsura. He subdued Kāliya in the Yamunā River and lifted Govardhana Hill to shelter the people of Vraja from Indra\'s storm. These events established Him as the divine protector of Vraja while revealing His extraordinary nature.',
-        sources: ['Śrīmad Bhāgavatam (Skandha 10)', 'Harivaṁśa', 'Viṣṇu Purāṇa'] 
+        sources: ['Śrīmad Bhāgavatam (Skandha 10)', 'Harivaṁśa', 'Viṣṇu Purāṇa']
       },
-      { 
-        id: 'mahabharata', 
-        name: 'Mahābhārata', 
+      {
+        id: 'mahabharata',
+        name: 'Mahābhārata',
         subtitle: 'The Great Epic of Lineage and Duty',
         narrative: 'The Mahābhārata recounts the conflict between the Pāṇḍavas and the Kauravas over the rightful rule of Hastināpura. Years of political rivalry, exile, broken agreements and failed peace negotiations culminated in the Kurukṣetra War. Guided by Śrī Kṛṣṇa, the Pāṇḍavas ultimately prevailed, restoring lawful rule and bringing one of the greatest epics of Sanātana Dharma to its conclusion.',
-        sources: ['Mahābhārata', 'Harivaṁśa'] 
+        sources: ['Mahābhārata', 'Harivaṁśa']
       },
-      { 
-        id: 'bhagavad-gita', 
-        name: 'Bhagavad Gītā', 
+      {
+        id: 'bhagavad-gita',
+        name: 'Bhagavad Gītā',
         subtitle: 'The Ultimate Discourse on Action and Liberation',
         narrative: 'On the battlefield of Kurukṣetra, Arjuna became overwhelmed with grief and hesitation before the war began. Śrī Kṛṣṇa then delivered the Bhagavad Gītā, a dialogue explaining dharma, karma, yoga, bhakti and the nature of the Self. This sacred teaching prepared Arjuna to fulfill his duty and has remained one of the most influential spiritual texts in the world.',
-        sources: ['Mahābhārata — Bhīṣma Parva', 'Bhagavad Gītā'] 
+        sources: ['Mahābhārata — Bhīṣma Parva', 'Bhagavad Gītā']
       },
-      { 
-        id: 'departure-krishna', 
-        name: 'Departure of Śrī Kṛṣṇa', 
+      {
+        id: 'departure-krishna',
+        name: 'Departure of Śrī Kṛṣṇa',
         subtitle: 'The Ascension and the Dawn of Kali Yuga',
         narrative: 'After the conclusion of the Yādava dynasty\'s final events, Śrī Kṛṣṇa withdrew His earthly manifestation. While resting in the forest, He was struck by the hunter Jarā, who mistook His foot for a deer. With His departure, Dvāpara Yuga came to an end and Kali Yuga began according to the traditional chronology preserved in the Purāṇas.',
-        sources: ['Śrīmad Bhāgavatam (Skandha 11)', 'Mahābhārata — Mausala Parva', 'Viṣṇu Purāṇa'] 
+        sources: ['Śrīmad Bhāgavatam (Skandha 11)', 'Mahābhārata — Mausala Parva', 'Viṣṇu Purāṇa']
       }
     ]
   },
@@ -153,40 +153,40 @@ const YUGA_NODES = [
     x: 75,
     y: 96,
     events: [
-      { 
-        id: 'kali-yuga-begins', 
-        name: 'Kali Yuga Begins', 
+      {
+        id: 'kali-yuga-begins',
+        name: 'Kali Yuga Begins',
         subtitle: 'The Onset of the Dark Age',
         narrative: 'Kali Yuga traditionally begins immediately after the departure of Śrī Kṛṣṇa from the earthly realm, marking the conclusion of Dvāpara Yuga. According to traditional Hindu chronology, this transition is dated to approximately 3102 BCE. Scriptures describe this as the beginning of the age in which dharma gradually declines and the influence of Kali increases among humanity.',
-        sources: ['Mahābhārata', 'Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam 12', 'Traditional Yuga chronology'] 
+        sources: ['Mahābhārata', 'Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam 12', 'Traditional Yuga chronology']
       },
-      { 
-        id: 'compilation-puranas', 
-        name: 'Compilation of the Purāṇas', 
+      {
+        id: 'compilation-puranas',
+        name: 'Compilation of the Purāṇas',
         subtitle: 'The Preservation of Sacred Knowledge',
         narrative: 'Recognizing that humanity in Kali Yuga would possess shorter lifespans, weaker memory and reduced spiritual capacity, Maharṣi Vedavyāsa organized the Vedas into four divisions and is traditionally credited with composing or compiling the Mahābhārata and the eighteen Mahāpurāṇas. These works preserved Vedic wisdom in forms that would remain accessible to future generations throughout Kali Yuga.',
-        sources: ['Mahābhārata', 'Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam', 'Traditional accounts of Vedavyāsa'] 
+        sources: ['Mahābhārata', 'Viṣṇu Purāṇa', 'Śrīmad Bhāgavatam', 'Traditional accounts of Vedavyāsa']
       },
-      { 
-        id: 'bhakti-movement', 
-        name: 'Bhakti Movement', 
+      {
+        id: 'bhakti-movement',
+        name: 'Bhakti Movement',
         subtitle: 'The Path of Devotion',
         narrative: 'Throughout Kali Yuga, devotion (Bhakti) became one of the most accessible spiritual paths. Across different regions of Bhārata, saints, ācāryas and devotees revitalized devotion to Bhagavān through kīrtana, temple worship, scriptural teaching and personal devotion. Their efforts helped preserve Sanātana Dharma and made spiritual practice accessible to people from all backgrounds.',
-        sources: ['Bhāgavata Purāṇa', 'Various Bhakti traditions', 'Traditional Vaiṣṇava literature'] 
+        sources: ['Bhāgavata Purāṇa', 'Various Bhakti traditions', 'Traditional Vaiṣṇava literature']
       },
-      { 
-        id: 'present-age', 
-        name: 'Present Age', 
+      {
+        id: 'present-age',
+        name: 'Present Age',
         subtitle: 'The Current Epoch',
         narrative: 'According to traditional Hindu understanding, humanity is presently living in the early portion of Kali Yuga. Scriptures describe this age as one in which truthfulness, compassion, purity and memory gradually diminish while conflict, material attachment and adharma increase. Despite these challenges, the scriptures repeatedly emphasize that sincere devotion, remembrance of Bhagavān and study of sacred texts remain powerful means of spiritual progress during this age.',
-        sources: ['Śrīmad Bhāgavatam 12.2', 'Mahābhārata', 'Viṣṇu Purāṇa'] 
+        sources: ['Śrīmad Bhāgavatam 12.2', 'Mahābhārata', 'Viṣṇu Purāṇa']
       },
-      { 
-        id: 'kalki-avatara', 
-        name: 'Kalki Avatāra (Future)', 
+      {
+        id: 'kalki-avatara',
+        name: 'Kalki Avatāra (Future)',
         subtitle: 'The Prophesied Restorer',
         narrative: 'The Purāṇas describe Kalki as the future and final avatāra of Bhagavān Viṣṇu who will appear near the end of Kali Yuga when adharma has reached its peak. Born in Śambhala to the brāhmaṇa Viṣṇuyaśas, Kalki is described as restoring righteousness, removing entrenched evil, and inaugurating the beginning of a new Satya Yuga, continuing the eternal cycle of cosmic time.',
-        sources: ['Śrīmad Bhāgavatam 12.2', 'Kalki Purāṇa', 'Viṣṇu Purāṇa'] 
+        sources: ['Śrīmad Bhāgavatam 12.2', 'Kalki Purāṇa', 'Viṣṇu Purāṇa']
       }
     ]
   }
@@ -223,15 +223,16 @@ const EASE_POWER3 = [0.215, 0.61, 0.355, 1];
 function EventItem({ event, isActive, onHoverStart, onHoverEnd }) {
   const textRef = useRef(null);
 
-  const handleMouseEnter = () => {
+  const handleInteraction = (e) => {
     if (textRef.current) {
       const rect = textRef.current.getBoundingClientRect();
-      const panelWidth = Math.min(window.innerWidth * 0.35, 500); // Max 500px, 35vw
-      const panelLeft = window.innerWidth * 0.08; 
+      const isMobile = window.innerWidth < 1024;
+      const panelWidth = isMobile ? window.innerWidth - 48 : Math.min(window.innerWidth * 0.35, 500);
+      const panelLeft = isMobile ? 24 : window.innerWidth * 0.08;
       const panelRightEdge = panelLeft + panelWidth;
-      
-      const gapToCard = 40; 
-      const gapToText = 24; 
+
+      const gapToCard = 40;
+      const gapToText = 24;
 
       const lineLeft = panelRightEdge + gapToCard;
       const lineRight = rect.left - gapToText;
@@ -243,18 +244,23 @@ function EventItem({ event, isActive, onHoverStart, onHoverEnd }) {
         panelLeft,
         panelWidth,
         lineLeft,
-        lineWidth
+        lineWidth,
+        isMobile
       });
     }
   };
 
   return (
-    <div 
+    <div
       className="flex flex-col items-end cursor-pointer group w-full relative"
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={handleInteraction}
       onMouseLeave={onHoverEnd}
+      onClick={(e) => {
+        e.stopPropagation();
+        handleInteraction(e);
+      }}
     >
-      <span 
+      <span
         ref={textRef}
         style={{
           fontFamily: '"Instrument Serif", serif',
@@ -274,7 +280,7 @@ export function SiteWideThread() {
   const containerRef = useRef(null);
   const beginningRef = useRef(null);
   const pathRef = useRef(null);
-  
+
   const [dim, setDim] = useState({ w: 0, h: 0, startY: 0 });
   const [nodePositions, setNodePositions] = useState(null);
   const [triggers, setTriggers] = useState({
@@ -295,7 +301,7 @@ export function SiteWideThread() {
   });
   const [activeNodes, setActiveNodes] = useState({});
   const [hoveredYuga, setHoveredYuga] = useState(null);
-  
+
   // Global state for the active hovered incident
   const [activeIncident, setActiveIncident] = useState(null);
   const [imgError, setImgError] = useState(false);
@@ -323,12 +329,12 @@ export function SiteWideThread() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    
+
     const updateDimensions = () => {
       if (!containerRef.current || !beginningRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       const dotRect = beginningRef.current.getBoundingClientRect();
-      
+
       const relativeY = (dotRect.top - rect.top) + (dotRect.height / 2);
 
       setDim({
@@ -347,13 +353,13 @@ export function SiteWideThread() {
 
   useEffect(() => {
     if (!pathRef.current || dim.w === 0 || dim.h === 0) return;
-    
+
     // We use a small timeout to let the browser draw the path before measuring
     const timeout = setTimeout(() => {
       if (!pathRef.current) return;
       const path = pathRef.current;
       const totalLength = path.getTotalLength();
-      
+
       const extraSpace = window.innerHeight * 0.5; // 50vh added
       const baseH = Math.max(0, dim.h - extraSpace);
 
@@ -413,10 +419,14 @@ export function SiteWideThread() {
     const extraSpace = window.innerHeight * 0.5; // 50vh added
     const baseH = Math.max(0, dim.h - extraSpace);
 
-    const px = (x) => (x / 100) * dim.w;
+    const px = (x) => {
+      const isMobile = dim.w < 1024;
+      const targetX = isMobile ? (x === 85 ? 93 : (x === 75 ? 89 : x)) : x;
+      return (targetX / 100) * dim.w;
+    };
     const py = (y) => (y / 100) * baseH;
     const pyExtra = (y) => py(100) + (y / 100) * extraSpace;
-    
+
     return `
       M ${px(85)} ${dim.startY} 
       C ${px(85)} ${py(20)}, ${px(75)} ${py(35)}, ${px(75)} ${py(50)} 
@@ -434,10 +444,14 @@ export function SiteWideThread() {
     const extraSpace = window.innerHeight * 0.5;
     const baseH = Math.max(0, dim.h - extraSpace);
 
-    const px = (x) => (x / 100) * dim.w;
+    const px = (x) => {
+      const isMobile = dim.w < 1024;
+      const targetX = isMobile ? (x === 85 ? 93 : (x === 75 ? 89 : x)) : x;
+      return (targetX / 100) * dim.w;
+    };
     const py = (y) => (y / 100) * baseH;
     const pyExtra = (y) => py(100) + (y / 100) * extraSpace;
-    
+
     return `
       M ${px(75)} ${pyExtra(45)}
       C ${px(75)} ${pyExtra(60)}, ${px(50)} ${pyExtra(80)}, ${px(10)} ${pyExtra(80)}
@@ -469,7 +483,7 @@ export function SiteWideThread() {
   });
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className="absolute inset-0 z-[100] pointer-events-none overflow-hidden"
       aria-hidden="true"
@@ -477,49 +491,113 @@ export function SiteWideThread() {
       {/* GLOBAL KNOWLEDGE ARCHIVE PANEL */}
       <AnimatePresence>
         {activeIncident && (
-          <div className="fixed inset-0 pointer-events-none z-[200]">
-            
-            {/* The Connecting Line */}
-            <motion.div 
-              className="absolute h-[1px] bg-[#C58B52]"
-              style={{ 
-                left: activeIncident.lineLeft, 
-                top: activeIncident.centerY,
-                width: activeIncident.lineWidth,
-                transformOrigin: 'right' 
-              }}
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              exit={{ scaleX: 0, opacity: 0 }}
-              transition={{ duration: 0.8, ease: EASE_POWER3 }}
-            />
-
-            {/* The Dedicated Left Panel */}
-            <div 
-              className="absolute transform -translate-y-1/2"
-              style={{ 
-                left: activeIncident.panelLeft, 
-                top: activeIncident.centerY, 
-                width: activeIncident.panelWidth 
-              }}
+          activeIncident.isMobile ? (
+            <div
+              className="fixed inset-0 bg-[#050504]/60 backdrop-blur-sm z-[250] flex items-center justify-center p-6 pointer-events-auto select-none font-sans"
+              onClick={onHoverEnd}
             >
-              <div className="w-full text-left relative flex flex-col max-h-[85vh] overflow-y-auto pr-4 pointer-events-auto custom-scrollbar">
-                 
-                 {/* Image Fade & Blur */}
-                 <div className="w-full min-h-[220px] aspect-[4/3] mb-6 overflow-hidden border border-[#C58B52]/20 shrink-0 relative bg-[#E9E2D4]">
-                   <AnimatePresence mode="wait">
-                     <motion.div 
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, ease: EASE_POWER3 }}
+                className="w-full max-w-md bg-[#E9E2D4] border border-[#C58B52]/35 p-6 shadow-2xl relative flex flex-col max-h-[80vh] overflow-y-auto custom-scrollbar"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close Button */}
+                <button
+                  className="absolute top-4 right-4 font-general text-[8.5px] uppercase tracking-wider text-[#9E2A2B] font-bold"
+                  onClick={onHoverEnd}
+                >
+                  [ CLOSE ]
+                </button>
+
+                {/* Image */}
+                <div className="w-full h-44 mb-6 overflow-hidden border border-[#C58B52]/20 shrink-0 relative bg-[#E9E2D4] mt-4">
+                  {!imgError ? (
+                    <img
+                      src={encodeURI(`/${IMAGE_MAPPING[activeIncident.event.name] || activeIncident.event.name + '.jpg'}`)}
+                      alt={activeIncident.event.name}
+                      className="w-full h-full object-cover"
+                      onError={() => setImgError(true)}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="font-instrument italic text-[#C58B52]/50 text-base">Archive Entry Missing</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Title */}
+                <div className="mb-4 text-left">
+                  <h3 className="font-instrument text-3xl text-[#1A1A1A] leading-none mb-1 tracking-tight">
+                    {activeIncident.event.name}
+                  </h3>
+                  <span className="block font-general text-[8.5px] tracking-widest uppercase text-[#C58B52]">
+                    {activeIncident.event.subtitle}
+                  </span>
+                </div>
+
+                {/* Narrative */}
+                <p className="font-cormorant text-[1.15rem] font-light text-[#333333] leading-relaxed text-left mb-6">
+                  {activeIncident.event.narrative}
+                </p>
+
+                {/* Sources */}
+                <div className="border-t border-[#C58B52]/20 pt-4 text-left">
+                  <span className="font-general text-[8px] uppercase tracking-widest text-[#C58B52] block mb-2 font-bold font-general">Scriptural Sources</span>
+                  <ul className="flex flex-col gap-1">
+                    {activeIncident.event.sources.map((src, i) => (
+                      <li key={i} className="font-instrument text-base text-[#1A1A1A]">{src}</li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            </div>
+          ) : (
+            <div className="fixed inset-0 pointer-events-none z-[200]">
+
+              {/* The Connecting Line */}
+              <motion.div
+                className="absolute h-[1px] bg-[#C58B52]"
+                style={{
+                  left: activeIncident.lineLeft,
+                  top: activeIncident.centerY,
+                  width: activeIncident.lineWidth,
+                  transformOrigin: 'right'
+                }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                exit={{ scaleX: 0, opacity: 0 }}
+                transition={{ duration: 0.8, ease: EASE_POWER3 }}
+              />
+
+              {/* The Dedicated Left Panel */}
+              <div
+                className="absolute transform -translate-y-1/2"
+                style={{
+                  left: activeIncident.panelLeft,
+                  top: activeIncident.centerY,
+                  width: activeIncident.panelWidth
+                }}
+              >
+                <div className="w-full text-left relative flex flex-col max-h-[85vh] overflow-y-auto pr-4 pointer-events-auto custom-scrollbar">
+
+                  {/* Image Fade & Blur */}
+                  <div className="w-full min-h-[220px] aspect-[4/3] mb-6 overflow-hidden border border-[#C58B52]/20 shrink-0 relative bg-[#E9E2D4]">
+                    <AnimatePresence mode="wait">
+                      <motion.div
                         key={activeIncident.event.id}
                         initial={{ opacity: 0, filter: 'blur(8px)' }}
                         animate={{ opacity: 1, filter: 'blur(0px)' }}
                         exit={{ opacity: 0, filter: 'blur(8px)' }}
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="absolute inset-0"
-                     >
+                      >
                         {!imgError ? (
-                          <img 
-                            src={encodeURI(`/${IMAGE_MAPPING[activeIncident.event.name] || activeIncident.event.name + '.jpg'}`)} 
-                            alt={activeIncident.event.name} 
+                          <img
+                            src={encodeURI(`/${IMAGE_MAPPING[activeIncident.event.name] || activeIncident.event.name + '.jpg'}`)}
+                            alt={activeIncident.event.name}
                             className="w-full h-full object-cover"
                             onError={(e) => {
                               console.error('Failed to load image:', e.target.src);
@@ -531,64 +609,61 @@ export function SiteWideThread() {
                             <span className="font-instrument italic text-[#C58B52]/50 text-xl">Archive Entry Missing</span>
                           </div>
                         )}
-                     </motion.div>
-                   </AnimatePresence>
-                 </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
 
-                 {/* Title, Subtitle, Narrative, Sources */}
-                 <AnimatePresence mode="wait">
-                   <motion.div
+                  {/* Title, Subtitle, Narrative, Sources */}
+                  <AnimatePresence mode="wait">
+                    <motion.div
                       key={activeIncident.event.id}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="flex flex-col shrink-0"
-                   >
-                     {/* Title and Subtitle */}
-                     <div className="mb-6">
+                    >
+                      {/* Title and Subtitle */}
+                      <div className="mb-6">
                         <h3 className="font-instrument text-4xl text-[#1A1A1A] leading-none mb-2 tracking-tight">
                           {activeIncident.event.name}
                         </h3>
                         <span className="block font-general text-[10px] tracking-widest uppercase text-[#C58B52]">
                           {activeIncident.event.subtitle}
                         </span>
-                     </div>
+                      </div>
 
-                     {/* Detailed Narrative */}
-                     <div className="mb-6">
+                      {/* Detailed Narrative */}
+                      <div className="mb-6">
                         <p className="font-cormorant text-[1.2rem] font-light text-[#333333] leading-relaxed">
                           {activeIncident.event.narrative}
                         </p>
-                     </div>
+                      </div>
 
-                     {/* Sources */}
-                     <div className="border-t border-[#C58B52]/20 pt-6 mt-2 pb-8">
+                      {/* Sources */}
+                      <div className="border-t border-[#C58B52]/20 pt-6 mt-2 pb-8">
                         <h4 className="font-general text-[9px] uppercase tracking-widest text-[#C58B52] mb-3">Scriptural Sources</h4>
                         <ul className="flex flex-col gap-1">
                           {activeIncident.event.sources.map((src, i) => (
                             <li key={i} className="font-instrument text-lg text-[#1A1A1A]">{src}</li>
                           ))}
                         </ul>
-                     </div>
-                   </motion.div>
-                 </AnimatePresence>
-
-
-
-
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </div>
-            </div>
 
-          </div>
+            </div>
+          )
         )}
       </AnimatePresence>
 
 
       {dim.w > 0 && dim.h > 0 && (
-        <svg 
-          width={dim.w} 
-          height={dim.h} 
+        <svg
+          width={dim.w}
+          height={dim.h}
           className="absolute inset-0"
         >
           <motion.path
@@ -629,24 +704,25 @@ export function SiteWideThread() {
       )}
 
       {/* BEGINNING ORIGIN */}
-      <div 
+      <div
         ref={beginningRef}
         className="absolute"
-        style={nodePositions ? { top: nodePositions.brahmanda.y, left: nodePositions.brahmanda.x, transform: 'translate(-50%, -50%)' } : { top: 'clamp(5rem, 10vw, 8rem)', left: '85%', transform: 'translate(-50%, -50%)' }} 
+        style={nodePositions ? { top: nodePositions.brahmanda.y, left: nodePositions.brahmanda.x, transform: 'translate(-50%, -50%)' } : { top: 'clamp(5rem, 10vw, 8rem)', left: '85%', transform: 'translate(-50%, -50%)' }}
       >
         <div className="relative flex items-center justify-center">
           <div className="absolute right-6 flex flex-col items-end pt-1 w-[320px]">
             {/* Future Compatibility Sequence container */}
             <div className="flex flex-col items-end mb-4">
-              <img 
-                src="/om_sacred_symbol_transparent.png" 
-                alt="Sacred Om Symbol" 
+              <img
+                src="/om_sacred_symbol_transparent.png"
+                alt="Sacred Om Symbol"
                 className="w-[55px] md:w-[65px] object-contain opacity-80"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
               {/* Future elements (Vishnu, Lotus, Brahma) can be sequentially added here */}
             </div>
 
-            <span 
+            <span
               style={{
                 fontFamily: '"General Sans", sans-serif',
                 fontSize: '9px',
@@ -666,7 +742,7 @@ export function SiteWideThread() {
                 color: '#888888'
               }}
             >
-              The unmanifest source from which creation emerges.<br/>
+              The unmanifest source from which creation emerges.<br />
               Before time, before matter, before the Yugas, existence rests in the Supreme.
             </span>
           </div>
@@ -674,8 +750,8 @@ export function SiteWideThread() {
           <div className="relative w-[10px] h-[10px] flex items-center justify-center">
             <motion.div
               animate={
-                cycleFinished 
-                  ? { opacity: [0.3, 1, 0.3], scale: [1.5, 3, 1.5] } 
+                cycleFinished
+                  ? { opacity: [0.3, 1, 0.3], scale: [1.5, 3, 1.5] }
                   : { opacity: [0.3, 0.8, 0.3], scale: [1, 1.5, 1] }
               }
               transition={
@@ -686,7 +762,7 @@ export function SiteWideThread() {
               className="absolute inset-[-10px] rounded-full"
               style={{ background: cycleFinished ? 'radial-gradient(circle, rgba(255,230,180,0.8) 0%, transparent 70%)' : 'radial-gradient(circle, rgba(197,139,82,0.4) 0%, transparent 70%)' }}
             />
-            <motion.div 
+            <motion.div
               className="w-[5px] h-[5px] rounded-full relative z-10"
               animate={{
                 backgroundColor: cycleFinished ? '#FFE6B4' : '#C58B52',
@@ -701,18 +777,18 @@ export function SiteWideThread() {
       {/* SRI VISHNU STAGE (0.05 Progress) */}
       <AnimatePresence>
         {activeNodes.vishnuStage && nodePositions && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1, ease: 'easeOut' }}
             className="absolute"
-            style={{ top: nodePositions.vishnu.y, left: nodePositions.vishnu.x, transform: 'translate(-50%, -50%)' }} 
+            style={{ top: nodePositions.vishnu.y, left: nodePositions.vishnu.x, transform: 'translate(-50%, -50%)' }}
           >
             <div className="relative flex items-center justify-center">
-              
+
               <div className="absolute right-8 flex flex-row items-center gap-10 w-[600px] justify-end">
-                
+
                 {/* Text Block */}
                 <div className="flex flex-col items-end text-right max-w-[320px]">
                   <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-3">
@@ -727,10 +803,11 @@ export function SiteWideThread() {
                 </div>
 
                 {/* Illustration */}
-                <img 
-                  src="/sri_vishnu_figure_transparent.png" 
-                  alt="Śrī Viṣṇu" 
+                <img
+                  src="/sri_vishnu_figure_transparent.png"
+                  alt="Śrī Viṣṇu"
                   className="w-[200px] object-contain opacity-85"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
 
               </div>
@@ -743,7 +820,7 @@ export function SiteWideThread() {
                   className="absolute inset-[-8px] rounded-full"
                   style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.3) 0%, transparent 70%)' }}
                 />
-                <div 
+                <div
                   className="w-[4px] h-[4px] rounded-full relative z-10"
                   style={{ backgroundColor: '#BA7A3A' }}
                 />
@@ -756,18 +833,18 @@ export function SiteWideThread() {
       {/* PADMA UDBHAVA STAGE (0.25 Progress) */}
       <AnimatePresence>
         {activeNodes.brahmaStage && nodePositions && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1, ease: 'easeOut' }}
             className="absolute"
-            style={{ top: nodePositions.brahma.y, left: nodePositions.brahma.x, transform: 'translate(-50%, -50%)' }} 
+            style={{ top: nodePositions.brahma.y, left: nodePositions.brahma.x, transform: 'translate(-50%, -50%)' }}
           >
             <div className="relative flex items-center justify-center">
-              
+
               <div className="absolute right-8 flex flex-row items-center gap-10 w-[600px] justify-end">
-                
+
                 {/* Text Block */}
                 <div className="flex flex-col items-end text-right max-w-[320px]">
                   <span className="font-general text-[11px] uppercase tracking-widest text-[#C58B52] mb-3">
@@ -782,10 +859,11 @@ export function SiteWideThread() {
                 </div>
 
                 {/* Illustration */}
-                <img 
-                  src="/sri_brahma_figure_transparent.png" 
-                  alt="Padma and Śrī Brahmā" 
+                <img
+                  src="/sri_brahma_figure_transparent.png"
+                  alt="Padma and Śrī Brahmā"
                   className="w-[200px] object-contain opacity-80"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
 
               </div>
@@ -798,7 +876,7 @@ export function SiteWideThread() {
                   className="absolute inset-[-8px] rounded-full"
                   style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.3) 0%, transparent 70%)' }}
                 />
-                <div 
+                <div
                   className="w-[4px] h-[4px] rounded-full relative z-10"
                   style={{ backgroundColor: '#BA7A3A' }}
                 />
@@ -843,10 +921,10 @@ export function SiteWideThread() {
                   className="absolute inset-[-12px] rounded-full"
                   style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.5) 0%, transparent 70%)' }}
                 />
-                
+
                 {/* Physical Dot */}
                 <motion.div
-                  animate={{ 
+                  animate={{
                     scale: isActive ? 1.4 : 1,
                     backgroundColor: isActive ? '#C58B52' : 'transparent',
                     borderColor: isActive ? '#C58B52' : 'rgba(197,139,82,0.4)',
@@ -859,17 +937,17 @@ export function SiteWideThread() {
             </div>
 
             {/* Editorial Annotation Bracket & Event List */}
-            <motion.div 
+            <motion.div
               animate={{ opacity: isDimmed ? 0.2 : 1 }}
               transition={{ duration: 0.8, ease: EASE_POWER3 }}
-              className="absolute right-[30px] top-0 transform -translate-y-1/2 pr-[24px] w-[300px] flex flex-col items-end gap-6 border-r border-[#C58B52]/30"
+              className="absolute right-[20px] md:right-[30px] top-0 transform -translate-y-1/2 pr-[16px] md:pr-[24px] w-[calc(100vw-60px)] sm:w-[280px] md:w-[300px] flex flex-col items-end gap-4 md:gap-6 border-r border-[#C58B52]/30"
             >
               {/* Horizontal Connector Line pointing to the dot */}
-              <div className="absolute right-[-30px] top-1/2 w-[30px] h-[1px] bg-[#C58B52]/30" />
+              <div className="absolute right-[-20px] md:right-[-30px] top-1/2 w-[20px] md:w-[30px] h-[1px] bg-[#C58B52]/30" />
 
               {/* Yuga Title */}
               <div className="flex flex-col items-end">
-                <span 
+                <span
                   style={{
                     fontFamily: '"General Sans", sans-serif',
                     fontSize: '9.5px',
@@ -900,9 +978,9 @@ export function SiteWideThread() {
               {/* Event List */}
               <div className="flex flex-col items-end gap-3 w-full">
                 {node.events.map((evt, i) => (
-                  <EventItem 
-                    key={i} 
-                    event={evt} 
+                  <EventItem
+                    key={i}
+                    event={evt}
                     isActive={activeIncident?.event?.id === evt.id}
                     onHoverStart={setActiveIncident}
                     onHoverEnd={() => setActiveIncident(null)}
@@ -917,12 +995,12 @@ export function SiteWideThread() {
       {/* KALKI AVATĀRA STAGE */}
       <AnimatePresence>
         {activeNodes.kalkiStage && nodePositions && (
-          <div 
+          <div
             className="absolute pointer-events-none"
-            style={{ top: nodePositions.kalki.y, left: nodePositions.kalki.x }} 
+            style={{ top: nodePositions.kalki.y, left: nodePositions.kalki.x }}
           >
             <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -943,12 +1021,12 @@ export function SiteWideThread() {
       {/* MAHĀPRALAYA STAGE */}
       <AnimatePresence>
         {activeNodes.mahapralayaStage && nodePositions && (
-          <div 
+          <div
             className="absolute pointer-events-none"
-            style={{ top: nodePositions.mahapralaya.y, left: nodePositions.mahapralaya.x }} 
+            style={{ top: nodePositions.mahapralaya.y, left: nodePositions.mahapralaya.x }}
           >
             <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -969,12 +1047,12 @@ export function SiteWideThread() {
       {/* ŚRĪ MAHĀDEVA STAGE */}
       <AnimatePresence>
         {activeNodes.mahadevaStage && nodePositions && (
-          <div 
+          <div
             className="absolute pointer-events-none"
-            style={{ top: nodePositions.mahadeva.y, left: nodePositions.mahadeva.x }} 
+            style={{ top: nodePositions.mahadeva.y, left: nodePositions.mahadeva.x }}
           >
             <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -995,10 +1073,11 @@ export function SiteWideThread() {
                     </span>
                   </div>
                   {/* Illustration */}
-                  <img 
-                    src="/Shiva_transparent.png" 
-                    alt="Śrī Mahādeva" 
+                  <img
+                    src="/Shiva_transparent.png"
+                    alt="Śrī Mahādeva"
                     className="w-[200px] object-contain opacity-80 pointer-events-auto"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>
 
@@ -1011,7 +1090,7 @@ export function SiteWideThread() {
                     style={{ background: 'radial-gradient(circle, rgba(197,139,82,0.5) 0%, transparent 70%)' }}
                   />
                   <motion.div
-                    animate={{ 
+                    animate={{
                       scale: 1.4,
                       backgroundColor: '#C58B52',
                       borderColor: '#C58B52',

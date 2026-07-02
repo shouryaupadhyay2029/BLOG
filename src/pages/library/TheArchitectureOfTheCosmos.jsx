@@ -35,9 +35,9 @@ const TERMINOLOGY = [
 export function TheArchitectureOfTheCosmos() {
   return (
     <div className="w-full min-h-screen bg-[#E9E2D4] text-[#0D0D0C] font-sans antialiased selection:bg-[#C58B52]/30">
-      
+
       {/* 1. HERO SECTION */}
-      <ArticleHero 
+      <ArticleHero
         title="The Architecture of the Cosmos"
         subtitle="Before the first sunrise... Before galaxies... Before space itself... Ancient scriptures describe an astonishing vision of reality."
         readingTime="45 Min"
@@ -57,7 +57,7 @@ export function TheArchitectureOfTheCosmos() {
       <div className="w-full max-w-4xl mx-auto px-6 py-32 flex flex-col gap-32">
 
         {/* 2. WHY THIS TOPIC MATTERS */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -83,7 +83,7 @@ export function TheArchitectureOfTheCosmos() {
         </motion.section>
 
         {/* 3. WHAT READERS WILL DISCOVER */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -102,7 +102,7 @@ export function TheArchitectureOfTheCosmos() {
         </motion.section>
 
         {/* 4. QUICK SUMMARY */}
-        <motion.section 
+        <motion.section
           className="bg-[#0D0D0C] text-[#E9E2D4] p-12 md:p-16 rounded-sm shadow-2xl relative overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -111,11 +111,11 @@ export function TheArchitectureOfTheCosmos() {
         >
           {/* Subtle noise/texture */}
           <div className="absolute inset-0 noise-fine opacity-20 mix-blend-overlay pointer-events-none" />
-          
+
           <h2 className="font-instrument text-3xl md:text-5xl text-[#E9E2D4] tracking-tight mb-12 border-b border-[#C58B52]/20 pb-8 relative z-10">
             The Executive Summary
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
             <div>
               <h4 className="font-cormorant text-2xl font-medium text-[#C58B52] mb-3">What is Brahmāṇḍa?</h4>
@@ -145,7 +145,7 @@ export function TheArchitectureOfTheCosmos() {
         </motion.section>
 
         {/* 5. BEFORE WE BEGIN (SOURCES) */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -171,7 +171,7 @@ export function TheArchitectureOfTheCosmos() {
         </motion.section>
 
         {/* 6. RESEARCH METHODOLOGY */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -227,7 +227,7 @@ export function TheArchitectureOfTheCosmos() {
         <EvidenceRatingSystem />
 
         {/* 8. READING GUIDE */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -235,14 +235,14 @@ export function TheArchitectureOfTheCosmos() {
           className="bg-[#E9E2D4] border-t-4 border-[#C58B52] p-12 shadow-xl relative"
         >
           <div className="absolute top-0 right-12 w-[1px] h-32 bg-[#C58B52]" />
-          
+
           <h2 className="font-instrument text-4xl md:text-5xl text-[#0D0D0C] tracking-tight mb-8">
             How to Read TATTVA
           </h2>
           <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-12">
             This article utilizes interactive components to help you distinguish between scripture, commentary, and scholarly analysis. Look out for the following elements as you read:
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="border border-[#0D0D0C]/10 p-6 bg-[#0D0D0C]/[0.02]">
               <span className="font-general text-[9px] uppercase tracking-[0.2em] text-[#C58B52] mb-2 block">UI ELEMENT</span>
@@ -274,7 +274,7 @@ export function TheArchitectureOfTheCosmos() {
 
       {/* --- CHAPTER I: CREATION BEFORE CREATION --- */}
       <CreationBeforeCreation />
-      
+
       {/* --- CHAPTER II: BRAHMANDA (THE COSMIC EGG) --- */}
       <BrahmandaChapter />
 

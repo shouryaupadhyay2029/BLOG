@@ -338,7 +338,7 @@ function ArchiveRow({ index, number, title, categoryLabel, status, verdict, read
                   Completed
                 </span>
               </div>
-              
+
               {verdict && (
                 <div className="flex flex-col text-right">
                   <span className="font-general text-[7px] text-[#1C1C1A]/40 uppercase tracking-widest leading-none">Verdict</span>
@@ -440,7 +440,7 @@ export function SatyaMithyaPage() {
       <CreamGrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16 select-none">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)] select-none">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -464,34 +464,34 @@ export function SatyaMithyaPage() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
           >
             SATYA & MITHYĀ
           </span>
         </Link>
 
         <Link to="/the-origin" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             THE ORIGIN
           </span>
@@ -499,7 +499,7 @@ export function SatyaMithyaPage() {
       </nav>
 
       <div className="w-full max-w-6xl mx-auto px-6 pt-44 relative z-10 flex flex-col">
-        
+
         {/* HERO SECTION */}
         <motion.div
           className="mb-12 flex flex-col"
@@ -578,7 +578,7 @@ export function SatyaMithyaPage() {
           </Reveal>
 
           {/* Horizontal stages flow */}
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 relative select-none">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 relative select-none">
             {[
               { label: 'Claim', desc: 'Identify popular belief under review.' },
               { label: 'Language', desc: 'Examine original Sanskrit lexical definitions.' },
@@ -646,7 +646,7 @@ export function SatyaMithyaPage() {
 
         {/* CONTROLS (SEARCH & FILTERS) */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mt-16 mb-8 border-b border-[#C58B52]/10 pb-8">
-          
+
           {/* SEARCH FIELD */}
           <div className="relative w-full md:max-w-xs select-none">
             <input
@@ -672,11 +672,10 @@ export function SatyaMithyaPage() {
               <button
                 key={filter}
                 onClick={() => setSelectedFilter(filter)}
-                className={`font-general text-[9px] uppercase tracking-widest transition-colors focus:outline-none ${
-                  selectedFilter === filter
+                className={`font-general text-[9px] uppercase tracking-widest transition-colors focus:outline-none ${selectedFilter === filter
                     ? 'text-[#9E2A2B] font-bold border-b border-[#9E2A2B]'
                     : 'text-[#1C1C1A]/50 hover:text-[#1C1C1A]'
-                }`}
+                  }`}
               >
                 {filter}
               </button>

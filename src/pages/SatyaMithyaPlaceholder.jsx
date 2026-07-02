@@ -32,7 +32,7 @@ export function SatyaMithyaPlaceholder() {
       <GrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)]">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -59,7 +59,7 @@ export function SatyaMithyaPlaceholder() {
         
         <Link to="/inquiry" className="group flex items-center">
           <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
@@ -67,7 +67,7 @@ export function SatyaMithyaPlaceholder() {
 
         <Link to="/library" className="group flex items-center">
           <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
@@ -75,7 +75,7 @@ export function SatyaMithyaPlaceholder() {
 
         <Link to="/satya-mithya" className="group flex items-center">
           <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]/70 group-hover:text-[#C58B52]"
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]/70 group-hover:text-[#C58B52]"
           >
             SATYA & MITHYĀ
           </span>
@@ -83,7 +83,7 @@ export function SatyaMithyaPlaceholder() {
 
 <Link to="/the-origin" className="group flex items-center">
   <span 
-    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+    className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
   >
     THE ORIGIN
   </span>

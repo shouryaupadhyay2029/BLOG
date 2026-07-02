@@ -160,3 +160,16 @@
 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
 .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(197, 139, 82, 0.3); border-radius: 4px; }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(197, 139, 82, 0.6); }
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Tactile active press feedback for premium UX */
+a:active, 
+button:active,
+[role="button"]:active {
+  transform: scale(0.98);
+  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+

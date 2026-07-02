@@ -147,7 +147,7 @@ export function SatyaMithyaCase005() {
   const [expandedStoryNote, setExpandedStoryNote] = useState(false);
   const [activeVedicTab, setActiveVedicTab] = useState(0);
   const [expandedCompareRow, setExpandedCompareRow] = useState(null);
-  
+
   // Later Scriptures states
   const [expandedTimelineStage, setExpandedTimelineStage] = useState(null);
   const [activeMedhatithiTab, setActiveMedhatithiTab] = useState(0);
@@ -271,7 +271,7 @@ export function SatyaMithyaCase005() {
       <GrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-6 md:gap-12 lg:gap-16 select-none">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)] select-none">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -295,38 +295,38 @@ export function SatyaMithyaCase005() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
           >
             SATYA & MITHYĀ
           </span>
         </Link>
 
-<Link to="/the-origin" className="group flex items-center">
-  <span 
-    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
-  >
-    THE ORIGIN
-  </span>
-</Link>
+        <Link to="/the-origin" className="group flex items-center">
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+          >
+            THE ORIGIN
+          </span>
+        </Link>
       </nav>
 
       {/* STICKY EVIDENCE SIDEBAR PANEL */}
@@ -345,9 +345,8 @@ export function SatyaMithyaCase005() {
                   <span className={`text-[10px] ${step.checked ? 'text-emerald-500' : 'text-[#E9E2D4]/20'}`}>
                     {step.checked ? <CheckIcon className="w-3 h-3 text-emerald-500 inline-block align-middle" /> : <span className="w-2 h-2 rounded-full border border-[#E9E2D4]/20 inline-block align-middle" />}
                   </span>
-                  <span className={`font-cormorant text-xs transition-colors duration-300 ${
-                    step.active ? 'text-[#C58B52] font-bold' : step.checked ? 'text-[#E9E2D4]/70' : 'text-[#E9E2D4]/40'
-                  }`}>
+                  <span className={`font-cormorant text-xs transition-colors duration-300 ${step.active ? 'text-[#C58B52] font-bold' : step.checked ? 'text-[#E9E2D4]/70' : 'text-[#E9E2D4]/40'
+                    }`}>
                     {step.label}
                   </span>
                 </div>
@@ -386,7 +385,7 @@ export function SatyaMithyaCase005() {
 
       {/* MAIN CONTAINER */}
       <div className="w-full max-w-3xl mx-auto px-6 pt-44 relative z-10 flex flex-col">
-        
+
         {/* ══════════════════════════════════════════════
             HERO SECTION
         ══════════════════════════════════════════════ */}
@@ -417,7 +416,7 @@ export function SatyaMithyaCase005() {
                   <span className="font-general text-[9px] uppercase tracking-[0.2em] text-[#E9E2D4]/40 block mb-1">
                     Subject of Inquiry
                   </span>
-                  <motion.h2 
+                  <motion.h2
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 1.2 }}
@@ -463,7 +462,7 @@ export function SatyaMithyaCase005() {
               <p className="font-cormorant text-sm md:text-base text-[#E9E2D4]/75 leading-relaxed font-light mb-6">
                 Many public discussions merge several completely different subjects into one. Readers often hear the word "Sati" without realizing that it may refer to:
               </p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pl-2">
                 {[
                   { term: 'The Goddess Satī', desc: 'A mythological figure in Purāṇic literature whose self-immolation occurred in protest of her father\'s insult to Shiva, not as a widow.' },
@@ -722,7 +721,7 @@ export function SatyaMithyaCase005() {
                 The Goddess Satī (Dakṣāyaṇī)
               </h3>
               <p className="font-cormorant text-base text-[#E9E2D4]/85 leading-relaxed font-light mb-6">
-                In the Purāṇic theological tradition, the word <em>Satī</em> is also the name of a specific deity—the daughter of Dakṣa and the first consort of Shiva. 
+                In the Purāṇic theological tradition, the word <em>Satī</em> is also the name of a specific deity—the daughter of Dakṣa and the first consort of Shiva.
               </p>
               <p className="font-cormorant text-base text-[#E9E2D4]/85 leading-relaxed font-light mb-6">
                 According to the well-known <em>Dakṣa Yajña</em> narrative, her father Dakṣa organized a grand sacrifice but deliberately insulted Shiva by not inviting him and mocking him in public. Deeply humiliated by her father's disrespect toward her husband, Satī self-immolated by generating her inner yogic fire (Yogāgni).
@@ -730,7 +729,7 @@ export function SatyaMithyaCase005() {
 
               <div className="border border-[#C58B52]/10 bg-white/[0.02] p-5 rounded-sm mb-6">
                 <p className="font-cormorant text-base text-[#E9E2D4] leading-relaxed font-light">
-                  <strong>Crucial distinction:</strong> The Goddess Satī's self-sacrifice was not an act of a widow immolating herself upon her husband's funeral pyre. Shiva was, in fact, alive and intact. Her act was a protest against insult and a demonstration of theological/yogic power. 
+                  <strong>Crucial distinction:</strong> The Goddess Satī's self-sacrifice was not an act of a widow immolating herself upon her husband's funeral pyre. Shiva was, in fact, alive and intact. Her act was a protest against insult and a demonstration of theological/yogic power.
                 </p>
               </div>
 
@@ -1027,9 +1026,8 @@ export function SatyaMithyaCase005() {
                     <button
                       key={idx}
                       onClick={() => setActiveVedicTab(idx)}
-                      className={`flex-1 py-3 px-4 text-center border-r border-[#C58B52]/15 last:border-none focus:outline-none transition-colors duration-300 ${
-                        activeVedicTab === idx ? 'bg-[#C58B52]/10 text-[#C58B52] font-bold' : 'text-[#E9E2D4]/50 hover:text-[#E9E2D4]'
-                      }`}
+                      className={`flex-1 py-3 px-4 text-center border-r border-[#C58B52]/15 last:border-none focus:outline-none transition-colors duration-300 ${activeVedicTab === idx ? 'bg-[#C58B52]/10 text-[#C58B52] font-bold' : 'text-[#E9E2D4]/50 hover:text-[#E9E2D4]'
+                        }`}
                     >
                       {tab}
                     </button>
@@ -1231,87 +1229,89 @@ export function SatyaMithyaCase005() {
               <h4 className="font-instrument text-2xl text-[#E9E2D4] font-bold mb-6 text-center">
                 Vedic Funeral Passages Comparison
               </h4>
-              <div className="border border-[#C58B52]/15 rounded-sm overflow-hidden select-none">
-                {/* Headers */}
-                <div className="grid grid-cols-3 bg-[#1d1d1c] p-4 text-center font-general text-[8px] uppercase tracking-wider text-[#C58B52] font-bold">
-                  <div>Ṛgveda 10.18.7</div>
-                  <div>Ṛgveda 10.18.8</div>
-                  <div>Atharvaveda 18.3.1</div>
-                </div>
+              <div className="overflow-x-auto w-full scrollbar-none">
+                <div className="border border-[#C58B52]/15 rounded-sm overflow-hidden select-none min-w-[600px] md:min-w-0">
+                  {/* Headers */}
+                  <div className="grid grid-cols-3 bg-[#1d1d1c] p-4 text-center font-general text-[8px] uppercase tracking-wider text-[#C58B52] font-bold">
+                    <div>Ṛgveda 10.18.7</div>
+                    <div>Ṛgveda 10.18.8</div>
+                    <div>Atharvaveda 18.3.1</div>
+                  </div>
 
-                {/* Rows */}
-                {[
-                  {
-                    rowId: 'Context',
-                    title: 'Context',
-                    cols: [
-                      'Funeral hymn addressing living women participating in the ritual.',
-                      'Funeral hymn addressing the widow lying beside her deceased husband.',
-                      'Funeral hymn detailing ancient cremation and mourning customs.'
-                    ]
-                  },
-                  {
-                    rowId: 'Tradition',
-                    title: 'Traditional Interpretation',
-                    cols: [
-                      'Sāyaṇa and classical commentators gloss "yonim agre" as entering the home first.',
-                      'Instructs the widow to leave the pyre and return to the living community.',
-                      'Describes symbolic lying beside the husband as an ancient boundary rite.'
-                    ]
-                  },
-                  {
-                    rowId: 'Philology',
-                    title: 'Modern Philology',
-                    cols: [
-                      'Manuscripts preserve "agre" (first). "Agneh" is treated as a later variation.',
-                      'Direct command (udīrṣva) to return to the world of the living (jīvalokam).',
-                      'Identifies the lying down as a symbolic ritual, not a physical command to burn.'
-                    ]
-                  },
-                  {
-                    rowId: 'History',
-                    title: 'Historical Relevance',
-                    cols: [
-                      'Became the primary text cited in medieval debates to support or challenge Sati.',
-                      'Cited by reformers (like Ram Mohan Roy) as scriptural proof against Sati.',
-                      'Cited to show that early Vedic funeral practices were non-immolational.'
-                    ]
-                  }
-                ].map((row, ri) => {
-                  const isExpanded = expandedCompareRow === row.rowId;
-                  return (
-                    <div key={ri} className="border-b border-[#C58B52]/15 last:border-none">
-                      <button
-                        onClick={() => setExpandedCompareRow(isExpanded ? null : row.rowId)}
-                        className="w-full bg-[#161615] hover:bg-[#1a1a19] p-4 text-left flex justify-between items-center transition-colors focus:outline-none"
-                      >
-                        <span className="font-instrument text-xs font-semibold text-[#E9E2D4]">{row.title}</span>
-                        <span className="font-general text-[7px] text-[#C58B52]">
-                          {isExpanded ? '[ COLLAPSE ]' : '[ VIEW DETAILS ]'}
-                        </span>
-                      </button>
-                      <AnimatePresence>
-                        {isExpanded && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.4, ease: EASE_EXPO }}
-                            className="overflow-hidden bg-[#000000]/40 border-t border-[#C58B52]/10"
-                          >
-                            <div className="grid grid-cols-3 gap-4 p-4 font-cormorant text-xs md:text-sm text-[#E9E2D4]/75 font-light leading-relaxed">
-                              {row.cols.map((colText, ci) => (
-                                <div key={ci} className={ci < 2 ? 'border-r border-[#C58B52]/10 pr-2' : ''}>
-                                  {colText}
-                                </div>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  );
-                })}
+                  {/* Rows */}
+                  {[
+                    {
+                      rowId: 'Context',
+                      title: 'Context',
+                      cols: [
+                        'Funeral hymn addressing living women participating in the ritual.',
+                        'Funeral hymn addressing the widow lying beside her deceased husband.',
+                        'Funeral hymn detailing ancient cremation and mourning customs.'
+                      ]
+                    },
+                    {
+                      rowId: 'Tradition',
+                      title: 'Traditional Interpretation',
+                      cols: [
+                        'Sāyaṇa and classical commentators gloss "yonim agre" as entering the home first.',
+                        'Instructs the widow to leave the pyre and return to the living community.',
+                        'Describes symbolic lying beside the husband as an ancient boundary rite.'
+                      ]
+                    },
+                    {
+                      rowId: 'Philology',
+                      title: 'Modern Philology',
+                      cols: [
+                        'Manuscripts preserve "agre" (first). "Agneh" is treated as a later variation.',
+                        'Direct command (udīrṣva) to return to the world of the living (jīvalokam).',
+                        'Identifies the lying down as a symbolic ritual, not a physical command to burn.'
+                      ]
+                    },
+                    {
+                      rowId: 'History',
+                      title: 'Historical Relevance',
+                      cols: [
+                        'Became the primary text cited in medieval debates to support or challenge Sati.',
+                        'Cited by reformers (like Ram Mohan Roy) as scriptural proof against Sati.',
+                        'Cited to show that early Vedic funeral practices were non-immolational.'
+                      ]
+                    }
+                  ].map((row, ri) => {
+                    const isExpanded = expandedCompareRow === row.rowId;
+                    return (
+                      <div key={ri} className="border-b border-[#C58B52]/15 last:border-none">
+                        <button
+                          onClick={() => setExpandedCompareRow(isExpanded ? null : row.rowId)}
+                          className="w-full bg-[#161615] hover:bg-[#1a1a19] p-4 text-left flex justify-between items-center transition-colors focus:outline-none"
+                        >
+                          <span className="font-instrument text-xs font-semibold text-[#E9E2D4]">{row.title}</span>
+                          <span className="font-general text-[7px] text-[#C58B52]">
+                            {isExpanded ? '[ COLLAPSE ]' : '[ VIEW DETAILS ]'}
+                          </span>
+                        </button>
+                        <AnimatePresence>
+                          {isExpanded && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.4, ease: EASE_EXPO }}
+                              className="overflow-hidden bg-[#000000]/40 border-t border-[#C58B52]/10"
+                            >
+                              <div className="grid grid-cols-3 gap-4 p-4 font-cormorant text-xs md:text-sm text-[#E9E2D4]/75 font-light leading-relaxed">
+                                {row.cols.map((colText, ci) => (
+                                  <div key={ci} className={ci < 2 ? 'border-r border-[#C58B52]/10 pr-2' : ''}>
+                                    {colText}
+                                  </div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </Reveal>
@@ -1481,11 +1481,10 @@ export function SatyaMithyaCase005() {
                   <button
                     key={idx}
                     onClick={() => setExpandedTimelineStage(expandedTimelineStage === stage.id ? null : stage.id)}
-                    className={`py-2 px-3 text-[10px] font-general uppercase tracking-wider rounded-sm focus:outline-none transition-colors border ${
-                      expandedTimelineStage === stage.id
+                    className={`py-2 px-3 text-[10px] font-general uppercase tracking-wider rounded-sm focus:outline-none transition-colors border ${expandedTimelineStage === stage.id
                         ? 'bg-[#C58B52]/15 border-[#C58B52] text-[#C58B52] font-bold'
                         : 'border-[#C58B52]/10 hover:border-[#C58B52]/40 text-[#E9E2D4]/60'
-                    }`}
+                      }`}
                   >
                     {stage.l}
                   </button>
@@ -1672,9 +1671,8 @@ export function SatyaMithyaCase005() {
                     <button
                       key={idx}
                       onClick={() => setActiveMedhatithiTab(idx)}
-                      className={`flex-1 py-3 px-4 text-center border-r border-[#C58B52]/15 last:border-none focus:outline-none transition-colors duration-300 ${
-                        activeMedhatithiTab === idx ? 'bg-[#C58B52]/10 text-[#C58B52] font-bold' : 'text-[#E9E2D4]/50 hover:text-[#E9E2D4]'
-                      }`}
+                      className={`flex-1 py-3 px-4 text-center border-r border-[#C58B52]/15 last:border-none focus:outline-none transition-colors duration-300 ${activeMedhatithiTab === idx ? 'bg-[#C58B52]/10 text-[#C58B52] font-bold' : 'text-[#E9E2D4]/50 hover:text-[#E9E2D4]'
+                        }`}
                     >
                       {tab}
                     </button>
@@ -2030,11 +2028,10 @@ export function SatyaMithyaCase005() {
                   <button
                     key={idx}
                     onClick={() => setExpandedHistTimeline(expandedHistTimeline === period.id ? null : period.id)}
-                    className={`py-2 px-3 text-[10px] font-general uppercase tracking-wider rounded-sm focus:outline-none transition-colors border ${
-                      expandedHistTimeline === period.id
+                    className={`py-2 px-3 text-[10px] font-general uppercase tracking-wider rounded-sm focus:outline-none transition-colors border ${expandedHistTimeline === period.id
                         ? 'bg-[#C58B52]/15 border-[#C58B52] text-[#C58B52] font-bold'
                         : 'border-[#C58B52]/10 hover:border-[#C58B52]/40 text-[#E9E2D4]/60'
-                    }`}
+                      }`}
                   >
                     {period.l}
                   </button>
@@ -2248,11 +2245,10 @@ export function SatyaMithyaCase005() {
                     <button
                       key={reg.id}
                       onClick={() => setActiveHistRegion(reg.id)}
-                      className={`w-full py-3 px-4 text-left font-general text-[9px] uppercase tracking-wider border rounded-sm focus:outline-none transition-colors ${
-                        activeHistRegion === reg.id
+                      className={`w-full py-3 px-4 text-left font-general text-[9px] uppercase tracking-wider border rounded-sm focus:outline-none transition-colors ${activeHistRegion === reg.id
                           ? 'bg-[#C58B52]/15 border-[#C58B52] text-[#C58B52] font-bold'
                           : 'border-[#C58B52]/10 hover:border-[#C58B52]/30 text-[#E9E2D4]/60'
-                      }`}
+                        }`}
                     >
                       {reg.label}
                     </button>
@@ -2437,7 +2433,7 @@ export function SatyaMithyaCase005() {
               <h4 className="font-instrument text-xl text-[#E9E2D4] font-bold mb-8">
                 The Historical Trajectory of Widow Immolation
               </h4>
-              
+
               <div className="flex flex-col md:flex-row justify-between items-center gap-4 max-w-xl mx-auto mb-6 text-[10px] font-general uppercase tracking-widest">
                 <div className="border border-[#C58B52]/20 px-3 py-2 rounded-sm bg-black/40 w-full md:w-auto">Literary Narratives</div>
                 <div className="text-[#C58B52]">➔</div>
@@ -2662,7 +2658,7 @@ export function SatyaMithyaCase005() {
                     <span className="font-general text-[7px] text-[#C58B52] block uppercase tracking-widest mb-1 font-bold">Model 0{idx + 1}</span>
                     <h4 className="font-instrument text-lg text-[#E9E2D4] font-bold mb-1">{model.title}</h4>
                     <p className="font-instrument italic text-xs text-[#C58B52] mb-3">{model.subtitle}</p>
-                    
+
                     <AnimatePresence>
                       {expandedScholarlyCard === idx && (
                         <motion.p
@@ -2677,7 +2673,7 @@ export function SatyaMithyaCase005() {
                       )}
                     </AnimatePresence>
                   </div>
-                  
+
                   <button
                     onClick={() => setExpandedScholarlyCard(expandedScholarlyCard === idx ? null : idx)}
                     className="w-full bg-[#C58B52]/5 hover:bg-[#C58B52]/10 text-[#C58B52] mt-4 py-1.5 px-3 border border-[#C58B52]/15 text-[8px] font-general uppercase tracking-widest focus:outline-none transition-colors rounded-sm font-bold"
@@ -2698,101 +2694,103 @@ export function SatyaMithyaCase005() {
               <h4 className="font-instrument text-2xl text-[#E9E2D4] font-bold mb-6 text-center">
                 Comparison of Historical Influences
               </h4>
-              <div className="border border-[#C58B52]/15 rounded-sm overflow-hidden select-none">
-                {/* Headers */}
-                <div className="grid grid-cols-3 bg-[#1d1d1c] p-4 text-center font-general text-[8px] uppercase tracking-wider text-[#C58B52] font-bold">
-                  <div>Historical Factor</div>
-                  <div>Supporting Evidence</div>
-                  <div>Evidence Strength</div>
-                </div>
+              <div className="overflow-x-auto w-full scrollbar-none">
+                <div className="border border-[#C58B52]/15 rounded-sm overflow-hidden select-none min-w-[600px] md:min-w-0">
+                  {/* Headers */}
+                  <div className="grid grid-cols-3 bg-[#1d1d1c] p-4 text-center font-general text-[8px] uppercase tracking-wider text-[#C58B52] font-bold">
+                    <div>Historical Factor</div>
+                    <div>Supporting Evidence</div>
+                    <div>Evidence Strength</div>
+                  </div>
 
-                {/* Rows */}
-                {[
-                  {
-                    rowId: 'Property',
-                    title: 'Property & Inheritance',
-                    evidence: 'Statistical peaks in Dayabhaga-governed Bengal.',
-                    strength: 'Strong in late 18th/early 19th century Bengal; weak/absent elsewhere.',
-                    debate: 'Whether property rights were the primary cause or a secondary trigger utilized by families during economic distress.'
-                  },
-                  {
-                    rowId: 'Warrior',
-                    title: 'Warrior Culture',
-                    evidence: 'Royal monuments and clan chronicles in Rajasthan.',
-                    strength: 'Highly documented among ruling elites and warrior classes.',
-                    debate: 'How far the warrior ideal was voluntarily embraced by women versus enforced as a tool of courtly prestige.'
-                  },
-                  {
-                    rowId: 'Literature',
-                    title: 'Religious Literature',
-                    evidence: 'Verses in later Smṛti digests and Garuḍa Purāṇa.',
-                    strength: 'Well-attested textually in later medieval periods.',
-                    debate: 'The degree of practical influence these Sanskrit texts had on non-literate regional populations.'
-                  },
-                  {
-                    rowId: 'Tradition',
-                    title: 'Regional Tradition',
-                    evidence: 'Sati stones (Masti-kallu) in specific pockets of Karnataka/Central India.',
-                    strength: 'Solid archaeological and localized inscriptional backing.',
-                    debate: 'Why certain districts accumulated hundreds of stones while neighboring areas with identical religions had none.'
-                  },
-                  {
-                    rowId: 'Instability',
-                    title: 'Political Instability',
-                    evidence: 'Peaks in Sati occurrences during military invasions and transition states.',
-                    strength: 'Moderately supported by regional chronicles.',
-                    debate: 'Whether Sati was a defensive response to war or a product of internal courtly consolidation.'
-                  },
-                  {
-                    rowId: 'Prestige',
-                    title: 'Social Prestige',
-                    evidence: 'Epigraphical records of families claiming elevated status after a Sati event.',
-                    strength: 'Strong in local epigraphy and clan genealogies.',
-                    debate: 'Evaluating the relative roles of family pride versus coercion by the wider community.'
-                  }
-                ].map((row, ri) => {
-                  const isExpanded = expandedFactorRow === row.rowId;
-                  return (
-                    <div key={ri} className="border-b border-[#C58B52]/15 last:border-none">
-                      <button
-                        onClick={() => setExpandedFactorRow(isExpanded ? null : row.rowId)}
-                        className="w-full bg-[#161615] hover:bg-[#1a1a19] p-4 text-left flex justify-between items-center transition-colors focus:outline-none"
-                      >
-                        <span className="font-instrument text-xs font-semibold text-[#E9E2D4]">{row.title}</span>
-                        <span className="font-cormorant text-xs text-[#E9E2D4]/70">{row.evidence}</span>
-                        <span className="font-general text-[7px] text-[#C58B52]">
-                          {isExpanded ? '[ COLLAPSE ]' : '[ VIEW DEBATE ]'}
-                        </span>
-                      </button>
-                      <AnimatePresence>
-                        {isExpanded && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.4, ease: EASE_EXPO }}
-                            className="overflow-hidden bg-black/40 border-t border-[#C58B52]/10"
-                          >
-                            <div className="grid grid-cols-3 gap-4 p-4 font-cormorant text-xs md:text-sm text-[#E9E2D4]/75 font-light leading-relaxed">
-                              <div>
-                                <strong className="text-[#C58B52] block mb-1">Evidence Summary:</strong>
-                                {row.evidence}
+                  {/* Rows */}
+                  {[
+                    {
+                      rowId: 'Property',
+                      title: 'Property & Inheritance',
+                      evidence: 'Statistical peaks in Dayabhaga-governed Bengal.',
+                      strength: 'Strong in late 18th/early 19th century Bengal; weak/absent elsewhere.',
+                      debate: 'Whether property rights were the primary cause or a secondary trigger utilized by families during economic distress.'
+                    },
+                    {
+                      rowId: 'Warrior',
+                      title: 'Warrior Culture',
+                      evidence: 'Royal monuments and clan chronicles in Rajasthan.',
+                      strength: 'Highly documented among ruling elites and warrior classes.',
+                      debate: 'How far the warrior ideal was voluntarily embraced by women versus enforced as a tool of courtly prestige.'
+                    },
+                    {
+                      rowId: 'Literature',
+                      title: 'Religious Literature',
+                      evidence: 'Verses in later Smṛti digests and Garuḍa Purāṇa.',
+                      strength: 'Well-attested textually in later medieval periods.',
+                      debate: 'The degree of practical influence these Sanskrit texts had on non-literate regional populations.'
+                    },
+                    {
+                      rowId: 'Tradition',
+                      title: 'Regional Tradition',
+                      evidence: 'Sati stones (Masti-kallu) in specific pockets of Karnataka/Central India.',
+                      strength: 'Solid archaeological and localized inscriptional backing.',
+                      debate: 'Why certain districts accumulated hundreds of stones while neighboring areas with identical religions had none.'
+                    },
+                    {
+                      rowId: 'Instability',
+                      title: 'Political Instability',
+                      evidence: 'Peaks in Sati occurrences during military invasions and transition states.',
+                      strength: 'Moderately supported by regional chronicles.',
+                      debate: 'Whether Sati was a defensive response to war or a product of internal courtly consolidation.'
+                    },
+                    {
+                      rowId: 'Prestige',
+                      title: 'Social Prestige',
+                      evidence: 'Epigraphical records of families claiming elevated status after a Sati event.',
+                      strength: 'Strong in local epigraphy and clan genealogies.',
+                      debate: 'Evaluating the relative roles of family pride versus coercion by the wider community.'
+                    }
+                  ].map((row, ri) => {
+                    const isExpanded = expandedFactorRow === row.rowId;
+                    return (
+                      <div key={ri} className="border-b border-[#C58B52]/15 last:border-none">
+                        <button
+                          onClick={() => setExpandedFactorRow(isExpanded ? null : row.rowId)}
+                          className="w-full bg-[#161615] hover:bg-[#1a1a19] p-4 text-left flex justify-between items-center transition-colors focus:outline-none"
+                        >
+                          <span className="font-instrument text-xs font-semibold text-[#E9E2D4]">{row.title}</span>
+                          <span className="font-cormorant text-xs text-[#E9E2D4]/70">{row.evidence}</span>
+                          <span className="font-general text-[7px] text-[#C58B52]">
+                            {isExpanded ? '[ COLLAPSE ]' : '[ VIEW DEBATE ]'}
+                          </span>
+                        </button>
+                        <AnimatePresence>
+                          {isExpanded && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.4, ease: EASE_EXPO }}
+                              className="overflow-hidden bg-black/40 border-t border-[#C58B52]/10"
+                            >
+                              <div className="grid grid-cols-3 gap-4 p-4 font-cormorant text-xs md:text-sm text-[#E9E2D4]/75 font-light leading-relaxed">
+                                <div>
+                                  <strong className="text-[#C58B52] block mb-1">Evidence Summary:</strong>
+                                  {row.evidence}
+                                </div>
+                                <div className="border-l border-[#C58B52]/10 pl-4 pr-2">
+                                  <strong className="text-[#C58B52] block mb-1">Evidence Strength:</strong>
+                                  {row.strength}
+                                </div>
+                                <div className="border-l border-[#C58B52]/10 pl-4">
+                                  <strong className="text-[#C58B52] block mb-1">Areas of Debate:</strong>
+                                  {row.debate}
+                                </div>
                               </div>
-                              <div className="border-l border-[#C58B52]/10 pl-4 pr-2">
-                                <strong className="text-[#C58B52] block mb-1">Evidence Strength:</strong>
-                                {row.strength}
-                              </div>
-                              <div className="border-l border-[#C58B52]/10 pl-4">
-                                <strong className="text-[#C58B52] block mb-1">Areas of Debate:</strong>
-                                {row.debate}
-                              </div>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  );
-                })}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </Reveal>
@@ -2806,15 +2804,14 @@ export function SatyaMithyaCase005() {
               <h4 className="font-instrument text-2xl text-[#E9E2D4] font-bold mb-6 text-center">
                 Modern Historiography Stance
               </h4>
-              
+
               <div className="flex border-b border-[#C58B52]/15 overflow-x-auto text-[9px] font-general uppercase tracking-wider select-none mb-6">
                 {['Agreement', 'Competing Interpretations', 'Questions Debated'].map((tab, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveScholarPerspTab(idx)}
-                    className={`flex-1 py-3 px-4 text-center border-r border-[#C58B52]/15 last:border-none focus:outline-none transition-colors duration-300 ${
-                      activeScholarPerspTab === idx ? 'bg-[#C58B52]/10 text-[#C58B52] font-bold' : 'text-[#E9E2D4]/50 hover:text-[#E9E2D4]'
-                    }`}
+                    className={`flex-1 py-3 px-4 text-center border-r border-[#C58B52]/15 last:border-none focus:outline-none transition-colors duration-300 ${activeScholarPerspTab === idx ? 'bg-[#C58B52]/10 text-[#C58B52] font-bold' : 'text-[#E9E2D4]/50 hover:text-[#E9E2D4]'
+                      }`}
                   >
                     {tab}
                   </button>
@@ -3045,9 +3042,8 @@ export function SatyaMithyaCase005() {
                   <button
                     key={idx}
                     onClick={() => setActiveMadriTab(idx)}
-                    className={`flex-1 min-w-[100px] py-3 px-4 text-center font-general text-[8px] uppercase tracking-wider border-r border-[#C58B52]/10 last:border-none focus:outline-none transition-colors duration-300 ${
-                      activeMadriTab === idx ? 'bg-[#C58B52]/10 text-[#C58B52] font-bold' : 'text-[#E9E2D4]/40 hover:text-[#E9E2D4]/80'
-                    }`}
+                    className={`flex-1 min-w-[100px] py-3 px-4 text-center font-general text-[8px] uppercase tracking-wider border-r border-[#C58B52]/10 last:border-none focus:outline-none transition-colors duration-300 ${activeMadriTab === idx ? 'bg-[#C58B52]/10 text-[#C58B52] font-bold' : 'text-[#E9E2D4]/40 hover:text-[#E9E2D4]/80'
+                      }`}
                   >
                     {tab}
                   </button>
@@ -3113,25 +3109,27 @@ export function SatyaMithyaCase005() {
               </div>
 
               {/* Comparison */}
-              <div className="mx-6 mb-6 border border-[#C58B52]/15 rounded-sm overflow-hidden">
-                <div className="grid grid-cols-3 bg-[#1d1d1c] p-3 font-general text-[7.5px] uppercase tracking-wider text-[#C58B52]/70 text-center font-bold">
-                  <div>Aspect</div>
-                  <div>Mādrī</div>
-                  <div>Kuntī</div>
-                </div>
-                {[
-                  ['Choice Made', 'Died on funeral pyre', 'Remained alive as widow'],
-                  ['Reason Given in Text', 'Guilt, grief, personal devotion', 'Maternal duty to the Pāṇḍavas'],
-                  ['Textual Framing', 'Personal, situational act', 'Long, honoured widowhood'],
-                  ['Presented as Obligation?', 'No explicit command', 'No condemnation for living'],
-                  ['Historical Implication', 'One narrative example', 'Direct counter-example to universal command'],
-                ].map(([aspect, madri, kunti], ri) => (
-                  <div key={ri} className="grid grid-cols-3 border-t border-[#C58B52]/10 text-center">
-                    <div className="p-3 font-general text-[7.5px] text-[#E9E2D4]/50 uppercase tracking-wider bg-[#1a1a18] flex items-center justify-center">{aspect}</div>
-                    <div className="p-3 font-cormorant text-xs text-[#E9E2D4]/75 flex items-center justify-center border-l border-[#C58B52]/10">{madri}</div>
-                    <div className="p-3 font-cormorant text-xs text-[#E9E2D4]/75 flex items-center justify-center border-l border-[#C58B52]/10">{kunti}</div>
+              <div className="mx-6 mb-6 overflow-x-auto scrollbar-none">
+                <div className="border border-[#C58B52]/15 rounded-sm overflow-hidden min-w-[600px] md:min-w-0">
+                  <div className="grid grid-cols-3 bg-[#1d1d1c] p-3 font-general text-[7.5px] uppercase tracking-wider text-[#C58B52]/70 text-center font-bold">
+                    <div>Aspect</div>
+                    <div>Mādrī</div>
+                    <div>Kuntī</div>
                   </div>
-                ))}
+                  {[
+                    ['Choice Made', 'Died on funeral pyre', 'Remained alive as widow'],
+                    ['Reason Given in Text', 'Guilt, grief, personal devotion', 'Maternal duty to the Pāṇḍavas'],
+                    ['Textual Framing', 'Personal, situational act', 'Long, honoured widowhood'],
+                    ['Presented as Obligation?', 'No explicit command', 'No condemnation for living'],
+                    ['Historical Implication', 'One narrative example', 'Direct counter-example to universal command'],
+                  ].map(([aspect, madri, kunti], ri) => (
+                    <div key={ri} className="grid grid-cols-3 border-t border-[#C58B52]/10 text-center">
+                      <div className="p-3 font-general text-[7.5px] text-[#E9E2D4]/50 uppercase tracking-wider bg-[#1a1a18] flex items-center justify-center">{aspect}</div>
+                      <div className="p-3 font-cormorant text-xs text-[#E9E2D4]/75 flex items-center justify-center border-l border-[#C58B52]/10">{madri}</div>
+                      <div className="p-3 font-cormorant text-xs text-[#E9E2D4]/75 flex items-center justify-center border-l border-[#C58B52]/10">{kunti}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </Reveal>
@@ -3245,26 +3243,28 @@ export function SatyaMithyaCase005() {
                 </p>
 
                 {/* Comparison Table */}
-                <div className="border border-[#C58B52]/15 rounded-sm overflow-hidden mb-4">
-                  <div className="grid grid-cols-3 bg-[#1d1d1c] p-3 font-general text-[7.5px] uppercase tracking-wider text-[#C58B52]/70 text-center font-bold">
-                    <div>Dimension</div>
-                    <div>Jauhar</div>
-                    <div>Sati</div>
-                  </div>
-                  {[
-                    ['When', 'During or immediately before an active military siege', 'Upon a husband\'s death, in peacetime or wartime'],
-                    ['Who', 'Women of royal households en masse', 'Individual widow on husband\'s funeral pyre'],
-                    ['Context', 'Military defeat; prevention of capture and enslavement', 'Grief, devotion, family pressure, or social expectation'],
-                    ['Purpose', 'Collective prevention of capture; preservation of honour', 'Personal act of loyalty or sacrifice; religious merit'],
-                    ['Historical Setting', 'Rajput fort sieges; Mughal-era warfare', 'Royal, elite and in some regions ordinary households'],
-                    ['Religious Meaning', 'Primarily a martial-political act', 'Sometimes framed in later texts as spiritually meritorious'],
-                  ].map(([dim, jauhar, sati], ri) => (
-                    <div key={ri} className="grid grid-cols-3 border-t border-[#C58B52]/10">
-                      <div className="p-3 font-general text-[7.5px] text-[#E9E2D4]/50 uppercase tracking-wider bg-[#1a1a18] flex items-center">{dim}</div>
-                      <div className="p-3 font-cormorant text-xs text-[#E9E2D4]/75 leading-relaxed border-l border-[#C58B52]/10">{jauhar}</div>
-                      <div className="p-3 font-cormorant text-xs text-[#E9E2D4]/75 leading-relaxed border-l border-[#C58B52]/10">{sati}</div>
+                <div className="overflow-x-auto w-full scrollbar-none mb-4">
+                  <div className="border border-[#C58B52]/15 rounded-sm overflow-hidden min-w-[600px] md:min-w-0">
+                    <div className="grid grid-cols-3 bg-[#1d1d1c] p-3 font-general text-[7.5px] uppercase tracking-wider text-[#C58B52]/70 text-center font-bold">
+                      <div>Dimension</div>
+                      <div>Jauhar</div>
+                      <div>Sati</div>
                     </div>
-                  ))}
+                    {[
+                      ['When', 'During or immediately before an active military siege', 'Upon a husband\'s death, in peacetime or wartime'],
+                      ['Who', 'Women of royal households en masse', 'Individual widow on husband\'s funeral pyre'],
+                      ['Context', 'Military defeat; prevention of capture and enslavement', 'Grief, devotion, family pressure, or social expectation'],
+                      ['Purpose', 'Collective prevention of capture; preservation of honour', 'Personal act of loyalty or sacrifice; religious merit'],
+                      ['Historical Setting', 'Rajput fort sieges; Mughal-era warfare', 'Royal, elite and in some regions ordinary households'],
+                      ['Religious Meaning', 'Primarily a martial-political act', 'Sometimes framed in later texts as spiritually meritorious'],
+                    ].map(([dim, jauhar, sati], ri) => (
+                      <div key={ri} className="grid grid-cols-3 border-t border-[#C58B52]/10">
+                        <div className="p-3 font-general text-[7.5px] text-[#E9E2D4]/50 uppercase tracking-wider bg-[#1a1a18] flex items-center">{dim}</div>
+                        <div className="p-3 font-cormorant text-xs text-[#E9E2D4]/75 leading-relaxed border-l border-[#C58B52]/10">{jauhar}</div>
+                        <div className="p-3 font-cormorant text-xs text-[#E9E2D4]/75 leading-relaxed border-l border-[#C58B52]/10">{sati}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <p className="font-general text-[7px] uppercase tracking-widest text-[#C58B52]/50">
                   Classification: <span className="text-[#C58B52] flex items-center gap-1">Distinct Institution <BulletDot /> Siege Context <BulletDot /> Not Widow Immolation</span>
@@ -3664,81 +3664,83 @@ export function SatyaMithyaCase005() {
           {/* ── SCHOLAR COMPARISON TABLE ───────────────────────────────── */}
           <Reveal className="my-16">
             <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">Scholar Comparison</span>
-            <div className="border border-[#C58B52]/20 bg-[#161615] rounded-sm overflow-hidden">
-              <div className="grid grid-cols-4 bg-[#1d1d1c] p-4 font-general text-[7.5px] uppercase tracking-wider text-[#C58B52]/70 text-center font-bold">
-                <div>Topic</div>
-                <div>Broad Agreement</div>
-                <div>Evidence Strength</div>
-                <div>Remaining Questions</div>
+            <div className="overflow-x-auto w-full scrollbar-none">
+              <div className="border border-[#C58B52]/20 bg-[#161615] rounded-sm overflow-hidden min-w-[700px] md:min-w-0">
+                <div className="grid grid-cols-4 bg-[#1d1d1c] p-4 font-general text-[7.5px] uppercase tracking-wider text-[#C58B52]/70 text-center font-bold">
+                  <div>Topic</div>
+                  <div>Broad Agreement</div>
+                  <div>Evidence Strength</div>
+                  <div>Remaining Questions</div>
+                </div>
+                {[
+                  {
+                    rowId: 'Vedic',
+                    topic: 'Vedic Mandate',
+                    agree: 'No clear Vedic command. Minority textual variant required to read immolation into 10.18.7.',
+                    strength: 5,
+                    open: 'Exact scope of variant manuscript traditions across all extant manuscripts.'
+                  },
+                  {
+                    rowId: 'Origin',
+                    topic: 'Historical Origin',
+                    agree: 'Post-Vedic. Earliest physical evidence: 510 CE (Eran inscription). Gradual development.',
+                    strength: 4,
+                    open: 'Whether non-inscribed earlier forms existed among non-elite groups.'
+                  },
+                  {
+                    rowId: 'Regional',
+                    topic: 'Regional Variation',
+                    agree: 'Highly significant. Rajasthan, Bengal, and parts of Karnataka had more documented cases. Kashmir, Kerala, Maharashtra far fewer.',
+                    strength: 5,
+                    open: 'Under-documented regions due to absence of equivalent colonial administrative surveys.'
+                  },
+                  {
+                    rowId: 'Legal',
+                    topic: 'Legal Unanimity',
+                    agree: 'No unanimous Dharmashāstra doctrine. Medhātithi opposed; Vijñāneśvara conditionally permitted.',
+                    strength: 5,
+                    open: 'Extent of practical enforcement or influence of written codes on village-level custom.'
+                  },
+                  {
+                    rowId: 'Colonial',
+                    topic: 'Colonial Role',
+                    agree: 'Administrative documentation shaped how the practice was statistically represented. 1829 abolition had both humanitarian and colonial political dimensions.',
+                    strength: 4,
+                    open: 'The degree to which colonial documentation altered actual practice versus simply revealing it.'
+                  },
+                ].map((row) => {
+                  const open = expandedScholarRow === row.rowId;
+                  return (
+                    <div key={row.rowId} className="border-t border-[#C58B52]/10">
+                      <button
+                        onClick={() => setExpandedScholarRow(open ? null : row.rowId)}
+                        className="w-full grid grid-cols-4 p-4 text-left hover:bg-[#1a1a18] transition-colors focus:outline-none"
+                      >
+                        <span className="font-instrument text-xs font-semibold text-[#E9E2D4]">{row.topic}</span>
+                        <span className="font-cormorant text-xs text-[#E9E2D4]/65 px-2">{row.agree}</span>
+                        <span className="flex justify-center items-center"><StarRating count={row.strength} /></span>
+                        <span className="font-general text-[7px] text-[#C58B52] text-right">{open ? '[ COLLAPSE ]' : '[ EXPAND ]'}</span>
+                      </button>
+                      <AnimatePresence>
+                        {open && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: EASE_EXPO }}
+                            className="overflow-hidden border-t border-[#C58B52]/10 bg-black/30"
+                          >
+                            <div className="p-5">
+                              <strong className="font-general text-[7.5px] text-[#C58B52] uppercase tracking-widest block mb-2">Remaining Questions</strong>
+                              <p className="font-cormorant text-xs text-[#E9E2D4]/70 leading-relaxed font-light">{row.open}</p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
               </div>
-              {[
-                {
-                  rowId: 'Vedic',
-                  topic: 'Vedic Mandate',
-                  agree: 'No clear Vedic command. Minority textual variant required to read immolation into 10.18.7.',
-                  strength: 5,
-                  open: 'Exact scope of variant manuscript traditions across all extant manuscripts.'
-                },
-                {
-                  rowId: 'Origin',
-                  topic: 'Historical Origin',
-                  agree: 'Post-Vedic. Earliest physical evidence: 510 CE (Eran inscription). Gradual development.',
-                  strength: 4,
-                  open: 'Whether non-inscribed earlier forms existed among non-elite groups.'
-                },
-                {
-                  rowId: 'Regional',
-                  topic: 'Regional Variation',
-                  agree: 'Highly significant. Rajasthan, Bengal, and parts of Karnataka had more documented cases. Kashmir, Kerala, Maharashtra far fewer.',
-                  strength: 5,
-                  open: 'Under-documented regions due to absence of equivalent colonial administrative surveys.'
-                },
-                {
-                  rowId: 'Legal',
-                  topic: 'Legal Unanimity',
-                  agree: 'No unanimous Dharmashāstra doctrine. Medhātithi opposed; Vijñāneśvara conditionally permitted.',
-                  strength: 5,
-                  open: 'Extent of practical enforcement or influence of written codes on village-level custom.'
-                },
-                {
-                  rowId: 'Colonial',
-                  topic: 'Colonial Role',
-                  agree: 'Administrative documentation shaped how the practice was statistically represented. 1829 abolition had both humanitarian and colonial political dimensions.',
-                  strength: 4,
-                  open: 'The degree to which colonial documentation altered actual practice versus simply revealing it.'
-                },
-              ].map((row) => {
-                const open = expandedScholarRow === row.rowId;
-                return (
-                  <div key={row.rowId} className="border-t border-[#C58B52]/10">
-                    <button
-                      onClick={() => setExpandedScholarRow(open ? null : row.rowId)}
-                      className="w-full grid grid-cols-4 p-4 text-left hover:bg-[#1a1a18] transition-colors focus:outline-none"
-                    >
-                      <span className="font-instrument text-xs font-semibold text-[#E9E2D4]">{row.topic}</span>
-                      <span className="font-cormorant text-xs text-[#E9E2D4]/65 px-2">{row.agree}</span>
-                      <span className="flex justify-center items-center"><StarRating count={row.strength} /></span>
-                      <span className="font-general text-[7px] text-[#C58B52] text-right">{open ? '[ COLLAPSE ]' : '[ EXPAND ]'}</span>
-                    </button>
-                    <AnimatePresence>
-                      {open && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: EASE_EXPO }}
-                          className="overflow-hidden border-t border-[#C58B52]/10 bg-black/30"
-                        >
-                          <div className="p-5">
-                            <strong className="font-general text-[7.5px] text-[#C58B52] uppercase tracking-widest block mb-2">Remaining Questions</strong>
-                            <p className="font-cormorant text-xs text-[#E9E2D4]/70 leading-relaxed font-light">{row.open}</p>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
             </div>
           </Reveal>
 
@@ -4098,12 +4100,12 @@ export function SatyaMithyaCase005() {
               <span className="font-general text-[8px] uppercase tracking-widest text-[#C58B52] block mb-6 text-center font-bold">Investigation Confidence</span>
               <div className="space-y-3 mb-6">
                 {[
-                  { label: 'Language Evidence',      stars: 5 },
-                  { label: 'Scriptural Evidence',    stars: 5 },
-                  { label: 'Philological Evidence',  stars: 5 },
-                  { label: 'Historical Evidence',    stars: 5 },
-                  { label: 'Archaeological Evidence',stars: 4 },
-                  { label: 'Modern Scholarship',     stars: 5 },
+                  { label: 'Language Evidence', stars: 5 },
+                  { label: 'Scriptural Evidence', stars: 5 },
+                  { label: 'Philological Evidence', stars: 5 },
+                  { label: 'Historical Evidence', stars: 5 },
+                  { label: 'Archaeological Evidence', stars: 4 },
+                  { label: 'Modern Scholarship', stars: 5 },
                 ].map((row, idx) => (
                   <div key={idx} className="flex items-center gap-4 border border-[#C58B52]/10 bg-black/20 p-3 rounded-sm">
                     <span className="font-general text-[7.5px] uppercase tracking-widest text-[#E9E2D4]/50 w-44 shrink-0">{row.label}</span>
@@ -4147,12 +4149,12 @@ export function SatyaMithyaCase005() {
             <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">Continue Exploring</span>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                { status: 'Completed', num: '#001', title: 'Does the Bhagavad Gītā Teach War?',          id: 'does-gita-teach-war' },
-                { status: 'Completed', num: '#002', title: 'Are There Really 33 Crore Gods?',             id: 'are-there-really-33-crore-gods' },
-                { status: 'Completed', num: '#003', title: 'Hinduism Worships Idols?',                    id: 'hinduism-worships-idols' },
-                { status: 'Completed', num: '#004', title: 'Was the Caste System Created by Hinduism?',   id: 'does-bhagavad-gita-support-caste' },
+                { status: 'Completed', num: '#001', title: 'Does the Bhagavad Gītā Teach War?', id: 'does-gita-teach-war' },
+                { status: 'Completed', num: '#002', title: 'Are There Really 33 Crore Gods?', id: 'are-there-really-33-crore-gods' },
+                { status: 'Completed', num: '#003', title: 'Hinduism Worships Idols?', id: 'hinduism-worships-idols' },
+                { status: 'Completed', num: '#004', title: 'Was the Caste System Created by Hinduism?', id: 'does-bhagavad-gita-support-caste' },
                 { status: 'Coming Soon', num: '#006', title: 'Do the Rāmāyaṇa and Mahābhārata Count as History?', id: null },
-                { status: 'Coming Soon', num: '#007', title: 'Does Karma Mean Everything Is Predetermined?',       id: null },
+                { status: 'Coming Soon', num: '#007', title: 'Does Karma Mean Everything Is Predetermined?', id: null },
               ].map((c, i) => (
                 <div
                   key={i}
@@ -4176,14 +4178,14 @@ export function SatyaMithyaCase005() {
             <p className="font-cormorant text-sm text-[#E9E2D4]/50 text-center mb-6 font-light">Related topics in the TATTVA Library that directly informed this investigation.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                { topic: 'Dharma',                   rel: 'The concept of dharma shaped how legal commentators framed the obligations of widowhood in Dharmashāstra literature.' },
-                { topic: 'Karma',                    rel: 'Karmic frameworks were sometimes invoked in later texts to interpret or rationalize a widow\'s choice of immolation.' },
-                { topic: 'Manusmṛti',                rel: 'One of the foundational Smṛti texts whose interpretation of widowhood was cited by both sides of the historical debate.' },
-                { topic: 'Vedas',                    rel: 'The Ṛgveda passages 10.18.7–8 are the central philological evidence examined in this investigation.' },
-                { topic: 'Mahābhārata',              rel: 'The epic presents both Mādrī\'s act and Kuntī\'s long widowhood without prescribing one as the universal norm.' },
-                { topic: 'Rāmāyaṇa',                rel: 'Mandodarī and Tārā survive as widows without committing Sati in the Vālmīki Rāmāyaṇa, contradicting any universal obligation.' },
-                { topic: 'History of Hindu Law',     rel: 'The Dharmashāstra tradition — including the crucial Medhātithi–Vijñāneśvara disagreement — is central to this investigation.' },
-                { topic: 'Women in Ancient India',   rel: 'The broader social and legal position of women across different Indian historical periods provides essential context for understanding Sati.' },
+                { topic: 'Dharma', rel: 'The concept of dharma shaped how legal commentators framed the obligations of widowhood in Dharmashāstra literature.' },
+                { topic: 'Karma', rel: 'Karmic frameworks were sometimes invoked in later texts to interpret or rationalize a widow\'s choice of immolation.' },
+                { topic: 'Manusmṛti', rel: 'One of the foundational Smṛti texts whose interpretation of widowhood was cited by both sides of the historical debate.' },
+                { topic: 'Vedas', rel: 'The Ṛgveda passages 10.18.7–8 are the central philological evidence examined in this investigation.' },
+                { topic: 'Mahābhārata', rel: 'The epic presents both Mādrī\'s act and Kuntī\'s long widowhood without prescribing one as the universal norm.' },
+                { topic: 'Rāmāyaṇa', rel: 'Mandodarī and Tārā survive as widows without committing Sati in the Vālmīki Rāmāyaṇa, contradicting any universal obligation.' },
+                { topic: 'History of Hindu Law', rel: 'The Dharmashāstra tradition — including the crucial Medhātithi–Vijñāneśvara disagreement — is central to this investigation.' },
+                { topic: 'Women in Ancient India', rel: 'The broader social and legal position of women across different Indian historical periods provides essential context for understanding Sati.' },
               ].map((item, idx) => (
                 <div key={idx} className="border border-[#C58B52]/10 bg-[#161615]/30 p-4 rounded-sm flex gap-3 items-start">
                   <DiamondIcon className="w-1.5 h-1.5 rotate-45 bg-[#C58B52] shrink-0 mt-1.5" />

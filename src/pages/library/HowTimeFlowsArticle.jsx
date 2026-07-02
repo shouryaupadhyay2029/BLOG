@@ -34,7 +34,7 @@ export function HowTimeFlowsArticle() {
       <CreamGrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)]">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -58,15 +58,15 @@ export function HowTimeFlowsArticle() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]">
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]">
             TATTVA LIBRARY
           </span>
         </Link>
@@ -74,21 +74,21 @@ export function HowTimeFlowsArticle() {
 
       {/* ARTICLE CONTENT */}
       <main className="w-full max-w-4xl mx-auto px-6 pt-48 pb-48 relative z-10">
-        
+
         {/* HERO / OPENING */}
-        <motion.div 
+        <motion.div
           className="mb-32 flex flex-col items-center text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, ease: EASE_EXPO }}
         >
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] text-[#C58B52] mb-8">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52] mb-8">
             LIBRARY 01
           </span>
           <h1 className="font-instrument text-6xl md:text-8xl text-[#0D0D0C] tracking-tighter leading-[0.9] mb-12 max-w-3xl">
             How Time Flows in Sanātana Dharma
           </h1>
-          
+
           <div className="w-[1px] h-[80px] bg-[#C58B52]/40 mb-16" />
 
           <p className="font-cormorant text-2xl md:text-3xl font-light text-[#0D0D0C]/80 leading-relaxed max-w-2xl text-left italic">
@@ -100,7 +100,7 @@ export function HowTimeFlowsArticle() {
         </motion.div>
 
         {/* SECTION 1: WHAT IS TIME? */}
-        <motion.section 
+        <motion.section
           className="mb-32"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ export function HowTimeFlowsArticle() {
           <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-12">
             We experience time not as numbers, but as change. As impermanence. In Sanātana Dharma, this relentless, all-consuming force of change is called <span className="font-medium text-[#C58B52]">Kāla</span>. Kāla is not a passive backdrop to the universe; it is the great devourer, the unstoppable momentum that brings all things into existence, ages them, and eventually consumes them.
           </p>
-          
+
           <div className="bg-[#0D0D0C]/5 border-l border-[#C58B52]/30 p-8 my-12">
             <p className="font-cormorant text-2xl font-light text-[#0D0D0C] italic leading-relaxed text-center">
               "kālo ’smi loka-kṣaya-kṛt pravṛddho<br />lokān samāhartum iha pravṛttaḥ"
@@ -135,7 +135,7 @@ export function HowTimeFlowsArticle() {
         </motion.section>
 
         {/* SECTION 2: SCALES OF TIME */}
-        <motion.section 
+        <motion.section
           className="mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export function HowTimeFlowsArticle() {
         </motion.section>
 
         {/* SECTION 4: THE COMPLETE COSMIC LADDER (UNIFIED) */}
-        <motion.section 
+        <motion.section
           className="mt-32 mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -174,7 +174,7 @@ export function HowTimeFlowsArticle() {
         </div>
 
         {/* SECTION 5: WHERE ARE WE TODAY? */}
-        <motion.section 
+        <motion.section
           className="mt-48 mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -192,7 +192,7 @@ export function HowTimeFlowsArticle() {
         <CosmicAddress />
 
         {/* SECTION 8: PRALAYA */}
-        <motion.section 
+        <motion.section
           className="mt-48 mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -214,7 +214,7 @@ export function HowTimeFlowsArticle() {
         </motion.section>
 
         {/* SECTION 9: SCIENCE */}
-        <motion.section 
+        <motion.section
           className="mt-48 mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -233,7 +233,7 @@ export function HowTimeFlowsArticle() {
         </motion.section>
 
         {/* SECTION 10: MISCONCEPTIONS */}
-        <motion.section 
+        <motion.section
           className="mt-48 mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -252,7 +252,7 @@ export function HowTimeFlowsArticle() {
         </motion.section>
 
         {/* FINAL SECTION: REFLECTION */}
-        <motion.section 
+        <motion.section
           className="mt-48 pb-[50vh] text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -260,15 +260,15 @@ export function HowTimeFlowsArticle() {
           transition={{ duration: 3, ease: "easeInOut" }}
         >
           <p className="font-cormorant text-2xl font-light text-[#0D0D0C]/70 leading-loose max-w-2xl mx-auto mb-16">
-            We spend our lives racing against deadlines. <br/>
-            We count our birthdays. <br/>
-            We watch our parents age. <br/>
-            We watch our children grow. <br/>
+            We spend our lives racing against deadlines. <br />
+            We count our birthdays. <br />
+            We watch our parents age. <br />
+            We watch our children grow. <br />
             And underneath it all runs the quiet, constant fear of running out of time.
           </p>
 
           <p className="font-cormorant text-3xl font-medium text-[#C58B52] leading-relaxed max-w-2xl mx-auto italic mt-32">
-            If time is not merely something we pass through...<br/>
+            If time is not merely something we pass through...<br />
             ...what if time itself has been guiding us all along?
           </p>
         </motion.section>

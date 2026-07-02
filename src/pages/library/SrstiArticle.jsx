@@ -122,11 +122,10 @@ function PhilosophyReveal({ onComplete }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 1.6, ease: EASE_EXPO }}
-          className={`font-cormorant text-center select-none pointer-events-none ${
-            phase === 3
+          className={`font-cormorant text-center select-none pointer-events-none ${phase === 3
               ? 'text-3xl md:text-4xl font-light text-[#C58B52]'
               : 'text-2xl md:text-3xl font-light text-white/55'
-          }`}
+            }`}
           style={{ letterSpacing: '0.04em' }}
         >
           {PHRASES[phase]}
@@ -197,16 +196,16 @@ export function SrstiArticle() {
       <CosmicParticles scrollProgress={scrollYProgress} />
 
       {/* ── TOP NAV — barely visible, respects darkness ── */}
-      <nav className="fixed top-9 left-9 z-50 flex items-center gap-10">
+      <nav className="fixed top-6 left-6 md:top-9 md:left-9 z-50 flex flex-wrap items-center gap-x-6 md:gap-x-10 gap-y-2 max-w-[calc(100%-48px)] select-none">
         <Link to="/">
           <span
-            className="font-cormorant uppercase tracking-[0.45em] text-[13px] font-light text-white/25 hover:text-white/70 transition-colors duration-700"
+            className="font-cormorant uppercase tracking-[0.2em] sm:tracking-[0.45em] text-[12px] md:text-[13px] font-light text-white/25 hover:text-white/70 transition-colors duration-700"
           >
             TATTVA
           </span>
         </Link>
         <Link to="/library">
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] text-white/20 hover:text-[#C58B52]/70 transition-colors duration-700">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.4em] text-white/20 hover:text-[#C58B52]/70 transition-colors duration-700">
             Library
           </span>
         </Link>

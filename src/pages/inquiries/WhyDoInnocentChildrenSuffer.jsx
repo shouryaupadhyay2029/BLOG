@@ -47,7 +47,7 @@ export function WhyDoInnocentChildrenSuffer() {
       <CreamGrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)]">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -71,26 +71,26 @@ export function WhyDoInnocentChildrenSuffer() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#0D0D0C]/50 group-hover:text-[#C58B52]"
           >
             SATYA & MITHYĀ
           </span>
@@ -102,7 +102,7 @@ export function WhyDoInnocentChildrenSuffer() {
         {SECTIONS.map((sec, i) => {
           const isActive = activeSection === sec.id;
           const isPast = SECTIONS.findIndex(s => s.id === activeSection) > i;
-          
+
           let textColor = 'text-[#0D0D0C]/20';
           if (isActive) textColor = 'text-[#0D0D0C]';
           else if (isPast) textColor = 'text-[#0D0D0C]/40';
@@ -116,11 +116,11 @@ export function WhyDoInnocentChildrenSuffer() {
           );
         })}
       </div>
-      
+
       <div className="w-full max-w-4xl px-6 pt-48 pb-32 relative z-10 flex flex-col items-center">
-        
+
         {/* PAGE HEADER */}
-        <motion.div 
+        <motion.div
           id="intro"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -128,7 +128,7 @@ export function WhyDoInnocentChildrenSuffer() {
           className="relative w-full mb-16 pt-16 pb-8"
         >
           <div className="relative z-10 flex flex-col items-center">
-            <span className="font-general text-[10px] uppercase tracking-[0.4em] text-[#C58B52] mb-6 block text-center">
+            <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52] mb-6 block text-center">
               INQUIRY II
             </span>
             <h1 className="font-instrument text-5xl md:text-7xl lg:text-8xl text-[#0D0D0C] tracking-tight mb-8 text-center leading-none">
@@ -166,7 +166,7 @@ export function WhyDoInnocentChildrenSuffer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1.2, ease: EASE_EXPO, delay: 0.2 }}
-          className="mb-48 w-[100vw] py-16 px-8 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.03] flex justify-center"
+          className="mb-48 w-full md:w-[100vw] max-w-full md:max-w-none md:relative md:left-1/2 md:right-1/2 md:-translate-x-1/2 py-16 px-6 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.03] flex justify-center"
         >
           <div className="max-w-4xl flex flex-col items-center">
             <p className="font-cormorant text-3xl md:text-4xl text-[#0D0D0C] leading-relaxed text-center font-light mb-12">
@@ -178,7 +178,7 @@ export function WhyDoInnocentChildrenSuffer() {
 
         {/* ARTICLE SECTIONS */}
         <div className="space-y-48 w-full max-w-3xl">
-          
+
           {/* Section 1 */}
           <motion.section
             id="sec-1"
@@ -246,7 +246,7 @@ export function WhyDoInnocentChildrenSuffer() {
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed mb-8">
-              Knowledge of karma must never paralyze our humanity; it must be balanced by Dharma. When confronted with the suffering of the innocent, the correct spiritual posture is never apathy. 
+              Knowledge of karma must never paralyze our humanity; it must be balanced by Dharma. When confronted with the suffering of the innocent, the correct spiritual posture is never apathy.
             </p>
             <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
               The tradition places the highest premium on Ahimsa (non-injury), compassion, and active service (Seva). If you witness a child in pain, your immediate Dharma—your present karmic duty—is to alleviate that pain. To use the philosophy of karma as an excuse to withhold help is an egregious violation of spiritual law.
@@ -266,7 +266,7 @@ export function WhyDoInnocentChildrenSuffer() {
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#0D0D0C]/80 leading-relaxed">
-              Sanātana Dharma explicitly rejects fatalism. While past karma sets the stage—determining the conditions into which one is born—it does not write the script of present choices. Even amidst severe suffering, the capacity for free will (Kriyāmāṇa Karma) remains. How one responds to their condition, how families support each other, and how society protects its vulnerable are all active choices that forge new, elevated destinies. 
+              Sanātana Dharma explicitly rejects fatalism. While past karma sets the stage—determining the conditions into which one is born—it does not write the script of present choices. Even amidst severe suffering, the capacity for free will (Kriyāmāṇa Karma) remains. How one responds to their condition, how families support each other, and how society protects its vulnerable are all active choices that forge new, elevated destinies.
             </p>
           </motion.section>
 
@@ -299,7 +299,7 @@ export function WhyDoInnocentChildrenSuffer() {
               7. Scriptural Consensus
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16" />
-            
+
             <div className="w-full border-t border-[#0D0D0C]/10">
               {[
                 { title: "Bhagavad Gītā", desc: "Establishes the eternity of the soul, the mechanics of rebirth, and the mandate of selfless action (Karmayoga)." },
@@ -335,7 +335,7 @@ export function WhyDoInnocentChildrenSuffer() {
               8. Levels of Certainty
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16" />
-            
+
             <div className="w-full border-t border-[#0D0D0C]/10">
               <div className="flex flex-col md:flex-row py-10 border-b border-[#0D0D0C]/10 gap-8">
                 <div className="w-full md:w-1/3">
@@ -476,7 +476,7 @@ export function WhyDoInnocentChildrenSuffer() {
         </div>
 
         {/* REFERENCE SECTION */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -507,7 +507,7 @@ export function WhyDoInnocentChildrenSuffer() {
         </motion.div>
 
         {/* PREMIUM ENDING */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "0%" }}

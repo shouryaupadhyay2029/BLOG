@@ -80,7 +80,7 @@ export function SatyaMithyaCase002() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
+
     let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
@@ -378,7 +378,7 @@ export function SatyaMithyaCase002() {
       <GrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16 select-none">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)] select-none">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -402,38 +402,38 @@ export function SatyaMithyaCase002() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
           >
             SATYA & MITHYĀ
           </span>
         </Link>
 
-<Link to="/the-origin" className="group flex items-center">
-  <span 
-    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
-  >
-    THE ORIGIN
-  </span>
-</Link>
+        <Link to="/the-origin" className="group flex items-center">
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+          >
+            THE ORIGIN
+          </span>
+        </Link>
       </nav>
 
       {/* STICKY EVIDENCE SIDEBAR PANEL */}
@@ -504,7 +504,7 @@ export function SatyaMithyaCase002() {
       </AnimatePresence>
 
       <div className="w-full max-w-3xl mx-auto px-6 pt-44 relative z-10 flex flex-col">
-        
+
         {/* HERO SECTION */}
         <section id="section-hero" className="mb-12 border-b border-[#C58B52]/20 pb-16">
           <motion.div
@@ -604,16 +604,15 @@ export function SatyaMithyaCase002() {
                 Click each semantic definition to investigate how different traditional lexicons translate the term.
               </p>
 
-              <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 {lexicalMeanings.map((meaning, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleLexClick(idx)}
-                    className={`p-4 border transition-all duration-300 text-left focus:outline-none ${
-                      activeLexMeaningIdx === idx
+                    className={`p-4 border transition-all duration-300 text-left focus:outline-none ${activeLexMeaningIdx === idx
                         ? 'border-[#9E2A2B] bg-[#9E2A2B]/5'
                         : 'border-[#C58B52]/20 bg-white/40 hover:border-[#C58B52]/60'
-                    }`}
+                      }`}
                   >
                     <span className="font-general text-[7.5px] text-[#C58B52] block uppercase tracking-widest mb-1">
                       Definition 0{idx + 1}
@@ -729,11 +728,10 @@ export function SatyaMithyaCase002() {
                   <button
                     key={idx}
                     onClick={() => handleVedicTimelineClick(idx)}
-                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${
-                      activeVedicTimelineIdx === idx
+                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${activeVedicTimelineIdx === idx
                         ? 'text-[#9E2A2B] border-b border-[#9E2A2B] font-bold'
                         : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]'
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </button>
@@ -853,11 +851,10 @@ export function SatyaMithyaCase002() {
                   <button
                     key={idx}
                     onClick={() => handleCouncilClick(idx)}
-                    className={`p-4 border text-center transition-all duration-300 focus:outline-none ${
-                      selectedCouncilGroup === idx
+                    className={`p-4 border text-center transition-all duration-300 focus:outline-none ${selectedCouncilGroup === idx
                         ? 'border-[#9E2A2B] bg-[#9E2A2B]/5'
                         : 'border-[#C58B52]/20 bg-white/40 hover:border-[#C58B52]/50'
-                    }`}
+                      }`}
                   >
                     <span className="font-instrument text-2xl font-bold text-[#9E2A2B] block">
                       {item.count}
@@ -967,11 +964,10 @@ export function SatyaMithyaCase002() {
                   <button
                     key={idx}
                     onClick={() => handleEvolutionClick(idx)}
-                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${
-                      activeEvolutionIdx === idx
+                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${activeEvolutionIdx === idx
                         ? 'text-[#9E2A2B] border-b border-[#9E2A2B] font-bold'
                         : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]'
-                    }`}
+                      }`}
                   >
                     {item.title}
                   </button>
@@ -1051,7 +1047,7 @@ export function SatyaMithyaCase002() {
               <span className="font-general text-[8px] uppercase tracking-widest text-[#C58B52] block mb-6 text-center font-bold">
                 Metaphysical Hierarchy Matrix
               </span>
-              
+
               <div className="flex flex-col gap-4 max-w-sm mx-auto text-center">
                 <div className="border border-[#9E2A2B] bg-[#9E2A2B]/5 p-3">
                   <span className="font-general text-[7px] text-[#9E2A2B] block uppercase tracking-widest">01 • Source</span>
@@ -1095,11 +1091,10 @@ export function SatyaMithyaCase002() {
                       setActivePhilCard(school);
                       setActivePluralityExplored(true);
                     }}
-                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${
-                      activePhilCard === school
+                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${activePhilCard === school
                         ? 'text-[#9E2A2B] border-b border-[#9E2A2B] font-bold'
                         : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]'
-                    }`}
+                      }`}
                   >
                     {school}
                   </button>
@@ -1285,11 +1280,10 @@ export function SatyaMithyaCase002() {
                     <button
                       key={tab}
                       onClick={() => setVerdictTab(tab)}
-                      className={`font-general text-[8.5px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${
-                        verdictTab === tab
+                      className={`font-general text-[8.5px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${verdictTab === tab
                           ? 'text-[#9E2A2B] border-b border-[#9E2A2B] font-bold'
                           : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]'
-                      }`}
+                        }`}
                     >
                       {tab}
                     </button>
@@ -1356,13 +1350,13 @@ export function SatyaMithyaCase002() {
                 "Not every popular belief begins in scripture."
               </p>
             </Reveal>
-            
+
             <Reveal delay={0.8}>
               <p className="font-instrument text-2xl text-[#9E2A2B] italic">
                 "Not every ancient word carries only one meaning."
               </p>
             </Reveal>
-            
+
             <Reveal delay={1.4}>
               <p className="font-instrument text-2xl text-[#1C1C1A]/85 italic">
                 "And not every simple answer can explain a civilization thousands of years old."
@@ -1446,17 +1440,16 @@ export function SatyaMithyaCase002() {
             <span className="font-general text-[9px] uppercase tracking-[0.35em] text-[#C58B52] block mb-8 text-center font-bold">
               SATYA / MITHYĀ Knowledge Map
             </span>
-            
+
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 relative select-none">
               {finalKnowledgeNetwork.map((node, idx) => (
                 <React.Fragment key={idx}>
-                  <div className={`p-4 border transition-all duration-500 text-center min-w-[130px] ${
-                    node.status === 'current'
+                  <div className={`p-4 border transition-all duration-500 text-center min-w-[130px] ${node.status === 'current'
                       ? 'border-[#9E2A2B] bg-[#9E2A2B]/5 shadow-sm'
                       : node.status === 'completed'
-                      ? 'border-[#C58B52]/30 bg-white/45'
-                      : 'border-[#1C1C1A]/10 bg-white/10 opacity-40'
-                  }`}>
+                        ? 'border-[#C58B52]/30 bg-white/45'
+                        : 'border-[#1C1C1A]/10 bg-white/10 opacity-40'
+                    }`}>
                     <span className="font-general text-[7px] text-[#C58B52] block mb-1 uppercase">
                       {node.number}
                     </span>

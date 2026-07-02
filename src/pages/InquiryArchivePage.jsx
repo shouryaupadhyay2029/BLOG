@@ -58,7 +58,7 @@ function QuestionRow({ index, id, number, title, category }) {
         transition={{ duration: 1.2, ease: EASE_EXPO, delay: index * 0.05 }}
       >
         {/* The thin golden line growing from left on hover */}
-        <motion.div 
+        <motion.div
           className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#C58B52]"
           initial={{ scaleY: 0 }}
           animate={{ scaleY: isHovered ? 1 : 0 }}
@@ -81,7 +81,7 @@ function QuestionRow({ index, id, number, title, category }) {
         </div>
 
         {/* Minimal Arrow */}
-        <motion.div 
+        <motion.div
           className="pr-8 md:pr-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out"
           initial={{ x: -10 }}
           animate={{ x: isHovered ? 0 : -10 }}
@@ -102,7 +102,7 @@ export function InquiryArchivePage() {
       <GrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)]">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -126,34 +126,34 @@ export function InquiryArchivePage() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             SATYA & MITHYĀ
           </span>
         </Link>
 
         <Link to="/the-origin" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
           >
             THE ORIGIN
           </span>
@@ -161,15 +161,15 @@ export function InquiryArchivePage() {
       </nav>
 
       <div className="w-full max-w-7xl mx-auto px-6 pt-48 pb-32 relative z-10">
-        
+
         {/* Header Section */}
-        <motion.div 
+        <motion.div
           className="mb-24 flex flex-col"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, ease: EASE_EXPO }}
         >
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] text-[#C58B52] mb-6">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52] mb-6">
             ARCHIVE I
           </span>
           <h1 className="font-instrument text-6xl md:text-8xl lg:text-9xl text-[#E9E2D4] tracking-tighter leading-none mb-12">
@@ -180,7 +180,7 @@ export function InquiryArchivePage() {
             Some sought belief. Others sought certainty.<br />
             This archive preserves the questions that continue to shape humanity's search for truth.
           </p>
-          
+
           <div className="w-full h-[1px] bg-[#C58B52]/30 mt-20" />
         </motion.div>
 

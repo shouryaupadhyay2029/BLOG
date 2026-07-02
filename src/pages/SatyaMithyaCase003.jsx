@@ -395,7 +395,7 @@ export function SatyaMithyaCase003() {
       <GrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16 select-none">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)] select-none">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -419,38 +419,38 @@ export function SatyaMithyaCase003() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#1C1C1A]/50 group-hover:text-[#C58B52]"
           >
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span 
-            className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#9E2A2B]"
           >
             SATYA & MITHYĀ
           </span>
         </Link>
 
-<Link to="/the-origin" className="group flex items-center">
-  <span 
-    className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
-  >
-    THE ORIGIN
-  </span>
-</Link>
+        <Link to="/the-origin" className="group flex items-center">
+          <span
+            className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]"
+          >
+            THE ORIGIN
+          </span>
+        </Link>
       </nav>
 
       {/* STICKY EVIDENCE SIDEBAR PANEL */}
@@ -508,7 +508,7 @@ export function SatyaMithyaCase003() {
       </aside>
 
       <div className="w-full max-w-3xl mx-auto px-6 pt-44 relative z-10 flex flex-col">
-        
+
         {/* HERO SECTION */}
         <section id="section-hero" className="mb-12 border-b border-[#C58B52]/20 pb-16">
           <motion.div
@@ -658,7 +658,7 @@ export function SatyaMithyaCase003() {
               <p className="font-cormorant text-sm text-[#1C1C1A]/80 leading-relaxed mb-4 text-left">
                 The English word "idol" derives from the Greek word <strong>eidōlon</strong>, meaning image, appearance or representation. Over time, especially in Jewish, Christian and Islamic theological literature, the word acquired a much narrower meaning. It came to describe the worship of false gods or mistaken objects of devotion. This historical meaning is important because it already carries a theological judgement before any investigation begins.
               </p>
-              
+
               <div className="border-t border-[#C58B52]/20 pt-4 text-left">
                 <button
                   onClick={() => setHistoryBackgroundExpanded(!historyBackgroundExpanded)}
@@ -688,7 +688,7 @@ export function SatyaMithyaCase003() {
             <span className="font-general text-[8.5px] uppercase tracking-wider text-[#C58B52] block mb-6 text-center font-bold">
               Sanskrit Concept Repository
             </span>
-            
+
             <div className="flex flex-col gap-4 max-w-xl mx-auto select-none">
               {sanskritVocabulary.map((item, idx) => (
                 <div key={idx} className="border border-[#C58B52]/20 bg-white/40">
@@ -823,7 +823,7 @@ export function SatyaMithyaCase003() {
                   🟠 Under Investigation
                 </span>
               </div>
-              
+
               <div className="mb-4">
                 <span className="font-general text-[7.5px] text-[#1C1C1A]/40 uppercase tracking-widest block mb-1">Claim under review</span>
                 <p className="font-instrument text-lg text-[#1C1C1A] font-semibold">
@@ -870,11 +870,10 @@ export function SatyaMithyaCase003() {
                   <button
                     key={idx}
                     onClick={() => setActiveTimelineIdx(idx)}
-                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${
-                      activeTimelineIdx === idx
+                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${activeTimelineIdx === idx
                         ? 'text-[#9E2A2B] border-b border-[#9E2A2B] font-bold'
                         : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]'
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </button>
@@ -1028,7 +1027,7 @@ export function SatyaMithyaCase003() {
                   🟠 Oversimplified
                 </span>
               </div>
-              
+
               <div className="mb-4">
                 <span className="font-general text-[7.5px] text-[#1C1C1A]/40 uppercase tracking-widest block mb-1">Claim under review</span>
                 <p className="font-instrument text-lg text-[#1C1C1A] font-semibold">
@@ -1130,11 +1129,10 @@ export function SatyaMithyaCase003() {
               {philosophySchools.map((school) => (
                 <div
                   key={school.id}
-                  className={`border transition-colors duration-300 ${
-                    activePhilCard === school.id
+                  className={`border transition-colors duration-300 ${activePhilCard === school.id
                       ? 'border-[#9E2A2B] bg-[#9E2A2B]/2'
                       : 'border-[#C58B52]/20 bg-white/40'
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => setActivePhilCard(activePhilCard === school.id ? '' : school.id)}
@@ -1194,7 +1192,7 @@ export function SatyaMithyaCase003() {
                   <span className="font-general text-[7px] text-[#C58B52] uppercase block tracking-widest mb-3 font-bold">
                     Analogy: {item.analogy}
                   </span>
-                  
+
                   <div className="flex flex-col items-center gap-1 my-3">
                     <span className="font-instrument text-sm text-[#1C1C1A] font-bold">{item.steps[0]}</span>
                     <span className="text-[#C58B52]/40 text-xs">↓</span>
@@ -1256,7 +1254,7 @@ export function SatyaMithyaCase003() {
                   🔴 Not Supported
                 </span>
               </div>
-              
+
               <div className="mb-4">
                 <span className="font-general text-[7.5px] text-[#1C1C1A]/40 uppercase tracking-widest block mb-1">Claim under review</span>
                 <p className="font-instrument text-lg text-[#1C1C1A] font-semibold">
@@ -1372,7 +1370,7 @@ export function SatyaMithyaCase003() {
                         {activeTempleQuestionIdx === idx ? '▲' : '▼'}
                       </span>
                     </button>
-                    
+
                     <AnimatePresence>
                       {activeTempleQuestionIdx === idx && (
                         <motion.div
@@ -1468,7 +1466,7 @@ export function SatyaMithyaCase003() {
                   🔴 Oversimplified
                 </span>
               </div>
-              
+
               <div className="mb-4">
                 <span className="font-general text-[7.5px] text-[#1C1C1A]/40 uppercase tracking-widest block mb-1">Claim under review</span>
                 <p className="font-instrument text-lg text-[#1C1C1A] font-semibold">
@@ -1542,11 +1540,10 @@ export function SatyaMithyaCase003() {
                   <button
                     key={idx}
                     onClick={() => setActiveHistoryIdx(idx)}
-                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${
-                      activeHistoryIdx === idx
+                    className={`font-general text-[9px] uppercase tracking-wider pb-2 focus:outline-none transition-colors duration-300 ${activeHistoryIdx === idx
                         ? 'text-[#9E2A2B] border-b border-[#9E2A2B] font-bold'
                         : 'text-[#1C1C1A]/40 hover:text-[#1C1C1A]'
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </button>
@@ -1633,7 +1630,7 @@ export function SatyaMithyaCase003() {
                   🔴 Not Supported
                 </span>
               </div>
-              
+
               <div className="mb-4">
                 <span className="font-general text-[7.5px] text-[#1C1C1A]/40 uppercase tracking-widest block mb-1">Claim under review</span>
                 <p className="font-instrument text-lg text-[#1C1C1A] font-semibold">
@@ -1705,7 +1702,7 @@ export function SatyaMithyaCase003() {
               <span className="absolute -top-3 left-6 bg-[#9E2A2B] text-white px-3 py-0.5 font-general text-[7.5px] uppercase tracking-[0.2em] font-bold">
                 OFFICIAL VERDICT REGISTRY
               </span>
-              
+
               <div className="mb-6 pt-2">
                 <span className="font-general text-[7px] text-[#1C1C1A]/40 uppercase block mb-1">Claim under review</span>
                 <span className="font-instrument text-xl text-[#1C1C1A] font-semibold italic">"Hinduism Worships Idols."</span>
@@ -1721,7 +1718,7 @@ export function SatyaMithyaCase003() {
               </div>
 
               <p className="font-cormorant text-sm text-[#1C1C1A]/85 leading-relaxed text-left font-light mb-4">
-                The investigation found that the English expression "Hinduism worships idols" does not accurately represent the full complexity of Hindu traditions. 
+                The investigation found that the English expression "Hinduism worships idols" does not accurately represent the full complexity of Hindu traditions.
               </p>
               <p className="font-cormorant text-sm text-[#1C1C1A]/85 leading-relaxed text-left font-light">
                 The Sanskrit vocabulary contains multiple concepts that cannot be reduced to a single English word. The scriptures reveal a gradual development of worship across different textual layers. Temple traditions distinguish between ordinary objects and consecrated Mūrtis. Different philosophical schools understand sacred images in different ways. The popular phrase therefore oversimplifies a diverse and historically evolving religious tradition.
@@ -1785,10 +1782,12 @@ export function SatyaMithyaCase003() {
               Core Lessons Documented
             </span>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto select-none">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto select-none">
               {whatWeLearned.map((val, idx) => (
                 <div key={idx} className="border border-[#C58B52]/15 bg-white/20 p-4 flex gap-2.5 items-start">
-                  <span className="text-green-700 text-[10px] font-bold mt-0.5">✓</span>
+                  <svg className="w-3.5 h-3.5 text-green-700 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
                   <span className="font-cormorant text-xs text-[#1C1C1A]/80 leading-relaxed font-light">
                     {val}
                   </span>
@@ -1806,15 +1805,29 @@ export function SatyaMithyaCase003() {
 
               <div className="flex flex-col gap-2 font-cormorant text-xs text-[#1C1C1A]/80 mb-6 text-left max-w-xs mx-auto">
                 {[
-                  { label: 'Language Investigation', stars: '★★★★★' },
-                  { label: 'Scriptural Investigation', stars: '★★★★★' },
-                  { label: 'Historical Investigation', stars: '★★★★☆' },
-                  { label: 'Philosophical Investigation', stars: '★★★★★' },
-                  { label: 'Temple Tradition', stars: '★★★★★' }
+                  { label: 'Language Investigation', stars: 5 },
+                  { label: 'Scriptural Investigation', stars: 5 },
+                  { label: 'Historical Investigation', stars: 4 },
+                  { label: 'Philosophical Investigation', stars: 5 },
+                  { label: 'Temple Tradition', stars: 5 }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex justify-between border-b border-[#C58B52]/10 py-1">
+                  <div key={idx} className="flex justify-between border-b border-[#C58B52]/10 py-1 items-center">
                     <span className="font-light">{item.label}</span>
-                    <span className="text-[#9E2A2B] font-mono tracking-wider">{item.stars}</span>
+                    <div className="flex gap-0.5 items-center">
+                      {[...Array(5)].map((_, starIdx) => (
+                        <svg
+                          key={starIdx}
+                          width="9"
+                          height="9"
+                          viewBox="0 0 24 24"
+                          fill={starIdx < item.stars ? "#9E2A2B" : "none"}
+                          stroke="#9E2A2B"
+                          strokeWidth="2"
+                        >
+                          <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" />
+                        </svg>
+                      ))}
+                    </div>
                   </div>
                 ))}
                 <div className="flex justify-between pt-2 text-[10px] font-general uppercase font-bold text-[#9E2A2B]">
@@ -1837,7 +1850,9 @@ export function SatyaMithyaCase003() {
                 className="w-full flex justify-between items-center text-left focus:outline-none"
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-[#9E2A2B] text-xs">◆</span>
+                  <svg className="w-2.5 h-2.5 text-[#9E2A2B] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12,2 22,12 12,22 2,12" />
+                  </svg>
                   <span className="font-instrument text-base font-bold text-[#1C1C1A]">
                     Editorial Transparency • Why TATTVA Chose "Misleading"
                   </span>
@@ -2109,7 +2124,7 @@ export function SatyaMithyaCase003() {
               <span className="font-general text-[9px] uppercase tracking-[0.35em] text-[#C58B52] block mb-8 text-center font-bold">
                 SATYA / MITHYĀ Knowledge Map
               </span>
-              
+
               <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 relative select-none">
                 {[
                   { number: 'Case File 001', title: 'Bhagavad Gītā & War', status: 'completed' },
@@ -2121,13 +2136,12 @@ export function SatyaMithyaCase003() {
                   { number: 'Case File 007', title: 'Bhagavad Gītā & Caste', status: 'coming' }
                 ].map((node, idx) => (
                   <React.Fragment key={idx}>
-                    <div className={`p-4 border transition-all duration-500 text-center min-w-[130px] ${
-                      node.status === 'current'
+                    <div className={`p-4 border transition-all duration-500 text-center min-w-[130px] ${node.status === 'current'
                         ? 'border-[#9E2A2B] bg-[#9E2A2B]/10 shadow-[0_0_15px_rgba(158,42,43,0.18)] scale-105'
                         : node.status === 'completed'
-                        ? 'border-[#C58B52]/30 bg-white/45'
-                        : 'border-[#1C1C1A]/10 bg-white/10 opacity-40'
-                    }`}>
+                          ? 'border-[#C58B52]/30 bg-white/45'
+                          : 'border-[#1C1C1A]/10 bg-white/10 opacity-40'
+                      }`}>
                       <span className="font-general text-[7px] text-[#C58B52] block mb-1 uppercase">
                         {node.number}
                       </span>

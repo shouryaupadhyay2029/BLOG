@@ -24,22 +24,22 @@ const EASE_EXPO = [0.16, 1, 0.3, 1];
 
 function DharmaChakraWatermark() {
   return (
-    <svg 
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none z-0"
+    <svg
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] pointer-events-none z-0"
       style={{ opacity: 0.03 }}
-      viewBox="0 0 100 100" 
-      fill="none" 
-      stroke="#E9E2D4" 
+      viewBox="0 0 100 100"
+      fill="none"
+      stroke="#E9E2D4"
       strokeWidth="0.5"
     >
       <circle cx="50" cy="50" r="45" />
       <circle cx="50" cy="50" r="38" />
       <circle cx="50" cy="50" r="8" />
       {[...Array(24)].map((_, i) => (
-        <line 
+        <line
           key={i}
-          x1="50" y1="50" x2="50" y2="12" 
-          transform={`rotate(${i * 15} 50 50)`} 
+          x1="50" y1="50" x2="50" y2="12"
+          transform={`rotate(${i * 15} 50 50)`}
         />
       ))}
     </svg>
@@ -74,7 +74,7 @@ export function WhyDoInnocentPeopleSuffer() {
       <GrainCanvas />
 
       {/* HORIZONTAL NAVIGATION BAR */}
-      <nav className="absolute top-9 left-9 md:top-11 md:left-13 z-50 flex items-center gap-12 lg:gap-16">
+      <nav className="absolute top-6 left-6 md:top-11 md:left-13 z-50 flex flex-wrap items-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-2 max-w-[calc(100%-48px)]">
         <Link to="/" className="block">
           <div className="cursor-default">
             <div className="relative flex flex-col justify-center items-center" style={{ width: '130px', height: '40px' }}>
@@ -98,21 +98,21 @@ export function WhyDoInnocentPeopleSuffer() {
             </div>
           </div>
         </Link>
-        
+
         <Link to="/inquiry" className="group flex items-center">
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#C58B52]">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#C58B52]">
             INQUIRY ARCHIVE
           </span>
         </Link>
 
         <Link to="/library" className="group flex items-center">
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
             TATTVA LIBRARY
           </span>
         </Link>
 
         <Link to="/satya-mithya" className="group flex items-center">
-          <span className="font-general text-[10px] uppercase tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
+          <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] transition-colors duration-500 text-[#E9E2D4]/50 group-hover:text-[#C58B52]">
             SATYA & MITHYĀ
           </span>
         </Link>
@@ -123,7 +123,7 @@ export function WhyDoInnocentPeopleSuffer() {
         {SECTIONS.map((sec, i) => {
           const isActive = activeSection === sec.id;
           const isPast = SECTIONS.findIndex(s => s.id === activeSection) > i;
-          
+
           let textColor = 'text-[#E9E2D4]/20';
           if (isActive) textColor = 'text-[#E9E2D4]';
           else if (isPast) textColor = 'text-[#E9E2D4]/40';
@@ -137,11 +137,11 @@ export function WhyDoInnocentPeopleSuffer() {
           );
         })}
       </div>
-      
+
       <div className="w-full max-w-4xl px-6 pt-48 pb-32 relative z-10 flex flex-col items-center">
-        
+
         {/* PAGE HEADER */}
-        <motion.div 
+        <motion.div
           id="intro"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export function WhyDoInnocentPeopleSuffer() {
           <DharmaChakraWatermark />
 
           <div className="relative z-10 flex flex-col items-center">
-            <span className="font-general text-[10px] uppercase tracking-[0.4em] text-[#C58B52] mb-6 block text-center">
+            <span className="font-general text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[#C58B52] mb-6 block text-center">
               INQUIRY I
             </span>
             <h1 className="font-instrument text-5xl md:text-7xl lg:text-8xl text-[#E9E2D4] tracking-tight mb-8 text-center leading-none">
@@ -295,7 +295,7 @@ export function WhyDoInnocentPeopleSuffer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1.2, ease: EASE_EXPO }}
-          className="mb-48 w-[100vw] py-16 px-8 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.02] flex flex-col items-center"
+          className="mb-48 w-full md:w-[100vw] max-w-full md:max-w-none md:relative md:left-1/2 md:right-1/2 md:-translate-x-1/2 py-16 px-6 md:px-16 border-y border-[#C58B52]/20 bg-[#C58B52]/[0.02] flex flex-col items-center"
         >
           <div className="w-full max-w-3xl text-center mb-16">
             <p className="font-cormorant text-xl md:text-2xl font-light text-[#E9E2D4]/80 leading-relaxed mx-auto">
@@ -309,7 +309,7 @@ export function WhyDoInnocentPeopleSuffer() {
               It answers it through scripture, philosophy, and a deep understanding of the soul, karma, rebirth, dharma, and liberation.
             </p>
           </div>
-          
+
           <div className="max-w-4xl flex flex-col items-center pt-8 border-t border-[#C58B52]/20">
             <p className="font-cormorant text-3xl md:text-4xl text-[#E9E2D4] leading-relaxed text-center font-light mt-8 mb-12">
               According to Sanātana Dharma, suffering is not random, and it is not simply divine punishment. The soul is eternal, life extends beyond one birth, and present conditions may arise from karma, free will, collective causes, and cosmic law. At the same time, the tradition does not justify cruelty or apathy. It insists that the wise respond to suffering with compassion, dharma, and selfless action.
@@ -319,7 +319,7 @@ export function WhyDoInnocentPeopleSuffer() {
         </motion.section>
 
         <div className="space-y-48 w-full max-w-3xl">
-          
+
           {/* Section 5: The Soul */}
           <motion.section
             id="sec-5"
@@ -357,11 +357,11 @@ export function WhyDoInnocentPeopleSuffer() {
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
-              Karma is frequently misunderstood as fatalism or divine spite. In reality, it is a universal law of cause and effect. It operates across three distinct modalities: Sañcita Karma (the accumulated storehouse of past actions), Prārabdha Karma (the specific portion of past actions bearing fruit in the present life), and Kriyāmāṇa Karma (the actions actively being created right now through free will). 
+              Karma is frequently misunderstood as fatalism or divine spite. In reality, it is a universal law of cause and effect. It operates across three distinct modalities: Sañcita Karma (the accumulated storehouse of past actions), Prārabdha Karma (the specific portion of past actions bearing fruit in the present life), and Kriyāmāṇa Karma (the actions actively being created right now through free will).
             </p>
-            
+
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-12">
-              To understand the staggering complexity of Sañcita Karma, the Mahābhārata offers the story of Sage Māṇḍavya. The great ascetic was once falsely accused of theft and wrongly impaled by a king. Surviving through his spiritual power, he later confronted Dharma (the god of justice) to ask what sin could possibly justify such agony. Dharma revealed it was because, as a small boy, Māṇḍavya had pierced insects with a blade of grass. 
+              To understand the staggering complexity of Sañcita Karma, the Mahābhārata offers the story of Sage Māṇḍavya. The great ascetic was once falsely accused of theft and wrongly impaled by a king. Surviving through his spiritual power, he later confronted Dharma (the god of justice) to ask what sin could possibly justify such agony. Dharma revealed it was because, as a small boy, Māṇḍavya had pierced insects with a blade of grass.
             </p>
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
               Māṇḍavya was outraged. He argued that the actions of an ignorant child should not dictate the fate of a conscious man, fundamentally reforming the cosmic laws of accountability. This story beautifully illustrates that because these interwoven layers span lifetimes and generations, reducing someone's present tragedy to a simple "they must have done something bad" is not only unscriptural, it is a gross oversimplification. Not every instance of suffering can be neatly traced to a single, visible karmic cause.
@@ -370,7 +370,7 @@ export function WhyDoInnocentPeopleSuffer() {
             <div className="w-full flex flex-col items-center justify-center py-16">
               <div className="w-[40px] h-[1px] bg-[#C58B52]/40 mb-16" />
               <p className="font-cormorant text-3xl md:text-5xl text-[#C58B52] leading-tight text-center italic">
-                "We cannot judge another person's karma.<br/>We can only choose our own Dharma."
+                "We cannot judge another person's karma.<br />We can only choose our own Dharma."
               </p>
               <div className="w-[40px] h-[1px] bg-[#C58B52]/40 mt-16" />
             </div>
@@ -406,7 +406,7 @@ export function WhyDoInnocentPeopleSuffer() {
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
-              We operate from a profound deficit of vision. Human perception is confined to the infinitesimally small slice of reality we call the present lifetime. We cannot see the origins of a soul, the intricate web of past debts, or the spiritual destination toward which it is traveling. 
+              We operate from a profound deficit of vision. Human perception is confined to the infinitesimally small slice of reality we call the present lifetime. We cannot see the origins of a soul, the intricate web of past debts, or the spiritual destination toward which it is traveling.
             </p>
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">
               Because of this blindness, we are entirely unqualified to judge the destiny or the karmic burden of another person. It requires deep humility to admit that while cosmic justice exists, its mechanisms remain vast and opaque to the ordinary human eye.
@@ -426,7 +426,7 @@ export function WhyDoInnocentPeopleSuffer() {
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
-              Understanding karma should never curdle into spiritual arrogance or apathy. A true understanding of Dharma does not allow one to look at a suffering child and coldly declare, "It is just their karma." 
+              Understanding karma should never curdle into spiritual arrogance or apathy. A true understanding of Dharma does not allow one to look at a suffering child and coldly declare, "It is just their karma."
             </p>
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">
               Instead, the realization that all beings share the same divine Ātman mandates radical compassion (Karuṇā). If another is suffering, your immediate Dharma—your Kriyāmāṇa Karma—is to alleviate it through Seva (selfless service). To weaponize the philosophy of karma as an excuse for indifference is considered a grave violation of Dharma itself.
@@ -497,7 +497,7 @@ export function WhyDoInnocentPeopleSuffer() {
               Scriptural consensus
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-16" />
-            
+
             <div className="w-full border-t border-[#E9E2D4]/10">
               <div className="flex flex-col md:flex-row py-10 border-b border-[#E9E2D4]/10 gap-8">
                 <div className="w-full md:w-1/3 flex items-start gap-4">
@@ -508,7 +508,7 @@ export function WhyDoInnocentPeopleSuffer() {
                   <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">Establishes the eternity of the Ātman, declaring that the self is unaffected by physical destruction, and emphasizes doing one's duty without attachment to the fruits of action.</p>
                 </div>
               </div>
-              
+
               <div className="flex flex-col md:flex-row py-10 border-b border-[#E9E2D4]/10 gap-8">
                 <div className="w-full md:w-1/3 flex items-start gap-4">
                   <span className="text-[#C58B52] font-serif opacity-50 text-sm">✦</span>
@@ -564,10 +564,10 @@ export function WhyDoInnocentPeopleSuffer() {
             </h2>
             <div className="w-[60px] h-[1px] bg-[#C58B52]/40 mb-12" />
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
-              Whether you are losing a loved one, enduring an unexpected tragedy, watching innocent people suffer, or feeling an overwhelming sense of helplessness and anger—the scriptures do not ask you to suppress your grief. 
+              Whether you are losing a loved one, enduring an unexpected tragedy, watching innocent people suffer, or feeling an overwhelming sense of helplessness and anger—the scriptures do not ask you to suppress your grief.
             </p>
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed mb-8">
-              Questioning God, feeling angry at the silence of the cosmos, or weeping at injustice are deeply human experiences, recognized by every tradition of Vedānta. 
+              Questioning God, feeling angry at the silence of the cosmos, or weeping at injustice are deeply human experiences, recognized by every tradition of Vedānta.
             </p>
             <p className="font-cormorant text-xl font-light text-[#E9E2D4]/80 leading-relaxed">
               However, the tradition teaches that we must not remain paralyzed there. Grief, in time, may gradually transform into compassion for others who hurt, wisdom about the temporary nature of the world, and a profound responsibility to uphold Dharma.
@@ -636,7 +636,7 @@ export function WhyDoInnocentPeopleSuffer() {
         </div>
 
         {/* REFERENCE SECTION */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -663,7 +663,7 @@ export function WhyDoInnocentPeopleSuffer() {
         </motion.div>
 
         {/* CONTINUE YOUR INQUIRY */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -696,7 +696,7 @@ export function WhyDoInnocentPeopleSuffer() {
         </motion.div>
 
         {/* PREMIUM ENDING */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "0%" }}
